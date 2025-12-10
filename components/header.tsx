@@ -131,7 +131,7 @@ export function Header() {
                   <div className="relative">
                     <img className="w-32  pb-1 md:pt-2" src="/images/logo.png" alt="Sharbari Ahmed" />
                      {/* Praise Line - Only on mobile and below logo inside nav */}
-              <div style={{ marginTop: "-22px" , marginLeft: "55px" }} className="md:hidden mt-0">
+              <div style={{ marginTop: "-22px" , marginLeft: "65px" }} className="md:hidden mt-0">
                 <p className="text-[14px] text-[#D4AF37]/70 font-cormorant italic tracking-wider leading-tight">
                   Praise For Sharbari's Work
                 </p>
