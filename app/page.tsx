@@ -189,9 +189,10 @@ export default function HomePage() {
             </div>
 
             {/* Responsive typography */}
-            <div className="d-flex justify-content-center align-items-center">
+        <div className="d-flex justify-content-center align-items-center ps-3">
   <img className="w-60 h-60" src="/images/logo.png" alt="" />
 </div>
+
 
             {/* Mobile-friendly separator */}
             <div className="relative my-8">
