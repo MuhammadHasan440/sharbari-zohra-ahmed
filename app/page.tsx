@@ -194,7 +194,7 @@ export default function HomePage() {
                 <img 
                   src="/images/logo.png" 
                   alt="Sharbari Ahmed Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain ps-2"
                   onError={(e) => {
                     // Fallback if logo doesn't load
                     const target = e.target as HTMLImageElement;
