@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Menu } from "lucide-react"
+import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote } from "lucide-react"
 
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -178,7 +178,7 @@ export default function HomePage() {
           {/* Mobile-optimized Hero Content */}
           <div className="relative z-10 w-full max-w-lg px-4 text-center animate-fade-in">
             {/* Mobile Badge */}
-             <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+            <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
             <div className="inline-block mb-6 touch-target">
               <div className="flex items-center gap-2 px-4 py-2 bg-[#FFF9EB]/10 backdrop-blur-sm rounded-full border border-[#D4AF37]/20">
                 <Sparkles className="w-4 h-4 text-[#D4AF37]" />
@@ -188,11 +188,25 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Responsive typography */}
-       <div className="d-flex justify-content-center align-items-center" style={{ marginLeft: "15px" }}>
-  <img className="w-60 h-60" src="/images/logo.png" alt="" />
-</div>
-
+            {/* Logo Centered */}
+            <div className="flex justify-center mb-6">
+              <div className="w-48 h-48 md:w-60 md:h-60 flex items-center justify-center">
+                <img 
+                  src="/images/logo.png" 
+                  alt="Sharbari Ahmed Logo" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Fallback if logo doesn't load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-full h-full flex items-center justify-center bg-gradient-to-br from-[#7A1F26] to-[#9D2935] rounded-full';
+                    fallback.innerHTML = '<span class="text-3xl md:text-4xl font-serif font-bold text-[#FFF9EB]">SA</span>';
+                    target.parentNode?.insertBefore(fallback, target);
+                  }}
+                />
+              </div>
+            </div>
 
             {/* Mobile-friendly separator */}
             <div className="relative my-8">
