@@ -189,7 +189,7 @@ export default function HomePage() {
             </div>
 
             {/* Responsive typography */}
-        <div className="d-flex justify-content-center align-items-center ps-3">
+        <div className="d-flex justify-content-center align-items-center ps-30">
   <img className="w-60 h-60" src="/images/logo.png" alt="" />
 </div>
 
