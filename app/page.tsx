@@ -189,7 +189,7 @@ export default function HomePage() {
             </div>
 
             {/* Responsive typography */}
-       <div className="d-flex justify-content-center align-items-center" style={{ marginLeft: "3px" }}>
+       <div className="d-flex justify-content-center align-items-center" style={{ marginLeft: "5px" }}>
   <img className="w-60 h-60" src="/images/logo.png" alt="" />
 </div>
 
