@@ -103,7 +103,7 @@ export function Header() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 mobile-transition h-20 md:h-20 ${
+        className={`fixed top-0 left-0 right-0 z-50 mobile-transition h-23 md:h-20 ${
           isScrolled 
             ? 'bg-[#1A1A1A]/95 backdrop-blur-xl shadow-2xl border-b border-[#D4AF37]/30' 
             : 'bg-[#1A1A1A]/90 backdrop-blur-md border-b border-[#D4AF37]/20'
@@ -119,28 +119,30 @@ export function Header() {
 
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
           <div className="flex justify-between items-center h-full">
-            {/* Logo */}
+            {/* Logo with Praise Line - Mobile only below logo */}
             <div
-              className="group relative flex items-center"
+              className="group relative flex flex-col items-start justify-center h-full"
               onMouseEnter={() => setActiveDropdown('home')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link href="/" className="relative">
-                <div className="relative flex items-center gap-3 cursor-pointer group">
-                  {/* Logo with Gold Border */}
-                 
-                  
-                  {/* Name with Gold Accent */}
-                  
-                    <div className="relative">
-                      <img className="w-40 pt-2 " src="/images/logo.png" alt="" />
-                      {/* Gold underline */}
-                      <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent group-hover:w-full transition-all duration-500"></div>
-                    </div>
-                    
+                <div className="relative cursor-pointer">
+                  {/* Logo */}
+                  <div className="relative">
+                    <img className="w-32  pb-1 md:pt-2" src="/images/logo.png" alt="Sharbari Ahmed" />
+                     {/* Praise Line - Only on mobile and below logo inside nav */}
+              <div style={{ marginTop: "-22px" , marginLeft: "55px" }} className="md:hidden mt-0">
+                <p className="text-[14px] text-[#D4AF37]/70 font-cormorant italic tracking-wider leading-tight">
+                  Praise For Sharbari's Work
+                </p>
+              </div>
+                    {/* Gold underline */}
+                    <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent group-hover:w-full transition-all duration-500"></div>
                   </div>
-                
+                </div>
               </Link>
+              
+             
 
               {/* Home Dropdown - Mughal Inspired */}
               {activeDropdown === 'home' && (
