@@ -16,16 +16,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sharbari Ahmed - Writer, Filmmaker, Speaker",
   description: "Challenging the stories we inherit—and who gets to tell them.",
-  generator: "v0.app",
   icons: {
-    icon: [
-      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-icon.png",
-  },
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/favicon.svg", type: "image/svg+xml" },
+  ],
+}
+
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

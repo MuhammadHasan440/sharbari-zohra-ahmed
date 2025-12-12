@@ -5,16 +5,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, ChevronUp, BookOpen, Film, GraduationCap, Globe, Heart, Sparkles, Quote, PenTool, Menu, X } from "lucide-react"
+import { ArrowRight, ChevronUp, BookOpen, Film, GraduationCap, Globe, Heart, Sparkles, Quote, PenTool, Award, Users, Map, Dog, Camera, Book, Mail, ExternalLink, Menu, X, Play } from "lucide-react"
 
-// Import your author image
-import authorImage from "@/public/images/author.jpeg"
+// Import author image
+import authorImage from "@/public/images/authorImage.jpeg"
 
 export default function AboutPage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isClient, setIsClient] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const [activeSection, setActiveSection] = useState("who-i-am")
+  const [activeSection, setActiveSection] = useState("biography")
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function AboutPage() {
       setShowScrollTop(window.scrollY > 300)
       
       // Update active section based on scroll position
-      const sections = ['who-i-am', 'literary-cinematic-life', 'education-mentorship', 'tedx']
+      const sections = ['biography', 'literary-works', 'film-television', 'mentorship', 'personal-life']
       const currentSection = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -53,23 +53,24 @@ export default function AboutPage() {
     }
   }
 
-  // Mobile menu sections
+  // Navigation sections
   const sections = [
-    { id: "who-i-am", label: "Who I Am", icon: <Globe size={16} /> },
-    { id: "literary-cinematic-life", label: "Literary Life", icon: <Film size={16} /> },
-    { id: "education-mentorship", label: "Mentorship", icon: <GraduationCap size={16} /> },
-    { id: "tedx", label: "TEDx Talk", icon: <Sparkles size={16} /> },
+    { id: "biography", label: "Biography", icon: <Globe size={16} /> },
+    { id: "literary-works", label: "Literary Works", icon: <Book size={16} /> },
+    { id: "film-television", label: "Film & TV", icon: <Film size={16} /> },
+    { id: "mentorship", label: "Mentorship", icon: <Users size={16} /> },
+    { id: "personal-life", label: "Personal Life", icon: <Heart size={16} /> },
   ]
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex flex-col bg-[#FFF9EB]">
+      <div className="min-h-screen flex flex-col bg-white">
         <Header />
         <main className="flex-1">
           <div className="h-screen flex items-center justify-center">
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F4C430] animate-pulse"></div>
-              <p className="mt-4 text-[#1A1A1A]/70 text-sm">Loading...</p>
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] animate-pulse"></div>
+              <p className="mt-4 text-[#111111]/70 text-sm">Loading...</p>
             </div>
           </div>
         </main>
@@ -79,22 +80,44 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFF9EB] text-[#1A1A1A]">
+    <div className="min-h-screen flex flex-col bg-white text-[#111111]">
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lora:wght@400;500;600;700&display=swap');
         
         h1, h2, h3, h4, h5, h6 {
           font-family: 'Playfair Display', serif;
         }
         
         .font-subheading {
-          font-family: 'Cormorant Garamond', serif;
+          font-family: 'Inter', sans-serif;
+        }
+        
+        .font-italic {
+          font-family: 'EB Garamond', serif;
         }
         
         body {
           font-family: 'Lora', serif;
           font-size: 16px;
           line-height: 1.6;
+        }
+
+        /* Text gradient */
+        .text-gradient {
+          background: linear-gradient(135deg, #A39F3B 0%, #7C7A34 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        /* Hover effects */
+        .hover-lift:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .hover-scale:hover {
+          transform: scale(1.02);
         }
 
         /* Improve touch targets */
@@ -148,7 +171,7 @@ export default function AboutPage() {
       {/* Mobile Navigation Menu */}
       <div className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
         <div className="relative">
-          <div className="absolute bottom-full mb-2 left-0 right-0 bg-[#FFF9EB] border border-[#D4AF37]/30 rounded-xl shadow-lg overflow-hidden mobile-transition"
+          <div className="absolute bottom-full mb-2 left-0 right-0 bg-white border border-[#A39F3B]/30 rounded-xl shadow-lg overflow-hidden mobile-transition"
                style={{
                  maxHeight: isMenuOpen ? '400px' : '0',
                  opacity: isMenuOpen ? '1' : '0',
@@ -160,9 +183,9 @@ export default function AboutPage() {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg mobile-transition flex items-center gap-3 ${activeSection === section.id ? 'bg-[#7A1F26]/10 text-[#7A1F26]' : 'text-[#1A1A1A]/70 hover:bg-[#7A1F26]/5'}`}
+                    className={`w-full text-left px-4 py-3 rounded-lg mobile-transition flex items-center gap-3 ${activeSection === section.id ? 'bg-[#A39F3B]/10 text-[#7C7A34]' : 'text-[#111111]/70 hover:bg-[#A39F3B]/5'}`}
                   >
-                    <span className={`${activeSection === section.id ? 'text-[#D4AF37]' : 'text-[#1A1A1A]/40'}`}>
+                    <span className={`${activeSection === section.id ? 'text-[#A39F3B]' : 'text-[#111111]/40'}`}>
                       {section.icon}
                     </span>
                     <span className="font-medium">{section.label}</span>
@@ -175,7 +198,7 @@ export default function AboutPage() {
           {/* Floating Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="w-full bg-gradient-to-r from-[#7A1F26] to-[#9D2935] text-[#FFF9EB] py-3 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 tap-highlight-transparent"
+            className="w-full bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] text-white py-3 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 tap-highlight-transparent hover-scale"
           >
             {isMenuOpen ? (
               <>
@@ -193,82 +216,82 @@ export default function AboutPage() {
       </div>
 
       <main className="flex-1 pb-24 lg:pb-0">
-        {/* Mobile Hero Section */}
+        {/* Hero Section with Author Image */}
         <section 
           className="relative pt-16 pb-12 mobile-full-width"
           style={{
-            backgroundImage: `linear-gradient(rgba(122, 31, 38, 0.95), rgba(26, 26, 26, 0.98)), url('https://images.unsplash.com/photo-1544931170-3ca13322c4a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            background: 'linear-gradient(135deg, #111111 0%, #111111 40%, #A39F3B 100%)',
           }}
         >
-          {/* Top Gold Border */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-           <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A39F3B' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+          
           <div className="mobile-padding">
-            {/* Author Image - Mobile Optimized */}
+            {/* Author Image */}
             <div className="relative mb-8">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#D4AF37] via-[#F4C430] to-[#7A1F26] rounded-2xl blur opacity-20"></div>
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#A39F3B] via-[#7C7A34] to-[#111111] rounded-2xl blur opacity-20"></div>
               
-              <div className="relative aspect-square w-64 mx-auto rounded-xl overflow-hidden border-4 border-[#FFF9EB] shadow-xl">
+              <div className="relative aspect-square w-64 mx-auto rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
                 <Image
                   src={authorImage}
-                  alt="Sharbari Ahmed - Literary Author"
+                  alt="Sharbari Zohra Ahmed - Award-winning writer, screenwriter, and filmmaker"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#7A1F26]/40 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent"></div>
               </div>
 
               {/* Author Badge */}
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 px-5 py-2 bg-[#FFF9EB] border border-[#D4AF37] rounded-full shadow-md">
-                <p className="text-[#7A1F26] font-subheading text-sm font-bold tracking-wide">Sharbari Ahmed</p>
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 px-6 py-2 bg-white border border-[#A39F3B] rounded-full shadow-lg">
+                <p className="text-[#7C7A34] font-subheading text-sm font-bold tracking-wide uppercase">Sharbari Zohra Ahmed</p>
               </div>
             </div>
 
-            {/* Hero Content - Mobile Stacked */}
+            {/* Hero Content */}
             <div className="text-center space-y-6">
               <div className="inline-block">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#FFF9EB]/10 backdrop-blur-sm rounded-full border border-[#D4AF37]/30">
-                  <Sparkles size={14} className="text-[#D4AF37]" />
-                  <p className="font-subheading text-xs text-[#D4AF37] tracking-widest">
-                    AUTHOR • STORYTELLER
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-[#A39F3B]/30">
+                  <Award size={14} className="text-[#A39F3B]" />
+                  <p className="font-subheading text-xs text-[#A39F3B] tracking-widest">
+                    AWARD-WINNING WRITER • SCREENWRITER • FILMMAKER
                   </p>
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold text-[#FFF9EB] leading-tight">
+              <h1 className="text-4xl font-bold text-white leading-tight">
                 The Story
                 <br />
-                <span className="text-[#D4AF37]">Behind</span>
+                <span className="text-gradient">Behind</span>
                 <br />
                 The Stories
               </h1>
 
               {/* Separator */}
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#D4AF37] rotate-45 bg-[#FFF9EB]"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#A39F3B] to-transparent"></div>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#A39F3B] rotate-45 bg-white"></div>
               </div>
 
-              <p className="font-subheading text-lg text-[#FFF9EB]/90 leading-relaxed px-4">
-                A journey through literary landscapes, cultural crossroads, and the art of storytelling.
+              <p className="font-italic text-lg text-white/90 leading-relaxed px-4">
+                Exploring identity, migration, faith, superstition and the complicated ways people love—and fail—each other.
               </p>
 
-              {/* Quick Stats - Horizontal Scroll on Mobile */}
+              {/* Quick Stats */}
               <div className="overflow-x-auto pb-2 pt-4 -mx-4 px-4">
                 <div className="flex gap-3 min-w-max">
                   {[
-                    { number: "15+", label: "Years" },
-                    { number: "2", label: "Books" },
-                    { number: "25+", label: "Works" },
+                    { number: "3", label: "Books" },
+                    { number: "4", label: "Screenplays" },
+                    { number: "10+", label: "Awards" },
                     { number: "50+", label: "Mentored" }
                   ].map((stat, index) => (
-                    <div key={index} className="flex-shrink-0 w-20 p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg backdrop-blur-sm">
-                      <p className="text-2xl font-bold text-[#D4AF37]">{stat.number}</p>
-                      <p className="text-xs text-[#FFF9EB]/80 mt-1">{stat.label}</p>
+                    <div key={index} className="flex-shrink-0 w-20 p-3 bg-[#A39F3B]/20 border border-[#A39F3B]/30 rounded-lg backdrop-blur-sm">
+                      <p className="text-2xl font-bold text-[#A39F3B]">{stat.number}</p>
+                      <p className="text-xs text-white/80 mt-1">{stat.label}</p>
                     </div>
                   ))}
                 </div>
@@ -277,219 +300,300 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Introduction Section - Mobile Optimized */}
-        <section className="py-12 mobile-padding bg-[#FFF9EB]">
-          <div className="text-center space-y-8">
-            <div className="inline-flex items-center gap-3">
-              <div className="h-px w-8 bg-gradient-to-r from-[#D4AF37] to-transparent"></div>
-              <span className="font-subheading text-sm text-[#7A1F26] tracking-widest">THE ARTIST'S JOURNEY</span>
-              <div className="h-px w-8 bg-gradient-to-l from-[#D4AF37] to-transparent"></div>
+        {/* Biography Section */}
+        <section id="biography" className="py-12 mobile-padding bg-white">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center gap-3">
+                <div className="h-px w-8 bg-gradient-to-r from-[#A39F3B] to-transparent"></div>
+                <span className="font-subheading text-sm text-[#7C7A34] tracking-widest uppercase">THE JOURNEY</span>
+                <div className="h-px w-8 bg-gradient-to-l from-[#A39F3B] to-transparent"></div>
+              </div>
+              
+              <h2 className="text-3xl font-bold text-[#111111]">
+                Full Biography
+              </h2>
             </div>
-            
-            <h2 className="text-3xl font-bold text-[#1A1A1A]">
-              About
-              <br />
-              <span className="text-[#7A1F26]">Sharbari Ahmed</span>
-            </h2>
 
+            {/* Olive-Gold Accent Box */}
+            <div className="p-6 bg-gradient-to-r from-[#A39F3B]/10 to-transparent border-l-4 border-[#A39F3B] rounded-r-lg">
+              <div className="flex items-start gap-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A39F3B]/30 flex-shrink-0">
+                  <Globe size={20} className="text-[#A39F3B]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-[#111111] mb-2">Global Perspective</h3>
+                  <p className="text-[#111111]/80">
+                    Born in Dhaka, Bangladesh and raised between Connecticut, Ethiopia, and New York, she brings a distinctly global, diasporic lens to everything she creates.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Biography Content */}
             <div className="space-y-6">
-              <div className="relative p-6 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
-                <Quote className="absolute top-3 left-3 w-5 h-5 text-[#D4AF37]/30" />
-                <p className="text-lg text-[#1A1A1A]/90 leading-relaxed italic">
-                  "I am a writer, filmmaker, and educator shaped by the legacies and contradictions of migration."
+              <p className="text-lg text-[#111111]/90 leading-relaxed">
+                <span className="font-bold text-[#7C7A34]">Sharbari Zohra Ahmed</span> is an award-winning writer, screenwriter, and filmmaker whose work explores identity, migration, faith, superstition and the complicated ways people love—and fail—each other.
+              </p>
+
+              <p className="text-[#111111]/80 leading-relaxed">
+                That cross-continental upbringing deeply informs her storytelling, infusing it with humor, political awareness, and emotional nuance.
+              </p>
+
+              {/* Quote Box */}
+              <div className="relative p-6 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-xl">
+                <Quote className="absolute top-3 left-3 w-5 h-5 text-[#A39F3B]/30" />
+                <p className="font-italic text-lg text-[#374151] italic leading-relaxed">
+                  "My work centers women who are caught between cultures, histories, and expectations, while still insisting on their own desires and agency."
+                </p>
+                <div className="w-16 h-1 bg-gradient-to-r from-[#A39F3B] to-transparent mt-4"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Literary Works Section */}
+        <section id="literary-works" className="py-12 mobile-full-width bg-gradient-to-b from-white to-[#F9FAFB]">
+          <div className="mobile-padding max-w-4xl mx-auto space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A39F3B]/30">
+                <BookOpen size={24} className="text-[#A39F3B]" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-[#111111]">Literary Works</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#A39F3B] to-transparent mt-1"></div>
+              </div>
+            </div>
+
+            {/* Book Cards */}
+            <div className="space-y-6">
+              <div className="p-6 bg-white rounded-xl border border-[#A39F3B]/10 shadow-sm hover-lift transition-all">
+                <h3 className="text-xl font-bold text-[#111111] mb-3">Dust Under Her Feet</h3>
+                <p className="text-[#111111]/80 mb-4">
+                  A novel exploring the immigrant experience through the lens of cultural displacement and personal transformation.
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="px-3 py-1 bg-gradient-to-r from-[#A39F3B]/10 to-transparent border border-[#A39F3B]/30 rounded-full">
+                    <span className="text-xs font-semibold text-[#7C7A34]">Adapted for Television</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 bg-white rounded-xl border border-[#A39F3B]/10 shadow-sm hover-lift transition-all">
+                <h3 className="text-xl font-bold text-[#111111] mb-3">The Ocean of Mrs. Nagai</h3>
+                <p className="text-[#111111]/80 mb-4">
+                  A short story collection that bridges continents and generations, exploring timeless connections and the immigrant experience.
                 </p>
               </div>
 
-              <div className="p-5 bg-gradient-to-br from-[#7A1F26]/10 to-transparent border border-[#7A1F26]/20 rounded-xl">
-                <h3 className="text-xl font-bold text-[#7A1F26] mb-3 flex items-center gap-2">
-                  <PenTool size={18} className="text-[#D4AF37]" />
-                  Creative Vision
-                </h3>
-                <p className="text-[#1A1A1A]/80 leading-relaxed">
-                  Born in Bangladesh and raised across multiple worlds, my creative work sits at the intersection of South Asian history, diasporic identity, and storytelling traditions.
+              <div className="p-6 bg-white rounded-xl border border-[#A39F3B]/10 shadow-sm hover-lift transition-all">
+                <h3 className="text-xl font-bold text-[#111111] mb-3">The Strangest of Fruit</h3>
+                <p className="text-[#111111]/80 mb-4">
+                  A luminous collection examining migration, womanhood, love, and the myths we carry across generations.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Content Sections - Mobile Stacked */}
-        <div className="space-y-12 mobile-padding">
-          {/* Who I Am */}
-          <section id="who-i-am" className="pt-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#7A1F26] to-[#9D2935] rounded-lg flex items-center justify-center flex-shrink-0">
-                <Globe size={20} className="text-[#FFF9EB]" />
+        {/* Film & Television Section */}
+        <section id="film-television" className="py-12 mobile-padding bg-white">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A39F3B]/30">
+                <Film size={24} className="text-[#A39F3B]" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-[#1A1A1A]">Who I Am</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#D4AF37] to-transparent mt-1"></div>
+                <h2 className="text-3xl font-bold text-[#111111]">Film & Television</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#A39F3B] to-transparent mt-1"></div>
               </div>
             </div>
 
-            <div className="space-y-5">
-              <p className="text-[#1A1A1A]/80 leading-relaxed bg-gradient-to-r from-transparent via-[#7A1F26]/5 to-transparent p-5 rounded-xl border-l-3 border-[#D4AF37]">
-                I am a writer, filmmaker, and educator shaped by the legacies and contradictions of migration. Born in Bangladesh and raised across multiple worlds.
-              </p>
-
-              <div className="space-y-4">
-                <div className="p-4 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-lg">
-                  <h4 className="font-bold text-[#7A1F26] mb-2 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full"></div>
-                    Creative Philosophy
-                  </h4>
-                  <p className="text-sm text-[#1A1A1A]/70">
-                    I believe in the power of narrative as a radical act—an act of reclaiming, reframing, and resisting.
-                  </p>
+            {/* Film Projects */}
+            <div className="space-y-8">
+              {/* Quantico Card */}
+              <div className="p-6 bg-gradient-to-br from-[#1F2937] to-[#111827] rounded-xl border border-white/10 text-white">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Quantico (ABC Series)</h3>
+                    <div className="px-3 py-1 bg-gradient-to-r from-[#A39F3B]/20 to-transparent border border-[#A39F3B]/30 rounded-full inline-block">
+                      <span className="text-xs font-semibold text-[#A39F3B]">HISTORY MAKER</span>
+                    </div>
+                  </div>
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-lg flex items-center justify-center">
+                    <Award size={20} className="text-white" />
+                  </div>
                 </div>
-                <div className="p-4 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-lg">
-                  <h4 className="font-bold text-[#7A1F26] mb-2 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full"></div>
-                    Mission
-                  </h4>
-                  <p className="text-sm text-[#1A1A1A]/70">
-                    To illuminate the spaces between cultures, histories, and identities through authentic storytelling.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Literary & Cinematic Life */}
-          <section id="literary-cinematic-life" className="pt-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center flex-shrink-0">
-                <Film size={20} className="text-[#1A1A1A]" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-[#1A1A1A]">Literary & Cinematic Life</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#7A1F26] to-transparent mt-1"></div>
-              </div>
-            </div>
-
-            <div className="space-y-5">
-              <p className="text-[#1A1A1A]/80 leading-relaxed">
-                My short story collection <span className="text-[#7A1F26] font-semibold">The Strangest of Fruit</span> has been praised for its emotional intelligence and engagement with history.
-              </p>
-
-              <div className="p-5 bg-gradient-to-r from-[#FFF9EB] via-[#F8F0E3] to-[#FFF9EB] border border-[#D4AF37]/30 rounded-lg">
-                <h4 className="text-lg font-bold text-[#7A1F26] mb-3">Television & Film</h4>
-                <p className="text-sm text-[#1A1A1A]/70">
-                  As a TV writer and filmmaker, I've contributed to projects that value complexity, representation, and character-driven storytelling.
+                <p className="text-[#D1D5DB] mb-4">
+                  Made history as part of the writing team for the hit ABC series, the first prime time network drama to feature a South Asian woman as its lead.
+                </p>
+                <p className="text-sm text-[#9CA3AF] italic">
+                  Helped expand representations of South Asian and Muslim characters on mainstream American television.
                 </p>
               </div>
-            </div>
-          </section>
 
-          {/* Educator, Mentor, Guide */}
-          <section id="education-mentorship" className="pt-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#7A1F26] to-[#D4AF37] rounded-lg flex items-center justify-center flex-shrink-0">
-                <GraduationCap size={20} className="text-[#FFF9EB]" />
+              {/* Screenplays */}
+              <div className="space-y-4">
+                <div className="p-5 bg-gradient-to-r from-[#A39F3B]/5 to-transparent border border-[#A39F3B]/20 rounded-lg">
+                  <h4 className="text-lg font-bold text-[#111111] mb-2">Raisins Not Virgins</h4>
+                  <p className="text-[#111111]/80 mb-3">
+                    A sharp, funny, and subversive screenplay that follows a young Bangladeshi American Muslim woman navigating love, faith, and family in a post-9/11 world.
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="px-2 py-1 bg-gradient-to-r from-[#A39F3B]/10 to-transparent border border-[#A39F3B]/30 rounded">
+                      <span className="text-xs font-semibold text-[#7C7A34]">Pre-Production</span>
+                    </div>
+                    <span className="text-xs text-[#111111]/60">Arpita Mukherjee attached to direct</span>
+                  </div>
+                </div>
+
+                <div className="p-5 bg-gradient-to-r from-[#A39F3B]/5 to-transparent border border-[#A39F3B]/20 rounded-lg">
+                  <h4 className="text-lg font-bold text-[#111111] mb-2">Rickshaw Girl</h4>
+                  <p className="text-[#111111]/80 mb-3">
+                    Co-wrote the screenplay for the feature adaptation of the beloved middle grade novel, praised for its vivid depiction of Bangladeshi culture.
+                  </p>
+                  <p className="text-sm text-[#111111]/60">
+                    Centers on a Bangladeshi girl who disguises herself as a boy to support her family by driving a rickshaw.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mentorship Section */}
+        <section id="mentorship" className="py-12 mobile-full-width bg-gradient-to-b from-white to-[#F9FAFB]">
+          <div className="mobile-padding max-w-4xl mx-auto space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A39F3B]/30">
+                <Users size={24} className="text-[#A39F3B]" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-[#1A1A1A]">Educator & Mentor</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#D4AF37] to-transparent mt-1"></div>
+                <h2 className="text-3xl font-bold text-[#111111]">Mentorship & Education</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#A39F3B] to-transparent mt-1"></div>
               </div>
             </div>
 
-            <div className="space-y-5">
-              <p className="text-[#1A1A1A]/80 leading-relaxed bg-gradient-to-r from-transparent via-[#7A1F26]/5 to-transparent p-5 rounded-xl">
-                For years, I've mentored emerging writers—helping them shape their stories with clarity, structure, and emotional depth.
+            <div className="space-y-6">
+              <p className="text-lg text-[#111111]/90 leading-relaxed">
+                For years, Ahmed has mentored emerging writers—helping them shape their stories with clarity, structure, and emotional depth.
               </p>
 
-              <div className="p-6 bg-gradient-to-br from-[#7A1F26]/10 to-transparent border border-[#7A1F26]/20 rounded-lg">
-                <Quote className="w-8 h-8 text-[#D4AF37]/20 mx-auto mb-3" />
-                <blockquote className="text-xl font-subheading italic text-center text-[#1A1A1A]">
+              <div className="p-6 bg-white rounded-xl border border-[#A39F3B]/10 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <GraduationCap size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#111111] mb-2">Teaching Philosophy</h3>
+                    <p className="text-[#111111]/80">
+                      In the classroom and one-on-one, she is known for her candor, rigor, and generosity, as well as her ability to balance tough love with deep encouragement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quote Box */}
+              <div className="relative p-8 bg-gradient-to-br from-[#A39F3B]/10 to-transparent border border-[#A39F3B]/20 rounded-xl text-center">
+                <Quote className="absolute top-4 left-4 w-6 h-6 text-[#A39F3B]/30 rotate-180" />
+                <blockquote className="text-2xl font-italic italic text-[#111111] mb-4">
                   "I teach not just craft, but courage."
                 </blockquote>
-                <div className="w-12 h-1 bg-gradient-to-r from-[#D4AF37] to-transparent mx-auto mt-3"></div>
+                <Quote className="absolute bottom-4 right-4 w-6 h-6 text-[#A39F3B]/30" />
+                <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#A39F3B] to-transparent mx-auto"></div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* TEDx Talk Section - Mobile Optimized */}
-          <section id="tedx" className="py-8 mobile-full-width bg-[#1A1A1A]">
-            <div className="mobile-padding space-y-8">
-              <div className="text-center space-y-6">
-                <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#F4C430] rounded-full">
-                  <p className="text-sm font-bold text-[#1A1A1A]">TEDx TALK</p>
-                </div>
-                <h2 className="text-2xl font-bold text-[#FFF9EB]">
-                  Between the Kabah Sharif and a Hard Place
-                </h2>
-                <p className="text-[#FFF9EB]/70 font-subheading text-sm">
-                  Exploring identity, spirituality, and inherited stories
-                </p>
+        {/* Personal Life Section */}
+        <section id="personal-life" className="py-12 mobile-padding bg-white">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A39F3B]/30">
+                <Heart size={24} className="text-[#A39F3B]" />
               </div>
-
-              {/* YouTube Embed - Mobile Responsive */}
-              <div className="relative">
-                <div className="aspect-video rounded-lg overflow-hidden border-2 border-[#D4AF37]/30">
-                  <iframe
-                    src="https://www.youtube.com/embed/qfyHTmv5JRk?si=Sfu6FeOUqzSLez_s"
-                    title="TEDx Talk - Between the Kabah Sharif and a Hard Place"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                </div>
-                
-                <div className="absolute top-2 left-2 px-2 py-1 bg-[#D4AF37] rounded-md">
-                  <p className="text-xs font-bold text-[#1A1A1A]">TEDx</p>
-                </div>
-              </div>
-
-              <div className="text-center space-y-4">
-                <p className="text-[#FFF9EB]/80 leading-relaxed text-sm">
-                  In this deeply personal talk, I explore the spaces between faith and doubt, tradition and modernity.
-                </p>
-                <Link
-                  href="https://www.ted.com/talks/sharbari_ahmed_between_the_kabah_sharif_and_a_hard_place"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-[#F4C430] transition-colors font-medium text-sm"
-                >
-                  Watch full talk
-                  <ArrowRight size={16} />
-                </Link>
+              <div>
+                <h2 className="text-3xl font-bold text-[#111111]">Personal Life</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#A39F3B] to-transparent mt-1"></div>
               </div>
             </div>
-          </section>
 
-          {/* Call to Action - Mobile Optimized */}
-          <section className="py-12 mobile-padding">
-            <div className="text-center space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">
-                  Let's Connect
-                  <br />
-                  <span className="text-[#7A1F26]">Through Stories</span>
-                </h2>
-                <p className="text-[#1A1A1A]/70 font-subheading">
-                  Interested in consulting, collaboration, or learning more about my work?
-                </p>
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                {/* Travel */}
+                <div className="p-4 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#A39F3B]/10 to-transparent rounded-lg flex items-center justify-center">
+                      <Map size={16} className="text-[#A39F3B]" />
+                    </div>
+                    <h4 className="font-bold text-[#111111]">Traveler</h4>
+                  </div>
+                  <p className="text-sm text-[#111111]/70">
+                    An avid traveler whose curiosity about the world continues to pull her across continents.
+                  </p>
+                </div>
+
+                {/* Animal Lover */}
+                <div className="p-4 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#A39F3B]/10 to-transparent rounded-lg flex items-center justify-center">
+                      <Dog size={16} className="text-[#A39F3B]" />
+                    </div>
+                    <h4 className="font-bold text-[#111111]">Animal Lover</h4>
+                  </div>
+                  <p className="text-sm text-[#111111]/70">
+                    Devoted animal lover who shares her life with two rescue dogs in Connecticut.
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <Link
-                  href="/contact"
-                  className="block w-full py-4 px-6 bg-gradient-to-r from-[#7A1F26] to-[#9D2935] text-[#FFF9EB] font-medium rounded-lg active:scale-95 mobile-transition text-center"
-                >
+              <div className="p-5 bg-gradient-to-r from-[#A39F3B]/5 to-transparent border-l-4 border-[#A39F3B] rounded-r-lg">
+                <p className="text-[#111111]/80 leading-relaxed">
+                  At home in Connecticut, she shares her life with two rescue dogs, who are both her companions and, often, her unofficial editors—keeping her grounded, entertained, and moving forward, one page at a time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#A39F3B]/8 via-[#7C7A34]/8 to-[#A39F3B]/8">
+          <div className="mobile-padding max-w-3xl mx-auto text-center space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-[#111111]">
+                Let's Connect
+                <br />
+                <span className="text-gradient">Through Stories</span>
+              </h2>
+              <p className="text-[#111111]/70 font-subheading">
+                Interested in consulting, collaboration, or learning more about my work?
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/contact"
+                className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] text-white font-subheading font-semibold rounded-full hover:shadow-[0_15px_40px_rgba(163,159,59,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-3">
                   Get in Touch
-                </Link>
-                <Link
-                  href="/books"
-                  className="block w-full py-4 px-6 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] font-medium rounded-lg active:scale-95 mobile-transition text-center"
-                >
-                  Explore My Books
-                </Link>
-              </div>
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+              
+              <Link
+                href="/books"
+                className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-[#111111] text-[#111111] font-subheading font-semibold rounded-full hover:bg-[#111111] hover:text-white hover:border-[#111111] transition-all duration-300 active:scale-95 touch-target hover-scale"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Explore Books
+                  <Book size={20} />
+                </span>
+              </Link>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
@@ -498,10 +602,10 @@ export default function AboutPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale"
           aria-label="Scroll to top"
         >
-          <ChevronUp size={20} className="text-[#1A1A1A]" />
+          <ChevronUp size={20} className="text-white" />
         </button>
       )}
 
