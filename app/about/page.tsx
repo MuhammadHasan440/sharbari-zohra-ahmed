@@ -257,7 +257,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-[#A39F3B]/30">
                   <Award size={14} className="text-[#A39F3B]" />
                   <p className="font-subheading text-xs text-[#A39F3B] tracking-widest">
-                    AWARD-WINNING WRITER • SCREENWRITER • FILMMAKER
+                    AWARD-WINNING WRITER • SCREENWRITER • FILMMAKER • SPEAKER
                   </p>
                 </div>
               </div>
