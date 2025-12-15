@@ -417,12 +417,7 @@ export default function HomePage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
                       {/* Award Badge */}
-                      <div className="absolute top-4 right-4 flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-full shadow-md">
-                        <Award size={16} className="text-[#A39F3B]" />
-                        <span className="font-subheading text-sm font-semibold text-[#111111]">
-                          Award Winner
-                        </span>
-                      </div>
+                    
                     </div>
                     
                     {/* Book Details */}
