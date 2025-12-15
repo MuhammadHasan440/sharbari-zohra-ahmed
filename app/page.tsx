@@ -258,20 +258,11 @@ export default function HomePage() {
           ref={heroRef}
           className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #111111 0%, #111111 40%, #A39F3B 100%)',
+           background: 'linear-gradient(180deg, #111111 0%, #7C7A34 60%, #DDE7D1 100%)',
+           backgroundPosition: 'bottom',
           }}
         >
-          {/* Background Dust/Texture Overlay */}
-          <div 
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: 'url(/images/dust.jpg)',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              mixBlendMode: 'overlay'
-            }}
-          ></div>
+          
           
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5" style={{
