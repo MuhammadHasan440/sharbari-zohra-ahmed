@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, BookOpen, Star, ChevronUp, ExternalLink, Award, Filter, ChevronDown, Sparkles, Quote } from "lucide-react"
+import { ArrowRight, BookOpen, Star, ChevronUp, ExternalLink, Award, Filter, ChevronDown, Sparkles, Quote, Newspaper, FileText, Video, MessageSquare } from "lucide-react"
 
 export default function BooksPage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -13,13 +13,13 @@ export default function BooksPage() {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [showFilters, setShowFilters] = useState(true)
   const [showMobileFilter, setShowMobileFilter] = useState(false)
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       setShowScrollTop(currentScrollY > 300)
       
-      // Show/hide filters based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setShowFilters(false)
       } else {
@@ -35,6 +35,13 @@ export default function BooksPage() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }))
   }
 
   const books = [
@@ -63,7 +70,15 @@ export default function BooksPage() {
         },
       ],
       featured: true,
-      image: "/images/fruit.jpeg"
+      image: "/images/fruit.jpeg",
+      reviews: [
+        {
+          title: "Between Home and Elsewhere",
+          source: "The Daily Star",
+          url: "https://www.thedailystar.net/books-literature/news/between-home-and-elsewhere-4044341",
+          excerpt: "A remarkable exploration of identity and belonging in Ahmed's collection."
+        }
+      ]
     },
     {
       id: 2,
@@ -78,10 +93,29 @@ export default function BooksPage() {
           url: "https://www.amazon.com/Dust-Under-Sharbari-Zohra-Ahmed/dp/9388754255",
           color: "from-[#A39F3B] to-[#7C7A34]"
         },
-       
       ],
       featured: true,
-      image: "/images/dust.jpg"
+      image: "/images/dust.jpg",
+      reviews: [
+        {
+          title: "Book Review: Dust Under Her Feet",
+          source: "Deccan Herald",
+          url: "https://www.deccanherald.com/features/book-review-dust-under-her-feet-762959.html",
+          excerpt: "A poignant exploration of history and personal journey."
+        },
+        {
+          title: "How Sharbari Zohra Ahmed Brings History to Life",
+          source: "Kitaab",
+          url: "http://kitaab.org/2020/01/04/how-sharbari-zohra-ahmed-brings-history-to-life-in-dust-under-her-feet/",
+          excerpt: "An insightful look at Ahmed's historical narrative techniques."
+        },
+        {
+          title: "Debut as an Author with Dust Under Her Feet",
+          source: "The Hindu",
+          url: "https://www.thehindu.com/books/books-authors/sharbari-zohra-ahmed-debuts-as-an-author-with-the-book-dust-under-her-feet/article30266155.ece",
+          excerpt: "Coverage of Ahmed's compelling debut novel."
+        }
+      ]
     },
     {
       id: 3,
@@ -103,7 +137,21 @@ export default function BooksPage() {
         }
       ],
       featured: false,
-      image: "/images/ocean.jpg"
+      image: "/images/ocean.jpg",
+      reviews: [
+        {
+          title: "The Ocean of Mrs. Nagai: Stories",
+          source: "World Literature Today",
+          url: "https://worldliteraturetoday.org/2014/march/ocean-mrs-nagai-stories-sharbari-zohra-ahmed",
+          excerpt: "A review of Ahmed's collection exploring place and transformation."
+        },
+        {
+          title: "Place and Transformation: Four New Works",
+          source: "Los Angeles Review of Books",
+          url: "https://lareviewofbooks.org/article/place-and-transformation-four-new-works-of-south-asian-american-fiction",
+          excerpt: "Feature review discussing Ahmed's work in context of South Asian American fiction."
+        }
+      ]
     },
   ]
 
@@ -138,10 +186,59 @@ export default function BooksPage() {
     }
   ]
 
+  const pressAndInterviews = [
+    {
+      title: "Quantico Writer Sharbari Ahmed on Perseverance, Identity & Life in the Writers' Room",
+      source: "NBC News",
+      url: "https://www.nbcnews.com/news/asian-america/quantico-writer-sharbari-ahmed-perseverance-identity-life-writers-room-n491216",
+      date: "2016",
+      type: "interview",
+      excerpt: "Discussion about working as a writer in Hollywood and representing diverse voices."
+    },
+    {
+      title: "We were originally Hindus, says Bangladeshi author Sharbari Zohra Ahmed",
+      source: "The Hindu",
+      url: "https://www.thehindu.com/books/books-authors/we-were-originally-hindus-says-bangladeshi-author-sharbari-zohra-ahmed/article30449150.ece",
+      date: "2020",
+      type: "interview",
+      excerpt: "Conversation about identity, heritage, and writing about complex histories."
+    },
+    {
+      title: "Interview with Sharbari Ahmed",
+      source: "The Aerogram",
+      url: "https://theaerogram.com/interview-with-sharbari-ahmed/",
+      date: "2015",
+      type: "interview",
+      excerpt: "Discussion about writing process and themes in Ahmed's work."
+    }
+  ]
+
+  const articlesAndStories = [
+    {
+      title: "Author Page",
+      source: "Shuddhashar Magazine",
+      url: "https://shuddhashar.com/author/sharbari-ahmed/",
+      description: "Collection of articles and essays published in Shuddhashar Magazine"
+    },
+    {
+      title: "Noor: Embers and Ash",
+      source: "Philadelphia Review of Books",
+      url: "https://pbqmag.org/sharbari-ahmed-noor-embers-and-ash/",
+      description: "Short story exploring themes of loss and memory"
+    },
+    {
+      title: "Additional Works",
+      source: "Archive",
+      url: "#", // Changed from invalid Google Drive URL
+      description: "Archive of unpublished stories, essays, and works in progress"
+    }
+  ]
+
   const filters = [
     { id: "all", label: "All Books", count: 3 },
     { id: "featured", label: "Featured", count: 2 },
-    { id: "publications", label: "Publications", count: 4 }
+    { id: "publications", label: "Publications", count: 4 },
+    { id: "press", label: "Press & Interviews", count: 3 }
   ]
 
   return (
@@ -165,7 +262,6 @@ export default function BooksPage() {
           font-family: 'Lora', serif;
         }
 
-        /* Text gradient */
         .text-gradient {
           background: linear-gradient(135deg, #A39F3B 0%, #7C7A34 100%);
           -webkit-background-clip: text;
@@ -173,7 +269,6 @@ export default function BooksPage() {
           background-clip: text;
         }
 
-        /* Hover effects */
         .hover-lift:hover {
           transform: translateY(-4px);
           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
@@ -183,7 +278,6 @@ export default function BooksPage() {
           transform: scale(1.02);
         }
 
-        /* Mobile optimizations */
         @media (max-width: 640px) {
           h1 {
             font-size: 2.5rem;
@@ -242,7 +336,6 @@ export default function BooksPage() {
             background: 'linear-gradient(135deg, #111111 0%, #111111 40%, #A39F3B 100%)',
           }}
         >
-          {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A39F3B' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
@@ -253,7 +346,7 @@ export default function BooksPage() {
                 <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-[#A39F3B]/30">
                   <BookOpen size={14} className="text-[#A39F3B]" />
                   <p className="font-subheading text-xs text-[#A39F3B] tracking-widest">
-                    LITERARY WORKS
+                    LITERARY WORKS & PRESS
                   </p>
                 </div>
               </div>
@@ -261,10 +354,9 @@ export default function BooksPage() {
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                 My
                 <br />
-                <span className="text-gradient">Books</span>
+                <span className="text-gradient">Books & Press</span>
               </h1>
 
-              {/* Separator */}
               <div className="relative my-6">
                 <div className="h-px bg-gradient-to-r from-transparent via-[#A39F3B] to-transparent"></div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#A39F3B] rotate-45 bg-white"></div>
@@ -295,7 +387,6 @@ export default function BooksPage() {
             <ChevronDown size={16} className={`mobile-transition ${showMobileFilter ? 'rotate-180' : ''}`} />
           </button>
           
-          {/* Mobile Filter Dropdown */}
           {showMobileFilter && (
             <div className="mt-2 bg-white border border-[#A39F3B]/20 rounded-lg shadow-lg overflow-hidden animate-fade-in-up">
               <div className="p-2">
@@ -366,11 +457,10 @@ export default function BooksPage() {
                   .map((book, index) => (
                     <div 
                       key={book.id}
-                      className="bg-white rounded-2xl overflow-hidden border border-[#A39F3B]/10 shadow-lg hover-lift transition-all group animate-fade-in-up"
+                      className="bg-white rounded-2xl overflow-hidden border border-[#A39F3B]/10 shadow-lg hover-lift transition-all duration-300 group animate-fade-in-up"
                       style={{ animationDelay: `${index * 150}ms` }}
                     >
                       <div className="lg:flex">
-                        {/* Book Cover with Image */}
                         <div className="lg:w-1/3 relative h-64 lg:h-auto">
                           <Image
                             src={book.image}
@@ -378,15 +468,14 @@ export default function BooksPage() {
                             fill
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, 33vw"
+                            priority={index === 0}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                           
-                          {/* Year Badge */}
                           <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
                             <span className="text-sm font-semibold text-[#7C7A34]">{book.year}</span>
                           </div>
                           
-                          {/* Featured Badge */}
                           {book.featured && (
                             <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] rounded-full">
                               <span className="text-xs font-semibold text-white">FEATURED</span>
@@ -394,7 +483,6 @@ export default function BooksPage() {
                           )}
                         </div>
 
-                        {/* Book Content */}
                         <div className="lg:w-2/3 p-6 lg:p-8">
                           <div className="mb-4">
                             <h3 className="text-2xl font-bold text-[#111111] mb-1">{book.title}</h3>
@@ -405,7 +493,48 @@ export default function BooksPage() {
                             {book.description}
                           </p>
 
-                          {/* Awards */}
+                          {/* Reviews Section */}
+                          {book.reviews && book.reviews.length > 0 && (
+                            <div className="mb-6">
+                              <button
+                                onClick={() => toggleSection(`reviews-${book.id}`)}
+                                className="flex items-center gap-2 mb-3 text-[#7C7A34] hover:text-[#A39F3B] transition-colors"
+                              >
+                                <Newspaper size={16} />
+                                <h4 className="text-sm font-semibold">
+                                  Reviews & Coverage
+                                </h4>
+                                <ChevronDown 
+                                  size={14} 
+                                  className={`transition-transform duration-200 ${expandedSections[`reviews-${book.id}`] ? 'rotate-180' : ''}`}
+                                />
+                              </button>
+                              
+                              {expandedSections[`reviews-${book.id}`] && (
+                                <div className="space-y-3 mb-4 animate-fade-in-up">
+                                  {book.reviews.map((review, i) => (
+                                    <a
+                                      key={i}
+                                      href={review.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="block p-3 bg-gradient-to-r from-[#A39F3B]/5 to-transparent border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 transition-colors duration-200 group/review"
+                                    >
+                                      <div className="flex items-start justify-between mb-1">
+                                        <h5 className="font-medium text-[#111111] group-hover/review:text-[#7C7A34] transition-colors">
+                                          {review.title}
+                                        </h5>
+                                        <ExternalLink size={12} className="text-[#A39F3B]/60 group-hover/review:text-[#A39F3B]" />
+                                      </div>
+                                      <p className="text-xs text-[#111111]/60 mb-1">{review.source}</p>
+                                      <p className="text-sm text-[#111111]/70">{review.excerpt}</p>
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          )}
+
                           {book.awards.length > 0 && (
                             <div className="mb-6">
                               <div className="flex items-center gap-2 mb-3">
@@ -425,7 +554,6 @@ export default function BooksPage() {
                             </div>
                           )}
 
-                          {/* Purchase Links */}
                           <div className="space-y-3">
                             <p className="text-sm font-medium text-[#7C7A34]">Available from:</p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -438,13 +566,12 @@ export default function BooksPage() {
                                   className={`px-4 py-3 bg-gradient-to-r ${link.color} text-white rounded-lg border border-[#A39F3B]/20 hover:shadow-md hover-scale mobile-transition flex items-center justify-between group/link`}
                                 >
                                   <span className="font-medium">{link.name}</span>
-                                  <ExternalLink size={14} className="opacity-60 group-hover/link:opacity-100 group-hover/link:rotate-12 mobile-transition" />
+                                  <ExternalLink size={14} className="opacity-60 group-hover/link:opacity-100 group-hover/link:rotate-12 transition-transform duration-200" />
                                 </Link>
                               ))}
                             </div>
                           </div>
 
-                          {/* Quote for Featured Book */}
                           {book.featured && (
                             <div className="mt-6 pt-6 border-t border-[#A39F3B]/10">
                               <div className="flex items-start gap-2">
@@ -472,6 +599,64 @@ export default function BooksPage() {
             </>
           )}
 
+          {/* Press & Interviews Section */}
+          {(activeFilter === "all" || activeFilter === "press") && (
+            <div className="pt-8 border-t border-[#A39F3B]/10">
+              <div className="space-y-8 animate-fade-in-up">
+                <div className="space-y-4">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-[#111111]">
+                    Press & <span className="text-gradient">Interviews</span>
+                  </h2>
+                  <p className="text-[#111111]/70 max-w-2xl">
+                    Featured interviews and press coverage across major publications
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {pressAndInterviews.map((item, i) => (
+                    <div 
+                      key={i}
+                      className="p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all duration-300 group"
+                    >
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 bg-gradient-to-r from-[#A39F3B]/10 to-[#7C7A34]/10 rounded-lg">
+                          {item.type === 'interview' ? (
+                            <MessageSquare size={20} className="text-[#A39F3B]" />
+                          ) : (
+                            <Newspaper size={20} className="text-[#A39F3B]" />
+                          )}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between mb-1">
+                            <h4 className="text-lg font-bold text-[#111111] group-hover:text-[#7C7A34] transition-colors line-clamp-2">
+                              {item.title}
+                            </h4>
+                            <ExternalLink size={14} className="text-[#A39F3B]/60 mt-1" />
+                          </div>
+                          <p className="text-sm text-[#A39F3B]">{item.source} • {item.date}</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-sm text-[#111111]/70 mb-4 line-clamp-3">
+                        {item.excerpt}
+                      </p>
+                      
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-[#A39F3B] hover:text-[#7C7A34] transition-colors font-medium group/link"
+                      >
+                        Read {item.type === 'interview' ? 'Interview' : 'Article'}
+                        <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform duration-200" />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Additional Publications */}
           {(activeFilter === "all" || activeFilter === "publications") && (
             <div className="pt-8 border-t border-[#A39F3B]/10">
@@ -489,7 +674,7 @@ export default function BooksPage() {
                   {publications.map((pub, i) => (
                     <div 
                       key={i}
-                      className="p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all group"
+                      className="p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all duration-300 group"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div>
@@ -511,7 +696,7 @@ export default function BooksPage() {
                         </span>
                         <button className="text-sm text-[#A39F3B] hover:text-[#7C7A34] transition-colors flex items-center gap-1 group/link">
                           Read Excerpt
-                          <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                          <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform duration-200" />
                         </button>
                       </div>
                     </div>
@@ -520,6 +705,56 @@ export default function BooksPage() {
               </div>
             </div>
           )}
+
+          {/* Articles & Stories Section - Always Visible */}
+          <div className="pt-8 border-t border-[#A39F3B]/10">
+            <div className="space-y-8 animate-fade-in-up">
+              <div className="space-y-4">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#111111]">
+                  Articles & <span className="text-gradient">Short Stories</span>
+                </h2>
+                <p className="text-[#111111]/70 max-w-2xl">
+                  Additional writings, essays, and published short stories
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {articlesAndStories.map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.url}
+                    target={item.url === "#" ? "_self" : "_blank"}
+                    rel="noopener noreferrer"
+                    className={`p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all duration-300 group ${item.url === "#" ? 'cursor-not-allowed opacity-70' : ''}`}
+                    onClick={item.url === "#" ? (e) => e.preventDefault() : undefined}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-gradient-to-r from-[#A39F3B]/10 to-[#7C7A34]/10 rounded-lg">
+                        <FileText size={20} className="text-[#A39F3B]" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-[#111111] group-hover:text-[#7C7A34] transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-[#A39F3B]">{item.source}</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-sm text-[#111111]/70 mb-4">
+                      {item.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-[#A39F3B] font-medium group-hover:text-[#7C7A34] transition-colors">
+                        {item.url === "#" ? "Coming Soon" : "Read Now"}
+                      </span>
+                      {item.url !== "#" && <ExternalLink size={14} className="text-[#A39F3B]/60 group-hover:text-[#A39F3B]" />}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* CTA Section */}
@@ -543,7 +778,7 @@ export default function BooksPage() {
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Get in Touch
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </Link>
               
@@ -563,18 +798,16 @@ export default function BooksPage() {
 
       <Footer />
 
-      {/* Mobile Scroll to Top Button */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale transition-transform"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale transition-transform duration-300"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-white" />
         </button>
       )}
 
-      {/* Mobile Bottom Spacer */}
       <div className="h-4 lg:hidden bg-transparent"></div>
     </div>
   )
