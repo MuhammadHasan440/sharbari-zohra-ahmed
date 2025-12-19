@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu, X, Book, Film, MessageSquare, User, ChevronDown, Home, ArrowRight, PenTool, Sparkles } from "lucide-react"
+import { Menu, X, Book, Film, MessageSquare, User, ChevronDown, Home, ArrowRight, PenTool, Sparkles, Mic } from "lucide-react"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,6 +45,13 @@ export function Header() {
       description: "Cinematic Adaptations"
     },
     { 
+      label: "TEDx", 
+      href: "/tedx",
+      icon: Mic,
+      description: "Speaking Engagements",
+      highlight: true
+    },
+    { 
       label: "Consulting", 
       href: "/consulting",
       icon: MessageSquare,
@@ -66,6 +73,7 @@ export function Header() {
 
   const quickLinks = [
     { label: "Featured Publications", href: "/#works", icon: Book },
+    { label: "TEDx Talk", href: "/tedx", icon: Mic },
     { label: "Literary Services", href: "/#services", icon: PenTool },
     { label: "Substack Letters", href: "https://sharbariahmed.substack.com", external: true, icon: Sparkles },
     { label: "Upcoming Events", href: "/events", icon: Home },
@@ -125,7 +133,6 @@ export function Header() {
             >
               <Link href="/" className="relative">
                 <div className="relative flex items-center gap-3 cursor-pointer group">
-                  {/* Logo with Olive Border */}
                   {/* Name with Olive Accent */}
                   <div className="relative">
                     <img className="w-40 pt-2" src="/images/logo.png" alt="Sharbari Zohra Ahmed" />
@@ -191,27 +198,40 @@ export function Header() {
                     <Link
                       href={item.href}
                       data-active={activeDropdown === item.label}
-                      className="relative flex items-center gap-2 px-4 py-2.5 mobile-transition text-[#2E2F1F] hover:text-[#B7C83E] group"
+                      className={`relative flex items-center gap-2 px-4 py-2.5 mobile-transition text-[#2E2F1F] hover:text-[#B7C83E] group ${
+                        item.highlight ? 'bg-gradient-to-r from-[#B7C83E]/10 to-[#e62b1e]/5 border border-[#e62b1e]/20' : ''
+                      }`}
                     >
                       {/* Hover background */}
                       <div className="absolute inset-0 bg-gradient-to-r from-[#B7C83E]/0 via-[#D9E6A3]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                       
+                      {/* TEDx red dot indicator */}
+                      {item.highlight && (
+                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#e62b1e] rounded-full animate-pulse z-20"></div>
+                      )}
+                      
                       <Icon 
                         size={16} 
-                        className="text-[#B7C83E]/70 group-hover:text-[#B7C83E] z-10 transition-colors" 
+                        className={`text-[#B7C83E]/70 group-hover:text-[#B7C83E] z-10 transition-colors ${
+                          item.highlight ? 'text-[#e62b1e]/80 group-hover:text-[#e62b1e]' : ''
+                        }`}
                       />
                       <span className="text-sm font-medium font-cormorant z-10">{item.label}</span>
-                      <ChevronDown 
-                        size={14}
-                        className="mobile-transition text-[#B7C83E]/50 group-hover:text-[#B7C83E] group-hover:rotate-180 z-10" 
-                      />
+                      {!item.highlight && (
+                        <ChevronDown 
+                          size={14}
+                          className="mobile-transition text-[#B7C83E]/50 group-hover:text-[#B7C83E] group-hover:rotate-180 z-10" 
+                        />
+                      )}
                       
                       {/* Olive underline animation */}
-                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] group-hover:w-3/4 transition-all duration-500"></div>
+                      <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] group-hover:w-3/4 transition-all duration-500 ${
+                        item.highlight ? 'from-[#e62b1e] via-[#B7C83E] to-[#e62b1e]' : ''
+                      }`}></div>
                     </Link>
 
                     {/* Dropdown Menu - Olive Style */}
-                    {activeDropdown === item.label && (
+                    {activeDropdown === item.label && !item.highlight && (
                       <div 
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[240px] bg-[#F9FAF4] border border-[#E3E7C8] rounded-lg shadow-2xl py-3 backdrop-blur-xl z-50 overflow-hidden"
                         onMouseEnter={() => setActiveDropdown(item.label)}
@@ -231,6 +251,66 @@ export function Header() {
                           <p className="text-sm text-[#5F6148] text-center font-cormorant italic">
                             Explore the journey
                           </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* TEDx Dropdown - Special Styling */}
+                    {activeDropdown === item.label && item.highlight && (
+                      <div 
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[280px] bg-[#F9FAF4] border border-[#E3E7C8] rounded-lg shadow-2xl py-3 backdrop-blur-xl z-50 overflow-hidden"
+                        onMouseEnter={() => setActiveDropdown(item.label)}
+                        onMouseLeave={() => setActiveDropdown(null)}
+                      >
+                        {/* TEDx red-olive gradient border */}
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e62b1e] via-[#B7C83E] to-[#e62b1e]"></div>
+                        <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-5 pointer-events-none"></div>
+                        
+                        <div className="relative px-4 py-3 border-b border-[#E3E7C8]">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-[#e62b1e] rounded-full animate-pulse"></div>
+                            <p className="text-xs text-[#2E2F1F] uppercase tracking-widest font-cormorant">TEDx Talk</p>
+                          </div>
+                          <p className="text-xs text-[#5F6148] mt-1">{item.description}</p>
+                        </div>
+                        
+                        {/* TEDx dropdown content */}
+                        <div className="space-y-1 px-2">
+                          <Link
+                            href="/tedx"
+                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <PlayCircle size={14} className="text-[#e62b1e]/70 group-hover:text-[#e62b1e]" />
+                            <div>
+                              <p className="text-sm font-cormorant">Watch Full Talk</p>
+                              <p className="text-xs text-[#5F6148]/70">"Between the Kabah Sharif and a Hard Place"</p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="https://www.ted.com/talks/sharbari_ahmed_between_the_kabah_sharif_and_a_hard_place"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <ExternalLink size={14} className="text-[#B7C83E]/70 group-hover:text-[#B7C83E]" />
+                            <div>
+                              <p className="text-sm font-cormorant">View on TED.com</p>
+                              <p className="text-xs text-[#5F6148]/70">With transcript & discussion</p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/press"
+                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <Newspaper size={14} className="text-[#6F7F1E]/70 group-hover:text-[#6F7F1E]" />
+                            <div>
+                              <p className="text-sm font-cormorant">Press Coverage</p>
+                              <p className="text-xs text-[#5F6148]/70">Reviews & recognition</p>
+                            </div>
+                          </Link>
                         </div>
                       </div>
                     )}
@@ -300,16 +380,25 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group relative flex items-center gap-4 px-4 py-3.5 text-[#2E2F1F] hover:text-[#6F7F1E] mobile-transition rounded-lg overflow-hidden"
+                    className={`group relative flex items-center gap-4 px-4 py-3.5 text-[#2E2F1F] hover:text-[#6F7F1E] mobile-transition rounded-lg overflow-hidden ${
+                      item.highlight ? 'bg-gradient-to-r from-[#e62b1e]/5 to-[#B7C83E]/5 border border-[#e62b1e]/20' : ''
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
+                    {/* TEDx red dot indicator */}
+                    {item.highlight && (
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#e62b1e] rounded-full animate-pulse z-20"></div>
+                    )}
+                    
                     {/* Olive accent line */}
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-gradient-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-6 transition-all duration-300"></div>
                     
                     {/* Hover background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#B7C83E]/0 via-[#D9E6A3]/20 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
-                    <Icon size={18} className="text-[#B7C83E]/70 group-hover:text-[#B7C83E] relative z-10 transition-colors" />
+                    <Icon size={18} className={`text-[#B7C83E]/70 group-hover:text-[#B7C83E] relative z-10 transition-colors ${
+                      item.highlight ? 'text-[#e62b1e] group-hover:text-[#e62b1e]' : ''
+                    }`} />
                     <div className="flex-1 relative z-10">
                       <span className="font-cormorant font-medium">{item.label}</span>
                       <p className="text-xs text-[#5F6148] mt-0.5">{item.description}</p>
@@ -470,7 +559,26 @@ export function Header() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
+
+        /* TEDx red pulse animation */
+        @keyframes tedx-pulse {
+          0%, 100% {
+            opacity: 1;
+            box-shadow: 0 0 0 0 rgba(230, 43, 30, 0.7);
+          }
+          50% {
+            opacity: 0.8;
+            box-shadow: 0 0 0 4px rgba(230, 43, 30, 0);
+          }
+        }
+
+        .tedx-pulse {
+          animation: tedx-pulse 2s infinite;
+        }
       `}</style>
     </>
   )
 }
+
+// Import additional icons needed for TEDx dropdown
+import { PlayCircle, ExternalLink, Newspaper } from 'lucide-react'
