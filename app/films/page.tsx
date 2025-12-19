@@ -113,6 +113,7 @@ export default function FilmsPage() {
         
         body {
           font-family: 'Lora', serif;
+          overflow-x: hidden;
         }
 
         /* Mobile optimizations */
