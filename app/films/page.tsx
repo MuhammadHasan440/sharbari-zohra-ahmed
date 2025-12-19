@@ -33,7 +33,7 @@ export default function FilmsPage() {
       link: "#",
       platform: "Available for Festival",
       year: "2024",
-      color: "from-[#D4AF37] to-[#F4C430]",
+      color: "from-[#B7C83E] to-[#6F7F1E]",
       featured: true
     },
     {
@@ -44,7 +44,7 @@ export default function FilmsPage() {
       status: "Streaming",
       link: "https://www.amazon.com/",
       platform: "Amazon Prime Video",
-      color: "from-[#7A1F26] to-[#9D2935]"
+      color: "from-[#2E2F1F] to-[#5F6148]"
     },
     {
       title: "Literary Adaptation",
@@ -54,7 +54,7 @@ export default function FilmsPage() {
       status: "Streaming",
       link: "https://www.amazon.com/",
       platform: "Amazon Prime Video",
-      color: "from-[#D4AF37] to-[#F4C430]"
+      color: "from-[#B7C83E] to-[#6F7F1E]"
     },
     {
       title: "Documentary Series",
@@ -64,7 +64,7 @@ export default function FilmsPage() {
       status: "In Festival Circuit",
       link: "#",
       platform: "Festival Submissions",
-      color: "from-[#7A1F26] to-[#9D2935]"
+      color: "from-[#2E2F1F] to-[#5F6148]"
     },
     {
       title: "Short Film",
@@ -74,7 +74,7 @@ export default function FilmsPage() {
       status: "Festival Award Winner",
       link: "#",
       platform: "Festival Circuit",
-      color: "from-[#D4AF37] to-[#F4C430]"
+      color: "from-[#B7C83E] to-[#6F7F1E]"
     },
   ]
 
@@ -99,7 +99,7 @@ export default function FilmsPage() {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFF9EB] text-[#1A1A1A]">
+    <div className="min-h-screen flex flex-col bg-[#F9FAF4] text-[#2E2F1F]">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
         
@@ -155,59 +155,58 @@ export default function FilmsPage() {
         {/* Mobile Hero Section */}
         <section className="relative pt-20 pb-12 mobile-full-width"
                  style={{
-                   backgroundImage: `linear-gradient(rgba(122, 31, 38, 0.95), rgba(26, 26, 26, 0.98)), url('https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`,
-                   backgroundSize: 'cover',
-                   backgroundPosition: 'center',
+                   background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
-          {/* Top Gold Border */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-           <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          {/* Top Olive Border */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          
           <div className="mobile-padding">
             <div className="text-center space-y-6">
               <div className="inline-block">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#FFF9EB]/10 backdrop-blur-sm rounded-full border border-[#D4AF37]/30">
-                  <Film size={14} className="text-[#D4AF37]" />
-                  <p className="font-subheading text-xs text-[#D4AF37] tracking-widest">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+                  <Film size={14} className="text-[#B7C83E]" />
+                  <p className="font-subheading text-xs text-[#B7C83E] tracking-widest">
                     CINEMATIC WORKS
                   </p>
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold text-[#FFF9EB] leading-tight">
+              <h1 className="text-4xl font-bold text-white leading-tight">
                 Films
                 <br />
-                <span className="text-[#D4AF37]">Rooted in</span>
+                <span className="text-[#B7C83E]">Rooted in</span>
                 <br />
                 Humanity
               </h1>
 
               {/* Separator */}
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#D4AF37] rotate-45 bg-[#FFF9EB]"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
-              <p className="font-subheading text-lg text-[#FFF9EB]/90 leading-relaxed px-2">
+              <p className="font-subheading text-lg text-white/90 leading-relaxed px-2">
                 Sharbari's filmmaking blends poetic visual language with emotionally charged narratives exploring displacement and resilience.
               </p>
 
               {/* Stats - Mobile Grid */}
               <div className="grid grid-cols-2 gap-3 pt-6">
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">5+</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Films Produced</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">5+</p>
+                  <p className="text-xs text-white/80">Films Produced</p>
                 </div>
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">15+</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Festival Selections</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">15+</p>
+                  <p className="text-xs text-white/80">Festival Selections</p>
                 </div>
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">4</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Awards Won</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">4</p>
+                  <p className="text-xs text-white/80">Awards Won</p>
                 </div>
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">10+</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Countries Screened</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">10+</p>
+                  <p className="text-xs text-white/80">Countries Screened</p>
                 </div>
               </div>
             </div>
@@ -216,15 +215,15 @@ export default function FilmsPage() {
 
         {/* Video Preview - Mobile Optimized */}
         <section className="py-8 mobile-padding">
-          <div className="relative group rounded-xl overflow-hidden border-2 border-[#D4AF37]/30 shadow-lg">
-            <div className="aspect-video bg-gradient-to-br from-[#7A1F26] to-[#1A1A1A] flex items-center justify-center">
+          <div className="relative group rounded-xl overflow-hidden border-2 border-[#E3E7C8] shadow-lg">
+            <div className="aspect-video bg-gradient-to-br from-[#2E2F1F] to-[#5F6148] flex items-center justify-center">
               <div className="text-center space-y-4 p-6">
-                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#D4AF37]/20 to-[#F4C430]/20 border-2 border-[#D4AF37]/30 flex items-center justify-center">
-                  <Play className="text-[#D4AF37] ml-1" size={28} />
+                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 border-2 border-[#E3E7C8] flex items-center justify-center">
+                  <Play className="text-[#B7C83E] ml-1" size={28} />
                 </div>
                 <div className="space-y-2">
-                  <p className="text-sm font-medium text-[#D4AF37] tracking-wider">FILM REEL PREVIEW</p>
-                  <p className="text-[#FFF9EB]/70 text-sm">Featured film preview coming soon</p>
+                  <p className="text-sm font-medium text-[#B7C83E] tracking-wider">FILM REEL PREVIEW</p>
+                  <p className="text-white/70 text-sm">Featured film preview coming soon</p>
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -233,50 +232,50 @@ export default function FilmsPage() {
         </section>
 
         {/* Director's Statement - Mobile Stacked */}
-        <section className="py-12 mobile-full-width bg-gradient-to-b from-[#FFF9EB] to-[#F8F0E3]">
+        <section className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
               <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                  <Camera size={20} className="text-[#FFF9EB]" />
+                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <Camera size={20} className="text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">Director's Statement</h2>
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">Director's Statement</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
-                  <h3 className="text-lg font-bold text-[#7A1F26] flex items-center gap-2">
-                    <Sparkles size={14} className="text-[#D4AF37]" />
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                  <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
+                    <Sparkles size={14} className="text-[#B7C83E]" />
                     Visual Authenticity
                   </h3>
-                  <p className="text-[#1A1A1A]/70 text-sm mt-2">
+                  <p className="text-[#5F6148] text-sm mt-2">
                     As a director and filmmaker, I'm committed to bringing literary narratives and original stories to the screen with visual authenticity and emotional depth.
                   </p>
                 </div>
 
-                <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
-                  <h3 className="text-lg font-bold text-[#7A1F26] flex items-center gap-2">
-                    <Globe size={14} className="text-[#D4AF37]" />
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                  <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
+                    <Globe size={14} className="text-[#B7C83E]" />
                     Cultural Memory
                   </h3>
-                  <p className="text-[#1A1A1A]/70 text-sm mt-2">
+                  <p className="text-[#5F6148] text-sm mt-2">
                     My work explores the intersection of personal identity, cultural memory, and the universal human experience.
                   </p>
                 </div>
 
-                <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
-                  <h3 className="text-lg font-bold text-[#7A1F26] flex items-center gap-2">
-                    <Users size={14} className="text-[#D4AF37]" />
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                  <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
+                    <Users size={14} className="text-[#B7C83E]" />
                     Marginalized Voices
                   </h3>
-                  <p className="text-[#1A1A1A]/70 text-sm mt-2">
+                  <p className="text-[#5F6148] text-sm mt-2">
                     I believe cinema is a powerful medium for challenging stereotypes and centering marginalized voices.
                   </p>
                 </div>
               </div>
 
-              <div className="p-6 bg-gradient-to-r from-transparent via-[#7A1F26]/5 to-transparent border-y border-[#D4AF37]/20">
-                <p className="text-[#1A1A1A]/80 leading-relaxed text-center font-subheading">
+              <div className="p-6 bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent border-y border-[#E3E7C8]">
+                <p className="text-[#5F6148] leading-relaxed text-center font-subheading">
                   Whether adapting existing stories or developing original screenplays, my approach prioritizes nuance, representation, and emotional truth.
                 </p>
               </div>
@@ -285,7 +284,7 @@ export default function FilmsPage() {
         </section>
 
         {/* Mobile Navigation Tabs */}
-        <div className="sticky top-16 z-30 bg-[#FFF9EB] border-b border-[#D4AF37]/20 shadow-sm">
+        <div className="sticky top-16 z-30 bg-[#F9FAF4] border-b border-[#E3E7C8] shadow-sm">
           <div className="overflow-x-auto">
             <div className="flex min-w-max">
               {tabs.map((tab) => (
@@ -300,8 +299,8 @@ export default function FilmsPage() {
                   }}
                   className={`px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 mobile-transition ${
                     activeTab === tab.id
-                      ? 'border-[#7A1F26] text-[#7A1F26]'
-                      : 'border-transparent text-[#1A1A1A]/70 hover:text-[#7A1F26]'
+                      ? 'border-[#B7C83E] text-[#2E2F1F]'
+                      : 'border-transparent text-[#5F6148] hover:text-[#2E2F1F]'
                   }`}
                 >
                   {tab.label}
@@ -315,12 +314,12 @@ export default function FilmsPage() {
         <section id="filmography" className="py-12 mobile-padding">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                <Clapperboard size={20} className="text-[#FFF9EB]" />
+              <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                <Clapperboard size={20} className="text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">Filmography</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#7A1F26] to-transparent mt-1"></div>
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">Filmography</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
 
@@ -328,49 +327,49 @@ export default function FilmsPage() {
               {filmography.map((film, index) => (
                 <div
                   key={index}
-                  className={`relative p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border rounded-xl mobile-transition ${
+                  className={`relative p-5 bg-gradient-to-br from-[#F9FAF4] to-white border rounded-xl mobile-transition ${
                     hoveredFilm === index 
-                      ? 'border-[#D4AF37] shadow-lg' 
-                      : 'border-[#D4AF37]/30'
+                      ? 'border-[#B7C83E] shadow-lg' 
+                      : 'border-[#E3E7C8]'
                   }`}
                   onMouseEnter={() => setHoveredFilm(index)}
                   onMouseLeave={() => setHoveredFilm(null)}
                 >
                   {/* Featured Badge */}
                   {film.featured && (
-                    <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#D4AF37] to-[#F4C430] rounded-full">
-                      <p className="text-xs font-bold text-[#1A1A1A]">FEATURED</p>
+                    <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
+                      <p className="text-xs font-bold text-[#2E2F1F]">FEATURED</p>
                     </div>
                   )}
 
                   <div className="space-y-4">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="text-lg font-bold text-[#1A1A1A]">{film.title}</h3>
+                        <h3 className="text-lg font-bold text-[#2E2F1F]">{film.title}</h3>
                         <div className="flex items-center gap-2 mt-1">
-                          <span className="px-2 py-0.5 bg-[#7A1F26]/10 text-[#7A1F26] text-xs rounded-full">
+                          <span className="px-2 py-0.5 bg-[#D9E6A3]/30 text-[#5F6148] text-xs rounded-full">
                             {film.type}
                           </span>
-                          <span className="px-2 py-0.5 bg-[#D4AF37]/10 text-[#7A1F26] text-xs rounded-full">
+                          <span className="px-2 py-0.5 bg-[#B7C83E]/10 text-[#5F6148] text-xs rounded-full">
                             {film.year}
                           </span>
                         </div>
                       </div>
                       <span className={`text-sm font-medium ${
-                        film.status === 'Streaming' ? 'text-[#7A1F26]' : 
-                        film.status === 'In Production' ? 'text-[#D4AF37]' : 
-                        'text-[#1A1A1A]'
+                        film.status === 'Streaming' ? 'text-[#6F7F1E]' : 
+                        film.status === 'In Production' ? 'text-[#B7C83E]' : 
+                        'text-[#5F6148]'
                       }`}>
                         {film.status}
                       </span>
                     </div>
 
-                    <p className="text-[#1A1A1A]/70 text-sm">
+                    <p className="text-[#5F6148] text-sm">
                       {film.description}
                     </p>
 
                     <div className="flex items-center justify-between pt-2">
-                      <div className="flex items-center gap-1 text-[#1A1A1A]/60 text-xs">
+                      <div className="flex items-center gap-1 text-[#5F6148] text-xs">
                         <Globe size={12} />
                         <span>{film.platform}</span>
                       </div>
@@ -379,7 +378,7 @@ export default function FilmsPage() {
                           href={film.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-[#7A1F26] hover:text-[#D4AF37] text-sm font-medium"
+                          className="flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] text-sm font-medium"
                         >
                           <Play size={14} />
                           <span>Watch</span>
@@ -396,16 +395,16 @@ export default function FilmsPage() {
         {/* Festivals & Awards Sections */}
         <div className="space-y-12 mobile-full-width">
           {/* Festivals Section */}
-          <section id="festivals" className="py-12 bg-gradient-to-b from-[#FFF9EB] to-[#F8F0E3]">
+          <section id="festivals" className="py-12 bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
             <div className="mobile-padding">
               <div className="space-y-8">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                    <Calendar size={20} className="text-[#FFF9EB]" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Calendar size={20} className="text-white" />
                   </div>
                   <div>
-                    <h2 className="text-3xl font-bold text-[#1A1A1A]">Festival Selections</h2>
-                    <div className="h-1 w-16 bg-gradient-to-r from-[#7A1F26] to-transparent mt-1"></div>
+                    <h2 className="text-3xl font-bold text-[#2E2F1F]">Festival Selections</h2>
+                    <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
                   </div>
                 </div>
 
@@ -413,15 +412,15 @@ export default function FilmsPage() {
                   {festivals.map((festival, index) => (
                     <div 
                       key={index} 
-                      className="p-4 bg-[#FFF9EB] border border-[#D4AF37]/20 rounded-lg"
+                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg"
                     >
                       <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                          <h4 className="text-[#7A1F26] font-bold">{festival.name}</h4>
-                          <p className="text-[#1A1A1A]/60 text-xs">{festival.location}</p>
+                          <h4 className="text-[#2E2F1F] font-bold">{festival.name}</h4>
+                          <p className="text-[#5F6148] text-xs">{festival.location}</p>
                         </div>
                         <div className="text-right">
-                          <span className="text-[#D4AF37] font-bold">{festival.year}</span>
+                          <span className="text-[#B7C83E] font-bold">{festival.year}</span>
                         </div>
                       </div>
                     </div>
@@ -432,16 +431,16 @@ export default function FilmsPage() {
           </section>
 
           {/* Awards Section */}
-          <section id="awards" className="py-12 bg-gradient-to-b from-[#F8F0E3] to-[#FFF9EB]">
+          <section id="awards" className="py-12 bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4]">
             <div className="mobile-padding">
               <div className="space-y-8">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                    <Award size={20} className="text-[#FFF9EB]" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Award size={20} className="text-white" />
                   </div>
                   <div>
-                    <h2 className="text-3xl font-bold text-[#1A1A1A]">Awards & Honors</h2>
-                    <div className="h-1 w-16 bg-gradient-to-r from-[#D4AF37] to-transparent mt-1"></div>
+                    <h2 className="text-3xl font-bold text-[#2E2F1F]">Awards & Honors</h2>
+                    <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
                   </div>
                 </div>
 
@@ -449,15 +448,15 @@ export default function FilmsPage() {
                   {awards.map((award, index) => (
                     <div 
                       key={index} 
-                      className="p-4 bg-[#FFF9EB] border border-[#D4AF37]/20 rounded-lg"
+                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg"
                     >
                       <div className="flex items-start gap-3">
-                        <Star className="text-[#D4AF37] flex-shrink-0 mt-1" size={16} />
+                        <Star className="text-[#B7C83E] flex-shrink-0 mt-1" size={16} />
                         <div className="flex-1">
-                          <h4 className="text-[#7A1F26] font-bold">{award.name}</h4>
+                          <h4 className="text-[#2E2F1F] font-bold">{award.name}</h4>
                           <div className="flex items-center justify-between mt-1">
-                            <p className="text-[#1A1A1A]/60 text-xs">{award.festival}</p>
-                            <span className="text-[#D4AF37] font-bold">{award.year}</span>
+                            <p className="text-[#5F6148] text-xs">{award.festival}</p>
+                            <span className="text-[#B7C83E] font-bold">{award.year}</span>
                           </div>
                         </div>
                       </div>
@@ -470,28 +469,28 @@ export default function FilmsPage() {
         </div>
 
         {/* Creative Collaborations - Mobile Optimized */}
-        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#FFF9EB] via-[#F8F0E3] to-[#FFF9EB]">
+        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">
                   Creative
                   <br />
-                  <span className="text-[#7A1F26]">Collaborations</span>
+                  <span className="text-[#6F7F1E]">Collaborations</span>
                 </h2>
-                <p className="text-[#1A1A1A]/70 font-subheading">
+                <p className="text-[#5F6148] font-subheading">
                   Working with talented cinematographers, producers, sound designers, and editors to bring stories to life.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                   <div className="space-y-3">
-                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                      <Users size={20} className="text-[#FFF9EB]" />
+                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                      <Users size={20} className="text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-[#1A1A1A]">Services Available</h3>
-                    <ul className="space-y-1 text-[#1A1A1A]/70 text-sm text-center">
+                    <h3 className="text-lg font-bold text-[#2E2F1F]">Services Available</h3>
+                    <ul className="space-y-1 text-[#5F6148] text-sm text-center">
                       <li>• Film production consultation</li>
                       <li>• Story development for screen</li>
                       <li>• Directing and cinematography</li>
@@ -500,18 +499,18 @@ export default function FilmsPage() {
                   </div>
                 </div>
 
-                <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                   <div className="space-y-3">
-                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                      <Film size={20} className="text-[#FFF9EB]" />
+                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                      <Film size={20} className="text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-[#1A1A1A]">Get in Touch</h3>
-                    <p className="text-[#1A1A1A]/70 text-sm">
+                    <h3 className="text-lg font-bold text-[#2E2F1F]">Get in Touch</h3>
+                    <p className="text-[#5F6148] text-sm">
                       Interested in collaboration, festival submissions, or licensing inquiries?
                     </p>
                     <Link
                       href="/contact?subject=Film%20Collaboration"
-                      className="inline-flex items-center gap-1 text-[#7A1F26] hover:text-[#D4AF37] font-medium text-sm"
+                      className="inline-flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] font-medium text-sm"
                     >
                       Start a Conversation
                       <ArrowRight size={14} />
@@ -523,7 +522,7 @@ export default function FilmsPage() {
               <div className="pt-6">
                 <Link
                   href="/contact?subject=Film%20Assets"
-                  className="inline-flex items-center gap-2 px-5 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#D4AF37] hover:text-[#1A1A1A] mobile-transition text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-5 py-2 border border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-gradient-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] mobile-transition text-sm font-medium border border-[#E3E7C8]"
                 >
                   Request Film Assets
                   <ExternalLink size={14} />
@@ -540,10 +539,10 @@ export default function FilmsPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
-          <ChevronUp size={20} className="text-[#1A1A1A]" />
+          <ChevronUp size={20} className="text-[#2E2F1F]" />
         </button>
       )}
 

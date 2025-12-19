@@ -37,15 +37,15 @@ export function Footer() {
 
   return (
     <>
-      <footer className="relative bg-[#1A1A1A] border-t border-[#D4AF37]/20">
-        {/* Top Gold Border */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-         <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+      <footer className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8]">
+        {/* Top Olive Border */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+        <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
 
-        {/* Mughal Pattern Overlay */}
+        {/* Pattern Overlay */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23D4AF37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23B7C83E' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
             backgroundSize: '200px',
           }}></div>
         </div>
@@ -56,15 +56,15 @@ export function Footer() {
             <div className="space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                    <Quote size={20} className="text-[#FFF9EB]" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Quote size={20} className="text-[#F9FAF4]" />
                   </div>
                   <div>
-                    <p className="font-subheading text-lg text-[#FFF9EB] font-bold">Sharbari Ahmed</p>
-                    <p className="text-sm text-[#D4AF37]/80">Writer • Filmmaker • Educator</p>
+                    <p className="font-subheading text-lg text-[#2E2F1F] font-bold">Sharbari Ahmed</p>
+                    <p className="text-sm text-[#5F6148]">Writer • Filmmaker • Educator</p>
                   </div>
                 </div>
-                <p className="text-[#FFF9EB]/70 text-sm leading-relaxed">
+                <p className="text-[#5F6148] text-sm leading-relaxed">
                   Challenging inherited narratives through storytelling that crosses borders and illuminates identity.
                 </p>
               </div>
@@ -75,7 +75,7 @@ export function Footer() {
                   href="https://sharbariahmed.substack.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-[#D4AF37] hover:text-[#F4C430] mobile-transition text-sm font-medium"
+                  className="group inline-flex items-center gap-2 text-[#6F7F1E] hover:text-[#B7C83E] mobile-transition text-sm font-medium"
                 >
                   <BookOpen size={14} />
                   Subscribe to Newsletter
@@ -86,8 +86,8 @@ export function Footer() {
 
             {/* Explore Links */}
             <div className="space-y-6">
-              <h4 className="font-subheading text-lg font-bold text-[#FFF9EB] flex items-center gap-2">
-                <Sparkles size={16} className="text-[#D4AF37]" />
+              <h4 className="font-subheading text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
+                <Sparkles size={16} className="text-[#B7C83E]" />
                 Explore
               </h4>
               <ul className="space-y-3">
@@ -97,17 +97,17 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="group flex items-center gap-3 text-[#FFF9EB]/70 hover:text-[#D4AF37] mobile-transition"
+                        className="group flex items-center gap-3 text-[#5F6148] hover:text-[#2E2F1F] mobile-transition"
                         onMouseEnter={() => setHoveredLink(link.href)}
                         onMouseLeave={() => setHoveredLink(null)}
                       >
                         {Icon && (
-                          <Icon size={14} className="text-[#D4AF37] group-hover:text-[#F4C430] mobile-transition" />
+                          <Icon size={14} className="text-[#B7C83E] group-hover:text-[#6F7F1E] mobile-transition" />
                         )}
                         <span className="relative">
                           {link.label}
                           <span 
-                            className={`absolute -bottom-1 left-0 h-[1px] bg-gradient-to-r from-[#D4AF37] to-[#F4C430] mobile-transition ${
+                            className={`absolute -bottom-1 left-0 h-[1px] bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] mobile-transition ${
                               hoveredLink === link.href ? 'w-full' : 'w-0'
                             }`}
                           ></span>
@@ -121,16 +121,16 @@ export function Footer() {
 
             {/* Quick Links */}
             <div className="space-y-6">
-              <h4 className="font-subheading text-lg font-bold text-[#FFF9EB]">Quick Links</h4>
+              <h4 className="font-subheading text-lg font-bold text-[#2E2F1F]">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="group flex items-center justify-between text-[#FFF9EB]/70 hover:text-[#D4AF37] mobile-transition"
+                      className="group flex items-center justify-between text-[#5F6148] hover:text-[#2E2F1F] mobile-transition"
                     >
                       <span>{link.label}</span>
-                      <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 mobile-transition text-[#D4AF37]" />
+                      <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 mobile-transition text-[#B7C83E]" />
                     </Link>
                   </li>
                 ))}
@@ -140,9 +140,9 @@ export function Footer() {
               <div className="pt-4">
                 <a
                   href="mailto:hello@example.com"
-                  className="group inline-flex items-center gap-2 text-[#FFF9EB]/70 hover:text-[#D4AF37] mobile-transition"
+                  className="group inline-flex items-center gap-2 text-[#5F6148] hover:text-[#2E2F1F] mobile-transition"
                 >
-                  <Mail size={14} className="text-[#D4AF37]" />
+                  <Mail size={14} className="text-[#B7C83E]" />
                   <span>hello@example.com</span>
                   <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 mobile-transition" />
                 </a>
@@ -151,8 +151,8 @@ export function Footer() {
 
             {/* Social Links */}
             <div className="space-y-6">
-              <h4 className="font-subheading text-lg font-bold text-[#FFF9EB]">Connect</h4>
-              <p className="text-[#FFF9EB]/70 text-sm">
+              <h4 className="font-subheading text-lg font-bold text-[#2E2F1F]">Connect</h4>
+              <p className="text-[#5F6148] text-sm">
                 Follow for updates, essays, and behind-the-scenes storytelling.
               </p>
               
@@ -170,24 +170,24 @@ export function Footer() {
                       onMouseLeave={() => setHoveredLink(null)}
                       aria-label={link.label}
                     >
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mobile-transition ${
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mobile-transition border border-[#E3E7C8] ${
                         hoveredLink === link.href
-                          ? 'bg-[#FFF9EB] shadow-lg scale-110'
-                          : 'bg-gradient-to-br from-[#7A1F26]/20 to-[#D4AF37]/20 border border-[#D4AF37]/30'
+                          ? 'bg-[#2E2F1F] shadow-lg scale-110'
+                          : 'bg-gradient-to-br from-[#B7C83E]/20 to-[#6F7F1E]/20'
                       }`}>
                         <Icon 
                           size={18} 
                           className={`mobile-transition ${
                             hoveredLink === link.href 
-                              ? 'text-[#7A1F26]' 
-                              : 'text-[#FFF9EB]/80'
+                              ? 'text-[#F9FAF4]' 
+                              : 'text-[#5F6148]'
                           }`}
                         />
                       </div>
                       
                       {/* Tooltip */}
                       {hoveredLink === link.href && (
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-[#FFF9EB] border border-[#D4AF37]/30 rounded text-xs text-[#7A1F26] whitespace-nowrap shadow-lg">
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-[#2E2F1F] border border-[#E3E7C8] rounded text-xs text-[#F9FAF4] whitespace-nowrap shadow-lg">
                           {link.label}
                         </div>
                       )}
@@ -200,7 +200,7 @@ export function Footer() {
               <div className="pt-4">
                 <button
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="group inline-flex items-center gap-2 text-sm text-[#FFF9EB]/70 hover:text-[#D4AF37] mobile-transition"
+                  className="group inline-flex items-center gap-2 text-sm text-[#5F6148] hover:text-[#2E2F1F] mobile-transition"
                 >
                   <ArrowRight size={14} className="rotate-90 group-hover:-translate-y-1 mobile-transition" />
                   Back to top
@@ -210,29 +210,29 @@ export function Footer() {
           </div>
 
           {/* Divider */}
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent my-8"></div>
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-[#B7C83E]/30 to-transparent my-8"></div>
 
           {/* Bottom */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
             <div className="text-center md:text-left space-y-2">
-              <p className="text-[#FFF9EB]/60 text-sm">
+              <p className="text-[#5F6148] text-sm">
                 &copy; {new Date().getFullYear()} Sharbari Ahmed. All rights reserved.
               </p>
-              <p className="text-[#FFF9EB]/40 text-xs">
+              <p className="text-[#5F6148]/70 text-xs">
                 Stories that illuminate the spaces between culture, history, and identity.
               </p>
             </div>
             
             <div className="flex items-center gap-4">
-              <Link href="/privacy" className="text-[#FFF9EB]/50 hover:text-[#FFF9EB]/80 mobile-transition text-xs">
+              <Link href="/privacy" className="text-[#5F6148] hover:text-[#2E2F1F] mobile-transition text-xs">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-[#FFF9EB]/50 hover:text-[#FFF9EB]/80 mobile-transition text-xs">
+              <Link href="/terms" className="text-[#5F6148] hover:text-[#2E2F1F] mobile-transition text-xs">
                 Terms of Service
               </Link>
-              <span className="text-[#FFF9EB]/30 text-xs">•</span>
-              <span className="text-[#FFF9EB]/40 text-xs flex items-center gap-1">
-                Made with <Heart size={10} className="text-[#D4AF37]" /> for storytelling
+              <span className="text-[#5F6148]/50 text-xs">•</span>
+              <span className="text-[#5F6148] text-xs flex items-center gap-1">
+                Made with <Heart size={10} className="text-[#B7C83E]" /> for storytelling
               </span>
             </div>
           </div>

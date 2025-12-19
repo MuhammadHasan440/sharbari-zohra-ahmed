@@ -56,17 +56,17 @@ export default function BooksPage() {
         { 
           name: "Amazon", 
           url: "https://www.amazon.com/Strangest-Fruit-Collected-Stories/dp/B0FRW1688Q",
-          color: "from-[#A39F3B] to-[#7C7A34]"
+          color: "from-[#B7C83E] to-[#6F7F1E]"
         },
         { 
           name: "Barnes & Noble", 
           url: "https://www.barnesandnoble.com/w/the-strangest-of-fruit-sharbari-ahmed/1148333148",
-          color: "from-[#111111] to-[#374151]"
+          color: "from-[#B7C83E] to-[#6F7F1E]"
         },
         { 
           name: "ThriftBooks", 
           url: "https://www.thriftbooks.com/w/the-strangest-of-fruit-collected-stories/56953199/",
-          color: "from-[#A39F3B] to-[#7C7A34]"
+          color: "from-[#B7C83E] to-[#6F7F1E]"
         },
       ],
       featured: true,
@@ -91,7 +91,7 @@ export default function BooksPage() {
         { 
           name: "Amazon", 
           url: "https://www.amazon.com/Dust-Under-Sharbari-Zohra-Ahmed/dp/9388754255",
-          color: "from-[#A39F3B] to-[#7C7A34]"
+          color: "from-[#B7C83E] to-[#6F7F1E]"
         },
       ],
       featured: true,
@@ -128,12 +128,12 @@ export default function BooksPage() {
         { 
           name: "Amazon eBook", 
           url: "https://www.amazon.com/Ocean-Mrs-Nagai-Stories-ebook/dp/B00CZKS2VW",
-          color: "from-[#A39F3B] to-[#7C7A34]"
+          color: "from-[#B7C83E] to-[#6F7F1E]"
         },
         { 
           name: "Apple Books", 
           url: "https://books.apple.com/us/book/the-ocean-of-mrs-nagai/id123456789",
-          color: "from-[#111111] to-[#374151]"
+          color: "from-[#B7C83E] to-[#6F7F1E]"
         }
       ],
       featured: false,
@@ -242,7 +242,7 @@ export default function BooksPage() {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#111111]">
+    <div className="min-h-screen flex flex-col bg-[#F9FAF4] text-[#2E2F1F]">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lora:wght@400;500;600;700&display=swap');
         
@@ -263,7 +263,7 @@ export default function BooksPage() {
         }
 
         .text-gradient {
-          background: linear-gradient(135deg, #A39F3B 0%, #7C7A34 100%);
+          background: linear-gradient(135deg, #B7C83E 0%, #6F7F1E 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -271,7 +271,7 @@ export default function BooksPage() {
 
         .hover-lift:hover {
           transform: translateY(-4px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+          box-shadow: 0 15px 30px rgba(183, 200, 62, 0.1) !important;
         }
 
         .hover-scale:hover {
@@ -333,23 +333,23 @@ export default function BooksPage() {
         <section 
           className="relative pt-16 pb-12 mobile-full-width"
           style={{
-            background: 'linear-gradient(135deg, #111111 0%, #111111 40%, #A39F3B 100%)',
+            background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
           }}
         >
-            {/* Background Pattern */}
+          {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5" style={{
             backgroundImage: 'url(/images/pattern.jpg)',
-           backgroundPosition: 'center',
-           backgroundRepeat: 'no-repeat',
-           backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
           }}></div>
           
           <div className="mobile-padding">
             <div className="text-center space-y-6 animate-fade-in-up">
               <div className="inline-block">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-[#A39F3B]/30">
-                  <BookOpen size={14} className="text-[#A39F3B]" />
-                  <p className="font-subheading text-xs text-[#A39F3B] tracking-widest">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+                  <BookOpen size={14} className="text-[#B7C83E]" />
+                  <p className="font-subheading text-xs text-[#B7C83E] tracking-widest">
                     LITERARY WORKS & PRESS
                   </p>
                 </div>
@@ -362,8 +362,8 @@ export default function BooksPage() {
               </h1>
 
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#A39F3B] to-transparent"></div>
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#A39F3B] rotate-45 bg-white"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
               <p className="font-italic text-lg text-white/90 leading-relaxed px-2 max-w-2xl mx-auto">
@@ -377,14 +377,14 @@ export default function BooksPage() {
         <div className="lg:hidden mobile-padding py-4">
           <button
             onClick={() => setShowMobileFilter(!showMobileFilter)}
-            className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#A39F3B]/10 to-transparent border border-[#A39F3B]/30 rounded-lg text-[#111111] hover:bg-gradient-to-r hover:from-[#A39F3B]/20 hover:to-transparent mobile-transition"
+            className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/50 hover:to-transparent mobile-transition"
           >
             <div className="flex items-center gap-2">
-              <Filter size={16} className="text-[#A39F3B]" />
+              <Filter size={16} className="text-[#B7C83E]" />
               <span className="font-medium">
                 {filters.find(f => f.id === activeFilter)?.label}
               </span>
-              <span className="px-2 py-0.5 bg-[#A39F3B]/20 text-[#7C7A34] text-xs rounded-full">
+              <span className="px-2 py-0.5 bg-[#D9E6A3]/50 text-[#5F6148] text-xs rounded-full">
                 {filters.find(f => f.id === activeFilter)?.count}
               </span>
             </div>
@@ -392,7 +392,7 @@ export default function BooksPage() {
           </button>
           
           {showMobileFilter && (
-            <div className="mt-2 bg-white border border-[#A39F3B]/20 rounded-lg shadow-lg overflow-hidden animate-fade-in-up">
+            <div className="mt-2 bg-white border border-[#E3E7C8] rounded-lg shadow-lg overflow-hidden animate-fade-in-up">
               <div className="p-2">
                 {filters.map((filter) => (
                   <button
@@ -401,13 +401,13 @@ export default function BooksPage() {
                       setActiveFilter(filter.id)
                       setShowMobileFilter(false)
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-lg mobile-transition flex items-center justify-between ${activeFilter === filter.id ? 'bg-gradient-to-r from-[#A39F3B]/10 to-transparent text-[#7C7A34]' : 'text-[#111111]/70 hover:bg-[#A39F3B]/5'}`}
+                    className={`w-full text-left px-4 py-3 rounded-lg mobile-transition flex items-center justify-between ${activeFilter === filter.id ? 'bg-gradient-to-r from-[#D9E6A3]/50 to-transparent text-[#2E2F1F]' : 'text-[#5F6148] hover:bg-[#D9E6A3]/30'}`}
                   >
                     <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${activeFilter === filter.id ? 'bg-[#A39F3B]' : 'bg-[#111111]/20'}`}></span>
+                      <span className={`w-2 h-2 rounded-full ${activeFilter === filter.id ? 'bg-[#B7C83E]' : 'bg-[#5F6148]/30'}`}></span>
                       <span className="font-medium">{filter.label}</span>
                     </div>
-                    <span className="px-2 py-0.5 bg-[#A39F3B]/10 text-[#7C7A34] text-xs rounded-full">
+                    <span className="px-2 py-0.5 bg-[#D9E6A3]/50 text-[#5F6148] text-xs rounded-full">
                       {filter.count}
                     </span>
                   </button>
@@ -419,16 +419,16 @@ export default function BooksPage() {
 
         {/* Desktop Filter Bar */}
         <div className={`hidden lg:block sticky top-16 z-30 mobile-transition ${showFilters ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
-          <div className="bg-white border-b border-[#A39F3B]/20 shadow-sm">
+          <div className="bg-white border-b border-[#E3E7C8] shadow-sm">
             <div className="max-w-6xl mx-auto px-6">
               <div className="flex items-center gap-4 py-3">
-                <span className="font-subheading text-sm font-medium text-[#111111]/60">Filter by:</span>
+                <span className="font-subheading text-sm font-medium text-[#5F6148]">Filter by:</span>
                 <div className="flex gap-2">
                   {filters.map((filter) => (
                     <button
                       key={filter.id}
                       onClick={() => setActiveFilter(filter.id)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap mobile-transition ${activeFilter === filter.id ? 'bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] text-white shadow-sm' : 'bg-gradient-to-r from-[#A39F3B]/10 to-transparent text-[#111111] hover:from-[#A39F3B]/20 hover:to-transparent'}`}
+                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap mobile-transition ${activeFilter === filter.id ? 'bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] shadow-sm' : 'bg-gradient-to-r from-[#D9E6A3]/30 to-transparent text-[#5F6148] hover:from-[#D9E6A3]/50 hover:to-transparent'}`}
                     >
                       {filter.label}
                       <span className="ml-2 px-1.5 py-0.5 bg-white/20 text-xs rounded-full">
@@ -447,10 +447,10 @@ export default function BooksPage() {
           {(activeFilter === "all" || activeFilter === "featured") && (
             <>
               <div className="space-y-6">
-                <h2 className="text-2xl lg:text-3xl font-bold text-[#111111]">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#2E2F1F]">
                   Featured <span className="text-gradient">Books</span>
                 </h2>
-                <p className="text-[#111111]/70 max-w-2xl">
+                <p className="text-[#5F6148] max-w-2xl">
                   Award-winning novels and collections exploring identity, migration, and complex human relationships.
                 </p>
               </div>
@@ -461,7 +461,7 @@ export default function BooksPage() {
                   .map((book, index) => (
                     <div 
                       key={book.id}
-                      className="bg-white rounded-2xl overflow-hidden border border-[#A39F3B]/10 shadow-lg hover-lift transition-all duration-300 group animate-fade-in-up"
+                      className="bg-white rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-lg hover-lift transition-all duration-300 group animate-fade-in-up"
                       style={{ animationDelay: `${index * 150}ms` }}
                     >
                       <div className="lg:flex">
@@ -476,24 +476,24 @@ export default function BooksPage() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                           
-                          <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
-                            <span className="text-sm font-semibold text-[#7C7A34]">{book.year}</span>
+                          <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+                            <span className="text-sm font-semibold text-[#5F6148]">{book.year}</span>
                           </div>
                           
                           {book.featured && (
-                            <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] rounded-full">
-                              <span className="text-xs font-semibold text-white">FEATURED</span>
+                            <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
+                              <span className="text-xs font-semibold text-[#2E2F1F]">FEATURED</span>
                             </div>
                           )}
                         </div>
 
                         <div className="lg:w-2/3 p-6 lg:p-8">
                           <div className="mb-4">
-                            <h3 className="text-2xl font-bold text-[#111111] mb-1">{book.title}</h3>
-                            <p className="font-italic text-[#A39F3B] text-sm italic">{book.subtitle}</p>
+                            <h3 className="text-2xl font-bold text-[#2E2F1F] mb-1">{book.title}</h3>
+                            <p className="font-italic text-[#B7C83E] text-sm italic">{book.subtitle}</p>
                           </div>
 
-                          <p className="text-[#111111]/80 leading-relaxed mb-6">
+                          <p className="text-[#5F6148] leading-relaxed mb-6">
                             {book.description}
                           </p>
 
@@ -502,7 +502,7 @@ export default function BooksPage() {
                             <div className="mb-6">
                               <button
                                 onClick={() => toggleSection(`reviews-${book.id}`)}
-                                className="flex items-center gap-2 mb-3 text-[#7C7A34] hover:text-[#A39F3B] transition-colors"
+                                className="flex items-center gap-2 mb-3 text-[#6F7F1E] hover:text-[#B7C83E] transition-colors"
                               >
                                 <Newspaper size={16} />
                                 <h4 className="text-sm font-semibold">
@@ -522,16 +522,16 @@ export default function BooksPage() {
                                       href={review.url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="block p-3 bg-gradient-to-r from-[#A39F3B]/5 to-transparent border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 transition-colors duration-200 group/review"
+                                      className="block p-3 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] transition-colors duration-200 group/review"
                                     >
                                       <div className="flex items-start justify-between mb-1">
-                                        <h5 className="font-medium text-[#111111] group-hover/review:text-[#7C7A34] transition-colors">
+                                        <h5 className="font-medium text-[#2E2F1F] group-hover/review:text-[#6F7F1E] transition-colors">
                                           {review.title}
                                         </h5>
-                                        <ExternalLink size={12} className="text-[#A39F3B]/60 group-hover/review:text-[#A39F3B]" />
+                                        <ExternalLink size={12} className="text-[#B7C83E]/60 group-hover/review:text-[#B7C83E]" />
                                       </div>
-                                      <p className="text-xs text-[#111111]/60 mb-1">{review.source}</p>
-                                      <p className="text-sm text-[#111111]/70">{review.excerpt}</p>
+                                      <p className="text-xs text-[#5F6148] mb-1">{review.source}</p>
+                                      <p className="text-sm text-[#5F6148]">{review.excerpt}</p>
                                     </a>
                                   ))}
                                 </div>
@@ -542,14 +542,14 @@ export default function BooksPage() {
                           {book.awards.length > 0 && (
                             <div className="mb-6">
                               <div className="flex items-center gap-2 mb-3">
-                                <Award size={16} className="text-[#A39F3B]" />
-                                <h4 className="text-sm font-semibold text-[#7C7A34]">Awards & Recognition</h4>
+                                <Award size={16} className="text-[#B7C83E]" />
+                                <h4 className="text-sm font-semibold text-[#6F7F1E]">Awards & Recognition</h4>
                               </div>
                               <div className="flex flex-wrap gap-2">
                                 {book.awards.map((award, i) => (
                                   <span 
                                     key={i}
-                                    className="px-3 py-1 bg-gradient-to-r from-[#A39F3B]/10 to-transparent border border-[#A39F3B]/20 rounded-full text-xs text-[#7C7A34]"
+                                    className="px-3 py-1 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-full text-xs text-[#5F6148]"
                                   >
                                     {award}
                                   </span>
@@ -559,7 +559,7 @@ export default function BooksPage() {
                           )}
 
                           <div className="space-y-3">
-                            <p className="text-sm font-medium text-[#7C7A34]">Available from:</p>
+                            <p className="text-sm font-medium text-[#6F7F1E]">Available from:</p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                               {book.links.map((link, linkIndex) => (
                                 <Link
@@ -567,7 +567,7 @@ export default function BooksPage() {
                                   href={link.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className={`px-4 py-3 bg-gradient-to-r ${link.color} text-white rounded-lg border border-[#A39F3B]/20 hover:shadow-md hover-scale mobile-transition flex items-center justify-between group/link`}
+                                  className={`px-4 py-3 bg-gradient-to-r ${link.color} text-[#2E2F1F] rounded-lg border border-[#E3E7C8] hover:shadow-md hover-scale mobile-transition flex items-center justify-between group/link`}
                                 >
                                   <span className="font-medium">{link.name}</span>
                                   <ExternalLink size={14} className="opacity-60 group-hover/link:opacity-100 group-hover/link:rotate-12 transition-transform duration-200" />
@@ -577,17 +577,17 @@ export default function BooksPage() {
                           </div>
 
                           {book.featured && (
-                            <div className="mt-6 pt-6 border-t border-[#A39F3B]/10">
+                            <div className="mt-6 pt-6 border-t border-[#E3E7C8]">
                               <div className="flex items-start gap-2">
-                                <Quote className="w-5 h-5 text-[#A39F3B]/40 flex-shrink-0 mt-1" />
-                                <blockquote className="text-sm text-[#111111]/70 italic">
+                                <Quote className="w-5 h-5 text-[#B7C83E]/40 flex-shrink-0 mt-1" />
+                                <blockquote className="text-sm text-[#5F6148] italic">
                                   {book.title === "The Strangest of Fruit" 
                                     ? "A remarkable debut collection... Ahmed writes with both precision and poetic grace about the complexities of identity and belonging."
                                     : "A compelling narrative that captures the essence of displacement and the universal search for home with remarkable sensitivity."
                                   }
                                 </blockquote>
                               </div>
-                              <p className="text-xs text-[#111111]/50 mt-2 ml-7">
+                              <p className="text-xs text-[#5F6148] mt-2 ml-7">
                                 {book.title === "The Strangest of Fruit" 
                                   ? "— Publishers Weekly"
                                   : "— Literary Review"
@@ -605,13 +605,13 @@ export default function BooksPage() {
 
           {/* Press & Interviews Section */}
           {(activeFilter === "all" || activeFilter === "press") && (
-            <div className="pt-8 border-t border-[#A39F3B]/10">
+            <div className="pt-8 border-t border-[#E3E7C8]">
               <div className="space-y-8 animate-fade-in-up">
                 <div className="space-y-4">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-[#111111]">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-[#2E2F1F]">
                     Press & <span className="text-gradient">Interviews</span>
                   </h2>
-                  <p className="text-[#111111]/70 max-w-2xl">
+                  <p className="text-[#5F6148] max-w-2xl">
                     Featured interviews and press coverage across major publications
                   </p>
                 </div>
@@ -620,28 +620,28 @@ export default function BooksPage() {
                   {pressAndInterviews.map((item, i) => (
                     <div 
                       key={i}
-                      className="p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all duration-300 group"
+                      className="p-5 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group"
                     >
                       <div className="flex items-start gap-3 mb-4">
-                        <div className="p-2 bg-gradient-to-r from-[#A39F3B]/10 to-[#7C7A34]/10 rounded-lg">
+                        <div className="p-2 bg-gradient-to-r from-[#D9E6A3]/30 to-[#B7C83E]/10 rounded-lg border border-[#E3E7C8]">
                           {item.type === 'interview' ? (
-                            <MessageSquare size={20} className="text-[#A39F3B]" />
+                            <MessageSquare size={20} className="text-[#B7C83E]" />
                           ) : (
-                            <Newspaper size={20} className="text-[#A39F3B]" />
+                            <Newspaper size={20} className="text-[#B7C83E]" />
                           )}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-start justify-between mb-1">
-                            <h4 className="text-lg font-bold text-[#111111] group-hover:text-[#7C7A34] transition-colors line-clamp-2">
+                            <h4 className="text-lg font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors line-clamp-2">
                               {item.title}
                             </h4>
-                            <ExternalLink size={14} className="text-[#A39F3B]/60 mt-1" />
+                            <ExternalLink size={14} className="text-[#B7C83E]/60 mt-1" />
                           </div>
-                          <p className="text-sm text-[#A39F3B]">{item.source} • {item.date}</p>
+                          <p className="text-sm text-[#B7C83E]">{item.source} • {item.date}</p>
                         </div>
                       </div>
                       
-                      <p className="text-sm text-[#111111]/70 mb-4 line-clamp-3">
+                      <p className="text-sm text-[#5F6148] mb-4 line-clamp-3">
                         {item.excerpt}
                       </p>
                       
@@ -649,7 +649,7 @@ export default function BooksPage() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-[#A39F3B] hover:text-[#7C7A34] transition-colors font-medium group/link"
+                        className="inline-flex items-center gap-2 text-sm text-[#B7C83E] hover:text-[#6F7F1E] transition-colors font-medium group/link"
                       >
                         Read {item.type === 'interview' ? 'Interview' : 'Article'}
                         <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform duration-200" />
@@ -663,13 +663,13 @@ export default function BooksPage() {
 
           {/* Additional Publications */}
           {(activeFilter === "all" || activeFilter === "publications") && (
-            <div className="pt-8 border-t border-[#A39F3B]/10">
+            <div className="pt-8 border-t border-[#E3E7C8]">
               <div className="space-y-8 animate-fade-in-up">
                 <div className="space-y-4">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-[#111111]">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-[#2E2F1F]">
                     Other <span className="text-gradient">Publications</span>
                   </h2>
-                  <p className="text-[#111111]/70 max-w-2xl">
+                  <p className="text-[#5F6148] max-w-2xl">
                     Featured stories and essays in literary journals and magazines
                   </p>
                 </div>
@@ -678,27 +678,27 @@ export default function BooksPage() {
                   {publications.map((pub, i) => (
                     <div 
                       key={i}
-                      className="p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all duration-300 group"
+                      className="p-5 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <h4 className="text-lg font-bold text-[#111111] group-hover:text-[#7C7A34] transition-colors">{pub.title}</h4>
-                          <p className="text-sm text-[#A39F3B] mt-1">{pub.venue}</p>
+                          <h4 className="text-lg font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">{pub.title}</h4>
+                          <p className="text-sm text-[#B7C83E] mt-1">{pub.venue}</p>
                         </div>
-                        <span className="px-2 py-1 bg-gradient-to-r from-[#A39F3B]/10 to-transparent text-[#7C7A34] text-xs font-medium rounded-full">
+                        <span className="px-2 py-1 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent text-[#5F6148] text-xs font-medium rounded-full border border-[#E3E7C8]">
                           {pub.year}
                         </span>
                       </div>
                       
-                      <p className="text-sm text-[#111111]/70 mb-4 italic line-clamp-2">
+                      <p className="text-sm text-[#5F6148] mb-4 italic line-clamp-2">
                         {pub.excerpt}
                       </p>
                       
                       <div className="flex items-center justify-between">
-                        <span className="px-3 py-1 bg-gradient-to-r from-[#A39F3B]/5 to-transparent border border-[#A39F3B]/20 text-[#7C7A34] text-xs rounded-full">
+                        <span className="px-3 py-1 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] text-[#5F6148] text-xs rounded-full">
                           {pub.category}
                         </span>
-                        <button className="text-sm text-[#A39F3B] hover:text-[#7C7A34] transition-colors flex items-center gap-1 group/link">
+                        <button className="text-sm text-[#B7C83E] hover:text-[#6F7F1E] transition-colors flex items-center gap-1 group/link">
                           Read Excerpt
                           <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform duration-200" />
                         </button>
@@ -711,13 +711,13 @@ export default function BooksPage() {
           )}
 
           {/* Articles & Stories Section - Always Visible */}
-          <div className="pt-8 border-t border-[#A39F3B]/10">
+          <div className="pt-8 border-t border-[#E3E7C8]">
             <div className="space-y-8 animate-fade-in-up">
               <div className="space-y-4">
-                <h2 className="text-2xl lg:text-3xl font-bold text-[#111111]">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#2E2F1F]">
                   Articles & <span className="text-gradient">Short Stories</span>
                 </h2>
-                <p className="text-[#111111]/70 max-w-2xl">
+                <p className="text-[#5F6148] max-w-2xl">
                   Additional writings, essays, and published short stories
                 </p>
               </div>
@@ -729,30 +729,30 @@ export default function BooksPage() {
                     href={item.url}
                     target={item.url === "#" ? "_self" : "_blank"}
                     rel="noopener noreferrer"
-                    className={`p-5 bg-gradient-to-br from-white to-[#F9FAFB] border border-[#A39F3B]/20 rounded-lg hover:border-[#A39F3B]/30 hover-lift transition-all duration-300 group ${item.url === "#" ? 'cursor-not-allowed opacity-70' : ''}`}
+                    className={`p-5 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group ${item.url === "#" ? 'cursor-not-allowed opacity-70' : ''}`}
                     onClick={item.url === "#" ? (e) => e.preventDefault() : undefined}
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 bg-gradient-to-r from-[#A39F3B]/10 to-[#7C7A34]/10 rounded-lg">
-                        <FileText size={20} className="text-[#A39F3B]" />
+                      <div className="p-2 bg-gradient-to-r from-[#D9E6A3]/30 to-[#B7C83E]/10 rounded-lg border border-[#E3E7C8]">
+                        <FileText size={20} className="text-[#B7C83E]" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-[#111111] group-hover:text-[#7C7A34] transition-colors">
+                        <h4 className="text-lg font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">
                           {item.title}
                         </h4>
-                        <p className="text-sm text-[#A39F3B]">{item.source}</p>
+                        <p className="text-sm text-[#B7C83E]">{item.source}</p>
                       </div>
                     </div>
                     
-                    <p className="text-sm text-[#111111]/70 mb-4">
+                    <p className="text-sm text-[#5F6148] mb-4">
                       {item.description}
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#A39F3B] font-medium group-hover:text-[#7C7A34] transition-colors">
+                      <span className="text-sm text-[#B7C83E] font-medium group-hover:text-[#6F7F1E] transition-colors">
                         {item.url === "#" ? "Coming Soon" : "Read Now"}
                       </span>
-                      {item.url !== "#" && <ExternalLink size={14} className="text-[#A39F3B]/60 group-hover:text-[#A39F3B]" />}
+                      {item.url !== "#" && <ExternalLink size={14} className="text-[#B7C83E]/60 group-hover:text-[#B7C83E]" />}
                     </div>
                   </a>
                 ))}
@@ -762,15 +762,15 @@ export default function BooksPage() {
         </div>
 
         {/* CTA Section */}
-        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#A39F3B]/8 via-[#7C7A34]/8 to-[#A39F3B]/8">
+        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 border-t border-[#E3E7C8]">
           <div className="mobile-padding max-w-3xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-[#111111]">
+              <h2 className="text-3xl font-bold text-[#2E2F1F]">
                 Explore
                 <br />
                 <span className="text-gradient">More Stories</span>
               </h2>
-              <p className="text-[#111111]/70 font-subheading">
+              <p className="text-[#5F6148] font-subheading">
                 Each book is a journey through identity, history, and human connection.
               </p>
             </div>
@@ -778,7 +778,7 @@ export default function BooksPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] text-white font-subheading font-semibold rounded-full hover:shadow-[0_15px_40px_rgba(163,159,59,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale"
+                className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale border border-[#E3E7C8]"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Get in Touch
@@ -788,7 +788,7 @@ export default function BooksPage() {
               
               <Link
                 href="/press"
-                className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-[#111111] text-[#111111] font-subheading font-semibold rounded-full hover:bg-[#111111] hover:text-white hover:border-[#111111] transition-all duration-300 active:scale-95 touch-target hover-scale"
+                className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-[#F9FAF4] hover:border-[#2E2F1F] transition-all duration-300 active:scale-95 touch-target hover-scale border border-[#E3E7C8]"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Press & Reviews
@@ -805,10 +805,10 @@ export default function BooksPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale transition-transform duration-300"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale transition-transform duration-300 border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
-          <ChevronUp size={20} className="text-white" />
+          <ChevronUp size={20} className="text-[#2E2F1F]" />
         </button>
       )}
 

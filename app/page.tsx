@@ -146,7 +146,7 @@ export default function HomePage() {
   // Don't render during SSR
   if (!mounted) {
     return (
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-[#F9FAF4]">
         <Header />
         <main className="flex-1"></main>
         <Footer />
@@ -155,7 +155,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#111111]">
+    <div className="min-h-screen flex flex-col bg-[#F9FAF4] text-[#2E2F1F]">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lora:wght@400;500;600;700&display=swap');
         
@@ -204,7 +204,7 @@ export default function HomePage() {
 
         /* Text gradient */
         .text-gradient {
-          background: linear-gradient(135deg, #A39F3B 0%, #7C7A34 100%);
+          background: linear-gradient(135deg, #B7C83E 0%, #6F7F1E 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -213,7 +213,7 @@ export default function HomePage() {
         /* Hover effects */
         .hover-lift:hover {
           transform: translateY(-8px);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12) !important;
+          box-shadow: 0 25px 50px rgba(183, 200, 62, 0.12) !important;
         }
 
         .hover-scale:hover {
@@ -221,7 +221,7 @@ export default function HomePage() {
         }
 
         .hover-glow:hover {
-          box-shadow: 0 0 40px rgba(163, 159, 59, 0.3) !important;
+          box-shadow: 0 0 40px rgba(183, 200, 62, 0.3) !important;
         }
 
         .transition-all {
@@ -258,35 +258,32 @@ export default function HomePage() {
           ref={heroRef}
           className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #111111 0%, #111111 40%, #A39F3B 100%)',
+            background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
           }}
         >
-          
-          
-          
-              {/* Background Pattern */}
+          {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5" style={{
             backgroundImage: 'url(/images/pattern.jpg)',
-           backgroundPosition: 'center',
-           backgroundRepeat: 'no-repeat',
-           backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
           }}></div>
           
           {/* Animated Gradient Overlay */}
           <div className="absolute inset-0" style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(163, 159, 59, 0.15) 0%, transparent 50%)`,
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(183, 200, 62, 0.15) 0%, transparent 50%)`,
             transform: `translateY(${scrollY * 0.3}px)`,
           }}></div>
           
           {/* Floating Elements */}
-          <div className="absolute top-20 left-10 w-20 h-20 border border-[#A39F3B]/30 rounded-full animate-spin"></div>
-          <div className="absolute bottom-30 right-15 w-32 h-32 border border-[#A39F3B]/15 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-[#B7C83E]/30 rounded-full animate-spin"></div>
+          <div className="absolute bottom-30 right-15 w-32 h-32 border border-[#B7C83E]/15 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
 
           {/* Hero Content */}
           <div className="relative z-10 w-full max-w-4xl px-4 text-center animate-fade-in">
             {/* Logo/Name */}
             <div className="mb-8">
-              <div className="font-['Cormorant_Garamond'] text-3xl md:text-4xl font-semibold text-[#A39F3B] tracking-widest uppercase mb-2">
+              <div className="font-['Cormorant_Garamond'] text-3xl md:text-4xl font-semibold text-[#B7C83E] tracking-widest uppercase mb-2">
                 Sharbari Zohra Ahmed
               </div>
             </div>
@@ -303,18 +300,18 @@ export default function HomePage() {
             
             {/* Quote */}
             <div className="relative my-12">
-              <div className="absolute top-1/2 left-0 w-10 h-px bg-[#A39F3B] transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 left-0 w-10 h-px bg-[#B7C83E] transform -translate-y-1/2"></div>
               <p className="font-italic text-xl md:text-2xl text-[#F3F4F6] italic px-8 md:px-12">
                 "Challenging the stories we inherit — and who gets to tell them."
               </p>
-              <div className="absolute top-1/2 right-0 w-10 h-px bg-[#A39F3B] transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 right-0 w-10 h-px bg-[#B7C83E] transform -translate-y-1/2"></div>
             </div>
             
             {/* CTA Buttons */}
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
               <button
                 onClick={() => scrollToSection("work")}
-                className="group relative w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] text-white font-subheading text-lg font-semibold rounded-full hover:shadow-[0_15px_40px_rgba(163,159,59,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale"
+                className="group relative w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Explore My Work
@@ -324,7 +321,7 @@ export default function HomePage() {
               
               <Link
                 href="/consulting"
-                className="group relative w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#A39F3B] text-[#A39F3B] font-subheading text-lg font-semibold rounded-full hover:bg-[#A39F3B] hover:text-white transition-all duration-300 active:scale-95 touch-target hover-scale"
+                className="group relative w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#B7C83E] text-[#B7C83E] font-subheading text-lg font-semibold rounded-full hover:bg-[#6F7F1E] hover:border-[#6F7F1E] hover:text-[#F9FAF4] transition-all duration-300 active:scale-95 touch-target hover-scale"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   Book a Consultation
@@ -338,14 +335,14 @@ export default function HomePage() {
                 <span className="font-subheading text-sm text-[#9CA3AF] tracking-widest">
                   Scroll
                 </span>
-                <div className="w-px h-16 bg-gradient-to-b from-[#A39F3B] via-[#7C7A34] to-transparent"></div>
+                <div className="w-px h-16 bg-gradient-to-b from-[#B7C83E] via-[#6F7F1E] to-transparent"></div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Featured Works Section */}
-        <section className="relative bg-gradient-to-b from-white to-[#F9FAFB] px-4 py-16 md:py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
           <div 
             className="absolute inset-0 opacity-[3%]"
@@ -358,14 +355,14 @@ export default function HomePage() {
           ></div>
           
           {/* Background Elements */}
-          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#A39F3B]/10 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#B7C83E]/10 to-transparent"></div>
           
           <div className="max-w-6xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-full flex items-center justify-center border border-[#A39F3B]/30">
-                  <BookOpen size={24} className="text-[#A39F3B]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <BookOpen size={24} className="text-[#B7C83E]" />
                 </div>
               </div>
               
@@ -373,7 +370,7 @@ export default function HomePage() {
                 Featured <span className="text-gradient">Works</span>
               </h2>
               
-              <p className="font-['Lato'] text-lg md:text-xl text-[#6B7280] font-semibold max-w-2xl mx-auto">
+              <p className="font-['Lato'] text-lg md:text-xl text-[#5F6148] font-semibold max-w-2xl mx-auto">
                 Award-winning books and films exploring identity, migration, and the human experience
               </p>
             </div>
@@ -382,15 +379,15 @@ export default function HomePage() {
             <div className="mb-16 md:mb-24">
               <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
                 <div className="flex items-center gap-4 mb-4 md:mb-0">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-full flex items-center justify-center border border-[#A39F3B]/30">
-                    <BookOpen size={28} className="text-[#A39F3B]" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                    <BookOpen size={28} className="text-[#B7C83E]" />
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold">
                     Books
                   </h3>
                 </div>
                 
-                <Link href="/books" className="flex items-center gap-2 text-[#A39F3B] font-subheading font-semibold text-lg hover:gap-3 transition-all">
+                <Link href="/books" className="flex items-center gap-2 text-[#B7C83E] font-subheading font-semibold text-lg hover:gap-3 transition-all">
                   <span>View All Books</span>
                   <ArrowRight size={18} />
                 </Link>
@@ -401,7 +398,7 @@ export default function HomePage() {
                 {BOOKS.map((book) => (
                   <div 
                     key={book.id}
-                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all group"
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all group border border-[#E3E7C8]"
                   >
                     {/* Book Cover with actual image */}
                     <div className="relative h-64 md:h-80 bg-[#F3F4F6] overflow-hidden">
@@ -415,23 +412,20 @@ export default function HomePage() {
                       
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      
-                      {/* Award Badge */}
-                    
                     </div>
                     
                     {/* Book Details */}
                     <div className="p-6">
-                      <h4 className="text-xl font-bold mb-3 line-clamp-2">
+                      <h4 className="text-xl font-bold mb-3 line-clamp-2 text-[#2E2F1F]">
                         {book.title}
                       </h4>
                       
-                      <p className="text-[#4B5563] text-sm mb-4 line-clamp-3">
+                      <p className="text-[#5F6148] text-sm mb-4 line-clamp-3">
                         {book.synopsis}
                       </p>
                       
                       <Link href={`/books/${book.id}`} className="w-full">
-                        <button className="w-full p-3 bg-gradient-to-r from-[#A39F3B]/10 to-transparent border border-[#A39F3B]/30 rounded-lg text-[#A39F3B] font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[#A39F3B] hover:to-[#7C7A34] hover:text-white hover:border-[#A39F3B] transition-all">
+                        <button className="w-full p-3 bg-gradient-to-r from-[#B7C83E]/10 to-transparent border border-[#B7C83E]/30 rounded-lg text-[#2E2F1F] font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:border-[#6F7F1E] transition-all">
                           Explore Book
                           <ArrowRight size={16} />
                         </button>
@@ -446,15 +440,15 @@ export default function HomePage() {
             <div>
               <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
                 <div className="flex items-center gap-4 mb-4 md:mb-0">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-full flex items-center justify-center border border-[#A39F3B]/30">
-                    <Film size={28} className="text-[#A39F3B]" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                    <Film size={28} className="text-[#B7C83E]" />
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold">
                     Films
                   </h3>
                 </div>
                 
-                <Link href="/film" className="flex items-center gap-2 text-[#A39F3B] font-subheading font-semibold text-lg hover:gap-3 transition-all">
+                <Link href="/film" className="flex items-center gap-2 text-[#B7C83E] font-subheading font-semibold text-lg hover:gap-3 transition-all">
                   <span>View All Projects</span>
                   <ArrowRight size={18} />
                 </Link>
@@ -465,24 +459,24 @@ export default function HomePage() {
                 {FILMS.map((film) => (
                   <div 
                     key={film.id}
-                    className="bg-gradient-to-br from-[#1F2937] to-[#111827] rounded-2xl overflow-hidden border border-white/10 shadow-xl hover-lift hover-glow transition-all group"
+                    className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group"
                   >
                     {/* Film Image */}
-                    <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#1F2937] to-[#111827] overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#A39F3B]/10 to-[#7C7A34]/10 flex items-center justify-center">
-                        <Film size={48} className="text-[#A39F3B]/30" />
+                    <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+                        <Film size={48} className="text-[#B7C83E]/30" />
                       </div>
                       
                       {/* Play Button Overlay */}
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
-                        <div className="w-14 h-14 md:w-16 md:h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all group-hover:bg-[#A39F3B] group-hover:scale-110">
-                          <Play size={24} className="text-[#111111]" />
+                        <div className="w-14 h-14 md:w-16 md:h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all group-hover:bg-[#B7C83E] group-hover:scale-110">
+                          <Play size={24} className="text-[#2E2F1F]" />
                         </div>
                       </div>
 
                       {/* Type Badge */}
-                      <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10 rounded-full">
-                        <span className="font-subheading text-xs font-semibold text-[#A39F3B] uppercase tracking-wider">
+                      <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+                        <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
                           {film.type}
                         </span>
                       </div>
@@ -500,14 +494,14 @@ export default function HomePage() {
 
                       {film.awards && film.awards.length > 0 && (
                         <div className="flex items-center gap-2 mb-4">
-                          <Award size={16} className="text-[#A39F3B]" />
+                          <Award size={16} className="text-[#B7C83E]" />
                           <span className="font-subheading text-sm text-[#9CA3AF]">
                             {film.awards[0]}
                           </span>
                         </div>
                       )}
 
-                      <Link href={`/film/${film.id}`} className="inline-flex items-center gap-2 text-[#A39F3B] font-subheading font-semibold text-sm hover:gap-3 transition-all">
+                      <Link href={`/film/${film.id}`} className="inline-flex items-center gap-2 text-[#B7C83E] font-subheading font-semibold text-sm hover:gap-3 transition-all">
                         <span>Learn More</span>
                         <ArrowRight size={16} />
                       </Link>
@@ -520,7 +514,7 @@ export default function HomePage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="relative bg-gradient-to-br from-[#111111] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
           <div 
             className="absolute inset-0 opacity-[3%]"
@@ -535,15 +529,15 @@ export default function HomePage() {
           
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A39F3B' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
 
           <div className="max-w-4xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-full flex items-center justify-center border border-[#A39F3B]/30">
-                  <Quote size={24} className="text-[#A39F3B]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <Quote size={24} className="text-[#B7C83E]" />
                 </div>
               </div>
               
@@ -557,7 +551,7 @@ export default function HomePage() {
             </div>
 
             {/* Testimonial Slider */}
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="bg-[#F9FAF4] rounded-3xl p-8 md:p-12 shadow-2xl border border-[#E3E7C8]">
               {/* Dust Texture Background */}
               <div 
                 className="absolute inset-0 opacity-[2%] rounded-3xl"
@@ -570,21 +564,21 @@ export default function HomePage() {
               ></div>
               
               {/* Quote Mark */}
-              <div className="absolute top-8 left-8 text-6xl font-['Playfair_Display'] text-[#A39F3B]/10">
+              <div className="absolute top-8 left-8 text-6xl font-['Playfair_Display'] text-[#B7C83E]/10">
                 "
               </div>
               
               <div className="relative z-10">
-                <p className="font-italic text-lg md:text-xl text-[#374151] italic mb-6 md:mb-8 leading-relaxed">
+                <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-6 md:mb-8 leading-relaxed">
                   {TESTIMONIALS[currentTestimonial]?.quote || "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…"}
                 </p>
                 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                   <div>
-                    <div className="font-subheading text-base font-semibold text-[#111111] mb-1">
+                    <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
                       {TESTIMONIALS[currentTestimonial]?.name || "Alexis Carmichael"}
                     </div>
-                    <div className="font-subheading text-sm text-[#6B7280]">
+                    <div className="font-subheading text-sm text-[#5F6148]">
                       {TESTIMONIALS[currentTestimonial]?.role || "Manhattanville University MFA student in fiction"}
                     </div>
                   </div>
@@ -595,7 +589,7 @@ export default function HomePage() {
                       onClick={() => setCurrentTestimonial((prev) => 
                         prev === 0 ? (TESTIMONIALS.length - 1) : prev - 1
                       )}
-                      className="w-10 h-10 bg-[#A39F3B]/10 rounded-full flex items-center justify-center hover:bg-[#A39F3B] hover:text-white transition-all"
+                      className="w-10 h-10 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
                     >
                       <ChevronLeft size={20} />
                     </button>
@@ -604,7 +598,7 @@ export default function HomePage() {
                       onClick={() => setCurrentTestimonial((prev) => 
                         (prev + 1) % TESTIMONIALS.length
                       )}
-                      className="w-10 h-10 bg-[#A39F3B]/10 rounded-full flex items-center justify-center hover:bg-[#A39F3B] hover:text-white transition-all"
+                      className="w-10 h-10 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
                     >
                       <ChevronRight size={20} />
                     </button>
@@ -620,8 +614,8 @@ export default function HomePage() {
                     onClick={() => setCurrentTestimonial(index)}
                     className={`h-1 rounded-full transition-all ${
                       index === currentTestimonial 
-                        ? 'w-8 bg-[#A39F3B]' 
-                        : 'w-2 bg-[#A39F3B]/30'
+                        ? 'w-8 bg-[#B7C83E]' 
+                        : 'w-2 bg-[#B7C83E]/30'
                     }`}
                   />
                 ))}
@@ -631,7 +625,7 @@ export default function HomePage() {
         </section>
 
         {/* Press & Praise Section */}
-        <section className="relative bg-gradient-to-b from-white to-[#F9FAFB] px-4 py-16 md:py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
           <div 
             className="absolute inset-0 opacity-[2%]"
@@ -644,14 +638,14 @@ export default function HomePage() {
           ></div>
           
           {/* Background Elements */}
-          <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#A39F3B]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
 
           <div className="max-w-6xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#A39F3B]/20 to-transparent rounded-full flex items-center justify-center border border-[#A39F3B]/30">
-                  <Star size={24} className="text-[#A39F3B]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <Star size={24} className="text-[#B7C83E]" />
                 </div>
               </div>
               
@@ -659,7 +653,7 @@ export default function HomePage() {
                 Press & <span className="text-gradient">Praise</span>
               </h2>
               
-              <p className="font-['Lato'] text-lg md:text-xl text-[#6B7280] font-semibold max-w-2xl mx-auto">
+              <p className="font-['Lato'] text-lg md:text-xl text-[#5F6148] font-semibold max-w-2xl mx-auto">
                 What critics and publications are saying
               </p>
             </div>
@@ -675,7 +669,7 @@ export default function HomePage() {
                       : 'opacity-0 translate-y-8'
                   }`}
                 >
-                  <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-[#A39F3B]/10 relative">
+                  <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-[#E3E7C8] relative">
                     {/* Dust Texture in Card */}
                     <div 
                       className="absolute inset-0 rounded-2xl opacity-[1%]"
@@ -687,18 +681,18 @@ export default function HomePage() {
                       }}
                     ></div>
                     <div className="relative z-10">
-                      <p className="font-italic text-lg md:text-xl text-[#374151] italic text-center mb-6 leading-relaxed">
+                      <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic text-center mb-6 leading-relaxed">
                         "{quote}"
                       </p>
                       
                       {/* Decorative Line */}
                       <div className="flex items-center justify-center gap-4 mb-4">
-                        <div className="w-12 h-0.5 bg-[#A39F3B]"></div>
-                        <div className="w-2 h-2 bg-[#A39F3B] rounded-full"></div>
-                        <div className="w-12 h-0.5 bg-[#A39F3B]"></div>
+                        <div className="w-12 h-0.5 bg-[#B7C83E]"></div>
+                        <div className="w-2 h-2 bg-[#B7C83E] rounded-full"></div>
+                        <div className="w-12 h-0.5 bg-[#B7C83E]"></div>
                       </div>
                       
-                      <p className="font-subheading text-center text-[#6B7280] italic">
+                      <p className="font-subheading text-center text-[#5F6148] italic">
                         On "The Strangest of Fruit"
                       </p>
                     </div>
@@ -717,7 +711,7 @@ export default function HomePage() {
               ].map((pub, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 text-center shadow-sm border border-[#A39F3B]/10 hover-lift transition-all cursor-pointer group relative"
+                  className="bg-white rounded-xl p-6 text-center shadow-sm border border-[#E3E7C8] hover-lift transition-all cursor-pointer group relative"
                 >
                   {/* Dust Texture in Card */}
                   <div 
@@ -729,12 +723,12 @@ export default function HomePage() {
                       backgroundSize: 'cover',
                     }}
                   ></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#A39F3B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B7C83E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
                   <div className="relative z-10">
                     <div className="font-bold text-xl md:text-2xl mb-1" style={{ color: pub.color }}>
                       {pub.name.split(' ')[0]}
                     </div>
-                    <div className="font-subheading text-sm text-[#6B7280] tracking-wide">
+                    <div className="font-subheading text-sm text-[#5F6148] tracking-wide">
                       {pub.name.split(' ').slice(1).join(' ')}
                     </div>
                   </div>
@@ -745,17 +739,8 @@ export default function HomePage() {
             {/* CTA Button */}
             <div className="text-center">
               <Link href="/press" className="inline-block">
-                <button className="px-8 py-4 bg-gradient-to-r from-[#111111] to-[#374151] text-white font-subheading font-semibold rounded-full hover:bg-gradient-to-r hover:from-[#A39F3B] hover:to-[#7C7A34] hover:shadow-[0_15px_40px_rgba(163,159,59,0.3)] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto relative group">
-                  {/* Dust Texture on Button */}
-                  <div 
-                    className="absolute inset-0 rounded-full opacity-[5%] group-hover:opacity-[10%] transition-opacity"
-                    style={{
-                      backgroundImage: 'url(/images/dust.jpg)',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'cover',
-                    }}
-                  ></div>
+                <button className="px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.3)] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto relative group border border-[#E3E7C8]">
+                 
                   <span className="relative z-10">Read Full Features</span>
                   <Book size={20} className="relative z-10" />
                 </button>
@@ -765,46 +750,29 @@ export default function HomePage() {
         </section>
 
         {/* Bottom CTA Section */}
-        <section className="relative bg-gradient-to-br from-[#A39F3B]/8 via-[#7C7A34]/8 to-[#A39F3B]/8 px-4 py-16 md:py-24 overflow-hidden">
-          {/* Dust Texture Overlay */}
-          <div 
-            className="absolute inset-0 opacity-[3%]"
-            style={{
-              backgroundImage: 'url(/images/dust.jpg)',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-            }}
-          ></div>
+        <section className="relative bg-gradient-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 px-4 py-16 md:py-24 overflow-hidden border-t border-[#E3E7C8]">
+          
           
           {/* Top Border */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#A39F3B] to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
           
           {/* Background Pattern */}
-          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#A39F3B]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
 
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Begin Your <span className="text-gradient">Story?</span>
             </h2>
             
-            <p className="font-['Lato'] text-lg md:text-xl text-[#6B7280] font-semibold mb-8 max-w-2xl mx-auto">
+            <p className="font-['Lato'] text-lg md:text-xl text-[#5F6148] font-semibold mb-8 max-w-2xl mx-auto">
               Whether you're seeking mentorship, consultation, or collaboration, let's create something meaningful together.
             </p>
             
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Link href="/consulting" className="w-full md:w-auto">
-                <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#A39F3B] to-[#7C7A34] text-white font-subheading text-lg font-semibold rounded-full hover:shadow-[0_20px_50px_rgba(163,159,59,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale relative">
-                  {/* Dust Texture on Button */}
-                  <div 
-                    className="absolute inset-0 rounded-full opacity-[5%] group-hover:opacity-[10%] transition-opacity"
-                    style={{
-                      backgroundImage: 'url(/images/dust.jpg)',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'cover',
-                    }}
-                  ></div>
+                <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_20px_50px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale relative border border-[#E3E7C8]">
+                  
+                  
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     Start Consultation
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -813,17 +781,8 @@ export default function HomePage() {
               </Link>
               
               <Link href="/contact" className="w-full md:w-auto">
-                <button className="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#111111] text-[#111111] font-subheading text-lg font-semibold rounded-full hover:bg-[#111111] hover:text-white hover:border-[#111111] transition-all duration-300 active:scale-95 touch-target hover-scale relative">
-                  {/* Dust Texture on Button */}
-                  <div 
-                    className="absolute inset-0 rounded-full opacity-[2%] group-hover:opacity-[5%] transition-opacity"
-                    style={{
-                      backgroundImage: 'url(/images/dust.jpg)',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'cover',
-                    }}
-                  ></div>
+                <button className="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-[#F9FAF4] hover:border-[#2E2F1F] transition-all duration-300 active:scale-95 touch-target hover-scale relative">
+                
                   <span className="relative z-10 flex items-center justify-center">
                     Get In Touch
                   </span>
@@ -834,13 +793,13 @@ export default function HomePage() {
         </section>
       </main>
 
-      <Footer />
+      
 
       {/* Scroll to Top Button */}
       {isClient && showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 z-50 w-12 h-12 bg-gradient-to-br from-[#A39F3B] to-[#7C7A34] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform touch-target hover-scale relative"
+          className="fixed bottom-4 right-4 z-50 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform touch-target hover-scale relative border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
           {/* Dust Texture on Button */}
@@ -853,9 +812,10 @@ export default function HomePage() {
               backgroundSize: 'cover',
             }}
           ></div>
-          <ChevronUp size={20} className="text-white relative z-10" />
+          <ChevronUp size={20} className="text-[#2E2F1F] relative z-10" />
         </button>
       )}
+      <Footer />
     </div>
   )
 }
