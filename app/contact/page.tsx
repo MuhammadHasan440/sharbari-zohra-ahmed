@@ -73,7 +73,7 @@ function ContactForm() {
   return (
     <>
       {/* Mobile Tabs Navigation */}
-      <div className="sticky top-16 z-30 bg-[#FFF9EB] border-b border-[#D4AF37]/20 shadow-sm lg:hidden">
+      <div className="sticky top-16 z-30 bg-[#F9FAF4] border-b border-[#E3E7C8] shadow-sm lg:hidden">
         <div className="overflow-x-auto">
           <div className="flex min-w-max">
             {tabs.map((tab) => (
@@ -82,8 +82,8 @@ function ContactForm() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 mobile-transition ${
                   activeTab === tab.id
-                    ? 'border-[#7A1F26] text-[#7A1F26]'
-                    : 'border-transparent text-[#1A1A1A]/70 hover:text-[#7A1F26]'
+                    ? 'border-[#B7C83E] text-[#2E2F1F]'
+                    : 'border-transparent text-[#5F6148] hover:text-[#2E2F1F]'
                 }`}
               >
                 {tab.label}
@@ -94,23 +94,23 @@ function ContactForm() {
       </div>
 
       {/* Contact Content */}
-      <div className="py-12 mobile-padding bg-[#FFF9EB]">
+      <div className="py-12 mobile-padding bg-[#F9FAF4]">
         {/* Form Section (Mobile: Conditional, Desktop: Always) */}
-        <div className={`lg:block ${activeTab === 'form' || window.innerWidth >= 1024 ? 'block' : 'hidden'}`}>
+        <div className={`lg:block ${activeTab === 'form' || (typeof window !== 'undefined' && window.innerWidth >= 1024) ? 'block' : 'hidden'}`}>
           <div className="space-y-8">
             {submitted ? (
-              <div className="relative p-6 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37] rounded-xl space-y-6">
+              <div className="relative p-6 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#B7C83E] rounded-xl space-y-6">
                 
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-full flex items-center justify-center">
-                  <Send className="text-[#FFF9EB]" size={24} />
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <Send className="text-white" size={24} />
                 </div>
                 
                 <div className="text-center space-y-4">
-                  <h3 className="text-2xl font-bold text-[#1A1A1A]">Message Sent Successfully!</h3>
-                  <p className="text-[#1A1A1A]/70">
+                  <h3 className="text-2xl font-bold text-[#2E2F1F]">Message Sent Successfully!</h3>
+                  <p className="text-[#5F6148]">
                     Thank you for reaching out. I'll get back to you within 2-3 business days.
                   </p>
-                  <p className="text-[#1A1A1A]/60 text-sm">
+                  <p className="text-[#5F6148] text-sm">
                     In the meantime, check out my latest work or subscribe to my Substack for updates.
                   </p>
                 </div>
@@ -118,7 +118,7 @@ function ContactForm() {
                 <div className="flex flex-col gap-3 pt-4">
                   <Link
                     href="/blog"
-                    className="px-5 py-3 bg-gradient-to-r from-[#7A1F26] to-[#9D2935] text-[#FFF9EB] rounded-lg active:scale-95 mobile-transition text-center"
+                    className="px-5 py-3 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] rounded-lg active:scale-95 mobile-transition text-center border border-[#E3E7C8]"
                   >
                     Read Blog
                   </Link>
@@ -126,7 +126,7 @@ function ContactForm() {
                     href="https://sharbariahmed.substack.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 border-2 border-[#D4AF37] text-[#D4AF37] rounded-lg active:scale-95 mobile-transition text-center"
+                    className="px-5 py-3 border-2 border-[#B7C83E] text-[#B7C83E] rounded-lg active:scale-95 mobile-transition text-center border border-[#E3E7C8]"
                   >
                     Visit Substack
                   </Link>
@@ -134,19 +134,19 @@ function ContactForm() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="p-6 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-xl">
+                <div className="p-6 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                      <Send className="text-[#FFF9EB]" size={20} />
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                      <Send className="text-white" size={20} />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1A1A1A]">Send a Message</h3>
+                    <h3 className="text-xl font-bold text-[#2E2F1F]">Send a Message</h3>
                   </div>
 
                   <div className="space-y-5">
                     {/* Name & Email */}
                     <div className="space-y-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-[#7A1F26] mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-[#6F7F1E] mb-2">
                           Name *
                         </label>
                         <input
@@ -156,13 +156,13 @@ function ContactForm() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-[#D4AF37]/30 rounded-lg bg-[#FFF9EB] text-[#1A1A1A] placeholder-[#1A1A1A]/50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent mobile-transition"
+                          className="w-full px-4 py-3 border border-[#E3E7C8] rounded-lg bg-white text-[#2E2F1F] placeholder-[#5F6148] focus:outline-none focus:ring-2 focus:ring-[#B7C83E] focus:border-transparent mobile-transition"
                           placeholder="Your name"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-[#7A1F26] mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-[#6F7F1E] mb-2">
                           Email *
                         </label>
                         <input
@@ -172,7 +172,7 @@ function ContactForm() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-[#D4AF37]/30 rounded-lg bg-[#FFF9EB] text-[#1A1A1A] placeholder-[#1A1A1A]/50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent mobile-transition"
+                          className="w-full px-4 py-3 border border-[#E3E7C8] rounded-lg bg-white text-[#2E2F1F] placeholder-[#5F6148] focus:outline-none focus:ring-2 focus:ring-[#B7C83E] focus:border-transparent mobile-transition"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -180,7 +180,7 @@ function ContactForm() {
 
                     {/* Service Type */}
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-[#7A1F26] mb-2">
+                      <label htmlFor="service" className="block text-sm font-medium text-[#6F7F1E] mb-2">
                         Type of Inquiry
                       </label>
                       <select
@@ -188,7 +188,7 @@ function ContactForm() {
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-[#D4AF37]/30 rounded-lg bg-[#FFF9EB] text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent mobile-transition"
+                        className="w-full px-4 py-3 border border-[#E3E7C8] rounded-lg bg-white text-[#2E2F1F] focus:outline-none focus:ring-2 focus:ring-[#B7C83E] focus:border-transparent mobile-transition"
                       >
                         <option value="">Select an option</option>
                         <option value="general">General Inquiry</option>
@@ -202,7 +202,7 @@ function ContactForm() {
 
                     {/* Subject */}
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-[#7A1F26] mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-[#6F7F1E] mb-2">
                         Subject *
                       </label>
                       <input
@@ -212,14 +212,14 @@ function ContactForm() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-[#D4AF37]/30 rounded-lg bg-[#FFF9EB] text-[#1A1A1A] placeholder-[#1A1A1A]/50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent mobile-transition"
+                        className="w-full px-4 py-3 border border-[#E3E7C8] rounded-lg bg-white text-[#2E2F1F] placeholder-[#5F6148] focus:outline-none focus:ring-2 focus:ring-[#B7C83E] focus:border-transparent mobile-transition"
                         placeholder="What would you like to discuss?"
                       />
                     </div>
 
                     {/* Message */}
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-[#7A1F26] mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-[#6F7F1E] mb-2">
                         Message *
                       </label>
                       <textarea
@@ -229,14 +229,14 @@ function ContactForm() {
                         onChange={handleChange}
                         required
                         rows={4}
-                        className="w-full px-4 py-3 border border-[#D4AF37]/30 rounded-lg bg-[#FFF9EB] text-[#1A1A1A] placeholder-[#1A1A1A]/50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent mobile-transition resize-none"
+                        className="w-full px-4 py-3 border border-[#E3E7C8] rounded-lg bg-white text-[#2E2F1F] placeholder-[#5F6148] focus:outline-none focus:ring-2 focus:ring-[#B7C83E] focus:border-transparent mobile-transition resize-none"
                         placeholder="Tell me more about your inquiry, project, or question..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#7A1F26] to-[#9D2935] text-[#FFF9EB] font-medium rounded-lg active:scale-95 mobile-transition"
+                      className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 mobile-transition border border-[#E3E7C8]"
                     >
                       Send Message
                       <Send size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -249,15 +249,15 @@ function ContactForm() {
         </div>
 
         {/* FAQ Section (Mobile: Conditional, Desktop: Always) */}
-        <div className={`lg:block mt-12 ${activeTab === 'faq' || window.innerWidth >= 1024 ? 'block' : 'hidden'}`}>
+        <div className={`lg:block mt-12 ${activeTab === 'faq' || (typeof window !== 'undefined' && window.innerWidth >= 1024) ? 'block' : 'hidden'}`}>
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                <MessageSquare size={20} className="text-[#FFF9EB]" />
+              <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                <MessageSquare size={20} className="text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">Frequently Asked Questions</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#7A1F26] to-transparent mt-1"></div>
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">Frequently Asked Questions</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
 
@@ -267,23 +267,23 @@ function ContactForm() {
                 return (
                   <details 
                     key={index} 
-                    className="group bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-lg mobile-transition"
+                    className="group bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg mobile-transition hover:border-[#B7C83E]"
                   >
                     <summary className="flex items-center justify-between p-4 cursor-pointer">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-[#D4AF37]/20 to-[#F4C430]/20 rounded flex items-center justify-center flex-shrink-0">
-                          <Icon className="text-[#7A1F26]" size={14} />
+                        <div className="w-8 h-8 bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]">
+                          <Icon className="text-[#5F6148]" size={14} />
                         </div>
-                        <h3 className="text-[#1A1A1A] font-medium text-sm group-open:text-[#7A1F26] mobile-transition">
+                        <h3 className="text-[#2E2F1F] font-medium text-sm group-open:text-[#6F7F1E] mobile-transition">
                           {item.question}
                         </h3>
                       </div>
-                      <span className="text-lg font-bold text-[#D4AF37] group-open:rotate-45 mobile-transition flex-shrink-0">
+                      <span className="text-lg font-bold text-[#B7C83E] group-open:rotate-45 mobile-transition flex-shrink-0">
                         +
                       </span>
                     </summary>
                     <div className="px-4 pb-4 ml-11">
-                      <p className="text-[#1A1A1A]/70 text-sm">
+                      <p className="text-[#5F6148] text-sm">
                         {item.answer}
                       </p>
                     </div>
@@ -295,30 +295,30 @@ function ContactForm() {
         </div>
 
         {/* Connect Section (Mobile: Conditional, Desktop: Always) */}
-        <div className={`lg:block mt-12 ${activeTab === 'connect' || window.innerWidth >= 1024 ? 'block' : 'hidden'}`}>
+        <div className={`lg:block mt-12 ${activeTab === 'connect' || (typeof window !== 'undefined' && window.innerWidth >= 1024) ? 'block' : 'hidden'}`}>
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                  <Users size={20} className="text-[#FFF9EB]" />
+                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <Users size={20} className="text-white" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#1A1A1A]">Other Ways to Connect</h2>
-                  <div className="h-1 w-16 bg-gradient-to-r from-[#D4AF37] to-transparent mt-1"></div>
+                  <h2 className="text-3xl font-bold text-[#2E2F1F]">Other Ways to Connect</h2>
+                  <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <a
                   href="mailto:hello@example.com"
-                  className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-lg active:scale-95 mobile-transition"
+                  className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg active:scale-95 mobile-transition hover:border-[#B7C83E]"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                    <Mail className="text-[#FFF9EB]" size={18} />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Mail className="text-white" size={18} />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-[#1A1A1A]/60 mb-1">Email</p>
-                    <p className="font-medium text-[#7A1F26] group-hover:text-[#D4AF37] mobile-transition">hello@example.com</p>
+                    <p className="text-xs text-[#5F6148] mb-1">Email</p>
+                    <p className="font-medium text-[#6F7F1E] group-hover:text-[#B7C83E] mobile-transition">hello@example.com</p>
                   </div>
                 </a>
 
@@ -326,14 +326,14 @@ function ContactForm() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-lg active:scale-95 mobile-transition"
+                  className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg active:scale-95 mobile-transition hover:border-[#B7C83E]"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                    <Linkedin className="text-[#FFF9EB]" size={18} />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Linkedin className="text-white" size={18} />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-[#1A1A1A]/60 mb-1">LinkedIn</p>
-                    <p className="font-medium text-[#7A1F26] group-hover:text-[#D4AF37] mobile-transition">@sharbariahmed</p>
+                    <p className="text-xs text-[#5F6148] mb-1">LinkedIn</p>
+                    <p className="font-medium text-[#6F7F1E] group-hover:text-[#B7C83E] mobile-transition">@sharbariahmed</p>
                   </div>
                 </a>
 
@@ -341,42 +341,42 @@ function ContactForm() {
                   href="https://sharbariahmed.substack.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-lg active:scale-95 mobile-transition"
+                  className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg active:scale-95 mobile-transition hover:border-[#B7C83E]"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                    <PenTool className="text-[#FFF9EB]" size={18} />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <PenTool className="text-white" size={18} />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-[#1A1A1A]/60 mb-1">Substack</p>
-                    <p className="font-medium text-[#7A1F26] group-hover:text-[#D4AF37] mobile-transition">Subscribe to Newsletter</p>
+                    <p className="text-xs text-[#5F6148] mb-1">Substack</p>
+                    <p className="font-medium text-[#6F7F1E] group-hover:text-[#B7C83E] mobile-transition">Subscribe to Newsletter</p>
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Response Time */}
-            <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/30 rounded-xl">
+            <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
               <div className="flex items-center gap-3 mb-3">
-                <Clock className="text-[#D4AF37]" size={18} />
-                <h3 className="text-lg font-bold text-[#1A1A1A]">Response Time</h3>
+                <Clock className="text-[#B7C83E]" size={18} />
+                <h3 className="text-lg font-bold text-[#2E2F1F]">Response Time</h3>
               </div>
-              <p className="text-[#1A1A1A]/70 text-sm">
+              <p className="text-[#5F6148] text-sm">
                 I typically respond to inquiries within 2-3 business days. For urgent matters, please mark your email as priority.
               </p>
             </div>
 
             {/* Consulting CTA */}
-            <div className="p-5 bg-gradient-to-br from-[#D4AF37]/10 to-[#F4C430]/10 border border-[#D4AF37] rounded-xl">
+            <div className="p-5 bg-gradient-to-br from-[#D9E6A3]/30 to-[#B7C83E]/10 border border-[#B7C83E] rounded-xl">
               <div className="flex items-center gap-3 mb-3">
-                <Sparkles className="text-[#7A1F26]" size={18} />
-                <h3 className="text-lg font-bold text-[#1A1A1A]">Interested in Consulting?</h3>
+                <Sparkles className="text-[#6F7F1E]" size={18} />
+                <h3 className="text-lg font-bold text-[#2E2F1F]">Interested in Consulting?</h3>
               </div>
-              <p className="text-[#1A1A1A]/70 text-sm mb-3">
+              <p className="text-[#5F6148] text-sm mb-3">
                 Learn more about my story consulting packages, mentorship programs, and creative services.
               </p>
               <Link
                 href="/consulting"
-                className="inline-flex items-center gap-1 text-[#7A1F26] hover:text-[#D4AF37] font-medium text-sm"
+                className="inline-flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] font-medium text-sm"
               >
                 View Services
                 <ArrowRight size={14} />
@@ -387,15 +387,15 @@ function ContactForm() {
       </div>
 
       {/* Quote Section */}
-      <section className="py-12 mobile-full-width bg-gradient-to-br from-[#FFF9EB] via-[#F8F0E3] to-[#FFF9EB]">
+      <section className="py-12 mobile-full-width bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
         <div className="mobile-padding">
           <div className="text-center space-y-6">
-            <div className="p-6 border-l-4 border-[#D4AF37] bg-gradient-to-r from-transparent via-[#7A1F26]/5 to-transparent">
-              <p className="text-xl font-subheading italic text-[#1A1A1A]/90 leading-relaxed">
+            <div className="p-6 border-l-4 border-[#B7C83E] bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent">
+              <p className="text-xl font-subheading italic text-[#2E2F1F] leading-relaxed">
                 "Stories remind us who we are—and who we might yet become. I look forward to hearing yours."
               </p>
             </div>
-            <p className="text-[#1A1A1A]/60 font-subheading">— Sharbari Ahmed</p>
+            <p className="text-[#5F6148] font-subheading">— Sharbari Ahmed</p>
           </div>
         </div>
       </section>
@@ -421,7 +421,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFF9EB] text-[#1A1A1A]">
+    <div className="min-h-screen flex flex-col bg-[#F9FAF4] text-[#2E2F1F]">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
         
@@ -477,41 +477,36 @@ export default function ContactPage() {
         {/* Mobile Hero Section */}
         <section className="relative pt-20 pb-12 mobile-full-width"
                  style={{
-                   backgroundImage: `linear-gradient(rgba(122, 31, 38, 0.95), rgba(26, 26, 26, 0.98)), url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`,
-                   backgroundSize: 'cover',
-                   backgroundPosition: 'center',
+                   background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
-          {/* Top Gold Border */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-           <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          {/* Top Olive Border */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          
           <div className="mobile-padding">
             <div className="text-center space-y-6">
               <div className="inline-block">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#FFF9EB]/10 backdrop-blur-sm rounded-full border border-[#D4AF37]/30">
-                
-                  <Mail size={14} className="text-[#D4AF37]" />
-                  <p className="font-subheading text-xs text-[#D4AF37] tracking-widest">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+                  <Mail size={14} className="text-[#B7C83E]" />
+                  <p className="font-subheading text-xs text-[#B7C83E] tracking-widest">
                     GET IN TOUCH
                   </p>
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold text-[#FFF9EB] leading-tight">
+              <h1 className="text-4xl font-bold text-white leading-tight">
                 Let's
                 <br />
-                <span className="text-[#D4AF37]">Connect</span>
+                <span className="text-[#B7C83E]">Connect</span>
               </h1>
 
               {/* Separator */}
               <div className="relative my-6">
-                
-                <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-                
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#D4AF37] rotate-45 bg-[#FFF9EB]"></div>
-                
+                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
-              <p className="font-subheading text-lg text-[#FFF9EB]/90 leading-relaxed px-2">
+              <p className="font-subheading text-lg text-white/90 leading-relaxed px-2">
                 For press, speaking, consulting, or general inquiries, feel free to reach out. I'm always interested in meaningful conversations about storytelling and creative work.
               </p>
             </div>
@@ -522,7 +517,7 @@ export default function ContactPage() {
         <Suspense fallback={
           <div className="py-20 mobile-padding">
             <div className="flex justify-center items-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D4AF37]"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#B7C83E]"></div>
             </div>
           </div>
         }>
@@ -536,10 +531,10 @@ export default function ContactPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
-          <ChevronUp size={20} className="text-[#1A1A1A]" />
+          <ChevronUp size={20} className="text-[#2E2F1F]" />
         </button>
       )}
 
