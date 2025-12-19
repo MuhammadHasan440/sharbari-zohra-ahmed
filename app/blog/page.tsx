@@ -31,7 +31,7 @@ export default function BlogPage() {
       excerpt: "Reflections on displacement, belonging, and the stories we carry across borders.",
       readTime: "8 min read",
       icon: Globe,
-      color: "from-[#D4AF37] to-[#F4C430]",
+      color: "from-[#B7C83E] to-[#6F7F1E]",
       featured: true
     },
     {
@@ -41,7 +41,7 @@ export default function BlogPage() {
       excerpt: "How spirituality shapes the act of creation and what it means to write from a place of belief.",
       readTime: "10 min read",
       icon: PenTool,
-      color: "from-[#7A1F26] to-[#9D2935]"
+      color: "from-[#2E2F1F] to-[#5F6148]"
     },
     {
       title: "Diasporic Longing",
@@ -50,7 +50,7 @@ export default function BlogPage() {
       excerpt: "Exploring the complex emotions of living between two worlds and the art of capturing that feeling.",
       readTime: "12 min read",
       icon: Compass,
-      color: "from-[#D4AF37] to-[#F4C430]"
+      color: "from-[#B7C83E] to-[#6F7F1E]"
     },
     {
       title: "Creativity & Identity",
@@ -59,7 +59,7 @@ export default function BlogPage() {
       excerpt: "The intersection of personal heritage and artistic expression in storytelling.",
       readTime: "6 min read",
       icon: Sparkles,
-      color: "from-[#7A1F26] to-[#9D2935]"
+      color: "from-[#2E2F1F] to-[#5F6148]"
     },
   ]
 
@@ -80,7 +80,7 @@ export default function BlogPage() {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFF9EB] text-[#1A1A1A]">
+    <div className="min-h-screen flex flex-col bg-[#F9FAF4] text-[#2E2F1F]">
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
         
@@ -136,57 +136,56 @@ export default function BlogPage() {
         {/* Mobile Hero Section */}
         <section className="relative pt-20 pb-12 mobile-full-width"
                  style={{
-                   backgroundImage: `linear-gradient(rgba(122, 31, 38, 0.95), rgba(26, 26, 26, 0.98)), url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`,
-                   backgroundSize: 'cover',
-                   backgroundPosition: 'center',
+                   background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
-          {/* Top Gold Border */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-
+          {/* Top Olive Border */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          
           <div className="mobile-padding">
             <div className="text-center space-y-6">
               <div className="inline-block">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#FFF9EB]/10 backdrop-blur-sm rounded-full border border-[#D4AF37]/30">
-                  <PenTool size={14} className="text-[#D4AF37]" />
-                  <p className="font-subheading text-xs text-[#D4AF37] tracking-widest">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+                  <PenTool size={14} className="text-[#B7C83E]" />
+                  <p className="font-subheading text-xs text-[#B7C83E] tracking-widest">
                     ESSAYS & REFLECTIONS
                   </p>
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold text-[#FFF9EB] leading-tight">
+              <h1 className="text-4xl font-bold text-white leading-tight">
                 Notes from
                 <br />
-                <span className="text-[#D4AF37]">the In-Between</span>
+                <span className="text-[#B7C83E]">the In-Between</span>
               </h1>
 
               {/* Separator */}
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#D4AF37] rotate-45 bg-[#FFF9EB]"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
-              <p className="font-subheading text-lg text-[#FFF9EB]/90 leading-relaxed px-2">
+              <p className="font-subheading text-lg text-white/90 leading-relaxed px-2">
                 Reflections on writing, identity, film, faith, creativity, and diasporic life.
               </p>
 
               {/* Stats - Mobile Grid */}
               <div className="grid grid-cols-2 gap-3 pt-6">
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">50+</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Essays Published</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">50+</p>
+                  <p className="text-xs text-white/80">Essays Published</p>
                 </div>
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">5k+</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Readers</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">5k+</p>
+                  <p className="text-xs text-white/80">Readers</p>
                 </div>
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">100%</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Free Content</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">100%</p>
+                  <p className="text-xs text-white/80">Free Content</p>
                 </div>
-                <div className="p-3 bg-[#7A1F26]/20 border border-[#D4AF37]/30 rounded-lg">
-                  <p className="text-xl font-bold text-[#D4AF37]">4</p>
-                  <p className="text-xs text-[#FFF9EB]/80">Categories</p>
+                <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
+                  <p className="text-xl font-bold text-[#B7C83E]">4</p>
+                  <p className="text-xs text-white/80">Categories</p>
                 </div>
               </div>
             </div>
@@ -194,7 +193,7 @@ export default function BlogPage() {
         </section>
 
         {/* Mobile Category Filters */}
-        <div className="sticky top-16 z-30 bg-[#FFF9EB] border-b border-[#D4AF37]/20 shadow-sm">
+        <div className="sticky top-16 z-30 bg-[#F9FAF4] border-b border-[#E3E7C8] shadow-sm">
           <div className="overflow-x-auto">
             <div className="flex min-w-max">
               {categories.map((category) => (
@@ -203,8 +202,8 @@ export default function BlogPage() {
                   onClick={() => setActiveCategory(category.id)}
                   className={`px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 mobile-transition ${
                     activeCategory === category.id
-                      ? 'border-[#7A1F26] text-[#7A1F26]'
-                      : 'border-transparent text-[#1A1A1A]/70 hover:text-[#7A1F26]'
+                      ? 'border-[#B7C83E] text-[#2E2F1F]'
+                      : 'border-transparent text-[#5F6148] hover:text-[#2E2F1F]'
                   }`}
                 >
                   {category.label}
@@ -218,12 +217,12 @@ export default function BlogPage() {
         <section className="py-12 mobile-padding">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                <BookOpen size={20} className="text-[#FFF9EB]" />
+              <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                <BookOpen size={20} className="text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">Featured Essays</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#7A1F26] to-transparent mt-1"></div>
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">Featured Essays</h2>
+                <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
 
@@ -235,40 +234,40 @@ export default function BlogPage() {
                   return (
                     <article
                       key={index}
-                      className={`relative p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border rounded-xl mobile-transition ${
-                        article.featured ? 'border-[#D4AF37] shadow-lg' : 'border-[#D4AF37]/30'
+                      className={`relative p-5 bg-gradient-to-br from-[#F9FAF4] to-white border rounded-xl mobile-transition ${
+                        article.featured ? 'border-[#B7C83E] shadow-lg' : 'border-[#E3E7C8]'
                       }`}
                     >
                       {article.featured && (
-                        <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#D4AF37] to-[#F4C430] rounded-full">
-                          <p className="text-xs font-bold text-[#1A1A1A]">FEATURED</p>
+                        <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
+                          <p className="text-xs font-bold text-[#2E2F1F]">FEATURED</p>
                         </div>
                       )}
 
                       <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 bg-gradient-to-br ${article.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                          <Icon className="text-[#FFF9EB]" size={20} />
+                        <div className={`w-12 h-12 bg-gradient-to-br ${article.color} rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]`}>
+                          <Icon className="text-white" size={20} />
                         </div>
 
                         <div className="space-y-3 flex-1">
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="px-2 py-0.5 bg-[#7A1F26]/10 text-[#7A1F26] text-xs rounded-full">
+                            <span className="px-2 py-0.5 bg-[#D9E6A3]/30 text-[#5F6148] text-xs rounded-full">
                               Essay
                             </span>
-                            <div className="flex items-center gap-1 text-[#1A1A1A]/60 text-xs">
+                            <div className="flex items-center gap-1 text-[#5F6148] text-xs">
                               <Calendar size={10} />
                               <span>{article.date}</span>
                             </div>
-                            <div className="text-xs text-[#D4AF37] font-medium">
+                            <div className="text-xs text-[#B7C83E] font-medium">
                               {article.readTime}
                             </div>
                           </div>
 
-                          <h3 className="text-lg font-bold text-[#1A1A1A] hover:text-[#7A1F26]">
+                          <h3 className="text-lg font-bold text-[#2E2F1F] hover:text-[#6F7F1E]">
                             {article.title}
                           </h3>
 
-                          <p className="text-[#1A1A1A]/70 text-sm">
+                          <p className="text-[#5F6148] text-sm">
                             {article.excerpt}
                           </p>
 
@@ -277,7 +276,7 @@ export default function BlogPage() {
                               href="https://sharbariahmed.substack.com"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-[#7A1F26] hover:text-[#D4AF37] text-sm font-medium"
+                              className="inline-flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] text-sm font-medium"
                             >
                               Read Full Essay
                               <ArrowRight size={12} />
@@ -295,7 +294,7 @@ export default function BlogPage() {
                 href="https://sharbariahmed.substack.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7A1F26] to-[#9D2935] text-[#FFF9EB] font-medium rounded-lg active:scale-95 mobile-transition"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 mobile-transition border border-[#E3E7C8]"
               >
                 Visit Substack Archive
                 <ExternalLink size={16} />
@@ -305,16 +304,16 @@ export default function BlogPage() {
         </section>
 
         {/* Topics Grid - Mobile Optimized */}
-        <section className="py-12 mobile-full-width bg-gradient-to-b from-[#FFF9EB] to-[#F8F0E3]">
+        <section className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
           <div className="mobile-padding">
             <div className="space-y-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                  <PenTool size={20} className="text-[#FFF9EB]" />
+                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <PenTool size={20} className="text-white" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#1A1A1A]">Topics I Explore</h2>
-                  <div className="h-1 w-16 bg-gradient-to-r from-[#7A1F26] to-transparent mt-1"></div>
+                  <h2 className="text-3xl font-bold text-[#2E2F1F]">Topics I Explore</h2>
+                  <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
                 </div>
               </div>
 
@@ -325,21 +324,21 @@ export default function BlogPage() {
                     onClick={() => setActiveCategory(topic.id === "all" ? "all" : topic.id)}
                     className={`p-4 rounded-lg border mobile-transition text-left ${
                       activeCategory === topic.id
-                        ? 'border-[#D4AF37] bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] shadow-sm'
-                        : 'border-[#D4AF37]/20 bg-[#FFF9EB]'
+                        ? 'border-[#B7C83E] bg-gradient-to-br from-[#F9FAF4] to-white shadow-sm'
+                        : 'border-[#E3E7C8] bg-white'
                     }`}
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="text-2xl">{topic.icon}</span>
                         <div className={`w-1.5 h-1.5 rounded-full ${
-                          activeCategory === topic.id ? 'bg-[#D4AF37]' : 'bg-transparent'
+                          activeCategory === topic.id ? 'bg-[#B7C83E]' : 'bg-transparent'
                         }`}></div>
                       </div>
                       
-                      <h3 className="font-bold text-[#1A1A1A] text-sm">{topic.title}</h3>
+                      <h3 className="font-bold text-[#2E2F1F] text-sm">{topic.title}</h3>
                       
-                      <p className="text-[#1A1A1A]/50 text-xs">{topic.count} essays</p>
+                      <p className="text-[#5F6148] text-xs">{topic.count} essays</p>
                     </div>
                   </button>
                 ))}
@@ -349,21 +348,21 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Signup - Mobile Optimized */}
-        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#FFF9EB] via-[#F8F0E3] to-[#FFF9EB]">
+        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
               <div className="space-y-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-lg flex items-center justify-center">
-                  <MessageSquare size={28} className="text-[#FFF9EB]" />
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <MessageSquare size={28} className="text-white" />
                 </div>
                 
-                <h2 className="text-3xl font-bold text-[#1A1A1A]">
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">
                   Subscribe to
                   <br />
-                  <span className="text-[#7A1F26]">My Newsletter</span>
+                  <span className="text-[#6F7F1E]">My Newsletter</span>
                 </h2>
                 
-                <p className="text-[#1A1A1A]/70 font-subheading">
+                <p className="text-[#5F6148] font-subheading">
                   Get essays about writing, identity, creativity, and diasporic life. Join a community of writers and storytelling enthusiasts.
                 </p>
               </div>
@@ -373,13 +372,13 @@ export default function BlogPage() {
                   href="https://sharbariahmed.substack.com/subscribe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-4 px-6 bg-gradient-to-r from-[#7A1F26] to-[#9D2935] text-[#FFF9EB] font-medium rounded-lg active:scale-95 mobile-transition text-center"
+                  className="block w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 mobile-transition text-center border border-[#E3E7C8]"
                 >
                   Subscribe Now
                 </Link>
                 
-                <div className="p-4 bg-gradient-to-r from-transparent via-[#7A1F26]/5 to-transparent rounded-lg border border-[#D4AF37]/20">
-                  <p className="text-xs text-[#1A1A1A]/60">
+                <div className="p-4 bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent rounded-lg border border-[#E3E7C8]">
+                  <p className="text-xs text-[#5F6148]">
                     New essays published regularly • Free content always • Unsubscribe anytime
                   </p>
                 </div>
@@ -392,49 +391,49 @@ export default function BlogPage() {
         <section className="py-12 mobile-padding">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-[#1A1A1A]">
+              <h2 className="text-3xl font-bold text-[#2E2F1F]">
                 Explore
                 <br />
-                <span className="text-[#7A1F26]">The Archive</span>
+                <span className="text-[#6F7F1E]">The Archive</span>
               </h2>
-              <p className="text-[#1A1A1A]/70 font-subheading">
+              <p className="text-[#5F6148] font-subheading">
                 Years of writing on culture, creativity, and the human experience. All essays are free to read.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-              <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
+              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37]/20 to-[#F4C430]/20 rounded-lg flex items-center justify-center">
-                    <BookOpen size={18} className="text-[#7A1F26]" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <BookOpen size={18} className="text-[#5F6148]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#7A1F26]">Latest Essays</h3>
-                    <p className="text-[#1A1A1A]/60 text-xs">Most recent reflections and insights</p>
+                    <h3 className="font-bold text-[#5F6148]">Latest Essays</h3>
+                    <p className="text-[#5F6148]/70 text-xs">Most recent reflections and insights</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
+              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37]/20 to-[#F4C430]/20 rounded-lg flex items-center justify-center">
-                    <Sparkles size={18} className="text-[#7A1F26]" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Sparkles size={18} className="text-[#5F6148]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#7A1F26]">Popular Series</h3>
-                    <p className="text-[#1A1A1A]/60 text-xs">Multi-part essays and themed collections</p>
+                    <h3 className="font-bold text-[#5F6148]">Popular Series</h3>
+                    <p className="text-[#5F6148]/70 text-xs">Multi-part essays and themed collections</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-5 bg-gradient-to-br from-[#FFF9EB] to-[#F8F0E3] border border-[#D4AF37]/20 rounded-xl">
+              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37]/20 to-[#F4C430]/20 rounded-lg flex items-center justify-center">
-                    <PenTool size={18} className="text-[#7A1F26]" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <PenTool size={18} className="text-[#5F6148]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#7A1F26]">Writer's Notes</h3>
-                    <p className="text-[#1A1A1A]/60 text-xs">Behind-the-scenes of the creative process</p>
+                    <h3 className="font-bold text-[#5F6148]">Writer's Notes</h3>
+                    <p className="text-[#5F6148]/70 text-xs">Behind-the-scenes of the creative process</p>
                   </div>
                 </div>
               </div>
@@ -445,7 +444,7 @@ export default function BlogPage() {
                 href="https://sharbariahmed.substack.com/archive"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#D4AF37] hover:text-[#1A1A1A] mobile-transition text-sm font-medium"
+                className="inline-flex items-center gap-2 px-5 py-2 border border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-gradient-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] mobile-transition text-sm font-medium border border-[#E3E7C8]"
               >
                 Browse Full Archive
                 <ExternalLink size={14} />
@@ -461,10 +460,10 @@ export default function BlogPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4C430] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
-          <ChevronUp size={20} className="text-[#1A1A1A]" />
+          <ChevronUp size={20} className="text-[#2E2F1F]" />
         </button>
       )}
 
