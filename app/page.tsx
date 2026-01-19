@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -109,6 +109,39 @@ export default function HomePage() {
     "These stories resonate with the quiet power of lived experience.",
     "A vital voice in contemporary literature.",
     "Masterful storytelling that crosses borders and boundaries."
+  ]
+
+  // New awards data
+  const AWARDS = [
+    {
+      id: 1,
+      title: "Winner: Best Unproduced Feature Screenplay",
+      organization: "Istanbul Women Films Awards",
+      year: "2026",
+      description: "Recognized for outstanding screenplay writing in the unproduced feature category.",
+      image: "/images/istanbul.png",
+      category: "screenplay",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Best Pilot Script",
+      organization: "Season October - December 2025",
+      year: "2025",
+      description: "Awarded for 'Bombay Duck' - an exceptional television pilot script.",
+      image: "/images/pilot.png",
+      category: "television",
+      scriptName: "Bombay Duck"
+    },
+    {
+      id: 3,
+      title: "Nominated",
+      organization: "Jaipur International Film Festival (JIFF)",
+      year: "2026",
+      description: "Official selection and nomination at one of India's premier film festivals.",
+      image: "/images/jiff.png",
+      category: "film festival"
+    }
   ]
 
   // Testimonial slider auto-rotate
@@ -342,7 +375,7 @@ export default function HomePage() {
         </section>
 
         {/* Featured Works Section */}
-        <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
+        <section id="work" className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
           <div 
             className="absolute inset-0 opacity-[3%]"
@@ -513,6 +546,149 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* New Awards Section */}
+        <section className="relative bg-gradient-to-b from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
+          {/* Dust Texture Overlay */}
+          <div 
+            className="absolute inset-0 opacity-[2%]"
+            style={{
+              backgroundImage: 'url(/images/dust.jpg)',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              mixBlendMode: 'overlay'
+            }}
+          ></div>
+          
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+          
+          {/* Floating Elements */}
+          <div className="absolute -top-10 -right-10 w-40 h-40 border border-[#B7C83E]/20 rounded-full animate-spin"></div>
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 border border-[#B7C83E]/10 rounded-full animate-float"></div>
+
+          <div className="max-w-6xl mx-auto relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center justify-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <Trophy size={24} className="text-[#B7C83E]" />
+                </div>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Awards & <span className="text-gradient">Recognition</span>
+              </h2>
+              
+              <p className="font-['Lato'] text-lg md:text-xl text-[#D1D5DB] font-semibold max-w-2xl mx-auto">
+                Recent accolades and recognition for screenwriting excellence
+              </p>
+            </div>
+
+            {/* Awards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+              {AWARDS.map((award) => (
+                <div 
+                  key={award.id}
+                  className="bg-[#F9FAF4] rounded-2xl overflow-hidden shadow-xl hover-lift transition-all group border border-[#E3E7C8]"
+                >
+                  {/* Award Image */}
+                  <div className="relative h-48 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+                    <Image
+                      src={award.image}
+                      alt={`${award.title} - ${award.organization}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    
+                    {/* Award Badge */}
+                    <div className="absolute top-4 left-4">
+                      <div className={`px-3 py-1.5 rounded-full backdrop-blur-sm border ${
+                        award.featured 
+                          ? 'bg-[#B7C83E]/20 border-[#B7C83E]' 
+                          : 'bg-black/40 border-[#E3E7C8]'
+                      }`}>
+                        <span className={`font-subheading text-xs font-semibold uppercase tracking-wider ${
+                          award.featured ? 'text-[#B7C83E]' : 'text-white'
+                        }`}>
+                          {award.featured ? 'Winner' : award.title.includes('Nominated') ? 'Nominee' : 'Award'}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Year Badge */}
+                    <div className="absolute top-4 right-4">
+                      <div className="w-12 h-12 bg-[#B7C83E] rounded-full flex items-center justify-center border border-white shadow-lg">
+                        <span className="font-bold text-white text-sm">{award.year}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Award Details */}
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h4 className="text-lg font-bold text-[#2E2F1F] mb-1">
+                          {award.title}
+                        </h4>
+                        
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-6 h-6 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                            <Award size={12} className="text-[#B7C83E]" />
+                          </div>
+                          <span className="font-subheading text-sm font-semibold text-[#B7C83E]">
+                            {award.organization}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-[#5F6148] text-sm mb-4">
+                      {award.description}
+                    </p>
+                    
+                    {award.scriptName && (
+                      <div className="mt-4 pt-4 border-t border-[#E3E7C8]">
+                        <div className="font-subheading text-sm font-semibold text-[#2E2F1F] mb-1">
+                          Script:
+                        </div>
+                        <div className="text-[#B7C83E] font-subheading font-semibold text-sm">
+                          "{award.scriptName}"
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Category Tag */}
+                    <div className="mt-4">
+                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${
+                        award.category === 'screenplay' 
+                          ? 'bg-[#B7C83E]/10 text-[#6F7F1E]' 
+                          : award.category === 'television'
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-purple-100 text-purple-700'
+                      }`}>
+                        <span className="text-xs font-semibold uppercase tracking-wider">
+                          {award.category === 'screenplay' ? 'Screenplay' : 
+                           award.category === 'television' ? 'Television' : 'Film Festival'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            
+          </div>
+        </section>
+
         {/* Testimonials Section */}
         <section className="relative bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
@@ -532,7 +708,7 @@ export default function HomePage() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
 
-          <div className="max-w-4xl mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
@@ -550,76 +726,161 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Testimonial Slider */}
-            <div className="bg-[#F9FAF4] rounded-3xl p-8 md:p-12 shadow-2xl border border-[#E3E7C8]">
-              {/* Dust Texture Background */}
-              <div 
-                className="absolute inset-0 opacity-[2%] rounded-3xl"
-                style={{
-                  backgroundImage: 'url(/images/dust.jpg)',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                }}
-              ></div>
-              
-              {/* Quote Mark */}
-              <div className="absolute top-8 left-8 text-6xl font-['Playfair_Display'] text-[#B7C83E]/10">
-                "
-              </div>
-              
-              <div className="relative z-10">
-                <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-6 md:mb-8 leading-relaxed">
-                  {TESTIMONIALS[currentTestimonial]?.quote || "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…"}
-                </p>
+            {/* Testimonial Grid - Updated with Video */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Video Testimonial */}
+              <div className="bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden">
+                {/* Dust Texture Background */}
+                <div 
+                  className="absolute inset-0 opacity-[2%] rounded-3xl"
+                  style={{
+                    backgroundImage: 'url(/images/dust.jpg)',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                  }}
+                ></div>
                 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <div>
-                    <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
-                      {TESTIMONIALS[currentTestimonial]?.name || "Alexis Carmichael"}
+                <div className="relative z-10">
+                  {/* Video Header */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                      <Play size={18} className="text-[#B7C83E]" />
                     </div>
-                    <div className="font-subheading text-sm text-[#5F6148]">
-                      {TESTIMONIALS[currentTestimonial]?.role || "Manhattanville University MFA student in fiction"}
+                    <div>
+                      <h3 className="font-bold text-lg text-[#2E2F1F]">Video Testimonial</h3>
+                      <p className="text-sm text-[#5F6148]">Hear directly from students</p>
                     </div>
                   </div>
                   
-                  {/* Testimonial Navigation */}
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setCurrentTestimonial((prev) => 
-                        prev === 0 ? (TESTIMONIALS.length - 1) : prev - 1
-                      )}
-                      className="w-10 h-10 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                  {/* Video Container */}
+                  <div className="relative rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937]">
+                    {/* Video */}
+                    <video 
+                      className="w-full h-64 md:h-80 object-cover"
+                      autoPlay
+                      muted
+                      playsInline
+                      loop
+                      controls
+                      poster="/images/video-thumbnail.jpg"
+                      onMouseEnter={(e) => e.currentTarget.play()}
+                      onMouseLeave={(e) => e.currentTarget.pause()}
                     >
-                      <ChevronLeft size={20} />
-                    </button>
+                      <source src="/videos/amanda.mov" type="video/mp4" />
+                      <source src="/videos/amanda.mov" type="video/quicktime" />
+                      Your browser does not support the video tag.
+                    </video>
                     
-                    <button
-                      onClick={() => setCurrentTestimonial((prev) => 
-                        (prev + 1) % TESTIMONIALS.length
-                      )}
-                      className="w-10 h-10 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
-                    >
-                      <ChevronRight size={20} />
-                    </button>
+                    {/* Video Status Indicator */}
+                    <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+                      <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider flex items-center gap-1">
+                        <span className="w-2 h-2 bg-[#B7C83E] rounded-full animate-pulse"></span>
+                        Auto-playing
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Video Details */}
+                  <div>
+                    <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
+                      Amanda Cabral
+                    </div>
+                    <div className="font-subheading text-sm text-[#5F6148] mb-3">
+                      MFA graduate, Sacred Heart University
+                    </div>
+                    <p className="text-[#5F6148] text-sm italic">
+                      "Sharbari's guidance was instrumental in shaping my thesis and finding my authentic voice as a writer."
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Testimonial Indicators */}
-              <div className="flex justify-center gap-2 mt-6">
-                {TESTIMONIALS.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentTestimonial(index)}
-                    className={`h-1 rounded-full transition-all ${
-                      index === currentTestimonial 
-                        ? 'w-8 bg-[#B7C83E]' 
-                        : 'w-2 bg-[#B7C83E]/30'
-                    }`}
-                  />
-                ))}
+              {/* Text Testimonials Slider */}
+              <div className="bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] relative">
+                {/* Dust Texture Background */}
+                <div 
+                  className="absolute inset-0 opacity-[2%] rounded-3xl"
+                  style={{
+                    backgroundImage: 'url(/images/dust.jpg)',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                  }}
+                ></div>
+                
+                {/* Quote Mark */}
+                <div className="absolute top-6 left-6 text-5xl font-['Playfair_Display'] text-[#B7C83E]/10">
+                  "
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="min-h-[200px] flex flex-col justify-between">
+                    <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-6 leading-relaxed">
+                      {TESTIMONIALS[currentTestimonial]?.quote || "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…"}
+                    </p>
+                    
+                    <div>
+                      <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
+                        {TESTIMONIALS[currentTestimonial]?.name || "Alexis Carmichael"}
+                      </div>
+                      <div className="font-subheading text-sm text-[#5F6148]">
+                        {TESTIMONIALS[currentTestimonial]?.role || "Manhattanville University MFA student in fiction"}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Testimonial Navigation */}
+                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-[#E3E7C8]">
+                    <div className="flex gap-2">
+                      {TESTIMONIALS.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentTestimonial(index)}
+                          className={`h-1.5 rounded-full transition-all ${
+                            index === currentTestimonial 
+                              ? 'w-6 bg-[#B7C83E]' 
+                              : 'w-2 bg-[#B7C83E]/30 hover:bg-[#B7C83E]/50'
+                          }`}
+                          aria-label={`Go to testimonial ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setCurrentTestimonial((prev) => 
+                          prev === 0 ? (TESTIMONIALS.length - 1) : prev - 1
+                        )}
+                        className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                        aria-label="Previous testimonial"
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
+                      
+                      <button
+                        onClick={() => setCurrentTestimonial((prev) => 
+                          (prev + 1) % TESTIMONIALS.length
+                        )}
+                        className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                        aria-label="Next testimonial"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* Additional CTA */}
+            <div className="text-center mt-12">
+              <Link href="/testimonials" className="inline-block">
+                <button className="px-6 py-3 bg-gradient-to-r from-[#B7C83E]/10 to-transparent border border-[#E3E7C8] text-[#B7C83E] font-subheading font-semibold rounded-full hover:bg-gradient-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:border-[#6F7F1E] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto">
+                  <span>View More Testimonials</span>
+                  <ArrowRight size={16} />
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -701,38 +962,70 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Publication Logos */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
+            {/* Publication Logos - Updated with NBC News Interview */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
               {[
-                { name: 'The New York Times', color: '#1F2937' },
-                { name: 'The Guardian', color: '#1E40AF' },
-                { name: 'LARB', color: '#92400E' },
-                { name: 'Publishers Weekly', color: '#065F46' },
+                { 
+                  name: 'NBC News', 
+                  color: '#E1AD01', 
+                  link: 'https://www.nbcnews.com/news/asian-america/quantico-writer-sharbari-ahmed-perseverance-identity-life-writers-room-n491216',
+                  subtitle: 'Interview: On Perseverance & Identity',
+                  featured: true 
+                },
               ].map((pub, index) => (
-                <div
+                <Link 
+                  href={pub.link || '#'} 
                   key={index}
-                  className="bg-white rounded-xl p-6 text-center shadow-sm border border-[#E3E7C8] hover-lift transition-all cursor-pointer group relative"
+                  target={pub.link ? "_blank" : "_self"}
+                  rel={pub.link ? "noopener noreferrer" : ""}
+                  className={`block ${pub.link ? 'cursor-pointer' : 'cursor-default'}`}
                 >
-                  {/* Dust Texture in Card */}
-                  <div 
-                    className="absolute inset-0 rounded-xl opacity-[1%] group-hover:opacity-[2%] transition-opacity"
-                    style={{
-                      backgroundImage: 'url(/images/dust.jpg)',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'cover',
-                    }}
-                  ></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B7C83E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
-                  <div className="relative z-10">
-                    <div className="font-bold text-xl md:text-2xl mb-1" style={{ color: pub.color }}>
-                      {pub.name.split(' ')[0]}
-                    </div>
-                    <div className="font-subheading text-sm text-[#5F6148] tracking-wide">
-                      {pub.name.split(' ').slice(1).join(' ')}
+                  <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-[#E3E7C8] hover-lift transition-all group relative h-full">
+                    {/* Dust Texture in Card */}
+                    <div 
+                      className="absolute inset-0 rounded-xl opacity-[1%] group-hover:opacity-[2%] transition-opacity"
+                      style={{
+                        backgroundImage: 'url(/images/dust.jpg)',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                      }}
+                    ></div>
+                    
+                    {/* Special highlight for featured interview */}
+                    {pub.featured && (
+                      <div className="absolute -top-2 -right-2">
+                        <div className="w-6 h-6 bg-[#B7C83E] rounded-full flex items-center justify-center border border-white shadow-sm">
+                          <Star size={12} className="text-white" />
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B7C83E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                    
+                    <div className="relative z-10">
+                      {/* Publication Name */}
+                      <div className="font-bold text-xl md:text-2xl mb-1" style={{ color: pub.color }}>
+                        {pub.name.split(' ')[0]}
+                      </div>
+                      <div className="font-subheading text-sm text-[#5F6148] tracking-wide">
+                        {pub.name.split(' ').slice(1).join(' ')}
+                      </div>
+                      
+                      {/* Interview subtitle for NBC News */}
+                      {pub.subtitle && (
+                        <div className="mt-3 pt-3 border-t border-[#E3E7C8]">
+                          <div className="font-subheading text-xs text-[#B7C83E] font-semibold uppercase tracking-wider">
+                            {pub.subtitle}
+                          </div>
+                          <div className="text-xs text-[#5F6148] mt-1">
+                            'Quantico' writer on perseverance & identity
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -740,7 +1033,6 @@ export default function HomePage() {
             <div className="text-center">
               <Link href="/press" className="inline-block">
                 <button className="px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.3)] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto relative group border border-[#E3E7C8]">
-                 
                   <span className="relative z-10">Read Full Features</span>
                   <Book size={20} className="relative z-10" />
                 </button>
@@ -751,8 +1043,6 @@ export default function HomePage() {
 
         {/* Bottom CTA Section */}
         <section className="relative bg-gradient-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 px-4 py-16 md:py-24 overflow-hidden border-t border-[#E3E7C8]">
-          
-          
           {/* Top Border */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
           
@@ -771,8 +1061,6 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Link href="/consulting" className="w-full md:w-auto">
                 <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_20px_50px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale relative border border-[#E3E7C8]">
-                  
-                  
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     Start Consultation
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -782,7 +1070,6 @@ export default function HomePage() {
               
               <Link href="/contact" className="w-full md:w-auto">
                 <button className="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-[#F9FAF4] hover:border-[#2E2F1F] transition-all duration-300 active:scale-95 touch-target hover-scale relative">
-                
                   <span className="relative z-10 flex items-center justify-center">
                     Get In Touch
                   </span>
@@ -792,8 +1079,6 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-
-      
 
       {/* Scroll to Top Button */}
       {isClient && showScrollTop && (
