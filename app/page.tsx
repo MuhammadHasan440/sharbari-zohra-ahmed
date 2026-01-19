@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy } from "lucide-react"
+import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy, Calendar } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -87,22 +87,34 @@ export default function HomePage() {
   ]
 
   const TESTIMONIALS = [
-    {
-      quote: "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…",
-      name: "Alexis Carmichael",
-      role: "Manhattanville University MFA student in fiction"
-    },
-    {
-      quote: "Sharbari's mentorship helped me find my authentic voice as a writer. Her insights are invaluable.",
-      name: "Sarah Johnson",
-      role: "Aspiring novelist"
-    },
-    {
-      quote: "A masterful teacher who understands the intersection of craft and commerce in publishing.",
-      name: "Michael Chen",
-      role: "Writing workshop participant"
-    }
-  ]
+  {
+    quote: "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…",
+    name: "Alexis Carmichael",
+    role: "Manhattanville University MFA student in fiction"
+  },
+  
+  {
+    quote: "A masterful teacher who understands the intersection of craft and commerce in publishing.",
+    name: "Michael Chen",
+    role: "Writing workshop participant"
+  },
+  // New testimonials added
+  {
+    quote: "When I began working with Sharbari, I had no idea how to write a screenplay. But over the course of a few months of working with her, I gradually became a better and more confident writer thanks to her. For new screenwriters, you never know where to start and Sharbari created a safe environment to ask those questions and learn. Her patience, knowledge, and passion for the art and craft of screenwriting is what I needed to know that I could be a writer too.",
+    name: "Alexander Serrano",
+    role: "MFA 2026 in Dramatic Writing, Fairfield University"
+  },
+  {
+    quote: "Having Sharbari as a professor at Manhattanville changed the course of my life. She was the first screenwriting professor who saw something in me and told me I could do this for a living if I wanted to. She guided me in the beginning stages of my writing journey and helped nurture my voice and understanding of story structure. With her help I ended up at one of the best film programs in the country and am pursuing my dream of screenwriting and directing.",
+    name: "Sarah Shankman",
+    role: "USC MFA and Filmmaker"
+  },
+  {
+    quote: "I took Sharbari's Screenplay Adaptations class and it has completely changed the course of my fiction and nonfiction writing. Having no prior experience in screenwriting, I felt like a fish out of water, but those fears quickly dissipated. Sharbari facilitates her workshops to be both encouraging and intense. I walked away with my eyes opened to the ways in which screenplays enhance and inform good writing; how one can improve upon the other, and how we use our emotions to connect physically with our readers. She pulls no punches in the best possible way.",
+    name: "Julie Gorski",
+    role: "MFA candidate in Creative Nonfiction, Manhattanville University"
+  }
+]
 
   const PRESS_QUOTES = [
     "Ahmed writes with a rare combination of lyricism and urgency.",
@@ -689,201 +701,278 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="relative bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
-          {/* Dust Texture Overlay */}
-          <div 
-            className="absolute inset-0 opacity-[3%]"
-            style={{
-              backgroundImage: 'url(/images/dust.jpg)',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              mixBlendMode: 'overlay'
-            }}
-          ></div>
-          
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+      {/* Testimonials Section */}
+<section className="relative bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
+  {/* Dust Texture Overlay */}
+  <div 
+    className="absolute inset-0 opacity-[3%]"
+    style={{
+      backgroundImage: 'url(/images/dust.jpg)',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      mixBlendMode: 'overlay'
+    }}
+  ></div>
+  
+  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-10" style={{
+    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+  }}></div>
 
-          <div className="max-w-6xl mx-auto relative z-10">
-            {/* Section Header */}
-            <div className="text-center mb-12 md:mb-16">
-              <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
-                  <Quote size={24} className="text-[#B7C83E]" />
-                </div>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Testimonials
-              </h2>
-              
-              <p className="font-['Lato'] text-lg md:text-xl text-[#D1D5DB] font-semibold max-w-2xl mx-auto">
-                Hear from students, collaborators, and readers
-              </p>
+  <div className="max-w-6xl mx-auto relative z-10">
+    {/* Section Header */}
+    <div className="text-center mb-12 md:mb-16">
+      <div className="inline-flex items-center justify-center gap-3 mb-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+          <Quote size={24} className="text-[#B7C83E]" />
+        </div>
+      </div>
+      
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Testimonials & Events
+      </h2>
+      
+      <p className="font-['Lato'] text-lg md:text-xl text-[#D1D5DB] font-semibold max-w-2xl mx-auto">
+        Hear from students, collaborators, and literary conversations
+      </p>
+    </div>
+
+    {/* Testimonial Grid - Updated with Video and Event */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Video Testimonial */}
+      <div className="lg:col-span-2 bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden">
+        {/* Dust Texture Background */}
+        <div 
+          className="absolute inset-0 opacity-[2%] rounded-3xl"
+          style={{
+            backgroundImage: 'url(/images/dust.jpg)',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}
+        ></div>
+        
+        <div className="relative z-10">
+          {/* Video Header */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+              <Play size={18} className="text-[#B7C83E]" />
             </div>
-
-            {/* Testimonial Grid - Updated with Video */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Video Testimonial */}
-              <div className="bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden">
-                {/* Dust Texture Background */}
-                <div 
-                  className="absolute inset-0 opacity-[2%] rounded-3xl"
-                  style={{
-                    backgroundImage: 'url(/images/dust.jpg)',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                ></div>
-                
-                <div className="relative z-10">
-                  {/* Video Header */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
-                      <Play size={18} className="text-[#B7C83E]" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg text-[#2E2F1F]">Video Testimonial</h3>
-                      <p className="text-sm text-[#5F6148]">Hear directly from students</p>
-                    </div>
-                  </div>
-                  
-                  {/* Video Container */}
-                  <div className="relative rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937]">
-                    {/* Video */}
-                    <video 
-                      className="w-full h-64 md:h-80 object-cover"
-                      autoPlay
-                      muted
-                      playsInline
-                      loop
-                      controls
-                      poster="/images/video-thumbnail.jpg"
-                      onMouseEnter={(e) => e.currentTarget.play()}
-                      onMouseLeave={(e) => e.currentTarget.pause()}
-                    >
-                      <source src="/videos/amanda.mp4" type="video/mp4" />
-                      <source src="/videos/amanda.mov" type="video/quicktime" />
-                      Your browser does not support the video tag.
-                    </video>
-                    
-                    {/* Video Status Indicator */}
-                    <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
-                      <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider flex items-center gap-1">
-                        <span className="w-2 h-2 bg-[#B7C83E] rounded-full animate-pulse"></span>
-                        Auto-playing
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Video Details */}
-                  <div>
-                    <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
-                      Amanda Cabral
-                    </div>
-                    <div className="font-subheading text-sm text-[#5F6148] mb-3">
-                      MFA graduate, Sacred Heart University
-                    </div>
-                    <p className="text-[#5F6148] text-sm italic">
-                      "Sharbari's guidance was instrumental in shaping my thesis and finding my authentic voice as a writer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Text Testimonials Slider */}
-              <div className="bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] relative">
-                {/* Dust Texture Background */}
-                <div 
-                  className="absolute inset-0 opacity-[2%] rounded-3xl"
-                  style={{
-                    backgroundImage: 'url(/images/dust.jpg)',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                ></div>
-                
-                {/* Quote Mark */}
-                <div className="absolute top-6 left-6 text-5xl font-['Playfair_Display'] text-[#B7C83E]/10">
-                  "
-                </div>
-                
-                <div className="relative z-10">
-                  <div className="min-h-[200px] flex flex-col justify-between">
-                    <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-6 leading-relaxed">
-                      {TESTIMONIALS[currentTestimonial]?.quote || "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…"}
-                    </p>
-                    
-                    <div>
-                      <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
-                        {TESTIMONIALS[currentTestimonial]?.name || "Alexis Carmichael"}
-                      </div>
-                      <div className="font-subheading text-sm text-[#5F6148]">
-                        {TESTIMONIALS[currentTestimonial]?.role || "Manhattanville University MFA student in fiction"}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Testimonial Navigation */}
-                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-[#E3E7C8]">
-                    <div className="flex gap-2">
-                      {TESTIMONIALS.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentTestimonial(index)}
-                          className={`h-1.5 rounded-full transition-all ${
-                            index === currentTestimonial 
-                              ? 'w-6 bg-[#B7C83E]' 
-                              : 'w-2 bg-[#B7C83E]/30 hover:bg-[#B7C83E]/50'
-                          }`}
-                          aria-label={`Go to testimonial ${index + 1}`}
-                        />
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => setCurrentTestimonial((prev) => 
-                          prev === 0 ? (TESTIMONIALS.length - 1) : prev - 1
-                        )}
-                        className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
-                        aria-label="Previous testimonial"
-                      >
-                        <ChevronLeft size={18} />
-                      </button>
-                      
-                      <button
-                        onClick={() => setCurrentTestimonial((prev) => 
-                          (prev + 1) % TESTIMONIALS.length
-                        )}
-                        className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
-                        aria-label="Next testimonial"
-                      >
-                        <ChevronRight size={18} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Additional CTA */}
-            <div className="text-center mt-12">
-              <Link href="/testimonials" className="inline-block">
-                <button className="px-6 py-3 bg-gradient-to-r from-[#B7C83E]/10 to-transparent border border-[#E3E7C8] text-[#B7C83E] font-subheading font-semibold rounded-full hover:bg-gradient-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:border-[#6F7F1E] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto">
-                  <span>View More Testimonials</span>
-                  <ArrowRight size={16} />
-                </button>
-              </Link>
+            <div>
+              <h3 className="font-bold text-lg text-[#2E2F1F]">Video Testimonial</h3>
+              <p className="text-sm text-[#5F6148]">Hear directly from students</p>
             </div>
           </div>
-        </section>
+          
+          {/* Video Container */}
+          <div className="relative rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937]">
+            {/* Video */}
+            <video 
+              className="w-full h-64 md:h-80 object-cover"
+              autoPlay
+              muted
+              playsInline
+              loop
+              controls
+              poster="/images/video-thumbnail.jpg"
+              onMouseEnter={(e) => e.currentTarget.play()}
+              onMouseLeave={(e) => e.currentTarget.pause()}
+            >
+              <source src="/videos/amanda.mp4" type="video/mp4" />
+              <source src="/videos/amanda.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
+            
+            {/* Video Status Indicator */}
+            <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
+              <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider flex items-center gap-1">
+                <span className="w-2 h-2 bg-[#B7C83E] rounded-full animate-pulse"></span>
+                Auto-playing
+              </span>
+            </div>
+          </div>
+          
+          {/* Video Details */}
+          <div>
+            <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
+              Amanda Cabral
+            </div>
+            <div className="font-subheading text-sm text-[#5F6148] mb-3">
+              MFA graduate, Sacred Heart University
+            </div>
+            <p className="text-[#5F6148] text-sm italic">
+              "Sharbari's guidance was instrumental in shaping my thesis and finding my authentic voice as a writer."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Literary Event Card */}
+      <div className="bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden hover-lift transition-all group">
+        {/* Dust Texture Background */}
+        <div 
+          className="absolute inset-0 opacity-[5%] rounded-3xl"
+          style={{
+            backgroundImage: 'url(/images/dust.jpg)',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}
+        ></div>
+        
+        {/* Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0h15v15H15V0zM0 15h15v15H0V15z' fill='%232E2F1F' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+        }}></div>
+        
+        <div className="relative z-10 h-full flex flex-col">
+          {/* Event Header */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+              <Book size={18} className="text-white" />
+            </div>
+            <div>
+              <h3 className="font-bold text-lg text-white">Literary Conversation</h3>
+              <p className="text-sm text-white/80">Featured Event</p>
+            </div>
+          </div>
+          
+          {/* Event Content */}
+          <div className="flex-1">
+            <div className="mb-4">
+              <h4 className="text-xl font-bold text-white mb-2">
+                Sharbari Ahmed + Nalini Jones
+              </h4>
+              <p className="text-white/90 text-sm font-italic italic mb-3">
+                In Conversation On <span className="font-bold">THE STRANGEST OF FRUIT</span>
+              </p>
+              <p className="text-white/80 text-sm">
+                A literary dialogue exploring migration, womanhood, and the myths we carry across generations.
+              </p>
+            </div>
+            
+            {/* Event Details */}
+            <div className="space-y-3 mt-6 pt-6 border-t border-white/30">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                  <Calendar size={12} className="text-white" />
+                </div>
+                <span className="text-white/90 text-sm font-subheading">Bookstore Event</span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                  <Users size={12} className="text-white" />
+                </div>
+                <span className="text-white/90 text-sm font-subheading">Author Conversation</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Event CTA */}
+          <Link 
+            href="https://www.barrettbookstore.com/event/sharbari-ahmed-nalini-jones-conversation-strangest-fruit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6"
+          >
+            <button className="w-full py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-white hover:text-[#2E2F1F] transition-all duration-300 group-hover:scale-[1.02]">
+              <span>View Event Details</span>
+              <ArrowRight size={16} />
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Text Testimonials Slider */}
+      <div className="lg:col-span-3 bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] relative">
+        {/* Dust Texture Background */}
+        <div 
+          className="absolute inset-0 opacity-[2%] rounded-3xl"
+          style={{
+            backgroundImage: 'url(/images/dust.jpg)',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}
+        ></div>
+        
+        {/* Quote Mark */}
+        <div className="absolute top-6 left-6 text-5xl font-['Playfair_Display'] text-[#B7C83E]/10">
+          "
+        </div>
+        
+        <div className="relative z-10">
+          <div className="min-h-[200px] flex flex-col justify-between">
+            <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-6 leading-relaxed">
+              {TESTIMONIALS[currentTestimonial]?.quote || "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…"}
+            </p>
+            
+            <div>
+              <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
+                {TESTIMONIALS[currentTestimonial]?.name || "Alexis Carmichael"}
+              </div>
+              <div className="font-subheading text-sm text-[#5F6148]">
+                {TESTIMONIALS[currentTestimonial]?.role || "Manhattanville University MFA student in fiction"}
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial Navigation */}
+          <div className="flex items-center justify-between mt-6 pt-6 border-t border-[#E3E7C8]">
+            <div className="flex gap-2">
+              {TESTIMONIALS.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    index === currentTestimonial 
+                      ? 'w-6 bg-[#B7C83E]' 
+                      : 'w-2 bg-[#B7C83E]/30 hover:bg-[#B7C83E]/50'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setCurrentTestimonial((prev) => 
+                  prev === 0 ? (TESTIMONIALS.length - 1) : prev - 1
+                )}
+                className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              
+              <button
+                onClick={() => setCurrentTestimonial((prev) => 
+                  (prev + 1) % TESTIMONIALS.length
+                )}
+                className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Additional CTA */}
+    <div className="text-center mt-12">
+      <Link href="/testimonials" className="inline-block">
+        <button className="px-6 py-3 bg-gradient-to-r from-[#B7C83E]/10 to-transparent border border-[#E3E7C8] text-[#B7C83E] font-subheading font-semibold rounded-full hover:bg-gradient-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:border-[#6F7F1E] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto">
+          <span>View More Testimonials & Events</span>
+          <ArrowRight size={16} />
+        </button>
+      </Link>
+    </div>
+  </div>
+</section>
 
         {/* Press & Praise Section */}
         <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
