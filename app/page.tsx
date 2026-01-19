@@ -767,7 +767,7 @@ export default function HomePage() {
                       onMouseEnter={(e) => e.currentTarget.play()}
                       onMouseLeave={(e) => e.currentTarget.pause()}
                     >
-                      <source src="/videos/amanda.mov" type="video/mp4" />
+                      <source src="/videos/amanda.mp4" type="video/mp4" />
                       <source src="/videos/amanda.mov" type="video/quicktime" />
                       Your browser does not support the video tag.
                     </video>
