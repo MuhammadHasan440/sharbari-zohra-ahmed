@@ -962,15 +962,7 @@ export default function HomePage() {
       </div>
     </div>
 
-    {/* Additional CTA */}
-    <div className="text-center mt-12">
-      <Link href="/testimonials" className="inline-block">
-        <button className="px-6 py-3 bg-gradient-to-r from-[#B7C83E]/10 to-transparent border border-[#E3E7C8] text-[#B7C83E] font-subheading font-semibold rounded-full hover:bg-gradient-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:border-[#6F7F1E] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto">
-          <span>View More Testimonials & Events</span>
-          <ArrowRight size={16} />
-        </button>
-      </Link>
-    </div>
+   
   </div>
 </section>
 
