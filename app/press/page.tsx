@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Star, Quote, BookOpen, Award, Newspaper, ChevronRight } from "lucide-react"
+import { Star, Quote, BookOpen, Award, Newspaper, ChevronRight, Globe } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SectionContainer } from "@/components/section-container"
@@ -104,6 +104,25 @@ export default function PressPage() {
       title: "Amazon eBook", 
       url: "https://www.amazon.com/Ocean-Mrs-Nagai-Stories-ebook/dp/B00CZKS2VW",
     },
+  ]
+
+  const reviewLinks = [
+    {
+      book: "The Strangest of Fruit",
+      title: "Between Home and Elsewhere",
+      publication: "The Daily Star",
+      date: "2024",
+      url: "https://www.thedailystar.net/books-literature/news/between-home-and-elsewhere-4044341",
+      excerpt: "A review of Sharbari Ahmed's collection exploring borders, identity, and belonging."
+    },
+    {
+      book: "Dust Under Her Feet",
+      title: "Book Review: Dust Under Her Feet",
+      publication: "Deccan Herald",
+      date: "2024",
+      url: "https://www.deccanherald.com/features/book-review-dust-under-her-feet-762959.html",
+      excerpt: "Review of Ahmed's novel exploring diaspora, memory, and cultural identity."
+    }
   ]
 
   // Don't render during SSR to avoid hydration mismatch
@@ -240,10 +259,10 @@ export default function PressPage() {
               {/* CTA Button */}
               <div className="mt-12">
                 <Link
-                  href="#book"
+                  href="#reviews"
                   className="group inline-flex items-center gap-2 px-8 py-4 bg-[#B7C83E] hover:bg-[#6F7F1E] text-[#2E2F1F] hover:text-[#F9FAF4] font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#B7C83E]/30 hover:scale-105 active:scale-95"
                 >
-                  <span>Explore The Collection</span>
+                  <span>Read Featured Reviews</span>
                   <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -257,8 +276,8 @@ export default function PressPage() {
             )}
           </section>
 
-          {/* Praise Section */}
-          <SectionContainer id="praise" className="bg-[#F9FAF4] relative overflow-hidden">
+          {/* Featured Reviews Section */}
+          <SectionContainer id="reviews" className="bg-[#F9FAF4] relative overflow-hidden">
             {/* Leaf pattern overlay */}
             <div className="absolute inset-0 opacity-10 leaf-bg" style={{ transform: 'rotate(15deg)' }}></div>
             
@@ -270,8 +289,97 @@ export default function PressPage() {
               <div className="text-center space-y-6">
                 <div className="inline-flex items-center gap-4">
                   <div className="h-px w-12 bg-[#B7C83E]"></div>
-                  <span className="font-cormorant text-[#6F7F1E] tracking-widest text-sm">READER & CRITIC PRAISE</span>
+                  <span className="font-cormorant text-[#6F7F1E] tracking-widest text-sm">FEATURED REVIEWS</span>
                   <div className="h-px w-12 bg-[#B7C83E]"></div>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-[#2E2F1F]">
+                  Featured Reviews
+                </h2>
+                <p className="font-cormorant text-lg text-[#5F6148]">Latest reviews from major publications</p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6">
+                {reviewLinks.map((review, index) => (
+                  <Link
+                    key={index}
+                    href={review.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block p-8 bg-gradient-to-r from-[#F9FAF4] to-[#D9E6A3] border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:bg-gradient-to-r hover:from-[#B7C83E]/10 hover:to-[#F9FAF4] transition-all duration-500 animate-slide-up"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {/* Olive accent line */}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-0 bg-gradient-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-16 transition-all duration-300 rounded-full"></div>
+                    
+                    <div className="flex flex-col md:flex-row md:items-start gap-6">
+                      {/* Publication Icon */}
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#B7C83E]/30 to-transparent border border-[#B7C83E]/40 rounded-xl flex items-center justify-center group-hover:border-[#6F7F1E] transition-colors">
+                          <Globe size={24} className="text-[#6F7F1E]" />
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1 space-y-4">
+                        <div className="space-y-2">
+                          <div className="flex flex-wrap items-center gap-3">
+                            <span className="px-3 py-1 bg-[#B7C83E]/20 text-[#6F7F1E] text-xs font-medium rounded-full">
+                              {review.book}
+                            </span>
+                            <p className="text-lg text-[#6F7F1E] font-medium">
+                              {review.publication}
+                            </p>
+                            <span className="text-sm text-[#5F6148]/40">•</span>
+                            <p className="text-sm text-[#5F6148]">{review.date}</p>
+                          </div>
+                          <h3 className="text-2xl font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">
+                            {review.title}
+                          </h3>
+                        </div>
+                        <p className="text-[#5F6148] leading-relaxed font-cormorant">
+                          {review.excerpt}
+                        </p>
+                      </div>
+                      
+                      {/* Action Button */}
+                      <div className="flex-shrink-0">
+                        <div className="group/btn relative overflow-hidden p-3 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg hover:shadow-lg hover:shadow-[#B7C83E]/30 transition-all duration-300">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-medium text-[#2E2F1F]">Read Review</span>
+                            <ChevronRight size={16} className="text-[#2E2F1F] group-hover/btn:translate-x-1 transition-transform" />
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#6F7F1E] to-[#B7C83E] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Additional Review Note */}
+              <div className="text-center pt-8">
+                <p className="text-[#5F6148] font-cormorant italic">
+                  For interview requests, review copies, or press inquiries, please visit the{" "}
+                  <Link href="/contact" className="text-[#6F7F1E] hover:text-[#B7C83E] underline transition-colors">
+                    contact page
+                  </Link>
+                  .
+                </p>
+              </div>
+            </div>
+          </SectionContainer>
+
+          {/* Praise Section */}
+          <SectionContainer id="praise" className="bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] relative overflow-hidden">
+            {/* Top decorative border */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+            
+            <div className="space-y-12">
+              <div className="text-center space-y-6">
+                <div className="inline-flex items-center gap-4">
+                  <div className="h-px w-8 bg-[#B7C83E]"></div>
+                  <span className="font-cormorant text-[#6F7F1E] tracking-widest text-sm">READER & CRITIC PRAISE</span>
+                  <div className="h-px w-8 bg-[#B7C83E]"></div>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-[#2E2F1F]">
                   What They Say
@@ -283,8 +391,8 @@ export default function PressPage() {
                 {praise.map((item, index) => (
                   <div
                     key={index}
-                    className="group relative p-6 bg-[#D9E6A3] rounded-xl border border-[#E3E7C8] hover:border-[#B7C83E] transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#B7C83E]/20 animate-slide-up"
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className="group relative p-6 bg-white rounded-xl border border-[#E3E7C8] hover:border-[#B7C83E] transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#B7C83E]/20 animate-slide-up"
+                    style={{ animationDelay: `${index * 100 + 200}ms` }}
                   >
                     {/* Olive quote mark */}
                     <Quote className="absolute top-4 left-4 w-8 h-8 text-[#B7C83E]/30" />
@@ -320,11 +428,14 @@ export default function PressPage() {
           </SectionContainer>
 
           {/* Press Coverage Section */}
-          <SectionContainer id="press" className="bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] relative overflow-hidden">
-            {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+          <SectionContainer id="press" className="bg-[#F9FAF4] relative overflow-hidden">
+            {/* Pattern overlay */}
+            <div className="absolute inset-0 opacity-10 leaf-bg"></div>
             
-            <div className="space-y-12">
+            {/* Bottom decorative border */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+
+            <div className="relative z-10 space-y-12">
               <div className="text-center space-y-6">
                 <div className="inline-flex items-center gap-4">
                   <div className="h-px w-8 bg-[#B7C83E]"></div>
@@ -344,8 +455,8 @@ export default function PressPage() {
                     <Link
                       key={index}
                       href={item.link}
-                      className="group relative block p-6 bg-gradient-to-r from-[#F9FAF4] to-[#D9E6A3] border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:bg-gradient-to-r hover:from-[#B7C83E]/10 hover:to-[#F9FAF4] transition-all duration-500 animate-slide-up"
-                      style={{ animationDelay: `${index * 100}ms` }}
+                      className="group relative block p-6 bg-gradient-to-r from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:bg-gradient-to-r hover:from-[#B7C83E]/10 hover:to-[#F9FAF4] transition-all duration-500 animate-slide-up"
+                      style={{ animationDelay: `${index * 100 + 300}ms` }}
                     >
                       {/* Olive accent line */}
                       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-gradient-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-12 transition-all duration-300 rounded-full"></div>
@@ -392,7 +503,7 @@ export default function PressPage() {
           </SectionContainer>
 
           {/* Book Information Section */}
-          <SectionContainer id="book" className="bg-[#F9FAF4] relative overflow-hidden">
+          <SectionContainer id="book" className="bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4] relative overflow-hidden">
             {/* Pattern overlay */}
             <div className="absolute inset-0 opacity-10 leaf-bg"></div>
             
@@ -522,7 +633,7 @@ export default function PressPage() {
           </SectionContainer>
 
           {/* Other Works Section */}
-          <SectionContainer id="other-works" className="bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4] relative overflow-hidden">
+          <SectionContainer id="other-works" className="bg-[#F9FAF4] relative overflow-hidden">
             {/* Top decorative border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
             
@@ -543,7 +654,7 @@ export default function PressPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Ocean & Mrs. Nagai */}
-                <div className="group relative p-8 bg-[#D9E6A3] border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] transition-all duration-500 hover:transform hover:-translate-y-1">
+                <div className="group relative p-8 bg-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] transition-all duration-500 hover:transform hover:-translate-y-1">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center">
@@ -572,7 +683,7 @@ export default function PressPage() {
                 </div>
 
                 {/* Filmography */}
-                <div className="group relative p-8 bg-[#D9E6A3] border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] transition-all duration-500 hover:transform hover:-translate-y-1">
+                <div className="group relative p-8 bg-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] transition-all duration-500 hover:transform hover:-translate-y-1">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 bg-gradient-to-br from-[#6F7F1E] to-[#B7C83E] rounded-lg flex items-center justify-center">

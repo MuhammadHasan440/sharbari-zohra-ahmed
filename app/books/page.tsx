@@ -84,8 +84,8 @@ export default function BooksPage() {
       id: 2,
       title: "Dust Under Her Feet",
       subtitle: "A Novel",
-      description: "A compelling narrative that traces the journey of identity, displacement, and belonging. Set against the backdrop of cultural shifts, this novel explores the universal search for home and self.",
-      year: "2018",
+      description: "Sharbari’s debut novel follows Yasmine Khan, a savvy, independent woman running a nightclub in 1940’s Calcutta during WW2 catering to American military personnel. Set against the twilight of the British Raj, as empire frays and tensions simmer in the streets, the story lives inside the nightclub that feels like the last safe harbor for Yasmine’s chosen family of waifs, singers and dancers, the forgotten people who built a home inside the walls of the Bombay Duck.",
+      year: "2019",
       awards: ["Critically Acclaimed Debut Novel", "Featured in New York Times Book Review"],
       links: [
         { 

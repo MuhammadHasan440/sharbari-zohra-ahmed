@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Film, ExternalLink, Play, Award, Calendar, Globe, Camera, Clapperboard, Star, ChevronUp, Users, ArrowRight, Sparkles } from "lucide-react"
+import { Film, ExternalLink, Play, Award, Calendar, Globe, Camera, Clapperboard, Star, ChevronUp, Users, ArrowRight, Sparkles, PenTool } from "lucide-react"
 
 export default function FilmsPage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -78,6 +78,39 @@ export default function FilmsPage() {
     },
   ]
 
+  const realFilms = [
+    {
+      id: 1,
+      title: "Rickshaw Girl",
+      type: "Feature Film",
+      role: "Screenwriter",
+      production: "Sleeperwave Films, 2022 — Dir. Amitabh Reza Choudhury",
+      description: "A daring teenage girl disguises herself as a boy and pedals a rickshaw on the gritty streets of Dhaka, Bangladesh to earn extra cash for her struggling family, all while pursuing her dream of becoming an artist.",
+      status: "Streaming",
+      source: "Wikipedia",
+      trailerLink: "https://tv.apple.com/us/clip/rickshaw-girl/umc.cmc.3ighgmeon5sls5va3kcpiyru1?targetId=umc.cmc.2wm6zyigg0vo53o0whw3faymt&targetType=Movie&playableId=tvs.sbd.9001%3A1655009323_APPLE_GENERATED_261423990",
+      internalLink: "/film/rickshaw-girl",
+      year: "2022",
+      color: "from-[#B7C83E] to-[#6F7F1E]",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Level 3",
+      type: "Short Film",
+      role: "Written & Directed by Sharbari",
+      production: "West Kelsey Productions, 2026",
+      description: "A celebrated literature professor hiding a life overtaken by hoarding must confront lived trauma and the scourge of perfectionism when her estranged daughter, a beautiful, talented ballerina, seeks to reconnect with her after 12 years.",
+      status: "In Post-Production",
+      source: "",
+      trailerLink: "#",
+      internalLink: "/film/level-3",
+      year: "2026",
+      color: "from-[#2E2F1F] to-[#5F6148]",
+      inProduction: true
+    }
+  ]
+
   const festivals = [
     { name: "International Film Festival", year: "2023", location: "Cannes, FR" },
     { name: "Documentary Festival Selection", year: "2023", location: "Sundance, US" },
@@ -94,6 +127,7 @@ export default function FilmsPage() {
 
   const tabs = [
     { id: "filmography", label: "Filmography" },
+    { id: "featured-films", label: "Featured Films" },
     { id: "festivals", label: "Festivals" },
     { id: "awards", label: "Awards" },
   ]
@@ -114,6 +148,22 @@ export default function FilmsPage() {
         body {
           font-family: 'Lora', serif;
           overflow-x: hidden;
+        }
+
+        .hover-lift {
+          transition: transform 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+          transform: translateY(-4px);
+        }
+        
+        .hover-glow {
+          transition: box-shadow 0.3s ease;
+        }
+        
+        .hover-glow:hover {
+          box-shadow: 0 10px 30px rgba(183, 200, 62, 0.15);
         }
 
         /* Mobile optimizations */
@@ -216,7 +266,7 @@ export default function FilmsPage() {
 
         {/* Video Preview - Mobile Optimized */}
         <section className="py-8 mobile-padding">
-          <div className="relative group rounded-xl overflow-hidden border-2 border-[#E3E7C8] shadow-lg">
+          <div className="relative group rounded-xl overflow-hidden border-2 border-[#E3E7C8] shadow-lg hover-lift">
             <div className="aspect-video bg-gradient-to-br from-[#2E2F1F] to-[#5F6148] flex items-center justify-center">
               <div className="text-center space-y-4 p-6">
                 <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 border-2 border-[#E3E7C8] flex items-center justify-center">
@@ -244,7 +294,7 @@ export default function FilmsPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                   <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
                     <Sparkles size={14} className="text-[#B7C83E]" />
                     Visual Authenticity
@@ -254,7 +304,7 @@ export default function FilmsPage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                   <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
                     <Globe size={14} className="text-[#B7C83E]" />
                     Cultural Memory
@@ -264,7 +314,7 @@ export default function FilmsPage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                   <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
                     <Users size={14} className="text-[#B7C83E]" />
                     Marginalized Voices
@@ -311,84 +361,187 @@ export default function FilmsPage() {
           </div>
         </div>
 
-        {/* Filmography Section */}
-        <section id="filmography" className="py-12 mobile-padding">
+        {/* Featured Films Section */}
+        <section id="featured-films" className="py-12 mobile-padding">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                <Clapperboard size={20} className="text-white" />
+                <Star size={20} className="text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#2E2F1F]">Filmography</h2>
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">Featured Films</h2>
                 <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
 
-            <div className="space-y-4">
-              {filmography.map((film, index) => (
-                <div
-                  key={index}
-                  className={`relative p-5 bg-gradient-to-br from-[#F9FAF4] to-white border rounded-xl mobile-transition ${
-                    hoveredFilm === index 
-                      ? 'border-[#B7C83E] shadow-lg' 
-                      : 'border-[#E3E7C8]'
-                  }`}
-                  onMouseEnter={() => setHoveredFilm(index)}
-                  onMouseLeave={() => setHoveredFilm(null)}
+            <div className="space-y-6">
+              {realFilms.map((film) => (
+                <div 
+                  key={film.id}
+                  className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group"
                 >
-                  {/* Featured Badge */}
-                  {film.featured && (
-                    <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
-                      <p className="text-xs font-bold text-[#2E2F1F]">FEATURED</p>
+                  {/* Film Image */}
+                  <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+                      {film.type === "Short Film" ? (
+                        <PenTool size={48} className="text-[#B7C83E]/30" />
+                      ) : (
+                        <Film size={48} className="text-[#B7C83E]/30" />
+                      )}
                     </div>
-                  )}
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
+                      <a 
+                        href={film.trailerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-14 h-14 md:w-16 md:h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all hover:bg-[#B7C83E] hover:scale-110"
+                      >
+                        <Play size={24} className="text-[#2E2F1F]" />
+                      </a>
+                    </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="text-lg font-bold text-[#2E2F1F]">{film.title}</h3>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="px-2 py-0.5 bg-[#D9E6A3]/30 text-[#5F6148] text-xs rounded-full">
-                            {film.type}
-                          </span>
-                          <span className="px-2 py-0.5 bg-[#B7C83E]/10 text-[#5F6148] text-xs rounded-full">
-                            {film.year}
-                          </span>
-                        </div>
-                      </div>
-                      <span className={`text-sm font-medium ${
-                        film.status === 'Streaming' ? 'text-[#6F7F1E]' : 
-                        film.status === 'In Production' ? 'text-[#B7C83E]' : 
-                        'text-[#5F6148]'
+                    {/* Type Badge */}
+                    <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+                      <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
+                        {film.type}
+                      </span>
+                    </div>
+
+                    {/* Status Badge */}
+                    <div className="absolute top-4 right-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+                      <span className={`text-xs font-semibold ${
+                        film.status === 'Streaming' ? 'text-[#B7C83E]' : 
+                        film.status === 'In Post-Production' ? 'text-[#D9E6A3]' : 
+                        'text-[#9CA3AF]'
                       }`}>
                         {film.status}
                       </span>
                     </div>
+                  </div>
 
-                    <p className="text-[#5F6148] text-sm">
+                  {/* Film Details */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        {film.title}
+                      </h4>
+                      <p className="text-[#B7C83E] font-subheading text-sm">
+                        {film.role}
+                      </p>
+                      <p className="text-[#9CA3AF] text-sm mt-1">
+                        {film.production}
+                      </p>
+                    </div>
+                    
+                    <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
                       {film.description}
                     </p>
 
-                    <div className="flex items-center justify-between pt-2">
-                      <div className="flex items-center gap-1 text-[#5F6148] text-xs">
-                        <Globe size={12} />
-                        <span>{film.platform}</span>
+                    {film.source && (
+                      <div className="flex items-start gap-2 mb-4 text-xs text-[#9CA3AF]">
+                        <span className="text-[#B7C83E]">Source:</span>
+                        <span>{film.source}</span>
                       </div>
-                      {film.link !== "#" && (
-                        <Link
-                          href={film.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] text-sm font-medium"
-                        >
-                          <Play size={14} />
-                          <span>Watch</span>
-                        </Link>
-                      )}
-                    </div>
+                    )}
+
+                    {film.inProduction && (
+                      <div className="mb-4 p-3 bg-[#B7C83E]/10 border border-[#E3E7C8] rounded-lg">
+                        <p className="text-xs text-[#B7C83E]">
+                          🎬 Currently in post-production. More details coming soon.
+                        </p>
+                      </div>
+                    )}
+
+                   
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Filmography Section */}
+        <section id="filmography" className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
+          <div className="mobile-padding">
+            <div className="space-y-8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <Clapperboard size={20} className="text-white" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-[#2E2F1F]">Filmography</h2>
+                  <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {filmography.map((film, index) => (
+                  <div
+                    key={index}
+                    className={`relative p-5 bg-gradient-to-br from-[#F9FAF4] to-white border rounded-xl mobile-transition hover-lift ${
+                      hoveredFilm === index 
+                        ? 'border-[#B7C83E] shadow-lg' 
+                        : 'border-[#E3E7C8]'
+                    }`}
+                    onMouseEnter={() => setHoveredFilm(index)}
+                    onMouseLeave={() => setHoveredFilm(null)}
+                  >
+                    {/* Featured Badge */}
+                    {film.featured && (
+                      <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
+                        <p className="text-xs font-bold text-[#2E2F1F]">FEATURED</p>
+                      </div>
+                    )}
+
+                    <div className="space-y-4">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h3 className="text-lg font-bold text-[#2E2F1F]">{film.title}</h3>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="px-2 py-0.5 bg-[#D9E6A3]/30 text-[#5F6148] text-xs rounded-full">
+                              {film.type}
+                            </span>
+                            <span className="px-2 py-0.5 bg-[#B7C83E]/10 text-[#5F6148] text-xs rounded-full">
+                              {film.year}
+                            </span>
+                          </div>
+                        </div>
+                        <span className={`text-sm font-medium ${
+                          film.status === 'Streaming' ? 'text-[#6F7F1E]' : 
+                          film.status === 'In Production' ? 'text-[#B7C83E]' : 
+                          'text-[#5F6148]'
+                        }`}>
+                          {film.status}
+                        </span>
+                      </div>
+
+                      <p className="text-[#5F6148] text-sm">
+                        {film.description}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-2">
+                        <div className="flex items-center gap-1 text-[#5F6148] text-xs">
+                          <Globe size={12} />
+                          <span>{film.platform}</span>
+                        </div>
+                        {film.link !== "#" && (
+                          <Link
+                            href={film.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] text-sm font-medium"
+                          >
+                            <Play size={14} />
+                            <span>Watch</span>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -413,7 +566,7 @@ export default function FilmsPage() {
                   {festivals.map((festival, index) => (
                     <div 
                       key={index} 
-                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg"
+                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg hover-lift"
                     >
                       <div className="flex items-center justify-between">
                         <div className="space-y-1">
@@ -449,7 +602,7 @@ export default function FilmsPage() {
                   {awards.map((award, index) => (
                     <div 
                       key={index} 
-                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg"
+                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg hover-lift"
                     >
                       <div className="flex items-start gap-3">
                         <Star className="text-[#B7C83E] flex-shrink-0 mt-1" size={16} />
@@ -485,7 +638,7 @@ export default function FilmsPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                   <div className="space-y-3">
                     <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                       <Users size={20} className="text-white" />
@@ -500,7 +653,7 @@ export default function FilmsPage() {
                   </div>
                 </div>
 
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                   <div className="space-y-3">
                     <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                       <Film size={20} className="text-white" />
@@ -523,7 +676,7 @@ export default function FilmsPage() {
               <div className="pt-6">
                 <Link
                   href="/contact?subject=Film%20Assets"
-                  className="inline-flex items-center gap-2 px-5 py-2 border border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-gradient-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] mobile-transition text-sm font-medium border border-[#E3E7C8]"
+                  className="inline-flex items-center gap-2 px-5 py-2 border border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-gradient-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] mobile-transition text-sm font-medium border border-[#E3E7C8] hover-lift"
                 >
                   Request Film Assets
                   <ExternalLink size={14} />

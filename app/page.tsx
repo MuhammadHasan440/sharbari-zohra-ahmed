@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy, Calendar } from "lucide-react"
+import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy, Calendar, PenTool } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -56,7 +56,7 @@ export default function HomePage() {
     {
       id: 2,
       title: "Dust Under Her Feet",
-      synopsis: "A novel exploring identity, belonging, and the traces we leave behind through the lens of cultural displacement.",
+      synopsis: "Sharbari’s debut novel follows Yasmine Khan, a savvy, independent woman running a nightclub in 1940’s Calcutta during WW2 catering to American military personnel. Set against the twilight of the British Raj, as empire frays and tensions simmer in the streets, the story lives inside the nightclub that feels like the last safe harbor for Yasmine’s chosen family of waifs, singers and dancers, the forgotten people who built a home inside the walls of the Bombay Duck.",
       image: "/images/dust.jpg"
     },
     {
@@ -67,24 +67,7 @@ export default function HomePage() {
     }
   ]
 
-  const FILMS = [
-    {
-      id: 1,
-      title: "The Third Wife",
-      description: "A cinematic exploration of tradition and transformation in colonial Bengal.",
-      type: "feature",
-      awards: ["Sundance Film Festival Award"],
-      image: "/images/film1.jpg"
-    },
-    {
-      id: 2,
-      title: "Tales of a City by the Sea",
-      description: "An intimate portrait of resilience and community in coastal Bangladesh.",
-      type: "documentary",
-      awards: ["Dhaka International Film Festival Award"],
-      image: "/images/film2.jpg"
-    }
-  ]
+ 
 
   const TESTIMONIALS = [
   {
@@ -93,11 +76,7 @@ export default function HomePage() {
     role: "Manhattanville University MFA student in fiction"
   },
   
-  {
-    quote: "A masterful teacher who understands the intersection of craft and commerce in publishing.",
-    name: "Michael Chen",
-    role: "Writing workshop participant"
-  },
+  
   // New testimonials added
   {
     quote: "When I began working with Sharbari, I had no idea how to write a screenplay. But over the course of a few months of working with her, I gradually became a better and more confident writer thanks to her. For new screenwriters, you never know where to start and Sharbari created a safe environment to ask those questions and learn. Her patience, knowledge, and passion for the art and craft of screenwriting is what I needed to know that I could be a writer too.",
@@ -123,7 +102,9 @@ export default function HomePage() {
     "Masterful storytelling that crosses borders and boundaries."
   ]
 
-  // New awards data
+ // ... existing code before awards section ...
+
+  // Updated awards data with new award
   const AWARDS = [
     {
       id: 1,
@@ -147,6 +128,17 @@ export default function HomePage() {
     },
     {
       id: 3,
+      title: "Award for Short Story",
+      organization: "First Words South Asian Literary Awards",
+      year: "2025",
+      description: "Winner for the short story 'Raisins Not Virgins'.",
+      image: "/images/award-trophy.png", // You can add this image later
+      category: "literary",
+      storyTitle: "Raisins Not Virgins",
+      featured: false
+    },
+    {
+      id: 4,
       title: "Nominated",
       organization: "Jaipur International Film Festival (JIFF)",
       year: "2026",
@@ -155,6 +147,8 @@ export default function HomePage() {
       category: "film festival"
     }
   ]
+
+
 
   // Testimonial slider auto-rotate
   useEffect(() => {
@@ -334,23 +328,16 @@ export default function HomePage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 leading-tight">
-              Writer • Filmmaker • Speaker
+            <h1 className="text-5xl md:text-7xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+             • Writer • Filmmaker • Speaker
             </h1>
-            
             {/* Subtitle */}
-            <div className="font-['Lato'] text-xl md:text-2xl font-semibold text-[#E5E7EB] mb-8 tracking-widest uppercase">
-              Challenging the stories we inherit
-            </div>
+            <p className="font-['Cormorant_Garamond'] text-lg md:text-xl text-[#E3E7C8] font-semibold max-w-3xl mx-auto">
+              "Challenging the stories we inherit — and who gets to tell them."
+
+            </p>  
             
-            {/* Quote */}
-            <div className="relative my-12">
-              <div className="absolute top-1/2 left-0 w-10 h-px bg-[#B7C83E] transform -translate-y-1/2"></div>
-              <p className="font-italic text-xl md:text-2xl text-[#F3F4F6] italic px-8 md:px-12">
-                "Challenging the stories we inherit — and who gets to tell them."
-              </p>
-              <div className="absolute top-1/2 right-0 w-10 h-px bg-[#B7C83E] transform -translate-y-1/2"></div>
-            </div>
+          
             
             {/* CTA Buttons */}
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
@@ -481,80 +468,149 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Films Section */}
-            <div>
-              <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
-                <div className="flex items-center gap-4 mb-4 md:mb-0">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
-                    <Film size={28} className="text-[#B7C83E]" />
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold">
-                    Films
-                  </h3>
-                </div>
-                
-                <Link href="/film" className="flex items-center gap-2 text-[#B7C83E] font-subheading font-semibold text-lg hover:gap-3 transition-all">
-                  <span>View All Projects</span>
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
+         {/* Films Section */}
+<div>
+  <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
+    <div className="flex items-center gap-4 mb-4 md:mb-0">
+      <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+        <Film size={28} className="text-[#B7C83E]" />
+      </div>
+      <h3 className="text-3xl md:text-4xl font-bold">
+        Films
+      </h3>
+    </div>
+    
+    <Link href="/films" className="flex items-center gap-2 text-[#B7C83E] font-subheading font-semibold text-lg hover:gap-3 transition-all">
+      <span>View All Projects</span>
+      <ArrowRight size={18} />
+    </Link>
+  </div>
 
-              {/* Films Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {FILMS.map((film) => (
-                  <div 
-                    key={film.id}
-                    className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group"
-                  >
-                    {/* Film Image */}
-                    <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
-                        <Film size={48} className="text-[#B7C83E]/30" />
-                      </div>
-                      
-                      {/* Play Button Overlay */}
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
-                        <div className="w-14 h-14 md:w-16 md:h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all group-hover:bg-[#B7C83E] group-hover:scale-110">
-                          <Play size={24} className="text-[#2E2F1F]" />
-                        </div>
-                      </div>
+  {/* Films Grid */}
+  <div className="space-y-6 md:space-y-8">
+    {/* Rickshaw Girl */}
+    <div className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
+      {/* Film Image */}
+      <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+          <Film size={48} className="text-[#B7C83E]/30" />
+        </div>
+        
+        {/* Play Button Overlay */}
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
+          <a 
+            href="https://tv.apple.com/us/clip/rickshaw-girl/umc.cmc.3ighgmeon5sls5va3kcpiyru1?targetId=umc.cmc.2wm6zyigg0vo53o0whw3faymt&targetType=Movie&playableId=tvs.sbd.9001%3A1655009323_APPLE_GENERATED_261423990"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 md:w-16 md:h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all hover:bg-[#B7C83E] hover:scale-110"
+          >
+            <Play size={24} className="text-[#2E2F1F]" />
+          </a>
+        </div>
 
-                      {/* Type Badge */}
-                      <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
-                        <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
-                          {film.type}
-                        </span>
-                      </div>
-                    </div>
+        {/* Type Badge */}
+        <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+          <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
+            Feature Film
+          </span>
+        </div>
+      </div>
 
-                    {/* Film Details */}
-                    <div className="p-6">
-                      <h4 className="text-xl font-bold text-white mb-3">
-                        {film.title}
-                      </h4>
-                      
-                      <p className="text-[#D1D5DB] text-sm mb-4">
-                        {film.description}
-                      </p>
+      {/* Film Details */}
+      <div className="p-6">
+        <div className="mb-4">
+          <h4 className="text-xl font-bold text-white mb-2">
+            Rickshaw Girl
+          </h4>
+          <p className="text-[#B7C83E] font-subheading text-sm">
+            Screenwriter
+          </p>
+          <p className="text-[#9CA3AF] text-sm mt-1">
+            Sleeperwave Films, 2022 — Dir. Amitabh Reza Choudhury
+          </p>
+        </div>
+        
+        <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
+          A daring teenage girl disguises herself as a boy and pedals a rickshaw on the gritty streets of Dhaka, Bangladesh to earn extra cash for her struggling family, all while pursuing her dream of becoming an artist.
+        </p>
 
-                      {film.awards && film.awards.length > 0 && (
-                        <div className="flex items-center gap-2 mb-4">
-                          <Award size={16} className="text-[#B7C83E]" />
-                          <span className="font-subheading text-sm text-[#9CA3AF]">
-                            {film.awards[0]}
-                          </span>
-                        </div>
-                      )}
+        <div className="flex items-start gap-2 mb-4 text-xs text-[#9CA3AF]">
+          <span className="text-[#B7C83E]">Source:</span>
+          <span>Wikipedia</span>
+        </div>
 
-                      <Link href={`/film/${film.id}`} className="inline-flex items-center gap-2 text-[#B7C83E] font-subheading font-semibold text-sm hover:gap-3 transition-all">
-                        <span>Learn More</span>
-                        <ArrowRight size={16} />
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a 
+            href="https://tv.apple.com/us/clip/rickshaw-girl/umc.cmc.3ighgmeon5sls5va3kcpiyru1?targetId=umc.cmc.2wm6zyigg0vo53o0whw3faymt&targetType=Movie&playableId=tvs.sbd.9001%3A1655009323_APPLE_GENERATED_261423990"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#B7C83E] text-[#2E2F1F] font-medium rounded-lg hover:bg-[#9CAF3E] transition-all border border-[#E3E7C8] text-sm"
+          >
+            <Play size={16} />
+            <span>Watch Trailer</span>
+          </a>
+          
+        
+        </div>
+      </div>
+    </div>
+
+    {/* Level 3 */}
+    <div className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
+      {/* Film Image */}
+      <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+          <PenTool size={48} className="text-[#B7C83E]/30" />
+        </div>
+
+        {/* In Production Badge */}
+        <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+          <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
+            In Post-Production
+          </span>
+        </div>
+        
+        {/* Year Badge */}
+        <div className="absolute top-4 right-4 px-3 py-1.5 bg-[#B7C83E]/20 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+          <span className="font-subheading text-xs font-semibold text-[#B7C83E]">
+            2026
+          </span>
+        </div>
+      </div>
+
+      {/* Film Details */}
+      <div className="p-6">
+        <div className="mb-4">
+          <h4 className="text-xl font-bold text-white mb-2">
+            "Level 3"
+          </h4>
+          <p className="text-[#B7C83E] font-subheading text-sm">
+            Written & Directed by Sharbari
+          </p>
+          <p className="text-[#9CA3AF] text-sm mt-1">
+            West Kelsey Productions, 2026
+          </p>
+        </div>
+        
+        <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
+          A celebrated literature professor hiding a life overtaken by hoarding must confront lived trauma and the scourge of perfectionism when her estranged daughter, a beautiful, talented ballerina, seeks to reconnect with her after 12 years.
+        </p>
+
+        <div className="mb-4 p-3 bg-[#B7C83E]/10 border border-[#E3E7C8] rounded-lg">
+          <p className="text-xs text-[#B7C83E]">
+            🎬 Currently in post-production. More details coming soon.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
+          <span className="text-xs text-[#9CA3AF] font-subheading">Short Film</span>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </section>
 
