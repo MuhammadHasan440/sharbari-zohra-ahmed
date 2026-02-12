@@ -1066,7 +1066,7 @@ export default function HomePage() {
     return (
       <div
         key={index}
-        className={`absolute top-0 left-0 w-full transition-all duration-800 ease-in-out ${
+        className={`absolute top-0 left-0 w-full transition-all duration-600 ease-in-out ${
           index === currentPressQuote 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-8'
