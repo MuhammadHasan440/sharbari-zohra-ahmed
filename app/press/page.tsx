@@ -19,27 +19,33 @@ export default function PressPage() {
 
   const praise = [
     {
-      text: "A stunning exploration of identity and belonging. Ahmed's stories challenge what we think we know about culture and heritage.",
-      author: "Acclaimed Author",
-      title: "Literary Review",
+      text: "Sharbari Zohra Ahmed skillfully weaves together various threads of human experience - it's terror, its humor and its beauty - in this wonderful collection.",
+      author: "Avni Doshi",
+      title: "Author, Burnt Sugar",
       rating: 5
     },
     {
-      text: "The Strangest of Fruit is a masterwork of contemporary fiction. Raw, honest, and profoundly moving.",
-      author: "Book Critic",
-      title: "The Literary Magazine",
+      text: "The Strangest Fruit is a beautifully written, compelling, thought-provoking, and lyrical collection of stories that takes us through the complexities of migration, grief, war, and poignant moments of joy. With sensitivity, nuance, and humor, Ahmed's stories honor the lives and deaths of her Bangladeshi characters and the histories and memories that haunt them. This stunning and remarkable collection is as emotionally resonant as it is unforgettable.",
+      author: "Edwidge Danticat",
+      title: "Author of Everything Inside",
       rating: 5
     },
     {
-      text: "Sharbari Ahmed has crafted stories that linger long after you finish reading them. Essential work.",
-      author: "Independent Reviewer",
-      title: "Cultural Perspectives",
+      text: "Sharbari Ahmed takes no prisoners in The Strangest of Fruit, an absolutely ferocious collection of short stories. This book cherishes some of the most precious things in fiction: the piercingly accurate naming of feelings you might have thought impossible to hold with language, and intense tenderness and honesty with moments and people from which others have turned away. These frank and fierce voices will seize your attention, keep it, and remain with you long after you've turned the last page. Ahmed's words aim themselves directly at your heart.",
+      author: "V. V. Ganeshananthan",
+      title: "Author, Brotherless Night",
       rating: 5
     },
     {
-      text: "These stories refuse to be contained by category or expectation. They are bold, beautiful, and necessary.",
-      author: "Press Mention",
-      title: "Contemporary Fiction Review",
+      text: "These stories read like slices of life, in which Ahmed creates detailed, engrossing worlds. Every vignette is punctuated by her rich imagery and gorgeous language, allowing us to connect to these characters in ways that feel familiar but also like an awakening.",
+      author: "Susan Muaddi Darraj",
+      title: "Author, Behind You Is The Sea",
+      rating: 5
+    },
+    {
+      text: "These masterful stories are exhilarating in every way, innovative in form, irreverent in voice, haunting and precise in their depictions of society and examinations of race, nationality, gender, and identity. Ahmed is a true artist with incredible gifts. Her characters brandish humor that barely masks the pain. They harbor just enough strength to overcome the tragedies of modern life. The Strangest of Fruit is serious yet full of joy, resulting in a collection that is pure magic.",
+      author: "Chaitali Sen",
+      title: "A New Race of Men from Heaven",
       rating: 5
     },
   ]
