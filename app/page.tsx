@@ -95,12 +95,14 @@ export default function HomePage() {
   }
 ]
 
-  const PRESS_QUOTES = [
-    "Ahmed writes with a rare combination of lyricism and urgency.",
-    "These stories resonate with the quiet power of lived experience.",
-    "A vital voice in contemporary literature.",
-    "Masterful storytelling that crosses borders and boundaries."
-  ]
+ const PRESS_QUOTES = [
+  "Edwidge Danticat: A lyrical, compelling collection exploring migration, grief, and moments of joy.",
+  "V. V. Ganeshananthan: Fearless voices name emotions with piercing honesty and linger long after the final page.",
+  "Avni Doshi: A beautifully woven collection capturing terror, humor, and beauty across the full range of human experience.",
+  "Susan Muaddi Darraj: Vivid, intimate stories rich in imagery and language, creating worlds that feel both familiar and awakening.",
+  "Chaitali Sen: Innovative, haunting, and joyful stories examining identity and pain with remarkable artistry."
+];
+
 
  // ... existing code before awards section ...
 
@@ -615,8 +617,8 @@ export default function HomePage() {
         </section>
 
         {/* New Awards Section */}
-        <section className="relative bg-gradient-to-b from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
-          {/* Dust Texture Overlay */}
+        {/* <section className="relative bg-gradient-to-b from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
+          
           <div 
             className="absolute inset-0 opacity-[2%]"
             style={{
@@ -628,17 +630,17 @@ export default function HomePage() {
             }}
           ></div>
           
-          {/* Background Pattern */}
+        
           <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
           
-          {/* Floating Elements */}
+         
           <div className="absolute -top-10 -right-10 w-40 h-40 border border-[#B7C83E]/20 rounded-full animate-spin"></div>
           <div className="absolute -bottom-10 -left-10 w-40 h-40 border border-[#B7C83E]/10 rounded-full animate-float"></div>
 
           <div className="max-w-6xl mx-auto relative z-10">
-            {/* Section Header */}
+            
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
@@ -655,14 +657,14 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Awards Grid */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {AWARDS.map((award) => (
                 <div 
                   key={award.id}
                   className="bg-[#F9FAF4] rounded-2xl overflow-hidden shadow-xl hover-lift transition-all group border border-[#E3E7C8]"
                 >
-                  {/* Award Image */}
+            
                   <div className="relative h-48 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
                     <Image
                       src={award.image}
@@ -672,10 +674,10 @@ export default function HomePage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     
-                    {/* Gradient Overlay */}
+               
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     
-                    {/* Award Badge */}
+                   
                     <div className="absolute top-4 left-4">
                       <div className={`px-3 py-1.5 rounded-full backdrop-blur-sm border ${
                         award.featured 
@@ -690,7 +692,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     
-                    {/* Year Badge */}
+                   
                     <div className="absolute top-4 right-4">
                       <div className="w-12 h-12 bg-[#B7C83E] rounded-full flex items-center justify-center border border-white shadow-lg">
                         <span className="font-bold text-white text-sm">{award.year}</span>
@@ -698,7 +700,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   
-                  {/* Award Details */}
+                  
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-3">
                       <div>
@@ -732,7 +734,7 @@ export default function HomePage() {
                       </div>
                     )}
                     
-                    {/* Category Tag */}
+                   
                     <div className="mt-4">
                       <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${
                         award.category === 'screenplay' 
@@ -752,10 +754,10 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* CTA */}
+
             
           </div>
-        </section>
+        </section> */}
 
       {/* Testimonials Section */}
 <section className="relative bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
@@ -1057,47 +1059,54 @@ export default function HomePage() {
             </div>
 
             {/* Press Quotes */}
-            <div className="max-w-3xl mx-auto mb-12 md:mb-16 relative h-64">
-              {PRESS_QUOTES.map((quote, index) => (
-                <div
-                  key={index}
-                  className={`absolute top-0 left-0 w-full transition-all duration-800 ease-in-out ${
-                    index === currentPressQuote 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                >
-                  <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-[#E3E7C8] relative">
-                    {/* Dust Texture in Card */}
-                    <div 
-                      className="absolute inset-0 rounded-2xl opacity-[1%]"
-                      style={{
-                        backgroundImage: 'url(/images/dust.jpg)',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
-                      }}
-                    ></div>
-                    <div className="relative z-10">
-                      <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic text-center mb-6 leading-relaxed">
-                        "{quote}"
-                      </p>
-                      
-                      {/* Decorative Line */}
-                      <div className="flex items-center justify-center gap-4 mb-4">
-                        <div className="w-12 h-0.5 bg-[#B7C83E]"></div>
-                        <div className="w-2 h-2 bg-[#B7C83E] rounded-full"></div>
-                        <div className="w-12 h-0.5 bg-[#B7C83E]"></div>
-                      </div>
-                      
-                      <p className="font-subheading text-center text-[#5F6148] italic">
-                        On "The Strangest of Fruit"
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+<div className="max-w-3xl mx-auto mb-12 md:mb-16 relative h-64">
+  {PRESS_QUOTES.map((quote, index) => {
+    // Split quote & author
+    const [author, text] = quote.split(": ");
+    return (
+      <div
+        key={index}
+        className={`absolute top-0 left-0 w-full transition-all duration-800 ease-in-out ${
+          index === currentPressQuote 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+        }`}
+      >
+        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-[#E3E7C8] relative">
+          {/* Dust Texture in Card */}
+          <div 
+            className="absolute inset-0 rounded-2xl opacity-[1%]"
+            style={{
+              backgroundImage: 'url(/images/dust.jpg)',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          ></div>
+          <div className="relative z-10 text-center">
+            {/* Quote */}
+            <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-4 leading-relaxed">
+              "{text}"
+            </p>
+
+            {/* Author */}
+            <p className="font-bold text-[#5F6148] text-base md:text-lg">
+              — {author}
+            </p>
+
+            {/* Decorative Line */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="w-12 h-0.5 bg-[#B7C83E]"></div>
+              <div className="w-2 h-2 bg-[#B7C83E] rounded-full"></div>
+              <div className="w-12 h-0.5 bg-[#B7C83E]"></div>
             </div>
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
 
             {/* Publication Logos - Updated with NBC News Interview */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
