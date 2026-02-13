@@ -283,11 +283,11 @@ export default function PressPage() {
           </section>
 
           {/* Featured Reviews Section */}
-          <SectionContainer id="reviews" className="bg-[#F9FAF4] relative overflow-hidden">
-            {/* Leaf pattern overlay */}
+          {/* <SectionContainer id="reviews" className="bg-[#F9FAF4] relative overflow-hidden">
+          
             <div className="absolute inset-0 opacity-10 leaf-bg" style={{ transform: 'rotate(15deg)' }}></div>
             
-            {/* Olive corner accents */}
+           
             <div className="absolute top-8 left-8 w-12 h-12 border-t border-l border-[#B7C83E]/40"></div>
             <div className="absolute top-8 right-8 w-12 h-12 border-t border-r border-[#B7C83E]/40"></div>
 
@@ -314,18 +314,18 @@ export default function PressPage() {
                     className="group relative block p-8 bg-gradient-to-r from-[#F9FAF4] to-[#D9E6A3] border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:bg-gradient-to-r hover:from-[#B7C83E]/10 hover:to-[#F9FAF4] transition-all duration-500 animate-slide-up"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    {/* Olive accent line */}
+                    
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-0 bg-gradient-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-16 transition-all duration-300 rounded-full"></div>
                     
                     <div className="flex flex-col md:flex-row md:items-start gap-6">
-                      {/* Publication Icon */}
+                      
                       <div className="flex-shrink-0">
                         <div className="w-16 h-16 bg-gradient-to-br from-[#B7C83E]/30 to-transparent border border-[#B7C83E]/40 rounded-xl flex items-center justify-center group-hover:border-[#6F7F1E] transition-colors">
                           <Globe size={24} className="text-[#6F7F1E]" />
                         </div>
                       </div>
                       
-                      {/* Content */}
+                      
                       <div className="flex-1 space-y-4">
                         <div className="space-y-2">
                           <div className="flex flex-wrap items-center gap-3">
@@ -347,7 +347,6 @@ export default function PressPage() {
                         </p>
                       </div>
                       
-                      {/* Action Button */}
                       <div className="flex-shrink-0">
                         <div className="group/btn relative overflow-hidden p-3 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg hover:shadow-lg hover:shadow-[#B7C83E]/30 transition-all duration-300">
                           <div className="flex items-center gap-2">
@@ -362,7 +361,7 @@ export default function PressPage() {
                 ))}
               </div>
 
-              {/* Additional Review Note */}
+              
               <div className="text-center pt-8">
                 <p className="text-[#5F6148] font-cormorant italic">
                   For interview requests, review copies, or press inquiries, please visit the{" "}
@@ -373,7 +372,7 @@ export default function PressPage() {
                 </p>
               </div>
             </div>
-          </SectionContainer>
+          </SectionContainer> */}
 
           {/* Praise Section */}
           <SectionContainer id="praise" className="bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] relative overflow-hidden">
@@ -433,80 +432,7 @@ export default function PressPage() {
             </div>
           </SectionContainer>
 
-          {/* Press Coverage Section */}
-          <SectionContainer id="press" className="bg-[#F9FAF4] relative overflow-hidden">
-            {/* Pattern overlay */}
-            <div className="absolute inset-0 opacity-10 leaf-bg"></div>
-            
-            {/* Bottom decorative border */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
-
-            <div className="relative z-10 space-y-12">
-              <div className="text-center space-y-6">
-                <div className="inline-flex items-center gap-4">
-                  <div className="h-px w-8 bg-[#B7C83E]"></div>
-                  <Newspaper size={20} className="text-[#6F7F1E]" />
-                  <span className="font-cormorant text-[#6F7F1E] tracking-widest text-sm">PRESS COVERAGE</span>
-                  <div className="h-px w-8 bg-[#B7C83E]"></div>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#2E2F1F]">
-                  Featured in the Press
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {pressItems.map((item, index) => {
-                  const Icon = item.icon
-                  return (
-                    <Link
-                      key={index}
-                      href={item.link}
-                      className="group relative block p-6 bg-gradient-to-r from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:bg-gradient-to-r hover:from-[#B7C83E]/10 hover:to-[#F9FAF4] transition-all duration-500 animate-slide-up"
-                      style={{ animationDelay: `${index * 100 + 300}ms` }}
-                    >
-                      {/* Olive accent line */}
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-gradient-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-12 transition-all duration-300 rounded-full"></div>
-                      
-                      <div className="flex flex-col md:flex-row md:items-center gap-6">
-                        {/* Icon */}
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/30 to-transparent border border-[#B7C83E]/40 rounded-lg flex items-center justify-center group-hover:border-[#6F7F1E] transition-colors">
-                            <Icon size={20} className="text-[#6F7F1E]" />
-                          </div>
-                        </div>
-                        
-                        {/* Content */}
-                        <div className="flex-1 space-y-3">
-                          <div className="space-y-1">
-                            <div className="flex flex-wrap items-center gap-3">
-                              <p className="text-sm text-[#6F7F1E] font-medium uppercase tracking-wider">
-                                {item.publication}
-                              </p>
-                              <span className="text-sm text-[#5F6148]/40">•</span>
-                              <p className="text-sm text-[#5F6148]">{item.date}</p>
-                            </div>
-                            <h3 className="text-xl font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">
-                              {item.title}
-                            </h3>
-                          </div>
-                          <p className="text-[#5F6148] leading-relaxed">
-                            {item.excerpt}
-                          </p>
-                        </div>
-                        
-                        {/* Arrow */}
-                        <div className="flex-shrink-0">
-                          <div className="w-8 h-8 border border-[#B7C83E]/40 rounded-full flex items-center justify-center group-hover:border-[#6F7F1E] group-hover:bg-[#6F7F1E]/10 transition-all">
-                            <ChevronRight size={16} className="text-[#6F7F1E] group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  )
-                })}
-              </div>
-            </div>
-          </SectionContainer>
+         
 
           {/* Book Information Section */}
           <SectionContainer id="book" className="bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4] relative overflow-hidden">
