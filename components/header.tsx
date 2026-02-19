@@ -143,7 +143,7 @@ export function Header() {
                 <div className="relative flex items-center gap-3 cursor-pointer group">
                   {/* Name with Olive Accent */}
                   <div className="relative">
-                    <img className="w-56 pt-2" src="/images/logo.png" alt="Sharbari Zohra Ahmed" />
+                    <img className="w-40 pt-2" src="/images/logo.png" alt="Sharbari Zohra Ahmed" />
                     {/* Olive underline */}
                     <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent group-hover:w-full transition-all duration-500"></div>
                   </div>
