@@ -131,7 +131,7 @@ export function Header() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#B7C83E]/5 via-transparent to-transparent pointer-events-none"></div>
         )}
 
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
+        <nav className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
             <div
