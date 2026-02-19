@@ -371,7 +371,7 @@ export default function AboutPage() {
 
             {/* Book Cards */}
             <div className="space-y-6">
-              <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm hover-lift transition-all">
+              {/* <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm hover-lift transition-all">
                 <h3 className="text-xl font-bold text-[#2E2F1F] mb-3">Dust Under Her Feet</h3>
                 <p className="text-[#5F6148] mb-4">
                   A novel exploring the immigrant experience through the lens of cultural displacement and personal transformation.
@@ -381,7 +381,7 @@ export default function AboutPage() {
                     <span className="text-xs font-semibold text-[#5F6148]">Adapted for Television</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm hover-lift transition-all">
                 <h3 className="text-xl font-bold text-[#2E2F1F] mb-3">The Ocean of Mrs. Nagai</h3>
