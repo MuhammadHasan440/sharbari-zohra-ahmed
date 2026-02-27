@@ -1230,7 +1230,7 @@ export default function HomePage() {
       {isClient && showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 z-50 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform touch-target hover-scale relative border border-[#E3E7C8]"
+          className="fixed bottom-4 left-5 z-50 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform touch-target hover-scale relative border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
           {/* Dust Texture on Button */}
