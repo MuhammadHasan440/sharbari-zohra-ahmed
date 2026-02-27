@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Star, Quote, BookOpen, Award, Newspaper, ChevronRight, Globe, Calendar, Sparkles, Heart, Flame } from "lucide-react"
+import { Star, Quote, BookOpen, Award, Newspaper, ChevronRight, Globe, Calendar, Sparkles, Heart, Flame, PenTool } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SectionContainer } from "@/components/section-container"
@@ -354,49 +354,6 @@ export default function AnnouncementPage() {
             </div>
           </SectionContainer>
 
-          {/* Early Praise Section */}
-          <SectionContainer className="bg-[#F9FAF4] relative overflow-hidden">
-            {/* Pattern overlay */}
-            <div className="absolute inset-0 opacity-10 leaf-bg"></div>
-
-            <div className="relative z-10 space-y-12">
-              <div className="text-center space-y-6">
-                <div className="inline-flex items-center gap-4">
-                  <div className="h-px w-12 bg-[#B7C83E]"></div>
-                  <span className="font-cormorant text-[#6F7F1E] tracking-widest text-sm">EARLY PRAISE</span>
-                  <div className="h-px w-12 bg-[#B7C83E]"></div>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#2E2F1F]">
-                  What Readers Are Saying
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {earlyPraise.map((item, index) => (
-                  <div
-                    key={index}
-                    className="group relative p-8 bg-white rounded-xl border border-[#E3E7C8] hover:border-[#B7C83E] transition-all duration-500 animate-slide-up"
-                    style={{ animationDelay: `${index * 100 + 200}ms` }}
-                  >
-                    <Quote className="absolute top-4 left-4 w-8 h-8 text-[#B7C83E]/30" />
-                    
-                    <blockquote className="text-lg text-[#2E2F1F]/90 leading-relaxed italic mb-6 font-cormorant pl-2">
-                      "{item.text}"
-                    </blockquote>
-                    
-                    <div className="border-t border-[#E3E7C8] pt-4">
-                      <p className="font-medium text-[#6F7F1E]">{item.author}</p>
-                      <p className="text-sm text-[#5F6148]">{item.publication}</p>
-                    </div>
-                    
-                    {/* Hover effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </SectionContainer>
-
           {/* Release Information Section */}
           <SectionContainer className="bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4] relative overflow-hidden">
             {/* Bottom decorative border */}
@@ -450,6 +407,74 @@ export default function AnnouncementPage() {
                     Cheek Press
                   </Link>
                 </p>
+              </div>
+            </div>
+          </SectionContainer>
+
+          {/* Connecticut Literary Anthology Call for Submissions */}
+          <SectionContainer className="bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] relative overflow-hidden">
+            {/* Top and bottom decorative borders */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+            
+            {/* Pattern overlay */}
+            <div className="absolute inset-0 opacity-10 leaf-bg"></div>
+
+            <div className="relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Image */}
+                <div className="relative group order-2 lg:order-1">
+  {/* Olive frame effect */}
+  <div className="absolute -inset-4 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+  
+  <div className="relative w-full h-[500px] md:h-[600px] rounded-xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-all duration-700">
+    <Image
+      src="/images/new-ann.jpg"
+      alt="Connecticut Literary Anthology 2026"
+      fill
+      className="object-contain"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      priority
+    />
+    
+    {/* Olive shine effect */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#D9E6A3]/30 via-transparent to-transparent"></div>
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+  </div>
+</div>
+
+                {/* Content */}
+                <div className="space-y-8 order-1 lg:order-2">
+                  <div className="space-y-6">
+                    <div className="inline-flex items-center gap-4">
+                      <div className="h-px w-12 bg-[#B7C83E]"></div>
+                      <span className="font-cormorant text-[#6F7F1E] tracking-widest text-sm">CALL FOR SUBMISSIONS</span>
+                    </div>
+                    
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#2E2F1F]">
+                      Calling All Connecticut Based Writers
+                    </h2>
+                    
+                    <div className="space-y-4">
+                      <p className="text-xl text-[#2E2F1F] font-cormorant leading-relaxed">
+                        I am thrilled to announce that I am the fiction editor for the{" "}
+                        <span className="font-bold text-[#6F7F1E]">Connecticut Literary Anthology 2026</span>.
+                      </p>
+                      
+                      <div className="pl-4 border-l-2 border-[#B7C83E] space-y-3">
+                        <p className="text-lg text-[#5F6148] font-cormorant">
+                          Please submit your work by{" "}
+                          <span className="font-bold text-[#6F7F1E]">April 15th</span>.
+                        </p>
+                        <p className="text-lg text-[#5F6148] font-cormorant">
+                          <span className="font-bold text-[#2E2F1F]">Open only to Connecticut based writers.</span>
+                        </p>
+                      </div>
+                    </div>
+
+                  
+                  </div>
+                </div>
               </div>
             </div>
           </SectionContainer>
