@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Film, ExternalLink, Play, Award, Calendar, Globe, Camera, Clapperboard, Star, ChevronUp, Users, ArrowRight, Sparkles, PenTool } from "lucide-react"
+import { Film, ExternalLink, Play, Award, Calendar, Globe, Camera, Clapperboard, Star, ChevronUp, Users, ArrowRight, Sparkles, PenTool, Youtube } from "lucide-react"
 
 export default function FilmsPage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -24,59 +24,7 @@ export default function FilmsPage() {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  const filmography = [
-    {
-      title: "Short Film",
-      type: "Short Film",
-      description: "Stills, synopsis, festival notes.",
-      status: "In Production",
-      link: "#",
-      platform: "Available for Festival",
-      year: "2024",
-      color: "from-[#B7C83E] to-[#6F7F1E]",
-      featured: true
-    },
-    {
-      title: "Feature Adaptation",
-      year: "2024",
-      type: "Feature Film",
-      description: "A film adaptation written by Sharbari, now streaming on Amazon. A powerful narrative exploring displacement, resilience, and the human spirit.",
-      status: "Streaming",
-      link: "https://www.amazon.com/",
-      platform: "Amazon Prime Video",
-      color: "from-[#2E2F1F] to-[#5F6148]"
-    },
-    {
-      title: "Literary Adaptation",
-      year: "2023",
-      type: "Feature",
-      description: "Available on Amazon Prime Video and select streaming platforms. A feature-length adaptation bringing literary fiction to the screen.",
-      status: "Streaming",
-      link: "https://www.amazon.com/",
-      platform: "Amazon Prime Video",
-      color: "from-[#B7C83E] to-[#6F7F1E]"
-    },
-    {
-      title: "Documentary Series",
-      year: "2023",
-      type: "Series (3 Episodes)",
-      description: "An intimate documentary series exploring storytelling, cultural heritage, and the creative process. Behind-the-scenes and personal narrative.",
-      status: "In Festival Circuit",
-      link: "#",
-      platform: "Festival Submissions",
-      color: "from-[#2E2F1F] to-[#5F6148]"
-    },
-    {
-      title: "Short Film",
-      year: "2022",
-      type: "Short (12 min)",
-      description: "An experimental narrative exploring memory and diaspora through visual metaphor. Selected for multiple international film festivals.",
-      status: "Festival Award Winner",
-      link: "#",
-      platform: "Festival Circuit",
-      color: "from-[#B7C83E] to-[#6F7F1E]"
-    },
-  ]
+  
 
   const realFilms = [
     {
@@ -103,6 +51,7 @@ export default function FilmsPage() {
       description: "A celebrated literature professor hiding a life overtaken by hoarding must confront lived trauma and the scourge of perfectionism when her estranged daughter, a beautiful, talented ballerina, seeks to reconnect with her after 12 years.",
       status: "In Post-Production",
       source: "",
+      posterImage: "/images/level-poster.jpg",
       trailerLink: "#",
       internalLink: "/film/level-3",
       year: "2026",
@@ -111,25 +60,8 @@ export default function FilmsPage() {
     }
   ]
 
-  const festivals = [
-    { name: "International Film Festival", year: "2023", location: "Cannes, FR" },
-    { name: "Documentary Festival Selection", year: "2023", location: "Sundance, US" },
-    { name: "Asian American Film Festival", year: "2022", location: "Los Angeles, US" },
-    { name: "Emerging Filmmakers Program", year: "2022", location: "Toronto, CA" },
-  ]
-
-  const awards = [
-    { name: "Best Short Film", festival: "Festival X", year: "2023" },
-    { name: "Director's Award", festival: "Festival Y", year: "2022" },
-    { name: "Audience Choice", festival: "Documentary Festival", year: "2023" },
-    { name: "Emerging Artist Fellowship", festival: "Arts Council", year: "2022" },
-  ]
-
   const tabs = [
-    { id: "filmography", label: "Filmography" },
     { id: "featured-films", label: "Featured Films" },
-    { id: "festivals", label: "Festivals" },
-    { id: "awards", label: "Awards" },
   ]
 
   return (
@@ -252,7 +184,7 @@ export default function FilmsPage() {
                   <p className="text-xs text-white/80">Festival Selections</p>
                 </div>
                 <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
-                  <p className="text-xl font-bold text-[#B7C83E]">4</p>
+                  <p className="text-xl font-bold text-[#B7C83E]">5</p>
                   <p className="text-xs text-white/80">Awards Won</p>
                 </div>
                 <div className="p-3 bg-[#2E2F1F]/20 border border-[#E3E7C8] rounded-lg">
@@ -293,41 +225,23 @@ export default function FilmsPage() {
                 <h2 className="text-3xl font-bold text-[#2E2F1F]">Director's Statement</h2>
               </div>
 
-              <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
-                  <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
-                    <Sparkles size={14} className="text-[#B7C83E]" />
-                    Visual Authenticity
-                  </h3>
-                  <p className="text-[#5F6148] text-sm mt-2">
-                    As a director and filmmaker, I'm committed to bringing literary narratives and original stories to the screen with visual authenticity and emotional depth.
-                  </p>
-                </div>
-
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
-                  <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
-                    <Globe size={14} className="text-[#B7C83E]" />
-                    Cultural Memory
-                  </h3>
-                  <p className="text-[#5F6148] text-sm mt-2">
-                    My work explores the intersection of personal identity, cultural memory, and the universal human experience.
-                  </p>
-                </div>
-
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
-                  <h3 className="text-lg font-bold text-[#2E2F1F] flex items-center gap-2">
-                    <Users size={14} className="text-[#B7C83E]" />
-                    Marginalized Voices
-                  </h3>
-                  <p className="text-[#5F6148] text-sm mt-2">
-                    I believe cinema is a powerful medium for challenging stereotypes and centering marginalized voices.
-                  </p>
-                </div>
+              <div className="max-w-3xl mx-auto space-y-6">
+                <p className="text-[#5F6148] leading-relaxed text-base">
+                  I am drawn to stories about the hidden lives people carry beneath the surface—secrets, shame, longing, and the quiet resilience required to confront them. My work often centers women navigating complicated emotional landscapes, where love and betrayal, identity and belonging, exist side by side.
+                </p>
+                
+                <p className="text-[#5F6148] leading-relaxed text-base">
+                  As a filmmaker and writer who has lived between cultures, I am deeply interested in characters who inhabit in-between spaces—geographically, emotionally, and morally. These liminal spaces are where truth is often revealed.
+                </p>
+                
+                <p className="text-[#5F6148] leading-relaxed text-base">
+                  Whether I'm working in film, television, or fiction, I try to create stories that feel intimate yet universal—stories that ask difficult questions about who we are, what we hide, and what it takes to reclaim ourselves.
+                </p>
               </div>
 
               <div className="p-6 bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent border-y border-[#E3E7C8]">
-                <p className="text-[#5F6148] leading-relaxed text-center font-subheading">
-                  Whether adapting existing stories or developing original screenplays, my approach prioritizes nuance, representation, and emotional truth.
+                <p className="text-[#5F6148] leading-relaxed text-center font-subheading italic">
+                  "These liminal spaces are where truth is often revealed."
                 </p>
               </div>
             </div>
@@ -382,13 +296,23 @@ export default function FilmsPage() {
                 >
                   {/* Film Image */}
                   <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
-                      {film.type === "Short Film" ? (
-                        <PenTool size={48} className="text-[#B7C83E]/30" />
-                      ) : (
-                        <Film size={48} className="text-[#B7C83E]/30" />
-                      )}
-                    </div>
+                    {film.posterImage ? (
+                      // Display actual poster image if available
+                      <img 
+                        src={film.posterImage} 
+                        alt={`${film.title} poster`}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      // Fallback gradient with icon
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+                        {film.type === "Short Film" ? (
+                          <PenTool size={48} className="text-[#B7C83E]/30" />
+                        ) : (
+                          <Film size={48} className="text-[#B7C83E]/30" />
+                        )}
+                      </div>
+                    )}
                     
                     {/* Play Button Overlay */}
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
@@ -454,7 +378,19 @@ export default function FilmsPage() {
                       </div>
                     )}
 
-                   
+                    {/* YouTube Channel Link */}
+                    <div className="mt-4 pt-4 border-t border-[#E3E7C8]/20">
+                      <a 
+                        href="https://youtube.com/@westkelseyproductions?si=G_AD0uwFV2v5tLWc"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-[#B7C83E] hover:text-white transition-colors"
+                      >
+                        <Youtube size={18} />
+                        <span>Watch more on our YouTube channel</span>
+                        <ExternalLink size={14} className="opacity-70" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -462,214 +398,39 @@ export default function FilmsPage() {
           </div>
         </section>
 
-        {/* Filmography Section */}
-        <section id="filmography" className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
-          <div className="mobile-padding">
-            <div className="space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                  <Clapperboard size={20} className="text-white" />
-                </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-[#2E2F1F]">Filmography</h2>
-                  <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                {filmography.map((film, index) => (
-                  <div
-                    key={index}
-                    className={`relative p-5 bg-gradient-to-br from-[#F9FAF4] to-white border rounded-xl mobile-transition hover-lift ${
-                      hoveredFilm === index 
-                        ? 'border-[#B7C83E] shadow-lg' 
-                        : 'border-[#E3E7C8]'
-                    }`}
-                    onMouseEnter={() => setHoveredFilm(index)}
-                    onMouseLeave={() => setHoveredFilm(null)}
-                  >
-                    {/* Featured Badge */}
-                    {film.featured && (
-                      <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
-                        <p className="text-xs font-bold text-[#2E2F1F]">FEATURED</p>
-                      </div>
-                    )}
-
-                    <div className="space-y-4">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <h3 className="text-lg font-bold text-[#2E2F1F]">{film.title}</h3>
-                          <div className="flex items-center gap-2 mt-1">
-                            <span className="px-2 py-0.5 bg-[#D9E6A3]/30 text-[#5F6148] text-xs rounded-full">
-                              {film.type}
-                            </span>
-                            <span className="px-2 py-0.5 bg-[#B7C83E]/10 text-[#5F6148] text-xs rounded-full">
-                              {film.year}
-                            </span>
-                          </div>
-                        </div>
-                        <span className={`text-sm font-medium ${
-                          film.status === 'Streaming' ? 'text-[#6F7F1E]' : 
-                          film.status === 'In Production' ? 'text-[#B7C83E]' : 
-                          'text-[#5F6148]'
-                        }`}>
-                          {film.status}
-                        </span>
-                      </div>
-
-                      <p className="text-[#5F6148] text-sm">
-                        {film.description}
-                      </p>
-
-                      <div className="flex items-center justify-between pt-2">
-                        <div className="flex items-center gap-1 text-[#5F6148] text-xs">
-                          <Globe size={12} />
-                          <span>{film.platform}</span>
-                        </div>
-                        {film.link !== "#" && (
-                          <Link
-                            href={film.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] text-sm font-medium"
-                          >
-                            <Play size={14} />
-                            <span>Watch</span>
-                          </Link>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Festivals & Awards Sections */}
-        <div className="space-y-12 mobile-full-width">
-          {/* Festivals Section */}
-          <section id="festivals" className="py-12 bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
-            <div className="mobile-padding">
-              <div className="space-y-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                    <Calendar size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-bold text-[#2E2F1F]">Festival Selections</h2>
-                    <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {festivals.map((festival, index) => (
-                    <div 
-                      key={index} 
-                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg hover-lift"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="space-y-1">
-                          <h4 className="text-[#2E2F1F] font-bold">{festival.name}</h4>
-                          <p className="text-[#5F6148] text-xs">{festival.location}</p>
-                        </div>
-                        <div className="text-right">
-                          <span className="text-[#B7C83E] font-bold">{festival.year}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Awards Section */}
-          <section id="awards" className="py-12 bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4]">
-            <div className="mobile-padding">
-              <div className="space-y-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                    <Award size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-bold text-[#2E2F1F]">Awards & Honors</h2>
-                    <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {awards.map((award, index) => (
-                    <div 
-                      key={index} 
-                      className="p-4 bg-white border border-[#E3E7C8] rounded-lg hover-lift"
-                    >
-                      <div className="flex items-start gap-3">
-                        <Star className="text-[#B7C83E] flex-shrink-0 mt-1" size={16} />
-                        <div className="flex-1">
-                          <h4 className="text-[#2E2F1F] font-bold">{award.name}</h4>
-                          <div className="flex items-center justify-between mt-1">
-                            <p className="text-[#5F6148] text-xs">{award.festival}</p>
-                            <span className="text-[#B7C83E] font-bold">{award.year}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
         {/* Creative Collaborations - Mobile Optimized */}
         <section className="py-12 mobile-full-width bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold text-[#2E2F1F]">
-                  Creative
-                  <br />
-                  <span className="text-[#6F7F1E]">Collaborations</span>
-                </h2>
-                <p className="text-[#5F6148] font-subheading">
-                  Working with talented cinematographers, producers, sound designers, and editors to bring stories to life.
-                </p>
+              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Award size={20} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#2E2F1F]">Tribeca All Access Program</h3>
+                  <p className="text-[#5F6148] text-sm">
+                    Tribeca Film Festival – 2008<br />
+                    (Raisins Not Virgins)
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
-                  <div className="space-y-3">
-                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                      <Users size={20} className="text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-[#2E2F1F]">Services Available</h3>
-                    <ul className="space-y-1 text-[#5F6148] text-sm text-center">
-                      <li>• Film production consultation</li>
-                      <li>• Story development for screen</li>
-                      <li>• Directing and cinematography</li>
-                      <li>• Post-production collaboration</li>
-                    </ul>
+              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <Film size={20} className="text-white" />
                   </div>
-                </div>
-
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
-                  <div className="space-y-3">
-                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                      <Film size={20} className="text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-[#2E2F1F]">Get in Touch</h3>
-                    <p className="text-[#5F6148] text-sm">
-                      Interested in collaboration, festival submissions, or licensing inquiries?
-                    </p>
-                    <Link
-                      href="/contact?subject=Film%20Collaboration"
-                      className="inline-flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] font-medium text-sm"
-                    >
-                      Start a Conversation
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
+                  <h3 className="text-lg font-bold text-[#2E2F1F]">Get in Touch</h3>
+                  <p className="text-[#5F6148] text-sm">
+                    Interested in collaboration, festival submissions, or licensing inquiries?
+                  </p>
+                  <Link
+                    href="/contact?subject=Film%20Collaboration"
+                    className="inline-flex items-center gap-1 text-[#6F7F1E] hover:text-[#B7C83E] font-medium text-sm"
+                  >
+                    Start a Conversation
+                    <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
 

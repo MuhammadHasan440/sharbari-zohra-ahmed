@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy, Calendar, PenTool } from "lucide-react"
+import { ArrowRight, Book, Film, Users, ChevronUp, Sparkles, Quote, Award, Star, Play, BookOpen, ChevronLeft, ChevronRight, Trophy, Calendar, PenTool, ExternalLink, Youtube } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -559,58 +559,78 @@ export default function HomePage() {
 
     {/* Level 3 */}
     <div className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
-      {/* Film Image */}
-      <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
-          <PenTool size={48} className="text-[#B7C83E]/30" />
-        </div>
+  {/* Film Image */}
+  <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+    {/* Poster Image */}
+    <img 
+      src="/images/level-poster.jpg" 
+      alt="Level 3 poster"
+      className="w-full h-full object-cover"
+    />
+    
+    {/* Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-        {/* In Production Badge */}
-        <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
-          <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
-            In Post-Production
-          </span>
-        </div>
-        
-        {/* Year Badge */}
-        <div className="absolute top-4 right-4 px-3 py-1.5 bg-[#B7C83E]/20 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
-          <span className="font-subheading text-xs font-semibold text-[#B7C83E]">
-            2026
-          </span>
-        </div>
-      </div>
-
-      {/* Film Details */}
-      <div className="p-6">
-        <div className="mb-4">
-          <h4 className="text-xl font-bold text-white mb-2">
-            "Level 3"
-          </h4>
-          <p className="text-[#B7C83E] font-subheading text-sm">
-            Written & Directed by Sharbari
-          </p>
-          <p className="text-[#9CA3AF] text-sm mt-1">
-            West Kelsey Productions, 2026
-          </p>
-        </div>
-        
-        <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
-          A celebrated literature professor hiding a life overtaken by hoarding must confront lived trauma and the scourge of perfectionism when her estranged daughter, a beautiful, talented ballerina, seeks to reconnect with her after 12 years.
-        </p>
-
-        <div className="mb-4 p-3 bg-[#B7C83E]/10 border border-[#E3E7C8] rounded-lg">
-          <p className="text-xs text-[#B7C83E]">
-            🎬 Currently in post-production. More details coming soon.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
-          <span className="text-xs text-[#9CA3AF] font-subheading">Short Film</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
-        </div>
-      </div>
+    {/* In Production Badge */}
+    <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+      <span className="font-subheading text-xs font-semibold text-[#B7C83E] uppercase tracking-wider">
+        In Post-Production
+      </span>
     </div>
+    
+    {/* Year Badge */}
+    <div className="absolute top-4 right-4 px-3 py-1.5 bg-[#B7C83E]/20 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
+      <span className="font-subheading text-xs font-semibold text-[#B7C83E]">
+        2026
+      </span>
+    </div>
+  </div>
+
+  {/* Film Details */}
+  <div className="p-6">
+    <div className="mb-4">
+      <h4 className="text-xl font-bold text-white mb-2">
+        "Level 3"
+      </h4>
+      <p className="text-[#B7C83E] font-subheading text-sm">
+        Written & Directed by Sharbari
+      </p>
+      <p className="text-[#9CA3AF] text-sm mt-1">
+        West Kelsey Productions, 2026
+      </p>
+    </div>
+    
+    <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
+      A celebrated literature professor hiding a life overtaken by hoarding must confront lived trauma and the scourge of perfectionism when her estranged daughter, a beautiful, talented ballerina, seeks to reconnect with her after 12 years.
+    </p>
+
+    <div className="mb-4 p-3 bg-[#B7C83E]/10 border border-[#E3E7C8] rounded-lg">
+      <p className="text-xs text-[#B7C83E]">
+        🎬 Currently in post-production. More details coming soon.
+      </p>
+    </div>
+
+    {/* YouTube Channel Link */}
+    <div className="mb-4">
+      <a 
+        href="https://youtube.com/@westkelseyproductions?si=G_AD0uwFV2v5tLWc"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-sm text-[#B7C83E] hover:text-white transition-colors"
+      >
+        <Youtube size={18} />
+        <span>Watch more on our YouTube channel</span>
+        <ExternalLink size={14} className="opacity-70" />
+      </a>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
+      <span className="text-xs text-[#9CA3AF] font-subheading">Short Film</span>
+      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
+    </div>
+  </div>
+</div>
   </div>
 </div>
           </div>
@@ -1024,6 +1044,131 @@ export default function HomePage() {
   </div>
 </section>
 
+{/* Awards & Honors Section */}
+<section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
+  {/* Dust Texture Overlay */}
+  <div 
+    className="absolute inset-0 opacity-[2%]"
+    style={{
+      backgroundImage: 'url(/images/dust.jpg)',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    }}
+  ></div>
+  
+  {/* Background Elements */}
+  <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
+  <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#6F7F1E]/5 to-transparent rounded-full blur-3xl"></div>
+
+  <div className="max-w-6xl mx-auto relative z-10">
+    {/* Section Header */}
+    <div className="text-center mb-8">
+      <div className="inline-flex items-center justify-center gap-3 mb-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+          <Trophy size={24} className="text-[#B7C83E]" />
+        </div>
+      </div>
+      
+      <h2 className="text-4xl md:text-5xl font-bold mb-2">
+        Awards & <span className="text-gradient">Honors</span>
+      </h2>
+      
+      <p className="font-['Lato'] text-lg text-[#5F6148] font-semibold">
+        See photos below.
+      </p>
+    </div>
+
+    {/* Awards Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      {/* Award 1: Tribeca */}
+      <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+        <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+             onClick={() => window.open('/images/tribeca-certificate.jpg', '_blank')}>
+          <img 
+            src="/images/tribeca-certificate.jpg" 
+            alt="Tribeca All Access Program Certificate"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+         
+        </div>
+        <div className="p-5">
+          <h4 className="font-bold text-[#2E2F1F] mb-1 line-clamp-2">
+            Screenplay Award – "Raisins Not Virgins"
+          </h4>
+          <p className="text-[#B7C83E] font-subheading text-sm font-semibold mb-1">
+            Tribeca All Access Program
+          </p>
+          <p className="text-[#5F6148] text-xs">
+            Tribeca Film Festival
+          </p>
+        </div>
+      </div>
+
+      {/* Award 2: New Haven 4 Hour Film Project */}
+      <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+        <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+             onClick={() => window.open('/images/newhaven-certificate.jpg', '_blank')}>
+          <img 
+            src="/images/newhaven-certificate.jpg" 
+            alt="New Haven 4 Hour Film Project Certificate"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+         
+        </div>
+        <div className="p-5">
+          <h4 className="font-bold text-[#2E2F1F] mb-1">
+            Best Screenplay Award
+          </h4>
+          <p className="text-[#B7C83E] font-subheading text-sm font-semibold mb-1">
+            New Haven 4 Hour Film Project
+          </p>
+        </div>
+      </div>
+
+      {/* Award 3: Screenwriting Competition 2026 */}
+      <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+        <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+             onClick={() => window.open('/images/competition-2026.jpg', '_blank')}>
+          <img 
+            src="/images/competition-2026.jpg" 
+            alt="Screenwriting Competition 2026 Certificate"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          
+        </div>
+        <div className="p-5">
+          <h4 className="font-bold text-[#2E2F1F] mb-1">
+            Screenwriting Competition 2026
+          </h4>
+          <p className="text-[#B7C83E] font-subheading text-sm font-semibold mb-1">
+            Award Winner
+          </p>
+        </div>
+      </div>
+
+      {/* Award 4: Best Pilot Script - Bombay Duck */}
+      <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+        <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+             onClick={() => window.open('/images/bombay-duck-certificate.jpg', '_blank')}>
+          <img 
+            src="/images/bombay-duck-certificate.jpg" 
+            alt="Best Pilot Script - Bombay Duck Certificate"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+       
+        </div>
+        <div className="p-5">
+          <h4 className="font-bold text-[#2E2F1F] mb-1 line-clamp-2">
+            Best Pilot Script – "Bombay Duck"
+          </h4>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</section>
         {/* Press & Praise Section */}
         <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}

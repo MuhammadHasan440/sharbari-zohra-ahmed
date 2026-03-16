@@ -154,9 +154,9 @@ export default function BlogPage() {
               </div>
 
               <h1 className="text-4xl font-bold text-white leading-tight">
-                Notes from
+                Underdog Energy 
                 <br />
-                <span className="text-[#B7C83E]">the In-Between</span>
+                <span className="text-[#B7C83E]">+ Substack</span>
               </h1>
 
               {/* Separator */}

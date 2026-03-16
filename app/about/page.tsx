@@ -290,7 +290,6 @@ export default function AboutPage() {
                   {[
                     { number: "3", label: "Books" },
                     { number: "4", label: "Screenplays" },
-                    { number: "10+", label: "Awards" },
                     { number: "50+", label: "Mentored" }
                   ].map((stat, index) => (
                     <div key={index} className="flex-shrink-0 w-20 p-3 bg-[#B7C83E]/20 border border-[#E3E7C8] rounded-lg backdrop-blur-sm">
@@ -328,7 +327,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-lg font-bold text-[#2E2F1F] mb-2">Global Perspective</h3>
                   <p className="text-[#5F6148]">
-                    Born in Dhaka, Bangladesh and raised between Connecticut, Ethiopia, and New York, she brings a distinctly global, diasporic lens to everything she creates.
+                    I was born in Dhaka, Bangladesh and raised between Connecticut, Ethiopia, and New York, which gives me a distinctly global, diasporic lens that informs everything I create.
                   </p>
                 </div>
               </div>
@@ -337,11 +336,13 @@ export default function AboutPage() {
             {/* Biography Content */}
             <div className="space-y-6">
               <p className="text-lg text-[#5F6148] leading-relaxed">
-                <span className="font-bold text-[#2E2F1F]">Sharbari Zohra Ahmed</span> is an award-winning writer, screenwriter, and filmmaker whose work explores identity, migration, faith, superstition and the complicated ways people love—and fail—each other.
+                <span className="font-bold text-[#2E2F1F]"> I am an award-winning writer,</span> screenwriter, and filmmaker whose work explores identity, migration, faith, superstition, and the complicated ways people love—and fail—each other.
+
               </p>
 
               <p className="text-[#5F6148] leading-relaxed">
-                That cross-continental upbringing deeply informs her storytelling, infusing it with humor, political awareness, and emotional nuance.
+               That cross-continental upbringing deeply informs my storytelling, infusing it with humor, political awareness, and emotional nuance.
+
               </p>
 
               {/* Quote Box */}
@@ -356,49 +357,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Literary Works Section */}
-        <section id="literary-works" className="py-12 mobile-full-width bg-gradient-to-b from-white to-[#F9FAF4]">
-          <div className="mobile-padding max-w-4xl mx-auto space-y-8">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#D9E6A3] to-transparent rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                <BookOpen size={24} className="text-[#5F6148]" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-[#2E2F1F]">Literary Works</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
-              </div>
-            </div>
-
-            {/* Book Cards */}
-            <div className="space-y-6">
-              {/* <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm hover-lift transition-all">
-                <h3 className="text-xl font-bold text-[#2E2F1F] mb-3">Dust Under Her Feet</h3>
-                <p className="text-[#5F6148] mb-4">
-                  A novel exploring the immigrant experience through the lens of cultural displacement and personal transformation.
-                </p>
-                <div className="flex items-center gap-2">
-                  <div className="px-3 py-1 bg-gradient-to-r from-[#D9E6A3]/50 to-transparent border border-[#E3E7C8] rounded-full">
-                    <span className="text-xs font-semibold text-[#5F6148]">Adapted for Television</span>
-                  </div>
-                </div>
-              </div> */}
-
-              <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm hover-lift transition-all">
-                <h3 className="text-xl font-bold text-[#2E2F1F] mb-3">The Ocean of Mrs. Nagai</h3>
-                <p className="text-[#5F6148] mb-4">
-                  A short story collection that bridges continents and generations, exploring timeless connections and the immigrant experience.
-                </p>
-              </div>
-
-              <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm hover-lift transition-all">
-                <h3 className="text-xl font-bold text-[#2E2F1F] mb-3">The Strangest of Fruit</h3>
-                <p className="text-[#5F6148] mb-4">
-                  A luminous collection examining migration, womanhood, love, and the myths we carry across generations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+       
+   
 
         {/* Film & Television Section */}
         <section id="film-television" className="py-12 mobile-padding bg-white">
@@ -480,7 +440,7 @@ export default function AboutPage() {
 
             <div className="space-y-6">
               <p className="text-lg text-[#5F6148] leading-relaxed">
-                For years, Ahmed has mentored emerging writers—helping them shape their stories with clarity, structure, and emotional depth.
+                For years, I have mentored emerging writers—helping them shape their stories with clarity, structure, and emotional depth
               </p>
 
               <div className="p-6 bg-white rounded-xl border border-[#E3E7C8] shadow-sm">
@@ -491,7 +451,8 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2E2F1F] mb-2">Teaching Philosophy</h3>
                     <p className="text-[#5F6148]">
-                      In the classroom and one-on-one, she is known for her candor, rigor, and generosity, as well as her ability to balance tough love with deep encouragement.
+                      In the classroom and one-on-one, I am known for my candor, rigor, and generosity, as well as my ability to balance tough love with deep encouragement.
+
                     </p>
                   </div>
                 </div>
@@ -554,7 +515,7 @@ export default function AboutPage() {
 
               <div className="p-5 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border-l-4 border-[#B7C83E] rounded-r-lg">
                 <p className="text-[#5F6148] leading-relaxed">
-                  At home in Connecticut, she shares her life with two rescue dogs, who are both her companions and, often, her unofficial editors—keeping her grounded, entertained, and moving forward, one page at a time.
+                  At home in Connecticut, I share my life with two rescue dogs, who are both my companions and my unofficial editors—keeping me grounded, entertained, and moving forward, one page at a time
                 </p>
               </div>
             </div>
