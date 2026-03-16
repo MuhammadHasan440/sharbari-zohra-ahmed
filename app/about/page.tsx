@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ArrowRight, ChevronUp, BookOpen, Film, GraduationCap, Globe, Heart, Sparkles, Quote, PenTool, Award, Users, Map, Dog, Camera, Book, Mail, ExternalLink, Menu, X, Play } from "lucide-react"
+import { ArrowRight, ChevronUp, BookOpen, Film, GraduationCap, Globe, Heart, Sparkles, Quote, PenTool, Award, Users, Map, Dog, Camera, Book, Mail, ExternalLink, Menu, X, Play, Trophy } from "lucide-react"
 
 // Import author image
 import authorImage from "@/public/images/authorImage.jpeg"
@@ -368,7 +368,7 @@ export default function AboutPage() {
                 <Film size={24} className="text-[#5F6148]" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#2E2F1F]">Film & Television</h2>
+                <h2 className="text-3xl font-bold text-[#2E2F1F]">Television</h2>
                 <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
@@ -389,7 +389,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <p className="text-[#D1D5DB] mb-4">
-                  Made history as part of the writing team for the hit ABC series, the first prime time network drama to feature a South Asian woman as its lead.
+                  Sharbari was part of the writing team on the wildly successful first season of groundbreaking procedural starring international Bollywood star Priyanka Chopra.
                 </p>
                 <p className="text-sm text-[#9CA3AF] italic">
                   Helped expand representations of South Asian and Muslim characters on mainstream American television.
@@ -519,6 +519,131 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+        {/* Awards & Honors Section */}
+        <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
+          {/* Dust Texture Overlay */}
+          <div 
+            className="absolute inset-0 opacity-[2%]"
+            style={{
+              backgroundImage: 'url(/images/dust.jpg)',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          ></div>
+          
+          {/* Background Elements */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#6F7F1E]/5 to-transparent rounded-full blur-3xl"></div>
+        
+          <div className="max-w-6xl mx-auto relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <Trophy size={24} className="text-[#B7C83E]" />
+                </div>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-2">
+                Awards & <span className="text-gradient">Honors</span>
+              </h2>
+              
+              <p className="font-['Lato'] text-lg text-[#5F6148] font-semibold">
+                See photos below.
+              </p>
+            </div>
+        
+            {/* Awards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {/* Award 1: Tribeca */}
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+                <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+                     onClick={() => window.open('/images/tribeca-certificate.jpg', '_blank')}>
+                  <img 
+                    src="/images/tribeca-certificate.jpg" 
+                    alt="Tribeca All Access Program Certificate"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                 
+                </div>
+                <div className="p-5">
+                  <h4 className="font-bold text-[#2E2F1F] mb-1 line-clamp-2">
+                    Screenplay Award – "Raisins Not Virgins"
+                  </h4>
+                  <p className="text-[#B7C83E] font-subheading text-sm font-semibold mb-1">
+                    Tribeca All Access Program
+                  </p>
+                  <p className="text-[#5F6148] text-xs">
+                    Tribeca Film Festival
+                  </p>
+                </div>
+              </div>
+        
+              {/* Award 2: New Haven 4 Hour Film Project */}
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+                <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+                     onClick={() => window.open('/images/newhaven-certificate.jpg', '_blank')}>
+                  <img 
+                    src="/images/newhaven-certificate.jpg" 
+                    alt="New Haven 4 Hour Film Project Certificate"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                 
+                </div>
+                <div className="p-5">
+                  <h4 className="font-bold text-[#2E2F1F] mb-1">
+                    Best Screenplay Award
+                  </h4>
+                  <p className="text-[#B7C83E] font-subheading text-sm font-semibold mb-1">
+                    New Haven 4 Hour Film Project
+                  </p>
+                </div>
+              </div>
+        
+              {/* Award 3: Screenwriting Competition 2026 */}
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+                <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+                     onClick={() => window.open('/images/competition-2026.jpg', '_blank')}>
+                  <img 
+                    src="/images/competition-2026.jpg" 
+                    alt="Screenwriting Competition 2026 Certificate"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  
+                </div>
+                <div className="p-5">
+                  <h4 className="font-bold text-[#2E2F1F] mb-1">
+                    Screenwriting Competition 2026
+                  </h4>
+                  <p className="text-[#B7C83E] font-subheading text-sm font-semibold mb-1">
+                    Award Winner
+                  </p>
+                </div>
+              </div>
+        
+              {/* Award 4: Best Pilot Script - Bombay Duck */}
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover-lift transition-all border border-[#E3E7C8]">
+                <div className="relative h-64 bg-[#F3F4F6] overflow-hidden cursor-pointer"
+                     onClick={() => window.open('/images/bombay-duck-certificate.jpg', '_blank')}>
+                  <img 
+                    src="/images/bombay-duck-certificate.jpg" 
+                    alt="Best Pilot Script - Bombay Duck Certificate"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+               
+                </div>
+                <div className="p-5">
+                  <h4 className="font-bold text-[#2E2F1F] mb-1 line-clamp-2">
+                    Best Pilot Script – "Bombay Duck"
+                  </h4>
+                </div>
+              </div>
+            </div>
+        
+           
           </div>
         </section>
 
