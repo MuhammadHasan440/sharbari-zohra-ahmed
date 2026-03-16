@@ -402,18 +402,7 @@ export default function FilmsPage() {
         <section className="py-12 mobile-full-width bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
-              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
-                    <Award size={20} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#2E2F1F]">Tribeca All Access Program</h3>
-                  <p className="text-[#5F6148] text-sm">
-                    Tribeca Film Festival – 2008<br />
-                    (Raisins Not Virgins)
-                  </p>
-                </div>
-              </div>
+          
 
               <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                 <div className="space-y-3">
