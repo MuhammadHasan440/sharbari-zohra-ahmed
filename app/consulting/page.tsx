@@ -4,7 +4,12 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { CheckCircle, Zap, BookOpen, ArrowRight, Star, ChevronUp, Users, Target, Clock, Award, MessageCircle, Sparkles, PenTool, Heart, Target as TargetIcon, Shield, TrendingUp, Users as UsersIcon, Book, Film, Quote, Mail, Calendar, FileText, Edit } from "lucide-react"
+import { 
+  CheckCircle, Zap, BookOpen, ArrowRight, Star, ChevronUp, 
+  Users, Target, Clock, Award, MessageCircle, Sparkles, PenTool, 
+  Heart, Target as TargetIcon, Shield, TrendingUp, Users as UsersIcon, 
+  Book, Film, Quote, Mail, Calendar, FileText, Edit, Globe, Compass 
+} from "lucide-react"
 
 export default function ConsultingPage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -31,6 +36,19 @@ export default function ConsultingPage() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  const scrollToSection = (sectionId: string) => {
+    setActiveTab(sectionId)
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80 // Header height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      })
+    }
   }
 
   const services = [
@@ -108,33 +126,51 @@ export default function ConsultingPage() {
   ]
 
   const whoIBestWith = [
-    "Writers serious about craft, revision, and long-term growth",
-    "Literary, upmarket, and character-driven storytelling",
-    "Work exploring identity, diaspora, gender, family dynamics, or intergenerational themes",
-    "Those seeking rigorous, thoughtful editorial partnership",
-    "Writers open to honest, actionable feedback"
+    {
+      text: "Writers serious about craft, revision, and long-term growth",
+      icon: Target
+    },
+    {
+      text: "Literary, upmarket, and character-driven storytelling",
+      icon: Book
+    },
+    {
+      text: "Work exploring identity, diaspora, gender, family dynamics, or intergenerational themes",
+      icon: Globe
+    },
+    {
+      text: "Those seeking rigorous, thoughtful editorial partnership",
+      icon: Users
+    },
+    {
+      text: "Writers open to honest, actionable feedback",
+      icon: MessageCircle
+    }
   ]
 
   const philosophyPoints = [
     {
       title: "Strong storytelling lives at the intersection of structure and emotional truth",
-      description: "Blending literary craft with screen storytelling principles for maximum impact."
+      description: "Blending literary craft with screen storytelling principles for maximum impact.",
+      icon: Zap
     },
     {
       title: "The goal is not perfection. The goal is resonance, clarity, and impact",
-      description: "Focusing on what makes your voice singular while strengthening your work's core."
+      description: "Focusing on what makes your voice singular while strengthening your work's core.",
+      icon: Star
     },
     {
       title: "Collaborative, detail-oriented work rooted in respect",
-      description: "Respecting the story you're trying to tell while providing actionable feedback."
+      description: "Respecting the story you're trying to tell while providing actionable feedback.",
+      icon: Heart
     },
   ]
 
   const tabs = [
-    { id: "services", label: "Services" },
-    { id: "philosophy", label: "Philosophy" },
-    { id: "testimonials", label: "Testimonials" },
-    { id: "inquiry", label: "Inquiry" },
+    { id: "services", label: "Services", icon: FileText },
+    { id: "philosophy", label: "Philosophy", icon: Compass },
+    { id: "testimonials", label: "Testimonials", icon: Quote },
+    { id: "inquiry", label: "Inquiry", icon: Mail },
   ]
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -204,46 +240,70 @@ Submitted on: ${new Date().toLocaleString()}`
           font-family: 'Lora', serif;
         }
 
-        @media (max-width: 640px) {
+        /* Smooth scrolling */
+        html {
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
           h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             line-height: 1.2;
           }
           
           h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             line-height: 1.3;
           }
           
-          .mobile-padding {
+          .container-padding {
             padding-left: 1rem;
             padding-right: 1rem;
+          }
+        }
+
+        @media (min-width: 769px) {
+          .container-padding {
+            padding-left: 2rem;
+            padding-right: 2rem;
           }
           
-          .mobile-full-width {
-            margin-left: -1rem;
-            margin-right: -1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
+          .max-w-content {
+            max-width: 1200px;
+            margin: 0 auto;
           }
         }
 
-        .tap-highlight-transparent {
-          -webkit-tap-highlight-color: transparent;
+        /* Transitions */
+        .transition-all {
+          transition: all 0.3s ease;
         }
 
-        .mobile-transition {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Form styles */
+        input:focus, select:focus, textarea:focus {
+          outline: none;
+          ring: 2px solid #B7C83E;
         }
 
-        /* Form validation styles */
-        input:invalid, select:invalid, textarea:invalid {
-          border-color: #dc2626;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
         }
         
-        input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
-          border-color: #dc2626;
-          ring-color: #dc2626;
+        ::-webkit-scrollbar-track {
+          background: #F9FAF4;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #B7C83E;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #6F7F1E;
         }
       `}</style>
 
@@ -251,14 +311,14 @@ Submitted on: ${new Date().toLocaleString()}`
 
       <main className="flex-1 pb-20 lg:pb-0">
         {/* Hero Section */}
-        <section className="relative pt-20 pb-12 mobile-full-width"
+        <section className="relative pt-20 pb-12 w-full"
                  style={{
                    background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
           <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
           
-          <div className="mobile-padding">
+          <div className="container-padding max-w-content">
             <div className="text-center space-y-6">
               <div className="inline-block">
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
@@ -269,7 +329,7 @@ Submitted on: ${new Date().toLocaleString()}`
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold text-white leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Work With Me
               </h1>
 
@@ -278,7 +338,7 @@ Submitted on: ${new Date().toLocaleString()}`
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
-              <p className="font-subheading text-lg text-white/90 leading-relaxed px-2">
+              <p className="font-subheading text-lg md:text-xl text-white/90 leading-relaxed px-2 max-w-2xl mx-auto">
                 Limited script and manuscript development consulting for writers seeking rigorous, thoughtful editorial partnership.
               </p>
 
@@ -297,97 +357,119 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Introduction */}
-        <section className="py-12 mobile-padding">
+        <section className="py-12 container-padding max-w-content">
           <div className="text-center space-y-6">
-            <h2 className="text-3xl font-bold text-[#2E2F1F]">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">
               Great writing requires both solitude and conversation.
             </h2>
             <div className="space-y-4 text-[#5F6148]">
-              <p className="font-subheading text-lg">
+              <p className="font-subheading text-base md:text-lg">
                 As a novelist, screenwriter, filmmaker, and educator, I work closely with writers to strengthen structure, deepen character, and clarify the emotional and thematic core of their work—while preserving what makes their voice singular.
               </p>
-              <p>
+              <p className="text-sm md:text-base">
                 My approach blends literary craft, screen storytelling, and industry insight drawn from publishing, film, and television development. I offer honest, actionable feedback designed to move your work forward without flattening its originality or intention.
               </p>
-              <p className="font-subheading text-lg pt-4 border-t border-[#E3E7C8]">
+              <p className="font-subheading text-base md:text-lg pt-4 border-t border-[#E3E7C8]">
                 This is collaborative, detail-oriented work rooted in respect for the story you are trying to tell.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Navigation Tabs */}
+        {/* Navigation Tabs with Icons */}
         <div className="sticky top-16 z-30 bg-[#F9FAF4] border-b border-[#E3E7C8] shadow-sm">
-          <div className="overflow-x-auto">
-            <div className="flex min-w-max">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => {
-                    setActiveTab(tab.id)
-                    const element = document.getElementById(tab.id)
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' })
-                    }
-                  }}
-                  className={`px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 mobile-transition ${
-                    activeTab === tab.id
-                      ? 'border-[#B7C83E] text-[#2E2F1F]'
-                      : 'border-transparent text-[#5F6148] hover:text-[#2E2F1F]'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+          <div className="container-padding max-w-content">
+            {/* Desktop Tabs */}
+            <div className="hidden md:flex justify-center space-x-2 py-2">
+              {tabs.map((tab) => {
+                const Icon = tab.icon
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => scrollToSection(tab.id)}
+                    className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                      activeTab === tab.id
+                        ? 'bg-[#B7C83E] text-[#2E2F1F]'
+                        : 'text-[#5F6148] hover:bg-[#D9E6A3]/30'
+                    }`}
+                  >
+                    <Icon size={16} />
+                    {tab.label}
+                  </button>
+                )
+              })}
+            </div>
+
+            {/* Mobile Tabs - Horizontal Scroll */}
+            <div className="md:hidden overflow-x-auto">
+              <div className="flex min-w-max py-2">
+                {tabs.map((tab) => {
+                  const Icon = tab.icon
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => scrollToSection(tab.id)}
+                      className={`flex items-center gap-2 px-4 py-2 mx-1 text-sm font-medium rounded-lg transition-all ${
+                        activeTab === tab.id
+                          ? 'bg-[#B7C83E] text-[#2E2F1F]'
+                          : 'text-[#5F6148] hover:bg-[#D9E6A3]/30'
+                      }`}
+                    >
+                      <Icon size={16} />
+                      {tab.label}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Services Section */}
-        <section id="services" className="py-12 mobile-padding">
+        <section id="services" className="py-12 container-padding max-w-content">
           <div className="space-y-8">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl font-bold text-[#2E2F1F]">Consulting Services</h2>
-              <p className="text-[#5F6148] font-subheading">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">Consulting Services</h2>
+              <p className="text-[#5F6148] font-subheading text-sm md:text-base">
                 Limited projects accepted each month to ensure depth, focus, and care
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((service, index) => {
                 const Icon = service.icon
                 return (
                   <div
                     key={index}
-                    className="group p-6 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl active:scale-95 mobile-transition hover:border-[#B7C83E]"
+                    className="group p-6 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:shadow-lg transition-all"
                   >
                     <div className="space-y-4">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-start gap-4">
-                          <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]`}>
-                            <Icon className="text-white" size={20} />
-                          </div>
-                          
-                          <div>
-                            <h3 className="text-lg font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E]">
-                              {service.title}
-                            </h3>
-                            <p className="text-[#5F6148] text-sm mt-1">{service.description}</p>
-                          </div>
+                      <div className="flex items-start gap-4">
+                        <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8] group-hover:scale-110 transition-transform`}>
+                          <Icon className="text-white" size={20} />
                         </div>
                         
-                        <div className="text-right">
-                          <div className="text-lg font-bold text-[#6F7F1E]">{service.price}</div>
+                        <div className="flex-1">
+                          <h3 className="text-base md:text-lg font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">
+                            {service.title}
+                          </h3>
+                          <p className="text-[#5F6148] text-sm mt-1">{service.description}</p>
                         </div>
                       </div>
                       
                       <div className="pl-16 space-y-2">
                         {service.details.map((detail, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm text-[#5F6148]">
-                            <div className="w-1.5 h-1.5 bg-[#B7C83E] rounded-full"></div>
-                            {detail}
+                          <div key={i} className="flex items-start gap-2 text-sm text-[#5F6148]">
+                            <div className="w-1.5 h-1.5 bg-[#B7C83E] rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span>{detail}</span>
                           </div>
                         ))}
+                      </div>
+
+                      <div className="pl-16 pt-2">
+                        <div className="inline-block px-3 py-1 bg-[#B7C83E]/10 rounded-full">
+                          <span className="text-sm font-bold text-[#6F7F1E]">{service.price}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -398,34 +480,47 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Who I Work Best With & Philosophy */}
-        <section id="philosophy" className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
-          <div className="mobile-padding">
+        <section id="philosophy" className="py-12 w-full bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
+          <div className="container-padding max-w-content">
             <div className="space-y-12">
-              {/* Who I Work Best With */}
+              {/* Who I Work Best With - With Icons */}
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-[#2E2F1F] text-center">Who I Work Best With</h2>
-                <div className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl">
-                  <div className="space-y-3">
-                    {whoIBestWith.map((item, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle size={18} className="text-[#B7C83E] flex-shrink-0 mt-0.5" />
-                        <p className="text-[#5F6148]">{item}</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F] text-center">Who I Work Best With</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {whoIBestWith.map((item, index) => {
+                    const Icon = item.icon
+                    return (
+                      <div key={index} className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
+                        <div className="flex items-start gap-3">
+                          <div className="w-10 h-10 bg-[#B7C83E]/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]">
+                            <Icon size={18} className="text-[#B7C83E]" />
+                          </div>
+                          <p className="text-[#5F6148] text-sm md:text-base">{item.text}</p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    )
+                  })}
                 </div>
               </div>
 
-              {/* Editorial Philosophy */}
+              {/* Editorial Philosophy - With Icons */}
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-[#2E2F1F] text-center">Editorial Philosophy</h2>
-                <div className="space-y-4">
-                  {philosophyPoints.map((point, index) => (
-                    <div key={index} className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl">
-                      <h3 className="text-lg font-bold text-[#2E2F1F] mb-2">{point.title}</h3>
-                      <p className="text-[#5F6148]">{point.description}</p>
-                    </div>
-                  ))}
+                <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F] text-center">Editorial Philosophy</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {philosophyPoints.map((point, index) => {
+                    const Icon = point.icon
+                    return (
+                      <div key={index} className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
+                        <div className="space-y-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                            <Icon size={20} className="text-white" />
+                          </div>
+                          <h3 className="text-base md:text-lg font-bold text-[#2E2F1F]">{point.title}</h3>
+                          <p className="text-[#5F6148] text-sm">{point.description}</p>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
@@ -433,22 +528,22 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-12 mobile-padding">
+        <section id="testimonials" className="py-12 container-padding max-w-content">
           <div className="space-y-8">
             <div className="text-center space-y-4">
               <div className="inline-flex items-center gap-2">
                 <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center border border-[#E3E7C8]">
                   <Quote size={18} className="text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-[#2E2F1F]">Writer Success Stories</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">Writer Success Stories</h2>
               </div>
-              <p className="text-[#5F6148] font-subheading">
+              <p className="text-[#5F6148] font-subheading text-sm md:text-base">
                 Hear from writers who transformed their work through mentorship
               </p>
             </div>
 
             {/* Testimonial Slider */}
-            <div className="bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl p-6 relative">
+            <div className="bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl p-6 md:p-8 relative">
               <div className="space-y-6">
                 <div className="flex gap-1">
                   {Array.from({ length: testimonials[currentTestimonial]?.rating || 5 }).map((_, i) => (
@@ -456,12 +551,12 @@ Submitted on: ${new Date().toLocaleString()}`
                   ))}
                 </div>
                 
-                <blockquote className="text-[#5F6148] italic text-sm leading-relaxed min-h-[120px]">
+                <blockquote className="text-[#5F6148] italic text-sm md:text-base leading-relaxed min-h-[100px] md:min-h-[80px]">
                   "{testimonials[currentTestimonial]?.quote}"
                 </blockquote>
                 
                 <div className="pt-4 border-t border-[#E3E7C8]">
-                  <p className="font-bold text-[#6F7F1E] text-sm">{testimonials[currentTestimonial]?.name}</p>
+                  <p className="font-bold text-[#6F7F1E] text-sm md:text-base">{testimonials[currentTestimonial]?.name}</p>
                   <p className="text-xs text-[#5F6148]">{testimonials[currentTestimonial]?.role}</p>
                 </div>
 
@@ -474,8 +569,9 @@ Submitted on: ${new Date().toLocaleString()}`
                         className={`h-1.5 rounded-full transition-all ${
                           index === currentTestimonial 
                             ? 'w-4 bg-[#B7C83E]' 
-                            : 'w-2 bg-[#B7C83E]/30'
+                            : 'w-2 bg-[#B7C83E]/30 hover:w-3'
                         }`}
+                        aria-label={`Go to testimonial ${index + 1}`}
                       />
                     ))}
                   </div>
@@ -486,6 +582,7 @@ Submitted on: ${new Date().toLocaleString()}`
                         prev === 0 ? testimonials.length - 1 : prev - 1
                       )}
                       className="w-8 h-8 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-white transition-all border border-[#E3E7C8]"
+                      aria-label="Previous testimonial"
                     >
                       <ArrowRight size={14} className="rotate-180" />
                     </button>
@@ -495,6 +592,7 @@ Submitted on: ${new Date().toLocaleString()}`
                         (prev + 1) % testimonials.length
                       )}
                       className="w-8 h-8 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-white transition-all border border-[#E3E7C8]"
+                      aria-label="Next testimonial"
                     >
                       <ArrowRight size={14} />
                     </button>
@@ -506,20 +604,20 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Inquiry Form Section */}
-        <section id="inquiry" className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8]">
-          <div className="mobile-padding">
+        <section id="inquiry" className="py-12 w-full bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8]">
+          <div className="container-padding max-w-content">
             <div className="space-y-8">
               <div className="text-center space-y-4">
-                <h2 className="text-3xl font-bold text-[#2E2F1F]">Consulting Inquiry</h2>
-                <p className="text-[#5F6148] font-subheading">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">Consulting Inquiry</h2>
+                <p className="text-[#5F6148] font-subheading text-sm md:text-base">
                   Start the Conversation
                 </p>
               </div>
 
-              <div className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl">
+              <div className="p-6 md:p-8 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl">
                 <div className="space-y-6">
                   <div className="text-center">
-                    <p className="text-[#5F6148]">
+                    <p className="text-[#5F6148] text-sm md:text-base">
                       Thank you for your interest in working together.
                       I personally review every inquiry and take on a limited number of projects at a time.
                     </p>
@@ -530,9 +628,9 @@ Submitted on: ${new Date().toLocaleString()}`
                     className="space-y-6"
                   >
                     <div className="space-y-4">
-                      <h3 className="text-lg font-bold text-[#2E2F1F]">Please provide the following details:</h3>
+                      <h3 className="text-base md:text-lg font-bold text-[#2E2F1F]">Please provide the following details:</h3>
                       
-                      <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Name */}
                         <div>
                           <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="name">
@@ -567,7 +665,7 @@ Submitted on: ${new Date().toLocaleString()}`
                         {/* Project Type */}
                         <div>
                           <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="projectType">
-                            What are you working on? *
+                            Project Type *
                           </label>
                           <select
                             id="projectType"
@@ -585,23 +683,6 @@ Submitted on: ${new Date().toLocaleString()}`
                             <option value="Nonfiction Book">Nonfiction Book</option>
                             <option value="Other">Other</option>
                           </select>
-                        </div>
-
-                        {/* Project Description */}
-                        <div>
-                          <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="projectDescription">
-                            Brief Project Description *
-                            <span className="text-xs text-[#5F6148]/70 ml-1">(3–5 sentences about the story and what matters most to you about telling it)</span>
-                          </label>
-                          <textarea
-                            id="projectDescription"
-                            name="projectDescription"
-                            required
-                            rows={4}
-                            minLength={50}
-                            className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors resize-none"
-                            placeholder="Describe your project, its themes, and why this story matters to you..."
-                          />
                         </div>
 
                         {/* Current Stage */}
@@ -627,7 +708,7 @@ Submitted on: ${new Date().toLocaleString()}`
                         </div>
 
                         {/* Approximate Length */}
-                        <div>
+                        <div className="md:col-span-2">
                           <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="projectLength">
                             Approximate Length *
                           </label>
@@ -641,91 +722,110 @@ Submitted on: ${new Date().toLocaleString()}`
                               placeholder="e.g., 300 pages, 85,000 words, 120 screenplay pages"
                             />
                             <select
-                              className="px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors sm:w-32"
+                              className="px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors sm:w-48"
                               onChange={(e) => {
                                 const lengthInput = document.getElementById('projectLength') as HTMLInputElement
-                                if (e.target.value === 'select') return
-                                lengthInput.value = e.target.value
+                                if (e.target.value && e.target.value !== 'select') {
+                                  lengthInput.value = e.target.value
+                                }
                               }}
                             >
-                              <option value="select">Common lengths</option>
+                              <option value="select">Quick select</option>
                               <option value="50-100 pages">Novella (50-100 pages)</option>
                               <option value="250-350 pages">Novel (250-350 pages)</option>
                               <option value="90-120 pages">Feature Screenplay</option>
                               <option value="30-60 pages">TV Pilot</option>
+                              <option value="60-90 minutes">Stage Play</option>
                             </select>
                           </div>
                         </div>
+                      </div>
 
-                        {/* Type of Support */}
-                        <div>
-                          <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="supportType">
-                            What kind of support are you hoping for? *
-                          </label>
-                          <select
-                            id="supportType"
-                            name="supportType"
-                            required
-                            className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors"
-                          >
-                            <option value="">Select type of support</option>
-                            <option value="Structure & Plot Development">Structure & Plot Development</option>
-                            <option value="Character Depth & Development">Character Depth & Development</option>
-                            <option value="Revision Roadmap">Revision Roadmap</option>
-                            <option value="Line-by-Line Editing">Line-by-Line Editing</option>
-                            <option value="Industry Strategy">Industry Strategy</option>
-                            <option value="Career Guidance">Career Guidance</option>
-                            <option value="Project Evaluation">Project Evaluation</option>
-                            <option value="Developmental Editing">Developmental Editing</option>
-                            <option value="Pitch/Market Positioning">Pitch/Market Positioning</option>
-                          </select>
-                        </div>
+                      {/* Project Description - Full Width */}
+                      <div>
+                        <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="projectDescription">
+                          Brief Project Description *
+                          <span className="text-xs text-[#5F6148]/70 ml-1">(3–5 sentences about the story and what matters most to you about telling it)</span>
+                        </label>
+                        <textarea
+                          id="projectDescription"
+                          name="projectDescription"
+                          required
+                          rows={4}
+                          minLength={50}
+                          className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors resize-none"
+                          placeholder="Describe your project, its themes, and why this story matters to you..."
+                        />
+                      </div>
 
-                        {/* Timeline or Goals */}
-                        <div>
-                          <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="timeline">
-                            Timeline or Goals
-                            <span className="text-xs text-[#5F6148]/70 ml-1">(Optional)</span>
-                          </label>
-                          <input
-                            type="text"
-                            id="timeline"
-                            name="timeline"
-                            className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors"
-                            placeholder="e.g., Complete revision in 3 months, submit to agents by end of year"
-                          />
-                        </div>
+                      {/* Type of Support */}
+                      <div>
+                        <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="supportType">
+                          What kind of support are you hoping for? *
+                        </label>
+                        <select
+                          id="supportType"
+                          name="supportType"
+                          required
+                          className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors"
+                        >
+                          <option value="">Select type of support</option>
+                          <option value="Structure & Plot Development">Structure & Plot Development</option>
+                          <option value="Character Depth & Development">Character Depth & Development</option>
+                          <option value="Revision Roadmap">Revision Roadmap</option>
+                          <option value="Line-by-Line Editing">Line-by-Line Editing</option>
+                          <option value="Industry Strategy">Industry Strategy</option>
+                          <option value="Career Guidance">Career Guidance</option>
+                          <option value="Project Evaluation">Project Evaluation</option>
+                          <option value="Developmental Editing">Developmental Editing</option>
+                          <option value="Pitch/Market Positioning">Pitch/Market Positioning</option>
+                        </select>
+                      </div>
 
-                        {/* Why Work Together */}
-                        <div>
-                          <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="whyWorkWithMe">
-                            Why are you interested in working together specifically? *
-                          </label>
-                          <textarea
-                            id="whyWorkWithMe"
-                            name="whyWorkWithMe"
-                            required
-                            rows={3}
-                            minLength={20}
-                            className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors resize-none"
-                            placeholder="What about my background, approach, or experience resonates with you?"
-                          />
-                        </div>
+                      {/* Timeline or Goals */}
+                      <div>
+                        <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="timeline">
+                          Timeline or Goals
+                          <span className="text-xs text-[#5F6148]/70 ml-1">(Optional)</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="timeline"
+                          name="timeline"
+                          className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors"
+                          placeholder="e.g., Complete revision in 3 months, submit to agents by end of year"
+                        />
+                      </div>
 
-                        {/* Additional Information */}
-                        <div>
-                          <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="additionalInfo">
-                            Anything else you'd like me to know?
-                            <span className="text-xs text-[#5F6148]/70 ml-1">(Optional)</span>
-                          </label>
-                          <textarea
-                            id="additionalInfo"
-                            name="additionalInfo"
-                            rows={3}
-                            className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors resize-none"
-                            placeholder="Additional context, specific concerns, or questions..."
-                          />
-                        </div>
+                      {/* Why Work Together */}
+                      <div>
+                        <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="whyWorkWithMe">
+                          Why are you interested in working together specifically? *
+                        </label>
+                        <textarea
+                          id="whyWorkWithMe"
+                          name="whyWorkWithMe"
+                          required
+                          rows={3}
+                          minLength={20}
+                          className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors resize-none"
+                          placeholder="What about my background, approach, or experience resonates with you?"
+                        />
+                      </div>
+
+                      {/* Additional Information */}
+                      <div>
+                        <label className="block text-sm font-medium text-[#5F6148] mb-1" htmlFor="additionalInfo">
+                          Anything else you'd like me to know?
+                          <span className="text-xs text-[#5F6148]/70 ml-1">(Optional)</span>
+                        </label>
+                        <textarea
+                          id="additionalInfo"
+                          name="additionalInfo"
+                          rows={3}
+                          className="w-full px-4 py-2 bg-white border border-[#E3E7C8] rounded-lg focus:border-[#B7C83E] focus:ring-1 focus:ring-[#B7C83E] outline-none transition-colors resize-none"
+                          placeholder="Additional context, specific concerns, or questions..."
+                        />
                       </div>
                     </div>
 
@@ -742,7 +842,7 @@ Submitted on: ${new Date().toLocaleString()}`
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 mobile-transition text-center border border-[#E3E7C8] hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 transition-all text-center border border-[#E3E7C8] hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       >
                         <Mail size={18} />
                         {isSubmitting ? 'Opening Email...' : 'Submit Inquiry'}
@@ -761,24 +861,23 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Final CTA */}
-        <section className="py-12 mobile-padding">
+        <section className="py-12 container-padding max-w-content">
           <div className="text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-[#2E2F1F]">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">
                 Ready to Begin Your
                 <br />
                 <span className="text-[#6F7F1E]">Editorial Partnership?</span>
               </h2>
-              <p className="text-[#5F6148] font-subheading">
+              <p className="text-[#5F6148] font-subheading text-sm md:text-base">
                 Limited spots available each month for focused, dedicated collaboration.
               </p>
             </div>
 
-            <div className="space-y-4">
-              {/* FIXED: Changed from Link to button for consistency */}
+            <div className="space-y-4 max-w-md mx-auto">
               <button
                 onClick={() => window.location.href = "mailto:shabini71@gmail.com"}
-                className="block w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 mobile-transition text-center border border-[#E3E7C8] hover:shadow-lg transition-all"
+                className="block w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 transition-all text-center border border-[#E3E7C8] hover:shadow-lg"
               >
                 Send Detailed Inquiry
               </button>
@@ -795,19 +894,16 @@ Submitted on: ${new Date().toLocaleString()}`
 
       <Footer />
 
-      {/* Mobile Scroll to Top Button */}
+      {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent border border-[#E3E7C8]"
+          className="fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8] animate-bounce"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-[#2E2F1F]" />
         </button>
       )}
-
-      {/* Mobile Bottom Spacer */}
-      <div className="h-4 lg:hidden bg-transparent"></div>
     </div>
   )
 }
