@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
+    "firebase": "^12.11.0",
     "lucide-react": "^0.556.0",
-    "next": "16.0.8",
+    "next": "^16.2.2",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
