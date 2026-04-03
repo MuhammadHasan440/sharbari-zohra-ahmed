@@ -9,15 +9,13 @@ import {
   ArrowLeft, 
   Save, 
   FileText, 
-  AlignLeft, 
   Eye, 
   Clock, 
   Tag, 
   Link as LinkIcon,
   Star,
   Palette,
-  AlertCircle,
-  CheckCircle
+  AlertCircle
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -33,6 +31,7 @@ export default function CreateBlog() {
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [isMounted, setIsMounted] = useState(false);
   
   // Individual state variables for each field
   const [title, setTitle] = useState('');
@@ -44,14 +43,21 @@ export default function CreateBlog() {
   const [color, setColor] = useState(gradientOptions[0].value);
   const [featured, setFeatured] = useState(false);
   const [substackUrl, setSubstackUrl] = useState('');
-  const [date, setDate] = useState(new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }));
+  const [date, setDate] = useState('');
+
+  // Set isMounted to true after component mounts (client-side only)
+  useEffect(() => {
+    setIsMounted(true);
+    // Set date only on client side
+    setDate(new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }));
+  }, []);
 
   // Handle redirect
   useEffect(() => {
-    if (!authLoading && !user) {
+    if (!authLoading && !user && isMounted) {
       router.push('/admin/login');
     }
-  }, [user, authLoading, router]);
+  }, [user, authLoading, router, isMounted]);
 
   const validateForm = () => {
     const errors: Record<string, string> = {};
@@ -101,6 +107,11 @@ export default function CreateBlog() {
     }
     setLoading(false);
   };
+
+  // Don't render anything on server
+  if (!isMounted) {
+    return null;
+  }
 
   if (authLoading) {
     return (
