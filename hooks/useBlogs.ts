@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { db } from '@/lib/firebase';
 import { 
@@ -21,6 +20,12 @@ export const useBlogs = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined' || !db) {
+      setLoading(false);
+      return;
+    }
+
     const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
     
     const unsubscribe = onSnapshot(q, 
@@ -46,6 +51,10 @@ export const useBlogs = () => {
   }, []);
 
   const addBlog = async (blogData: Omit<BlogInput, 'createdAt'>) => {
+    if (!db) {
+      return { success: false, error: 'Firestore not initialized' };
+    }
+
     try {
       const newBlog = {
         ...blogData,
@@ -60,14 +69,13 @@ export const useBlogs = () => {
   };
 
   const updateBlog = async (id: string, blogData: Partial<BlogInput>) => {
-    try {
-      if (!id) {
-        throw new Error('Blog ID is required');
-      }
+    if (!db) {
+      return { success: false, error: 'Firestore not initialized' };
+    }
 
+    try {
       const blogRef = doc(db, 'blogs', id);
       
-      // Clean the update data - remove undefined values and ensure proper types
       const updateData: any = {};
       
       Object.keys(blogData).forEach(key => {
@@ -77,16 +85,7 @@ export const useBlogs = () => {
         }
       });
       
-      // Ensure featured is boolean
-      if ('featured' in blogData) {
-        updateData.featured = Boolean(blogData.featured);
-      }
-      
-      console.log('Updating blog with ID:', id);
-      console.log('Update data:', updateData);
-      
       await updateDoc(blogRef, updateData);
-      console.log('Blog updated successfully');
       return { success: true };
     } catch (error: any) {
       console.error('Update blog error:', error);
@@ -95,6 +94,10 @@ export const useBlogs = () => {
   };
 
   const deleteBlog = async (id: string) => {
+    if (!db) {
+      return { success: false, error: 'Firestore not initialized' };
+    }
+
     try {
       const blogRef = doc(db, 'blogs', id);
       await deleteDoc(blogRef);
@@ -106,18 +109,16 @@ export const useBlogs = () => {
   };
 
   const getBlogById = useCallback(async (id: string) => {
+    if (!db) {
+      return { success: false, error: 'Firestore not initialized' };
+    }
+
     try {
-      if (!id) {
-        throw new Error('Blog ID is required');
-      }
-      
-      console.log('Fetching blog with ID:', id);
       const blogRef = doc(db, 'blogs', id);
       const blogDoc = await getDoc(blogRef);
       
       if (blogDoc.exists()) {
         const data = blogDoc.data();
-        console.log('Blog data fetched successfully');
         return { 
           success: true, 
           data: { 
