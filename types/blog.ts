@@ -1,29 +1,37 @@
 import { Timestamp } from 'firebase/firestore';
 
+// types/blog.ts
 export interface Blog {
   id: string;
   title: string;
+  excerpt: string;
+  content: string;
   category: string;
   date: string;
-  excerpt: string;
-  preview: string;
-  content: string;
   readTime: string;
-  color: string;
   featured: boolean;
+  color: string;
   substackUrl: string;
-  createdAt: Timestamp;
+  createdAt: string;
+  updatedAt?: string;
+  authorId?: string;
+  imageUrl?: string;
+  tags?: string[];
+  views?: number;
+  likes?: number;
 }
 
 export interface BlogInput {
   title: string;
-  category: string;
-  date: string;
   excerpt: string;
-  preview: string;
   content: string;
+  category: string;
   readTime: string;
-  color: string;
-  featured: boolean;
-  substackUrl: string;
+  featured?: boolean;
+  color?: string;
+  substackUrl?: string;
+  imageUrl?: string;
+  tags?: string[];
+  createdAt?: any;
+  updatedAt?: any;
 }

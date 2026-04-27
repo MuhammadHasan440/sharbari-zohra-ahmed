@@ -1,3 +1,4 @@
+// hooks/useBlogs.ts
 import { useState, useEffect, useCallback } from 'react';
 import { db } from '@/lib/firebase';
 import { 
@@ -10,7 +11,8 @@ import {
   deleteDoc,
   doc,
   getDoc,
-  Timestamp
+  Timestamp,
+  serverTimestamp
 } from 'firebase/firestore';
 import { Blog, BlogInput } from '@/types/blog';
 
@@ -20,37 +22,53 @@ export const useBlogs = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Only run on client side
-    if (typeof window === 'undefined' || !db) {
+    if (!db) {
+      console.error('Firestore not initialized');
       setLoading(false);
+      setError('Database not available');
       return;
     }
 
-    const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
+    console.log('Setting up Firestore listener for blogs');
     
-    const unsubscribe = onSnapshot(q, 
+    const q = query(
+      collection(db, 'blogs'),
+      orderBy('createdAt', 'desc')
+    );
+    
+    const unsubscribe = onSnapshot(
+      q,
       (snapshot) => {
         const blogsData = snapshot.docs.map(doc => {
           const data = doc.data();
           return {
             id: doc.id,
-            ...data
+            ...data,
+            // Convert Firestore Timestamp to string if needed
+            createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt,
+            updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt,
           };
-        }) as Blog[];
+        }) as unknown as Blog[];
+        
+        console.log(`Loaded ${blogsData.length} blogs`);
         setBlogs(blogsData);
         setLoading(false);
+        setError(null);
       },
       (err) => {
-        console.error('Firestore error:', err);
+        console.error('Firestore listener error:', err);
         setError(err.message);
         setLoading(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      console.log('Cleaning up Firestore listener');
+      unsubscribe();
+    };
   }, []);
 
-  const addBlog = async (blogData: Omit<BlogInput, 'createdAt'>) => {
+  const addBlog = useCallback(async (blogData: Omit<BlogInput, 'createdAt'>) => {
     if (!db) {
       return { success: false, error: 'Firestore not initialized' };
     }
@@ -58,17 +76,24 @@ export const useBlogs = () => {
     try {
       const newBlog = {
         ...blogData,
-        createdAt: Timestamp.now()
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+        // Add any default values
+        featured: blogData.featured || false,
+        views: 0,
+        likes: 0,
       };
+      
       const docRef = await addDoc(collection(db, 'blogs'), newBlog);
+      console.log('Blog added with ID:', docRef.id);
       return { success: true, id: docRef.id };
     } catch (error: any) {
       console.error('Add blog error:', error);
       return { success: false, error: error.message };
     }
-  };
+  }, []);
 
-  const updateBlog = async (id: string, blogData: Partial<BlogInput>) => {
+  const updateBlog = useCallback(async (id: string, blogData: Partial<BlogInput>) => {
     if (!db) {
       return { success: false, error: 'Firestore not initialized' };
     }
@@ -76,24 +101,27 @@ export const useBlogs = () => {
     try {
       const blogRef = doc(db, 'blogs', id);
       
-      const updateData: any = {};
-      
-      Object.keys(blogData).forEach(key => {
-        const value = blogData[key as keyof BlogInput];
+      // Remove undefined, null, and empty string values
+      const updateData = Object.entries(blogData).reduce((acc, [key, value]) => {
         if (value !== undefined && value !== null && value !== '') {
-          updateData[key] = value;
+          acc[key] = value;
         }
-      });
+        return acc;
+      }, {} as Record<string, any>);
+      
+      // Add updated timestamp
+      updateData.updatedAt = serverTimestamp();
       
       await updateDoc(blogRef, updateData);
+      console.log('Blog updated:', id);
       return { success: true };
     } catch (error: any) {
       console.error('Update blog error:', error);
       return { success: false, error: error.message };
     }
-  };
+  }, []);
 
-  const deleteBlog = async (id: string) => {
+  const deleteBlog = useCallback(async (id: string) => {
     if (!db) {
       return { success: false, error: 'Firestore not initialized' };
     }
@@ -101,12 +129,13 @@ export const useBlogs = () => {
     try {
       const blogRef = doc(db, 'blogs', id);
       await deleteDoc(blogRef);
+      console.log('Blog deleted:', id);
       return { success: true };
     } catch (error: any) {
       console.error('Delete blog error:', error);
       return { success: false, error: error.message };
     }
-  };
+  }, []);
 
   const getBlogById = useCallback(async (id: string) => {
     if (!db) {
@@ -124,7 +153,7 @@ export const useBlogs = () => {
           data: { 
             id: blogDoc.id, 
             ...data,
-            createdAt: data.createdAt
+            createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt,
           } as Blog 
         };
       }
@@ -135,5 +164,14 @@ export const useBlogs = () => {
     }
   }, []);
 
-  return { blogs, loading, error, addBlog, updateBlog, deleteBlog, getBlogById };
+  return { 
+    blogs, 
+    loading, 
+    error, 
+    addBlog, 
+    updateBlog, 
+    deleteBlog, 
+    getBlogById,
+    isEmpty: !loading && blogs.length === 0
+  };
 };
