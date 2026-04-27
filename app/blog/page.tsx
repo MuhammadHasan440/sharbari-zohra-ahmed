@@ -262,24 +262,26 @@ export default function BlogPage() {
                         </div>
 
                         <div className="mt-4 pt-3 border-t border-[#E3E7C8] flex flex-wrap gap-3 justify-between items-center">
-                          <button
-                            onClick={() => toggleEssay(article.id)}
-                            className="text-sm text-[#6F7F1E] hover:text-[#B7C83E] font-medium transition-colors flex items-center gap-1"
-                          >
-                            {isExpanded ? 'Show Less' : 'Read Full Essay'}
-                            <ArrowRight size={14} className={isExpanded ? 'rotate-90' : ''} />
-                          </button>
-                          
-                          <Link
-                            href={article.substackUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-sm text-[#6F7F1E] hover:text-[#B7C83E] font-medium transition-colors"
-                          >
-                            Read on Substack
-                            <ExternalLink size={14} />
-                          </Link>
-                        </div>
+    <button
+      onClick={() => toggleEssay(article.id)}
+      className="text-sm text-[#6F7F1E] hover:text-[#B7C83E] font-medium transition-colors flex items-center gap-1"
+    >
+      {isExpanded ? 'Show Less' : 'Read Full Essay'}
+      <ArrowRight size={14} className={isExpanded ? 'rotate-90' : ''} />
+    </button>
+
+    {article.substackUrl && (
+      <Link
+        href={article.substackUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-sm text-[#6F7F1E] hover:text-[#B7C83E] font-medium transition-colors"
+      >
+        Read on Substack
+        <ExternalLink size={14} />
+      </Link>
+    )}
+  </div>
                       </article>
                     );
                   })}
