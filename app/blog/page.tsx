@@ -138,8 +138,8 @@ export default function BlogPage() {
                  style={{
                    background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
-          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 'bg-gradient-to-r' from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-3 pointer-events-none"></div>
           
           <div className="container-padding max-w-content">
             <div className="text-center space-y-6">
@@ -159,7 +159,7 @@ export default function BlogPage() {
               </h1>
 
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="h-px 'bg-gradient-to-r' from-transparent via-[#B7C83E] to-transparent"></div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
@@ -188,12 +188,12 @@ export default function BlogPage() {
         <section className="py-8 md:py-12 container-padding max-w-content">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+              <div className="w-10 h-10 'bg-gradient-to-br' from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                 <BookOpen size={20} className="text-white" />
               </div>
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">All Essays</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
+                <div className="h-1 w-16 'bg-gradient-to-r' from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
 
@@ -220,18 +220,18 @@ export default function BlogPage() {
                     return (
                       <article
                         key={article.id}
-                        className={`relative p-5 md:p-6 bg-gradient-to-br from-[#F9FAF4] to-white border rounded-xl transition-all hover:shadow-lg ${
+                        className={`relative p-5 md:p-6 'bg-gradient-to-br' from-[#F9FAF4] to-white border rounded-xl transition-all hover:shadow-lg ${
                           article.featured ? 'border-[#B7C83E] shadow-lg' : 'border-[#E3E7C8]'
                         }`}
                       >
                         {article.featured && (
-                          <div className="absolute top-2 right-2 px-2 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
+                          <div className="absolute top-2 right-2 px-2 py-1 'bg-gradient-to-r' from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
                             <p className="text-xs font-bold text-[#2E2F1F]">FEATURED</p>
                           </div>
                         )}
 
                         <div className="flex items-start gap-3 md:gap-4 mb-4">
-                          <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${article.color} rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]`}>
+                          <div className={`w-10 h-10 md:w-12 md:h-12 'bg-gradient-to-br' ${article.color} rounded-lg flex items-center justify-center shrink-0 border border-[#E3E7C8]`}>
                             <IconComponent className="text-white" size={18} />
                           </div>
 
@@ -291,16 +291,16 @@ export default function BlogPage() {
         </section>
 
         {/* Topics Grid */}
-        <section className="py-12 w-full bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
+        <section className="py-12 w-full 'bg-gradient-to-b' from-[#F9FAF4] to-[#D9E6A3]">
           <div className="container-padding max-w-content">
             <div className="space-y-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                <div className="w-10 h-10 'bg-gradient-to-br' from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                   <PenTool size={20} className="text-white" />
                 </div>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">Topics I Explore</h2>
-                  <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
+                  <div className="h-1 w-16 'bg-gradient-to-r' from-[#B7C83E] to-transparent mt-1"></div>
                 </div>
               </div>
 
@@ -313,7 +313,7 @@ export default function BlogPage() {
                       onClick={() => setActiveCategory(topic.id)}
                       className={`p-4 rounded-lg border transition-all hover:shadow-md ${
                         activeCategory === topic.id
-                          ? 'border-[#B7C83E] bg-gradient-to-br from-[#F9FAF4] to-white shadow-sm'
+                          ? 'border-[#B7C83E] bg-linear-to-br from-[#F9FAF4] to-white shadow-sm'
                           : 'border-[#E3E7C8] bg-white hover:border-[#B7C83E]'
                       }`}
                     >
@@ -338,11 +338,11 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="py-12 w-full bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
+        <section className="py-12 w-full 'bg-gradient-to-br' from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
           <div className="container-padding max-w-content">
             <div className="text-center space-y-8 max-w-2xl mx-auto">
               <div className="space-y-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                <div className="w-16 h-16 mx-auto 'bg-gradient-to-br' from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                   <MessageSquare size={28} className="text-white" />
                 </div>
                 
@@ -362,12 +362,12 @@ export default function BlogPage() {
                   href="https://sharbariahmed.substack.com/subscribe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg hover:scale-105 transition-all text-center border border-[#E3E7C8]"
+                  className="inline-block w-full md:w-auto px-8 py-4 'bg-gradient-to-r' from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg hover:scale-105 transition-all text-center border border-[#E3E7C8]"
                 >
                   Subscribe Now
                 </Link>
                 
-                <div className="p-4 bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent rounded-lg border border-[#E3E7C8]">
+                <div className="p-4 'bg-gradient-to-r' from-transparent via-[#D9E6A3]/30 to-transparent rounded-lg border border-[#E3E7C8]">
                   <p className="text-xs text-[#5F6148]">
                     New essays published regularly • Free content always • Unsubscribe anytime
                   </p>
@@ -397,9 +397,9 @@ export default function BlogPage() {
                 { icon: Sparkles, title: "Popular Series", desc: "Multi-part essays and themed collections" },
                 { icon: PenTool, title: "Writer's Notes", desc: "Behind-the-scenes of the creative process" }
               ].map((item, idx) => (
-                <div key={idx} className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:shadow-lg transition-all">
+                <div key={idx} className="p-5 'bg-gradient-to-br' from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                    <div className="w-10 h-10 'bg-gradient-to-br' from-[#D9E6A3] to-[#B7C83E]/20 rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                       <item.icon size={18} className="text-[#5F6148]" />
                     </div>
                     <div>
@@ -416,7 +416,7 @@ export default function BlogPage() {
                 href="https://sharbariahmed.substack.com/archive"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-gradient-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] transition-all text-sm font-medium"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-linear-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] transition-all text-sm font-medium"
               >
                 Browse Full Archive
                 <ExternalLink size={14} />
@@ -431,7 +431,7 @@ export default function BlogPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8]"
+          className="fixed bottom-20 right-4 z-40 w-12 h-12 'bg-gradient-to-br' from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-[#2E2F1F]" />

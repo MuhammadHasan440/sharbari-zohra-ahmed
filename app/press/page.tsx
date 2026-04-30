@@ -589,11 +589,11 @@ export default function PressPage() {
                 <div className="group relative p-8 bg-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] transition-all duration-500 hover:transform hover:-translate-y-1">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center">
+                      <div className="w-14 h-14 bg-linearr-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center">
                         <BookOpen size={24} className="text-[#F9FAF4]" />
                       </div>
                       <h3 className="text-2xl font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">
-                        Ocean & Mrs. Nagai
+                        Ocean of Mrs. Nagai
                       </h3>
                     </div>
                     <p className="text-[#5F6148] leading-relaxed font-cormorant">

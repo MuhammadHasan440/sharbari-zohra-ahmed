@@ -50,7 +50,7 @@ export default function BooksPage() {
       title: "The Strangest of Fruit",
       subtitle: "A Collection of Stories",
       description: "A powerful collection centered on migration, war, womanhood, and the haunting afterlives of history. These stories explore the fractures between cultures—and the fragile bonds that hold us together.",
-      year: "2013",
+      year: "2025",
       awards: ["Lambda Literary Award Finalist", "Asian American Literary Award Nominee"],
       links: [
         { 
