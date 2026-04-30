@@ -315,8 +315,8 @@ Submitted on: ${new Date().toLocaleString()}`
                  style={{
                    background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
-          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-3 pointer-events-none"></div>
           
           <div className="container-padding max-w-content">
             <div className="text-center space-y-6">
@@ -334,7 +334,7 @@ Submitted on: ${new Date().toLocaleString()}`
               </h1>
 
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
@@ -441,11 +441,11 @@ Submitted on: ${new Date().toLocaleString()}`
                 return (
                   <div
                     key={index}
-                    className="group p-6 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:shadow-lg transition-all"
+                    className="group p-6 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] hover:shadow-lg transition-all"
                   >
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8] group-hover:scale-110 transition-transform`}>
+                        <div className={`w-12 h-12 bg-linear-to-br ${service.color} rounded-lg flex items-center justify-center shrink-0 border border-[#E3E7C8] group-hover:scale-110 transition-transform`}>
                           <Icon className="text-white" size={20} />
                         </div>
                         
@@ -460,7 +460,7 @@ Submitted on: ${new Date().toLocaleString()}`
                       <div className="pl-16 space-y-2">
                         {service.details.map((detail, i) => (
                           <div key={i} className="flex items-start gap-2 text-sm text-[#5F6148]">
-                            <div className="w-1.5 h-1.5 bg-[#B7C83E] rounded-full mt-1.5 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#B7C83E] rounded-full mt-1.5 shrink-0"></div>
                             <span>{detail}</span>
                           </div>
                         ))}
@@ -480,7 +480,7 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Who I Work Best With & Philosophy */}
-        <section id="philosophy" className="py-12 w-full bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
+        <section id="philosophy" className="py-12 w-full bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3]">
           <div className="container-padding max-w-content">
             <div className="space-y-12">
               {/* Who I Work Best With - With Icons */}
@@ -490,9 +490,9 @@ Submitted on: ${new Date().toLocaleString()}`
                   {whoIBestWith.map((item, index) => {
                     const Icon = item.icon
                     return (
-                      <div key={index} className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
+                      <div key={index} className="p-6 bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
                         <div className="flex items-start gap-3">
-                          <div className="w-10 h-10 bg-[#B7C83E]/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]">
+                          <div className="w-10 h-10 bg-[#B7C83E]/10 rounded-lg flex items-center justify-center shrink-0 border border-[#E3E7C8]">
                             <Icon size={18} className="text-[#B7C83E]" />
                           </div>
                           <p className="text-[#5F6148] text-sm md:text-base">{item.text}</p>
@@ -510,9 +510,9 @@ Submitted on: ${new Date().toLocaleString()}`
                   {philosophyPoints.map((point, index) => {
                     const Icon = point.icon
                     return (
-                      <div key={index} className="p-6 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
+                      <div key={index} className="p-6 bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
                         <div className="space-y-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                          <div className="w-12 h-12 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                             <Icon size={20} className="text-white" />
                           </div>
                           <h3 className="text-base md:text-lg font-bold text-[#2E2F1F]">{point.title}</h3>
@@ -532,7 +532,7 @@ Submitted on: ${new Date().toLocaleString()}`
           <div className="space-y-8">
             <div className="text-center space-y-4">
               <div className="inline-flex items-center gap-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center border border-[#E3E7C8]">
                   <Quote size={18} className="text-white" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F1F]">Writer Success Stories</h2>
@@ -543,7 +543,7 @@ Submitted on: ${new Date().toLocaleString()}`
             </div>
 
             {/* Testimonial Slider */}
-            <div className="bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl p-6 md:p-8 relative">
+            <div className="bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl p-6 md:p-8 relative">
               <div className="space-y-6">
                 <div className="flex gap-1">
                   {Array.from({ length: testimonials[currentTestimonial]?.rating || 5 }).map((_, i) => (
@@ -551,7 +551,7 @@ Submitted on: ${new Date().toLocaleString()}`
                   ))}
                 </div>
                 
-                <blockquote className="text-[#5F6148] italic text-sm md:text-base leading-relaxed min-h-[100px] md:min-h-[80px]">
+                <blockquote className="text-[#5F6148] italic text-sm md:text-base leading-relaxed min-h-[100px] md:min-h-20">
                   "{testimonials[currentTestimonial]?.quote}"
                 </blockquote>
                 
@@ -604,7 +604,7 @@ Submitted on: ${new Date().toLocaleString()}`
         </section>
 
         {/* Inquiry Form Section */}
-        <section id="inquiry" className="py-12 w-full bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8]">
+        <section id="inquiry" className="py-12 w-full bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8]">
           <div className="container-padding max-w-content">
             <div className="space-y-8">
               <div className="text-center space-y-4">
@@ -614,7 +614,7 @@ Submitted on: ${new Date().toLocaleString()}`
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl">
+              <div className="p-6 md:p-8 bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-xl">
                 <div className="space-y-6">
                   <div className="text-center">
                     <p className="text-[#5F6148] text-sm md:text-base">
@@ -842,7 +842,7 @@ Submitted on: ${new Date().toLocaleString()}`
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 transition-all text-center border border-[#E3E7C8] hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        className="w-full py-4 px-6 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 transition-all text-center border border-[#E3E7C8] hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       >
                         <Mail size={18} />
                         {isSubmitting ? 'Opening Email...' : 'Submit Inquiry'}
@@ -877,12 +877,12 @@ Submitted on: ${new Date().toLocaleString()}`
             <div className="space-y-4 max-w-md mx-auto">
               <button
                 onClick={() => window.location.href = "mailto:shabini71@gmail.com"}
-                className="block w-full py-4 px-6 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 transition-all text-center border border-[#E3E7C8] hover:shadow-lg"
+                className="block w-full py-4 px-6 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg active:scale-95 transition-all text-center border border-[#E3E7C8] hover:shadow-lg"
               >
                 Send Detailed Inquiry
               </button>
               
-              <div className="p-4 bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg">
+              <div className="p-4 bg-linear-to-r from-transparent via-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg">
                 <p className="text-xs text-[#5F6148]">
                   Response within 2–3 business days • Limited monthly availability • All inquiries personally reviewed
                 </p>
@@ -898,7 +898,7 @@ Submitted on: ${new Date().toLocaleString()}`
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8] animate-bounce"
+          className="fixed bottom-20 right-4 z-40 w-12 h-12 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8] animate-bounce"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-[#2E2F1F]" />

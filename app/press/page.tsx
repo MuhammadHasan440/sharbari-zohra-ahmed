@@ -204,7 +204,7 @@ export default function PressPage() {
 
         <main className="flex-1">
           {/* Hero Section with Fruit Image */}
-          <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] overflow-hidden">
+          <section className="relative py-16 md:py-24 bg-linear-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] overflow-hidden">
             {/* Olive leaf pattern overlay */}
             <div className="absolute inset-0 opacity-10 leaf-bg"></div>
             
@@ -218,13 +218,13 @@ export default function PressPage() {
                   className="object-cover opacity-10 mix-blend-multiply"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F9FAF4]/90 via-[#F9FAF4]/70 to-[#F9FAF4]/90"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-[#F9FAF4]/90 via-[#F9FAF4]/70 to-[#F9FAF4]/90"></div>
               </div>
             </div>
 
             {/* Olive decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
 
             {/* Animated olive leaves */}
             {isClient && (
@@ -256,7 +256,7 @@ export default function PressPage() {
                 <span className="text-[#6F7F1E]">Acclaim</span>
               </h1>
               
-              <div className="w-32 h-1 bg-gradient-to-r from-[#B7C83E] to-transparent mb-8"></div>
+              <div className="w-32 h-1 bg-linear-to-r from-[#B7C83E] to-transparent mb-8"></div>
               
               <p className="font-cormorant text-xl text-[#5F6148] leading-relaxed max-w-2xl">
                 Reviews, press coverage, and praise for my literary work and filmmaking.
@@ -277,7 +277,7 @@ export default function PressPage() {
             {/* Scroll indicator */}
             {isClient && (
               <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-px h-16 bg-gradient-to-b from-[#B7C83E] via-[#6F7F1E] to-transparent"></div>
+                <div className="w-px h-16 bg-linear-to-b from-[#B7C83E] via-[#6F7F1E] to-transparent"></div>
               </div>
             )}
           </section>
@@ -375,9 +375,9 @@ export default function PressPage() {
           </SectionContainer> */}
 
           {/* Praise Section */}
-          <SectionContainer id="praise" className="bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] relative overflow-hidden">
+          <SectionContainer id="praise" className="bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3] relative overflow-hidden">
             {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
             
             <div className="space-y-12">
               <div className="text-center space-y-6">
@@ -425,7 +425,7 @@ export default function PressPage() {
                     </div>
                     
                     {/* Hover effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                   </div>
                 ))}
               </div>
@@ -435,7 +435,7 @@ export default function PressPage() {
          
 
           {/* Book Information Section */}
-          <SectionContainer id="book" className="bg-gradient-to-b from-[#D9E6A3] to-[#F9FAF4] relative overflow-hidden">
+          <SectionContainer id="book" className="bg-linear-to-b from-[#D9E6A3] to-[#F9FAF4] relative overflow-hidden">
             {/* Pattern overlay */}
             <div className="absolute inset-0 opacity-10 leaf-bg"></div>
             
@@ -452,7 +452,7 @@ export default function PressPage() {
             </div>
             
             {/* Bottom decorative border */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
 
             <div className="relative z-10 space-y-12">
               <div className="text-center space-y-6">
@@ -466,9 +466,9 @@ export default function PressPage() {
                 {/* Book Cover */}
                 <div className="relative group">
                   {/* Olive frame effect */}
-                  <div className="absolute -inset-4 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                  <div className="absolute -inset-4 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
                   
-                  <div className="relative aspect-[3/4] bg-gradient-to-br from-[#6F7F1E] via-[#B7C83E] to-[#D9E6A3] rounded-xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-all duration-700">
+                  <div className="relative aspect-3/4 bg-linear-to-br from-[#6F7F1E] via-[#B7C83E] to-[#D9E6A3] rounded-xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-all duration-700">
                     {/* Fruit image on book cover */}
                     <div className="absolute inset-0">
                       <div className="relative h-full w-full">
@@ -500,8 +500,8 @@ export default function PressPage() {
                     </div>
                     
                     {/* Olive shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#D9E6A3]/30 via-transparent to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B7C83E]/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-[#D9E6A3]/30 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#B7C83E]/10 to-transparent translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </div>
                 </div>
 
@@ -512,7 +512,7 @@ export default function PressPage() {
                       Stories That Cross Borders
                     </h3>
                     
-                    <div className="h-px w-20 bg-gradient-to-r from-[#B7C83E] to-transparent"></div>
+                    <div className="h-px w-20 bg-linear-to-r from-[#B7C83E] to-transparent"></div>
                     
                     <p className="text-lg text-[#5F6148] leading-relaxed font-cormorant">
                       A collection of interconnected stories exploring identity, belonging, and the narratives we inherit.
@@ -567,7 +567,7 @@ export default function PressPage() {
           {/* Other Works Section */}
           <SectionContainer id="other-works" className="bg-[#F9FAF4] relative overflow-hidden">
             {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
             
             {/* Pattern overlay */}
             <div className="absolute inset-0 opacity-10 leaf-bg" style={{ transform: 'rotate(45deg)' }}></div>
@@ -611,14 +611,14 @@ export default function PressPage() {
                   </div>
                   
                   {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                 </div>
 
                 {/* Filmography */}
                 <div className="group relative p-8 bg-white border border-[#E3E7C8] rounded-xl hover:border-[#B7C83E] transition-all duration-500 hover:transform hover:-translate-y-1">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 bg-gradient-to-br from-[#6F7F1E] to-[#B7C83E] rounded-lg flex items-center justify-center">
+                      <div className="w-14 h-14 bg-linear-to-br from-[#6F7F1E] to-[#B7C83E] rounded-lg flex items-center justify-center">
                         <Award size={24} className="text-[#F9FAF4]" />
                       </div>
                       <h3 className="text-2xl font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">
@@ -638,7 +638,7 @@ export default function PressPage() {
                   </div>
                   
                   {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-[#B7C83E]/0 via-[#B7C83E]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                 </div>
               </div>
             </div>

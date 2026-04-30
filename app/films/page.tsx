@@ -141,8 +141,8 @@ export default function FilmsPage() {
                    background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
           {/* Top Olive Border */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
-          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-3 pointer-events-none"></div>
           
           <div className="mobile-padding">
             <div className="text-center space-y-6">
@@ -165,7 +165,7 @@ export default function FilmsPage() {
 
               {/* Separator */}
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
@@ -199,9 +199,9 @@ export default function FilmsPage() {
         {/* Video Preview - Mobile Optimized */}
         <section className="py-8 mobile-padding">
           <div className="relative group rounded-xl overflow-hidden border-2 border-[#E3E7C8] shadow-lg hover-lift">
-            <div className="aspect-video bg-gradient-to-br from-[#2E2F1F] to-[#5F6148] flex items-center justify-center">
+            <div className="aspect-video bg-linear-to-br from-[#2E2F1F] to-[#5F6148] flex items-center justify-center">
               <div className="text-center space-y-4 p-6">
-                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 border-2 border-[#E3E7C8] flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto rounded-full bg-linear-to-br from-[#D9E6A3] to-[#B7C83E]/20 border-2 border-[#E3E7C8] flex items-center justify-center">
                   <Play className="text-[#B7C83E] ml-1" size={28} />
                 </div>
                 <div className="space-y-2">
@@ -209,17 +209,17 @@ export default function FilmsPage() {
                   <p className="text-white/70 text-sm">Featured film preview coming soon</p>
                 </div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
           </div>
         </section>
 
         {/* Director's Statement - Mobile Stacked */}
-        <section className="py-12 mobile-full-width bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3]">
+        <section className="py-12 mobile-full-width bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
               <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                   <Camera size={20} className="text-white" />
                 </div>
                 <h2 className="text-3xl font-bold text-[#2E2F1F]">Director's Statement</h2>
@@ -239,7 +239,7 @@ export default function FilmsPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent border-y border-[#E3E7C8]">
+              <div className="p-6 bg-linear-to-r from-transparent via-[#D9E6A3]/30 to-transparent border-y border-[#E3E7C8]">
                 <p className="text-[#5F6148] leading-relaxed text-center font-subheading italic">
                   "These liminal spaces are where truth is often revealed."
                 </p>
@@ -279,12 +279,12 @@ export default function FilmsPage() {
         <section id="featured-films" className="py-12 mobile-padding">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+              <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                 <Star size={20} className="text-white" />
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-[#2E2F1F]">Featured Films</h2>
-                <div className="h-1 w-16 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
+                <div className="h-1 w-16 bg-linear-to-r from-[#B7C83E] to-transparent mt-1"></div>
               </div>
             </div>
 
@@ -292,10 +292,10 @@ export default function FilmsPage() {
               {realFilms.map((film) => (
                 <div 
                   key={film.id}
-                  className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group"
+                  className="bg-linear-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group"
                 >
                   {/* Film Image */}
-                  <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+                  <div className="relative h-48 md:h-64 bg-linear-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
                     {film.posterImage ? (
                       // Display actual poster image if available
                       <img 
@@ -305,7 +305,7 @@ export default function FilmsPage() {
                       />
                     ) : (
                       // Fallback gradient with icon
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-linear-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
                         {film.type === "Short Film" ? (
                           <PenTool size={48} className="text-[#B7C83E]/30" />
                         ) : (
@@ -399,14 +399,14 @@ export default function FilmsPage() {
         </section>
 
         {/* Creative Collaborations - Mobile Optimized */}
-        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
+        <section className="py-12 mobile-full-width bg-linear-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
           <div className="mobile-padding">
             <div className="text-center space-y-8">
           
 
-              <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
+              <div className="p-5 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover-lift">
                 <div className="space-y-3">
-                  <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <div className="w-12 h-12 mx-auto bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                     <Film size={20} className="text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-[#2E2F1F]">Get in Touch</h3>
@@ -424,10 +424,10 @@ export default function FilmsPage() {
               </div>
 
               <div className="pt-6">
-                <Link
-                  href="/contact?subject=Film%20Assets"
-                  className="inline-flex items-center gap-2 px-5 py-2 border border-[#B7C83E] text-[#B7C83E] rounded-lg hover:bg-gradient-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] mobile-transition text-sm font-medium border border-[#E3E7C8] hover-lift"
-                >
+               <Link
+  href="/contact?subject=Film%20Assets"
+  className="inline-flex items-center gap-2 px-5 py-2 border border-[#B7C83E] ring-1 ring-[#E3E7C8] text-[#B7C83E] rounded-lg hover:bg-linear-to-r hover:from-[#B7C83E] hover:to-[#6F7F1E] hover:text-[#2E2F1F] mobile-transition text-sm font-medium hover-lift"
+>
                   Request Film Assets
                   <ExternalLink size={14} />
                 </Link>
@@ -443,7 +443,7 @@ export default function FilmsPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent border border-[#E3E7C8]"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-[#2E2F1F]" />

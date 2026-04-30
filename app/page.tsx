@@ -56,7 +56,7 @@ export default function HomePage() {
     {
       id: 2,
       title: "Dust Under Her Feet",
-      synopsis: "Sharbari’s debut novel follows Yasmine Khan, a savvy, independent woman running a nightclub in 1940’s Calcutta during WW2 catering to American military personnel. Set against the twilight of the British Raj, as empire frays and tensions simmer in the streets, the story lives inside the nightclub that feels like the last safe harbor for Yasmine’s chosen family of waifs, singers and dancers, the forgotten people who built a home inside the walls of the Bombay Duck.",
+      synopsis: "Sharbari's debut novel follows Yasmine Khan, a savvy, independent woman running a nightclub in 1940's Calcutta during WW2 catering to American military personnel. Set against the twilight of the British Raj, as empire frays and tensions simmer in the streets, the story lives inside the nightclub that feels like the last safe harbor for Yasmine's chosen family of waifs, singers and dancers, the forgotten people who built a home inside the walls of the Bombay Duck.",
       image: "/images/dust.jpg"
     },
     {
@@ -345,7 +345,7 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
               <button
                 onClick={() => scrollToSection("work")}
-                className="group relative w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale"
+                className="group relative w-full md:w-auto px-8 py-4 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#1F2A0A] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-white hover:shadow-[0_15px_40px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Explore My Work
@@ -355,7 +355,7 @@ export default function HomePage() {
               
               <Link
                 href="/consulting"
-                className="group relative w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#B7C83E] text-[#B7C83E] font-subheading text-lg font-semibold rounded-full hover:bg-[#6F7F1E] hover:border-[#6F7F1E] hover:text-[#F9FAF4] transition-all duration-300 active:scale-95 touch-target hover-scale"
+                className="group relative w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#B7C83E] text-[#B7C83E] font-subheading text-lg font-semibold rounded-full hover:bg-[#6F7F1E] hover:border-[#6F7F1E] hover:text-white transition-all duration-300 active:scale-95 touch-target hover-scale"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   Book a Consultation
@@ -366,20 +366,20 @@ export default function HomePage() {
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 mt-12">
               <div className="flex flex-col items-center gap-2 opacity-80 animate-float">
-                <span className="font-subheading text-sm text-[#9CA3AF] tracking-widest">
+                <span className="font-subheading text-sm text-white tracking-widest">
                   Scroll
                 </span>
-                <div className="w-px h-16 bg-gradient-to-b from-[#B7C83E] via-[#6F7F1E] to-transparent"></div>
+                <div className="w-px h-16 bg-linear-to-b from-[#B7C83E] via-[#6F7F1E] to-transparent"></div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Featured Works Section */}
-        <section id="work" className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
+        <section id="work" className="relative bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
           <div 
-            className="absolute inset-0 opacity-[3%]"
+            className="absolute inset-0 opacity-3"
             style={{
               backgroundImage: 'url(/images/dust.jpg)',
               backgroundPosition: 'center',
@@ -389,13 +389,13 @@ export default function HomePage() {
           ></div>
           
           {/* Background Elements */}
-          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#B7C83E]/10 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-24 bg-linear-to-b from-[#B7C83E]/10 to-transparent"></div>
           
           <div className="max-w-6xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                <div className="w-12 h-12 bg-linear-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
                   <BookOpen size={24} className="text-[#B7C83E]" />
                 </div>
               </div>
@@ -404,7 +404,7 @@ export default function HomePage() {
                 Featured <span className="text-gradient">Works</span>
               </h2>
               
-              <p className="font-['Lato'] text-lg md:text-xl text-[#5F6148] font-semibold max-w-2xl mx-auto">
+              <p className="font-['Lato'] text-lg md:text-xl text-[#2E2F1F] font-semibold max-w-2xl mx-auto">
                 Award-winning books and films exploring identity, migration, and the human experience
               </p>
             </div>
@@ -413,10 +413,10 @@ export default function HomePage() {
             <div className="mb-16 md:mb-24">
               <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
                 <div className="flex items-center gap-4 mb-4 md:mb-0">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                  <div className="w-14 h-14 bg-linear-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
                     <BookOpen size={28} className="text-[#B7C83E]" />
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold">
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#2E2F1F]">
                     Books
                   </h3>
                 </div>
@@ -445,21 +445,21 @@ export default function HomePage() {
                       />
                       
                       {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
                     </div>
                     
                     {/* Book Details */}
                     <div className="p-6">
-                      <h4 className="text-xl font-bold mb-3 line-clamp-2 text-[#2E2F1F]">
+                      <h4 className="text-xl font-bold mb-3 line-clamp-2 text-[#1F2A0A]">
                         {book.title}
                       </h4>
                       
-                      <p className="text-[#5F6148] text-sm mb-4 line-clamp-3">
+                      <p className="text-[#2E2F1F] text-sm mb-4 line-clamp-3">
                         {book.synopsis}
                       </p>
                       
                       <Link href={`/books/${book.id}`} className="w-full">
-                        <button className="w-full p-3 bg-gradient-to-r from-[#B7C83E]/10 to-transparent border border-[#B7C83E]/30 rounded-lg text-[#2E2F1F] font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:border-[#6F7F1E] transition-all">
+                        <button className="w-full p-3 bg-linear-to-r from-[#B7C83E]/10 to-transparent border border-[#B7C83E]/30 rounded-lg text-[#1F2A0A] font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-linear-to-r hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-white hover:border-[#6F7F1E] transition-all">
                           Explore Book
                           <ArrowRight size={16} />
                         </button>
@@ -474,10 +474,10 @@ export default function HomePage() {
 <div>
   <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
     <div className="flex items-center gap-4 mb-4 md:mb-0">
-      <div className="w-14 h-14 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+      <div className="w-14 h-14 bg-linear-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
         <Film size={28} className="text-[#B7C83E]" />
       </div>
-      <h3 className="text-3xl md:text-4xl font-bold">
+      <h3 className="text-3xl md:text-4xl font-bold text-[#2E2F1F]">
         Films
       </h3>
     </div>
@@ -491,10 +491,10 @@ export default function HomePage() {
   {/* Films Grid */}
   <div className="space-y-6 md:space-y-8">
     {/* Rickshaw Girl */}
-    <div className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
+    <div className="bg-linear-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
       {/* Film Image */}
-      <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
+      <div className="relative h-48 md:h-64 bg-linear-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-br from-[#B7C83E]/10 to-[#6F7F1E]/10 flex items-center justify-center">
           <Film size={48} className="text-[#B7C83E]/30" />
         </div>
         
@@ -527,16 +527,16 @@ export default function HomePage() {
           <p className="text-[#B7C83E] font-subheading text-sm">
             Screenwriter
           </p>
-          <p className="text-[#9CA3AF] text-sm mt-1">
+          <p className="text-gray-300 text-sm mt-1">
             Sleeperwave Films, 2022 — Dir. Amitabh Reza Choudhury
           </p>
         </div>
         
-        <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
+        <p className="text-gray-200 text-sm mb-4 leading-relaxed">
           A daring teenage girl disguises herself as a boy and pedals a rickshaw on the gritty streets of Dhaka, Bangladesh to earn extra cash for her struggling family, all while pursuing her dream of becoming an artist.
         </p>
 
-        <div className="flex items-start gap-2 mb-4 text-xs text-[#9CA3AF]">
+        <div className="flex items-start gap-2 mb-4 text-xs text-gray-400">
           <span className="text-[#B7C83E]">Source:</span>
           <span>Wikipedia</span>
         </div>
@@ -546,7 +546,7 @@ export default function HomePage() {
             href="https://tv.apple.com/us/clip/rickshaw-girl/umc.cmc.3ighgmeon5sls5va3kcpiyru1?targetId=umc.cmc.2wm6zyigg0vo53o0whw3faymt&targetType=Movie&playableId=tvs.sbd.9001%3A1655009323_APPLE_GENERATED_261423990"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#B7C83E] text-[#2E2F1F] font-medium rounded-lg hover:bg-[#9CAF3E] transition-all border border-[#E3E7C8] text-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#B7C83E] text-[#1F2A0A] font-medium rounded-lg hover:bg-[#9CAF3E] transition-all border border-[#E3E7C8] text-sm"
           >
             <Play size={16} />
             <span>Watch Trailer</span>
@@ -558,9 +558,9 @@ export default function HomePage() {
     </div>
 
     {/* Level 3 */}
-    <div className="bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
+    <div className="bg-linear-to-br from-[#2E2F1F] to-[#1F2937] rounded-2xl overflow-hidden border border-[#E3E7C8] shadow-xl hover-lift hover-glow transition-all group">
   {/* Film Image */}
-  <div className="relative h-48 md:h-64 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
+  <div className="relative h-48 md:h-64 bg-linear-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
     {/* Poster Image */}
     <img 
       src="/images/level-poster.jpg" 
@@ -569,7 +569,7 @@ export default function HomePage() {
     />
     
     {/* Gradient Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
 
     {/* In Production Badge */}
     <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-[#E3E7C8] rounded-full">
@@ -595,12 +595,12 @@ export default function HomePage() {
       <p className="text-[#B7C83E] font-subheading text-sm">
         Written & Directed by Sharbari
       </p>
-      <p className="text-[#9CA3AF] text-sm mt-1">
+      <p className="text-gray-300 text-sm mt-1">
         West Kelsey Productions, 2026
       </p>
     </div>
     
-    <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
+    <p className="text-gray-200 text-sm mb-4 leading-relaxed">
       A celebrated literature professor hiding a life overtaken by hoarding must confront lived trauma and the scourge of perfectionism when her estranged daughter, a beautiful, talented ballerina, seeks to reconnect with her after 12 years.
     </p>
 
@@ -616,7 +616,7 @@ export default function HomePage() {
         href="https://youtube.com/@westkelseyproductions?si=G_AD0uwFV2v5tLWc"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm text-[#B7C83E] hover:text-white transition-colors"
+        className="inline-flex items-center gap-2 text-sm text-[#B7C83E] hover:text-[#D9E6A3] transition-colors"
       >
         <Youtube size={18} />
         <span>Watch more on our YouTube channel</span>
@@ -625,9 +625,9 @@ export default function HomePage() {
     </div>
 
     <div className="flex items-center gap-3">
-      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
-      <span className="text-xs text-[#9CA3AF] font-subheading">Short Film</span>
-      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
+      <div className="flex-1 h-px bg-linear-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
+      <span className="text-xs text-gray-400 font-subheading">Short Film</span>
+      <div className="flex-1 h-px bg-linear-to-r from-transparent via-[#E3E7C8] to-transparent"></div>
     </div>
   </div>
 </div>
@@ -636,154 +636,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* New Awards Section */}
-        {/* <section className="relative bg-gradient-to-b from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
-          
-          <div 
-            className="absolute inset-0 opacity-[2%]"
-            style={{
-              backgroundImage: 'url(/images/dust.jpg)',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              mixBlendMode: 'overlay'
-            }}
-          ></div>
-          
-        
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B7C83E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-          
-         
-          <div className="absolute -top-10 -right-10 w-40 h-40 border border-[#B7C83E]/20 rounded-full animate-spin"></div>
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 border border-[#B7C83E]/10 rounded-full animate-float"></div>
-
-          <div className="max-w-6xl mx-auto relative z-10">
-            
-            <div className="text-center mb-12 md:mb-16">
-              <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
-                  <Trophy size={24} className="text-[#B7C83E]" />
-                </div>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Awards & <span className="text-gradient">Recognition</span>
-              </h2>
-              
-              <p className="font-['Lato'] text-lg md:text-xl text-[#D1D5DB] font-semibold max-w-2xl mx-auto">
-                Recent accolades and recognition for screenwriting excellence
-              </p>
-            </div>
-
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-              {AWARDS.map((award) => (
-                <div 
-                  key={award.id}
-                  className="bg-[#F9FAF4] rounded-2xl overflow-hidden shadow-xl hover-lift transition-all group border border-[#E3E7C8]"
-                >
-            
-                  <div className="relative h-48 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] overflow-hidden">
-                    <Image
-                      src={award.image}
-                      alt={`${award.title} - ${award.organization}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    
-               
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    
-                   
-                    <div className="absolute top-4 left-4">
-                      <div className={`px-3 py-1.5 rounded-full backdrop-blur-sm border ${
-                        award.featured 
-                          ? 'bg-[#B7C83E]/20 border-[#B7C83E]' 
-                          : 'bg-black/40 border-[#E3E7C8]'
-                      }`}>
-                        <span className={`font-subheading text-xs font-semibold uppercase tracking-wider ${
-                          award.featured ? 'text-[#B7C83E]' : 'text-white'
-                        }`}>
-                          {award.featured ? 'Winner' : award.title.includes('Nominated') ? 'Nominee' : 'Award'}
-                        </span>
-                      </div>
-                    </div>
-                    
-                   
-                    <div className="absolute top-4 right-4">
-                      <div className="w-12 h-12 bg-[#B7C83E] rounded-full flex items-center justify-center border border-white shadow-lg">
-                        <span className="font-bold text-white text-sm">{award.year}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h4 className="text-lg font-bold text-[#2E2F1F] mb-1">
-                          {award.title}
-                        </h4>
-                        
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-6 h-6 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
-                            <Award size={12} className="text-[#B7C83E]" />
-                          </div>
-                          <span className="font-subheading text-sm font-semibold text-[#B7C83E]">
-                            {award.organization}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <p className="text-[#5F6148] text-sm mb-4">
-                      {award.description}
-                    </p>
-                    
-                    {award.scriptName && (
-                      <div className="mt-4 pt-4 border-t border-[#E3E7C8]">
-                        <div className="font-subheading text-sm font-semibold text-[#2E2F1F] mb-1">
-                          Script:
-                        </div>
-                        <div className="text-[#B7C83E] font-subheading font-semibold text-sm">
-                          "{award.scriptName}"
-                        </div>
-                      </div>
-                    )}
-                    
-                   
-                    <div className="mt-4">
-                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${
-                        award.category === 'screenplay' 
-                          ? 'bg-[#B7C83E]/10 text-[#6F7F1E]' 
-                          : award.category === 'television'
-                          ? 'bg-blue-100 text-blue-700'
-                          : 'bg-purple-100 text-purple-700'
-                      }`}>
-                        <span className="text-xs font-semibold uppercase tracking-wider">
-                          {award.category === 'screenplay' ? 'Screenplay' : 
-                           award.category === 'television' ? 'Television' : 'Film Festival'}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-
-            
-          </div>
-        </section> */}
-
       {/* Testimonials Section */}
-<section className="relative bg-gradient-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
+<section className="relative bg-linear-to-br from-[#2E2F1F] to-[#1F2937] px-4 py-16 md:py-24 overflow-hidden">
   {/* Dust Texture Overlay */}
   <div 
-    className="absolute inset-0 opacity-[3%]"
+    className="absolute inset-0 opacity-3"
     style={{
       backgroundImage: 'url(/images/dust.jpg)',
       backgroundPosition: 'center',
@@ -802,7 +659,7 @@ export default function HomePage() {
     {/* Section Header */}
     <div className="text-center mb-12 md:mb-16">
       <div className="inline-flex items-center justify-center gap-3 mb-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+        <div className="w-12 h-12 bg-linear-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
           <Quote size={24} className="text-[#B7C83E]" />
         </div>
       </div>
@@ -811,7 +668,7 @@ export default function HomePage() {
         Testimonials & Events
       </h2>
       
-      <p className="font-['Lato'] text-lg md:text-xl text-[#D1D5DB] font-semibold max-w-2xl mx-auto">
+      <p className="font-['Lato'] text-lg md:text-xl text-gray-200 font-semibold max-w-2xl mx-auto">
         Hear from students, collaborators, and literary conversations
       </p>
     </div>
@@ -822,7 +679,7 @@ export default function HomePage() {
       <div className="lg:col-span-2 bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden">
         {/* Dust Texture Background */}
         <div 
-          className="absolute inset-0 opacity-[2%] rounded-3xl"
+          className="absolute inset-0 opacity-2 rounded-3xl"
           style={{
             backgroundImage: 'url(/images/dust.jpg)',
             backgroundPosition: 'center',
@@ -834,17 +691,17 @@ export default function HomePage() {
         <div className="relative z-10">
           {/* Video Header */}
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+            <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
               <Play size={18} className="text-[#B7C83E]" />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-[#2E2F1F]">Video Testimonial</h3>
-              <p className="text-sm text-[#5F6148]">Hear directly from students</p>
+              <h3 className="font-bold text-lg text-[#1F2A0A]">Video Testimonial</h3>
+              <p className="text-sm text-[#2E2F1F]">Hear directly from students</p>
             </div>
           </div>
           
           {/* Video Container */}
-          <div className="relative rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-[#2E2F1F] to-[#1F2937]">
+          <div className="relative rounded-2xl overflow-hidden mb-6 bg-linear-to-br from-[#2E2F1F] to-[#1F2937]">
             {/* Video */}
             <video 
               className="w-full h-64 md:h-80 object-cover"
@@ -873,13 +730,13 @@ export default function HomePage() {
           
           {/* Video Details */}
           <div>
-            <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
+            <div className="font-subheading text-base font-semibold text-[#1F2A0A] mb-1">
               Amanda Cabral
             </div>
-            <div className="font-subheading text-sm text-[#5F6148] mb-3">
+            <div className="font-subheading text-sm text-[#2E2F1F] mb-3">
               MFA graduate, Sacred Heart University
             </div>
-            <p className="text-[#5F6148] text-sm italic">
+            <p className="text-[#2E2F1F] text-sm italic">
               "Sharbari's guidance was instrumental in shaping my thesis and finding my authentic voice as a writer."
             </p>
           </div>
@@ -887,10 +744,10 @@ export default function HomePage() {
       </div>
 
       {/* Literary Event Card */}
-      <div className="bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden hover-lift transition-all group">
+      <div className="bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] overflow-hidden hover-lift transition-all group">
         {/* Dust Texture Background */}
         <div 
-          className="absolute inset-0 opacity-[5%] rounded-3xl"
+          className="absolute inset-0 opacity-5 rounded-3xl"
           style={{
             backgroundImage: 'url(/images/dust.jpg)',
             backgroundPosition: 'center',
@@ -955,7 +812,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="mt-6"
           >
-            <button className="w-full py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-white hover:text-[#2E2F1F] transition-all duration-300 group-hover:scale-[1.02]">
+            <button className="w-full py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white font-subheading font-semibold text-sm flex items-center justify-center gap-2 hover:bg-white hover:text-[#1F2A0A] transition-all duration-300 group-hover:scale-[1.02]">
               <span>View Event Details</span>
               <ArrowRight size={16} />
             </button>
@@ -967,7 +824,7 @@ export default function HomePage() {
       <div className="lg:col-span-3 bg-[#F9FAF4] rounded-3xl p-6 md:p-8 shadow-2xl border border-[#E3E7C8] relative">
         {/* Dust Texture Background */}
         <div 
-          className="absolute inset-0 opacity-[2%] rounded-3xl"
+          className="absolute inset-0 opacity-2 rounded-3xl"
           style={{
             backgroundImage: 'url(/images/dust.jpg)',
             backgroundPosition: 'center',
@@ -983,15 +840,15 @@ export default function HomePage() {
         
         <div className="relative z-10">
           <div className="min-h-[200px] flex flex-col justify-between">
-            <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-6 leading-relaxed">
+            <p className="font-italic text-lg md:text-xl text-[#1F2A0A] italic mb-6 leading-relaxed">
               {TESTIMONIALS[currentTestimonial]?.quote || "Working with Sharbari completely transformed the way I think about writing. Real, brilliant, and disarmingly witty… she'll elevate your writing…"}
             </p>
             
             <div>
-              <div className="font-subheading text-base font-semibold text-[#2E2F1F] mb-1">
+              <div className="font-subheading text-base font-semibold text-[#1F2A0A] mb-1">
                 {TESTIMONIALS[currentTestimonial]?.name || "Alexis Carmichael"}
               </div>
-              <div className="font-subheading text-sm text-[#5F6148]">
+              <div className="font-subheading text-sm text-[#2E2F1F]">
                 {TESTIMONIALS[currentTestimonial]?.role || "Manhattanville University MFA student in fiction"}
               </div>
             </div>
@@ -1019,7 +876,7 @@ export default function HomePage() {
                 onClick={() => setCurrentTestimonial((prev) => 
                   prev === 0 ? (TESTIMONIALS.length - 1) : prev - 1
                 )}
-                className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-white transition-all border border-[#E3E7C8]"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft size={18} />
@@ -1029,7 +886,7 @@ export default function HomePage() {
                 onClick={() => setCurrentTestimonial((prev) => 
                   (prev + 1) % TESTIMONIALS.length
                 )}
-                className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-[#F9FAF4] transition-all border border-[#E3E7C8]"
+                className="w-9 h-9 bg-[#B7C83E]/10 rounded-full flex items-center justify-center hover:bg-[#B7C83E] hover:text-white transition-all border border-[#E3E7C8]"
                 aria-label="Next testimonial"
               >
                 <ChevronRight size={18} />
@@ -1046,10 +903,10 @@ export default function HomePage() {
 
 
         {/* Press & Praise Section */}
-        <section className="relative bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
+        <section className="relative bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3] px-4 py-16 md:py-24 overflow-hidden">
           {/* Dust Texture Overlay */}
           <div 
-            className="absolute inset-0 opacity-[2%]"
+            className="absolute inset-0 opacity-2"
             style={{
               backgroundImage: 'url(/images/dust.jpg)',
               backgroundPosition: 'center',
@@ -1059,13 +916,13 @@ export default function HomePage() {
           ></div>
           
           {/* Background Elements */}
-          <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -top-20 -left-20 w-80 h-80 bg-linear-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
 
           <div className="max-w-6xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
+                <div className="w-12 h-12 bg-linear-to-br from-[#B7C83E]/20 to-transparent rounded-full flex items-center justify-center border border-[#E3E7C8]">
                   <Star size={24} className="text-[#B7C83E]" />
                 </div>
               </div>
@@ -1074,7 +931,7 @@ export default function HomePage() {
                 Press & <span className="text-gradient">Praise</span>
               </h2>
               
-              <p className="font-['Lato'] text-lg md:text-xl text-[#5F6148] font-semibold max-w-2xl mx-auto">
+              <p className="font-['Lato'] text-lg md:text-xl text-[#2E2F1F] font-semibold max-w-2xl mx-auto">
                 What critics and publications are saying
               </p>
             </div>
@@ -1096,7 +953,7 @@ export default function HomePage() {
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-[#E3E7C8] relative">
           {/* Dust Texture in Card */}
           <div 
-            className="absolute inset-0 rounded-2xl opacity-[1%]"
+            className="absolute inset-0 rounded-2xl opacity-1"
             style={{
               backgroundImage: 'url(/images/dust.jpg)',
               backgroundPosition: 'center',
@@ -1106,12 +963,12 @@ export default function HomePage() {
           ></div>
           <div className="relative z-10 text-center">
             {/* Quote */}
-            <p className="font-italic text-lg md:text-xl text-[#2E2F1F] italic mb-4 leading-relaxed">
+            <p className="font-italic text-lg md:text-xl text-[#1F2A0A] italic mb-4 leading-relaxed">
               "{text}"
             </p>
 
             {/* Author */}
-            <p className="font-bold text-[#5F6148] text-base md:text-lg">
+            <p className="font-bold text-[#2E2F1F] text-base md:text-lg">
               — {author}
             </p>
 
@@ -1150,7 +1007,7 @@ export default function HomePage() {
                   <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-[#E3E7C8] hover-lift transition-all group relative h-full">
                     {/* Dust Texture in Card */}
                     <div 
-                      className="absolute inset-0 rounded-xl opacity-[1%] group-hover:opacity-[2%] transition-opacity"
+                      className="absolute inset-0 rounded-xl opacity-1 group-hover:opacity-2 transition-opacity"
                       style={{
                         backgroundImage: 'url(/images/dust.jpg)',
                         backgroundPosition: 'center',
@@ -1168,14 +1025,14 @@ export default function HomePage() {
                       </div>
                     )}
                     
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B7C83E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#B7C83E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
                     
                     <div className="relative z-10">
                       {/* Publication Name */}
                       <div className="font-bold text-xl md:text-2xl mb-1" style={{ color: pub.color }}>
                         {pub.name.split(' ')[0]}
                       </div>
-                      <div className="font-subheading text-sm text-[#5F6148] tracking-wide">
+                      <div className="font-subheading text-sm text-[#2E2F1F] tracking-wide">
                         {pub.name.split(' ').slice(1).join(' ')}
                       </div>
                       
@@ -1185,7 +1042,7 @@ export default function HomePage() {
                           <div className="font-subheading text-xs text-[#B7C83E] font-semibold uppercase tracking-wider">
                             {pub.subtitle}
                           </div>
-                          <div className="text-xs text-[#5F6148] mt-1">
+                          <div className="text-xs text-[#2E2F1F] mt-1">
                             'Quantico' writer on perseverance & identity
                           </div>
                         </div>
@@ -1199,7 +1056,7 @@ export default function HomePage() {
             {/* CTA Button */}
             <div className="text-center">
               <Link href="/press" className="inline-block">
-                <button className="px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.3)] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto relative group border border-[#E3E7C8]">
+                <button className="px-8 py-4 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#1F2A0A] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-white hover:shadow-[0_15px_40px_rgba(183,200,62,0.3)] transition-all duration-300 hover-scale flex items-center gap-3 mx-auto relative group border border-[#E3E7C8]">
                   <span className="relative z-10">Read Full Features</span>
                   <Book size={20} className="relative z-10" />
                 </button>
@@ -1209,25 +1066,25 @@ export default function HomePage() {
         </section>
 
         {/* Bottom CTA Section */}
-        <section className="relative bg-gradient-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 px-4 py-16 md:py-24 overflow-hidden border-t border-[#E3E7C8]">
+        <section className="relative bg-linear-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 px-4 py-16 md:py-24 overflow-hidden border-t border-[#E3E7C8]">
           {/* Top Border */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
           
           {/* Background Pattern */}
-          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-linear-to-br from-[#B7C83E]/5 to-transparent rounded-full blur-3xl"></div>
 
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Begin Your <span className="text-gradient">Story?</span>
             </h2>
             
-            <p className="font-['Lato'] text-lg md:text-xl text-[#5F6148] font-semibold mb-8 max-w-2xl mx-auto">
+            <p className="font-['Lato'] text-lg md:text-xl text-[#2E2F1F] font-semibold mb-8 max-w-2xl mx-auto">
               Whether you're seeking mentorship, consultation, or collaboration, let's create something meaningful together.
             </p>
             
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Link href="/consulting" className="w-full md:w-auto">
-                <button className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_20px_50px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale relative border border-[#E3E7C8]">
+                <button className="group w-full md:w-auto px-8 py-4 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#1F2A0A] font-subheading text-lg font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-white hover:shadow-[0_20px_50px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale relative border border-[#E3E7C8]">
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     Start Consultation
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -1236,7 +1093,7 @@ export default function HomePage() {
               </Link>
               
               <Link href="/contact" className="w-full md:w-auto">
-                <button className="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-[#F9FAF4] hover:border-[#2E2F1F] transition-all duration-300 active:scale-95 touch-target hover-scale relative">
+                <button className="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] text-[#2E2F1F] font-subheading text-lg font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-white hover:border-[#2E2F1F] transition-all duration-300 active:scale-95 touch-target hover-scale relative">
                   <span className="relative z-10 flex items-center justify-center">
                     Get In Touch
                   </span>
@@ -1251,12 +1108,12 @@ export default function HomePage() {
       {isClient && showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 left-5 z-50 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform touch-target hover-scale relative border border-[#E3E7C8]"
+          className="fixed bottom-4 left-5 z-50 w-12 h-12 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform touch-target hover-scale border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
           {/* Dust Texture on Button */}
           <div 
-            className="absolute inset-0 rounded-full opacity-[10%]"
+            className="absolute inset-0 rounded-full opacity-10"
             style={{
               backgroundImage: 'url(/images/dust.jpg)',
               backgroundPosition: 'center',
@@ -1264,7 +1121,7 @@ export default function HomePage() {
               backgroundSize: 'cover',
             }}
           ></div>
-          <ChevronUp size={20} className="text-[#2E2F1F] relative z-10" />
+          <ChevronUp size={20} className="text-[#1F2A0A] relative z-10" />
         </button>
       )}
       <Footer />

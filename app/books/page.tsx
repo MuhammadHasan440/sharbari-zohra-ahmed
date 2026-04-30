@@ -362,7 +362,7 @@ export default function BooksPage() {
               </h1>
 
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
@@ -377,7 +377,7 @@ export default function BooksPage() {
         <div className="lg:hidden mobile-padding py-4">
           <button
             onClick={() => setShowMobileFilter(!showMobileFilter)}
-            className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/50 hover:to-transparent mobile-transition"
+            className="w-full flex items-center justify-between px-4 py-3 bg-linear-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg text-[#2E2F1F] hover:bg-linear-to-r hover:from-[#D9E6A3]/50 hover:to-transparent mobile-transition"
           >
             <div className="flex items-center gap-2">
               <Filter size={16} className="text-[#B7C83E]" />
@@ -401,7 +401,7 @@ export default function BooksPage() {
                       setActiveFilter(filter.id)
                       setShowMobileFilter(false)
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-lg mobile-transition flex items-center justify-between ${activeFilter === filter.id ? 'bg-gradient-to-r from-[#D9E6A3]/50 to-transparent text-[#2E2F1F]' : 'text-[#5F6148] hover:bg-[#D9E6A3]/30'}`}
+                    className={`w-full text-left px-4 py-3 rounded-lg mobile-transition flex items-center justify-between ${activeFilter === filter.id ? 'bg-linear-to-r from-[#D9E6A3]/50 to-transparent text-[#2E2F1F]' : 'text-[#5F6148] hover:bg-[#D9E6A3]/30'}`}
                   >
                     <div className="flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full ${activeFilter === filter.id ? 'bg-[#B7C83E]' : 'bg-[#5F6148]/30'}`}></span>
@@ -428,7 +428,7 @@ export default function BooksPage() {
                     <button
                       key={filter.id}
                       onClick={() => setActiveFilter(filter.id)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap mobile-transition ${activeFilter === filter.id ? 'bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] shadow-sm' : 'bg-gradient-to-r from-[#D9E6A3]/30 to-transparent text-[#5F6148] hover:from-[#D9E6A3]/50 hover:to-transparent'}`}
+                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap mobile-transition ${activeFilter === filter.id ? 'bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] shadow-sm' : 'bg-linear-to-r from-[#D9E6A3]/30 to-transparent text-[#5F6148] hover:from-[#D9E6A3]/50 hover:to-transparent'}`}
                     >
                       {filter.label}
                       <span className="ml-2 px-1.5 py-0.5 bg-white/20 text-xs rounded-full">
@@ -474,14 +474,14 @@ export default function BooksPage() {
                             sizes="(max-width: 768px) 100vw, 33vw"
                             priority={index === 0}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                          <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
                           
                           <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full border border-[#E3E7C8]">
                             <span className="text-sm font-semibold text-[#5F6148]">{book.year}</span>
                           </div>
                           
                           {book.featured && (
-                            <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
+                            <div className="absolute top-4 right-4 px-3 py-1 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full border border-[#E3E7C8]">
                               <span className="text-xs font-semibold text-[#2E2F1F]">FEATURED</span>
                             </div>
                           )}
@@ -522,7 +522,7 @@ export default function BooksPage() {
                                       href={review.url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="block p-3 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] transition-colors duration-200 group/review"
+                                      className="block p-3 bg-linear-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] transition-colors duration-200 group/review"
                                     >
                                       <div className="flex items-start justify-between mb-1">
                                         <h5 className="font-medium text-[#2E2F1F] group-hover/review:text-[#6F7F1E] transition-colors">
@@ -549,7 +549,7 @@ export default function BooksPage() {
                                 {book.awards.map((award, i) => (
                                   <span 
                                     key={i}
-                                    className="px-3 py-1 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-full text-xs text-[#5F6148]"
+                                    className="px-3 py-1 bg-linear-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] rounded-full text-xs text-[#5F6148]"
                                   >
                                     {award}
                                   </span>
@@ -567,7 +567,7 @@ export default function BooksPage() {
                                   href={link.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className={`px-4 py-3 bg-gradient-to-r ${link.color} text-[#2E2F1F] rounded-lg border border-[#E3E7C8] hover:shadow-md hover-scale mobile-transition flex items-center justify-between group/link`}
+                                  className={`px-4 py-3 bg-linear-to-r ${link.color} text-[#2E2F1F] rounded-lg border border-[#E3E7C8] hover:shadow-md hover:scale mobile-transition flex items-center justify-between group/link`}
                                 >
                                   <span className="font-medium">{link.name}</span>
                                   <ExternalLink size={14} className="opacity-60 group-hover/link:opacity-100 group-hover/link:rotate-12 transition-transform duration-200" />
@@ -579,7 +579,7 @@ export default function BooksPage() {
                           {book.featured && (
                             <div className="mt-6 pt-6 border-t border-[#E3E7C8]">
                               <div className="flex items-start gap-2">
-                                <Quote className="w-5 h-5 text-[#B7C83E]/40 flex-shrink-0 mt-1" />
+                                <Quote className="w-5 h-5 text-[#B7C83E]/40 shrink-0 mt-1" />
                                 <blockquote className="text-sm text-[#5F6148] italic">
                                   {book.title === "The Strangest of Fruit" 
                                     ? "A remarkable debut collection... Ahmed writes with both precision and poetic grace about the complexities of identity and belonging."
@@ -620,10 +620,10 @@ export default function BooksPage() {
                   {pressAndInterviews.map((item, i) => (
                     <div 
                       key={i}
-                      className="p-5 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group"
+                      className="p-5 bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group"
                     >
                       <div className="flex items-start gap-3 mb-4">
-                        <div className="p-2 bg-gradient-to-r from-[#D9E6A3]/30 to-[#B7C83E]/10 rounded-lg border border-[#E3E7C8]">
+                        <div className="p-2 bg-linear-to-r from-[#D9E6A3]/30 to-[#B7C83E]/10 rounded-lg border border-[#E3E7C8]">
                           {item.type === 'interview' ? (
                             <MessageSquare size={20} className="text-[#B7C83E]" />
                           ) : (
@@ -678,14 +678,14 @@ export default function BooksPage() {
                   {publications.map((pub, i) => (
                     <div 
                       key={i}
-                      className="p-5 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group"
+                      className="p-5 bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <h4 className="text-lg font-bold text-[#2E2F1F] group-hover:text-[#6F7F1E] transition-colors">{pub.title}</h4>
                           <p className="text-sm text-[#B7C83E] mt-1">{pub.venue}</p>
                         </div>
-                        <span className="px-2 py-1 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent text-[#5F6148] text-xs font-medium rounded-full border border-[#E3E7C8]">
+                        <span className="px-2 py-1 bg-linear-to-r from-[#D9E6A3]/30 to-transparent text-[#5F6148] text-xs font-medium rounded-full border border-[#E3E7C8]">
                           {pub.year}
                         </span>
                       </div>
@@ -695,7 +695,7 @@ export default function BooksPage() {
                       </p>
                       
                       <div className="flex items-center justify-between">
-                        <span className="px-3 py-1 bg-gradient-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] text-[#5F6148] text-xs rounded-full">
+                        <span className="px-3 py-1 bg-linear-to-r from-[#D9E6A3]/30 to-transparent border border-[#E3E7C8] text-[#5F6148] text-xs rounded-full">
                           {pub.category}
                         </span>
                         <button className="text-sm text-[#B7C83E] hover:text-[#6F7F1E] transition-colors flex items-center gap-1 group/link">
@@ -729,11 +729,11 @@ export default function BooksPage() {
                     href={item.url}
                     target={item.url === "#" ? "_self" : "_blank"}
                     rel="noopener noreferrer"
-                    className={`p-5 bg-gradient-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group ${item.url === "#" ? 'cursor-not-allowed opacity-70' : ''}`}
+                    className={`p-5 bg-linear-to-br from-white to-[#F9FAF4] border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover-lift transition-all duration-300 group ${item.url === "#" ? 'cursor-not-allowed opacity-70' : ''}`}
                     onClick={item.url === "#" ? (e) => e.preventDefault() : undefined}
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 bg-gradient-to-r from-[#D9E6A3]/30 to-[#B7C83E]/10 rounded-lg border border-[#E3E7C8]">
+                      <div className="p-2 bg-linear-to-r from-[#D9E6A3]/30 to-[#B7C83E]/10 rounded-lg border border-[#E3E7C8]">
                         <FileText size={20} className="text-[#B7C83E]" />
                       </div>
                       <div>
@@ -762,7 +762,7 @@ export default function BooksPage() {
         </div>
 
         {/* CTA Section */}
-        <section className="py-12 mobile-full-width bg-gradient-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 border-t border-[#E3E7C8]">
+        <section className="py-12 mobile-full-width bg-linear-to-br from-[#B7C83E]/8 via-[#6F7F1E]/8 to-[#B7C83E]/8 border-t border-[#E3E7C8]">
           <div className="mobile-padding max-w-3xl mx-auto text-center space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold text-[#2E2F1F]">
@@ -778,7 +778,7 @@ export default function BooksPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale border border-[#E3E7C8]"
+                className="group w-full sm:w-auto px-8 py-4 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:from-[#6F7F1E] hover:to-[#6F7F1E] hover:text-[#F9FAF4] hover:shadow-[0_15px_40px_rgba(183,200,62,0.4)] transition-all duration-300 active:scale-95 touch-target hover-scale border border-[#E3E7C8]"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Get in Touch
@@ -786,10 +786,10 @@ export default function BooksPage() {
                 </span>
               </Link>
               
-              <Link
-                href="/press"
-                className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-[#F9FAF4] hover:border-[#2E2F1F] transition-all duration-300 active:scale-95 touch-target hover-scale border border-[#E3E7C8]"
-              >
+             <Link
+  href="/press"
+  className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-[#2E2F1F] ring-1 ring-[#E3E7C8] text-[#2E2F1F] font-subheading font-semibold rounded-full hover:bg-[#2E2F1F] hover:text-[#F9FAF4] transition-all duration-300 active:scale-95 touch-target hover-scale"
+>
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Press & Reviews
                   <ExternalLink size={20} />
@@ -805,7 +805,7 @@ export default function BooksPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale transition-transform duration-300 border border-[#E3E7C8]"
+          className="lg:hidden fixed bottom-20 right-4 z-40 w-12 h-12 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg tap-highlight-transparent hover-scale transition-transform duration-300 border border-[#E3E7C8]"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-[#2E2F1F]" />

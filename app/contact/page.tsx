@@ -202,8 +202,8 @@ function ContactForm() {
           <div className={`lg:col-span-2 ${activeTab === 'form' ? 'block' : 'hidden lg:block'}`}>
             <div className="space-y-8">
               {submitted ? (
-                <div className="relative p-6 md:p-8 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#B7C83E] rounded-xl space-y-6">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center border border-[#E3E7C8] animate-bounce">
+                <div className="relative p-6 md:p-8 bg-linear-to-br from-[#F9FAF4] to-white border border-[#B7C83E] rounded-xl space-y-6">
+                  <div className="w-16 h-16 mx-auto bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center border border-[#E3E7C8] animate-bounce">
                     <CheckCircle className="text-white" size={28} />
                   </div>
                   
@@ -221,7 +221,7 @@ function ContactForm() {
                   <div className="flex flex-col sm:flex-row gap-3 pt-4">
                     <Link
                       href="/blog"
-                      className="flex-1 px-5 py-3 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] rounded-lg hover:scale-105 transition-all text-center border border-[#E3E7C8]"
+                      className="flex-1 px-5 py-3 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] rounded-lg hover:scale-105 transition-all text-center border border-[#E3E7C8]"
                     >
                       Read Blog
                     </Link>
@@ -237,9 +237,9 @@ function ContactForm() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="p-6 md:p-8 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
+                  <div className="p-6 md:p-8 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                      <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                         <Send className="text-white" size={20} />
                       </div>
                       <h3 className="text-xl font-bold text-[#2E2F1F]">Send a Message</h3>
@@ -368,7 +368,7 @@ function ContactForm() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg hover:scale-105 transition-all border border-[#E3E7C8] disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-medium rounded-lg hover:scale-105 transition-all border border-[#E3E7C8] disabled:opacity-70 disabled:cursor-not-allowed"
                       >
                         {isSubmitting ? (
                           <>
@@ -395,12 +395,12 @@ function ContactForm() {
             <div className={`${activeTab === 'faq' ? 'block' : 'hidden lg:block'}`}>
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                     <HelpCircle size={20} className="text-white" />
                   </div>
                   <div>
                     <h2 className="text-xl md:text-2xl font-bold text-[#2E2F1F]">FAQ</h2>
-                    <div className="h-1 w-12 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
+                    <div className="h-1 w-12 bg-linear-to-r from-[#B7C83E] to-transparent mt-1"></div>
                   </div>
                 </div>
 
@@ -433,21 +433,21 @@ function ContactForm() {
                     return (
                       <div 
                         key={index} 
-                        className="bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg overflow-hidden transition-all hover:border-[#B7C83E]"
+                        className="bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg overflow-hidden transition-all hover:border-[#B7C83E]"
                       >
                         <button
                           onClick={() => setExpandedFaq(isExpanded ? null : index)}
                           className="w-full flex items-center justify-between p-4 text-left"
                         >
                           <div className="flex items-center gap-3 flex-1">
-                            <div className="w-8 h-8 bg-gradient-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded flex items-center justify-center flex-shrink-0 border border-[#E3E7C8]">
+                            <div className="w-8 h-8 bg-linear-to-br from-[#D9E6A3] to-[#B7C83E]/20 rounded flex items-center justify-center shrink-0 border border-[#E3E7C8]">
                               <Icon className="text-[#5F6148]" size={14} />
                             </div>
                             <h3 className="text-[#2E2F1F] font-medium text-sm flex-1">
                               {item.question}
                             </h3>
                           </div>
-                          <span className={`text-lg font-bold text-[#B7C83E] transition-transform ${isExpanded ? 'rotate-45' : ''} flex-shrink-0 ml-2`}>
+                          <span className={`text-lg font-bold text-[#B7C83E] transition-transform ${isExpanded ? 'rotate-45' : ''} shrink-0 ml-2`}>
                             {isExpanded ? '×' : '+'}
                           </span>
                         </button>
@@ -470,21 +470,21 @@ function ContactForm() {
             <div className={`${activeTab === 'connect' ? 'block' : 'hidden lg:block'}`}>
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
+                  <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8]">
                     <Users size={20} className="text-white" />
                   </div>
                   <div>
                     <h2 className="text-xl md:text-2xl font-bold text-[#2E2F1F]">Connect</h2>
-                    <div className="h-1 w-12 bg-gradient-to-r from-[#B7C83E] to-transparent mt-1"></div>
+                    <div className="h-1 w-12 bg-linear-to-r from-[#B7C83E] to-transparent mt-1"></div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <a
                     href="mailto:shabini71@gmail.com"
-                    className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover:shadow-md transition-all"
+                    className="group flex items-center gap-4 p-4 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover:shadow-md transition-all"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8] group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8] group-hover:scale-110 transition-transform">
                       <Mail className="text-white" size={18} />
                     </div>
                     <div className="flex-1">
@@ -499,9 +499,9 @@ function ContactForm() {
                     href="https://linkedin.com/in/sharbariahmed"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover:shadow-md transition-all"
+                    className="group flex items-center gap-4 p-4 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover:shadow-md transition-all"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8] group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8] group-hover:scale-110 transition-transform">
                       <Linkedin className="text-white" size={18} />
                     </div>
                     <div className="flex-1">
@@ -516,9 +516,9 @@ function ContactForm() {
                     href="https://sharbariahmed.substack.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-4 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover:shadow-md transition-all"
+                    className="group flex items-center gap-4 p-4 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-lg hover:border-[#B7C83E] hover:shadow-md transition-all"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8] group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg flex items-center justify-center border border-[#E3E7C8] group-hover:scale-110 transition-transform">
                       <PenTool className="text-white" size={18} />
                     </div>
                     <div className="flex-1">
@@ -531,7 +531,7 @@ function ContactForm() {
                 </div>
 
                 {/* Response Time */}
-                <div className="p-5 bg-gradient-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
+                <div className="p-5 bg-linear-to-br from-[#F9FAF4] to-white border border-[#E3E7C8] rounded-xl hover:shadow-md transition-all">
                   <div className="flex items-center gap-3 mb-3">
                     <Clock className="text-[#B7C83E]" size={18} />
                     <h3 className="text-base font-bold text-[#2E2F1F]">Response Time</h3>
@@ -542,7 +542,7 @@ function ContactForm() {
                 </div>
 
                 {/* Consulting CTA */}
-                <div className="p-5 bg-gradient-to-br from-[#D9E6A3]/30 to-[#B7C83E]/10 border border-[#B7C83E] rounded-xl hover:shadow-lg transition-all">
+                <div className="p-5 bg-linear-to-br from-[#D9E6A3]/30 to-[#B7C83E]/10 border border-[#B7C83E] rounded-xl hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3 mb-3">
                     <Sparkles className="text-[#6F7F1E]" size={18} />
                     <h3 className="text-base font-bold text-[#2E2F1F]">Interested in Consulting?</h3>
@@ -565,10 +565,10 @@ function ContactForm() {
       </div>
 
       {/* Quote Section */}
-      <section className="py-12 w-full bg-gradient-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
+      <section className="py-12 w-full bg-linear-to-br from-[#F9FAF4] via-[#D9E6A3] to-[#F9FAF4] border-t border-[#E3E7C8]">
         <div className="container-padding max-w-content">
           <div className="text-center space-y-6">
-            <div className="p-6 md:p-8 border-l-4 border-[#B7C83E] bg-gradient-to-r from-transparent via-[#D9E6A3]/30 to-transparent rounded-r-lg">
+            <div className="p-6 md:p-8 border-l-4 border-[#B7C83E] bg-linear-to-r from-transparent via-[#D9E6A3]/30 to-transparent rounded-r-lg">
               <p className="text-xl md:text-2xl font-subheading italic text-[#2E2F1F] leading-relaxed">
                 "Stories remind us who we are—and who we might yet become. I look forward to hearing yours."
               </p>
@@ -693,8 +693,8 @@ export default function ContactPage() {
                  style={{
                    background: 'linear-gradient(135deg, #2E2F1F 0%, #2E2F1F 40%, #B7C83E 100%)',
                  }}>
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
-          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+          <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-3pointer-events-none"></div>
           
           <div className="container-padding max-w-content">
             <div className="text-center space-y-6">
@@ -714,7 +714,7 @@ export default function ContactPage() {
               </h1>
 
               <div className="relative my-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                <div className="h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-[#B7C83E] rotate-45 bg-white"></div>
               </div>
 
@@ -743,7 +743,7 @@ export default function ContactPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 right-4 z-40 w-12 h-12 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8] animate-bounce"
+          className="fixed bottom-20 right-4 z-40 w-12 h-12 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all border border-[#E3E7C8] animate-bounce"
           aria-label="Scroll to top"
         >
           <ChevronUp size={20} className="text-[#2E2F1F]" />

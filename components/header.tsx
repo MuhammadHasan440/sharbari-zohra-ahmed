@@ -99,8 +99,8 @@ export function Header() {
                 {/* Logo placeholder */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-transparent flex items-center justify-center relative">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg relative overflow-hidden">
-                      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(111,127,30,0.1)_50%,transparent_75%)] bg-[length:250%_250%]"></div>
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-linear-to-br from-[#B7C83E] to-[#6F7F1E] rounded-lg relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(111,127,30,0.1)_50%,transparent_75%)] bg-size-[250%_250%]"></div>
                     </div>
                   </div>
                 </div>
@@ -124,11 +124,11 @@ export function Header() {
         }`}
       >
         {/* Pattern Background */}
-        <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-[3%] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-3 pointer-events-none"></div>
         
         {/* Olive Overlay on Scroll */}
         {isScrolled && (
-          <div className="absolute inset-0 bg-gradient-to-b from-[#B7C83E]/5 via-transparent to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-linear-to-b from-[#B7C83E]/5 via-transparent to-transparent pointer-events-none"></div>
         )}
 
         <nav className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
@@ -145,7 +145,7 @@ export function Header() {
                   <div className="relative">
                     <img className="w-40 pt-2" src="/images/logo.png" alt="Sharbari Zohra Ahmed" />
                     {/* Olive underline */}
-                    <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent group-hover:w-full transition-all duration-500"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent group-hover:w-full transition-all duration-500"></div>
                   </div>
                 </div>
               </Link>
@@ -161,7 +161,7 @@ export function Header() {
                   <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-5 pointer-events-none"></div>
                   
                   {/* Olive border top */}
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+                  <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
                   
                   <div className="relative px-4 py-3 border-b border-[#E3E7C8]">
                     <p className="text-xs text-[#5F6148] uppercase tracking-widest font-cormorant">Quick Access</p>
@@ -174,7 +174,7 @@ export function Header() {
                         href={link.href}
                         target={link.external ? "_blank" : undefined}
                         rel={link.external ? "noopener noreferrer" : undefined}
-                        className={`relative flex items-center gap-3 px-4 py-3 text-[#5F6148] hover:text-[#2E2F1F] group mobile-transition hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent ${
+                        className={`relative flex items-center gap-3 px-4 py-3 text-[#5F6148] hover:text-[#2E2F1F] group mobile-transition hover:bg-linear-to-r hover:from-[#D9E6A3]/30 hover:to-transparent ${
                           link.highlight ? 'bg-[#B7C83E]/10 border-l-2 border-[#B7C83E]' : ''
                         }`}
                         onClick={() => setIsOpen(false)}
@@ -194,7 +194,7 @@ export function Header() {
               )}
             </div>
 
-            {/* Desktop Navigation - Olive Theme */}
+            {/* Desktop Navigation - White text only */}
             <div className="hidden md:flex gap-2 items-center">
               {navItems.map((item) => {
                 const Icon = item.icon
@@ -208,16 +208,16 @@ export function Header() {
                     <Link
                       href={item.href}
                       data-active={activeDropdown === item.label}
-                      className={`relative flex items-center gap-2 px-4 py-2.5 mobile-transition text-[#2E2F1F] hover:text-[#B7C83E] group ${
-                        item.highlight ? 'bg-gradient-to-r from-[#B7C83E]/20 to-[#6F7F1E]/10 border border-[#B7C83E]/30' : ''
+                      className={`relative flex items-center gap-2 px-4 py-2.5 mobile-transition text-white hover:text-[#B7C83E] group ${
+                        item.highlight ? 'bg-linear-to-r from-[#B7C83E]/20 to-[#6F7F1E]/10 border border-[#B7C83E]/30 rounded-lg' : ''
                       }`}
                     >
                       {/* Hover background */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#B7C83E]/0 via-[#D9E6A3]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-[#B7C83E]/0 via-[#D9E6A3]/10 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                       
                       {/* Announcement badge */}
                       {item.badge && (
-                        <div className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-[#B7C83E] text-[#2E2F1F] text-[10px] font-bold rounded-full z-20 animate-pulse">
+                        <div className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-[#B7C83E] text-[#1F2A0A] text-[10px] font-bold rounded-full z-20 animate-pulse">
                           {item.badge}
                         </div>
                       )}
@@ -225,19 +225,19 @@ export function Header() {
                       <Icon 
                         size={16} 
                         className={`z-10 transition-colors ${
-                          item.highlight ? 'text-[#B7C83E]' : 'text-[#B7C83E]/70 group-hover:text-[#B7C83E]'
+                          item.highlight ? 'text-[#B7C83E]' : 'text-white/80 group-hover:text-[#B7C83E]'
                         }`}
                       />
-                      <span className="text-sm font-medium font-cormorant z-10">{item.label}</span>
+                      <span className="text-sm font-medium font-cormorant z-10 text-white group-hover:text-[#B7C83E]">{item.label}</span>
                       {!item.highlight && (
                         <ChevronDown 
                           size={14}
-                          className="mobile-transition text-[#B7C83E]/50 group-hover:text-[#B7C83E] group-hover:rotate-180 z-10" 
+                          className="mobile-transition text-white/60 group-hover:text-[#B7C83E] group-hover:rotate-180 z-10" 
                         />
                       )}
                       
                       {/* Olive underline animation */}
-                      <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] group-hover:w-3/4 transition-all duration-500 ${
+                      <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] group-hover:w-3/4 transition-all duration-500 ${
                         item.highlight ? 'opacity-100 w-3/4' : ''
                       }`}></div>
                     </Link>
@@ -245,12 +245,12 @@ export function Header() {
                     {/* Dropdown Menu - Olive Style */}
                     {activeDropdown === item.label && !item.highlight && (
                       <div 
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[240px] bg-[#F9FAF4] border border-[#E3E7C8] rounded-lg shadow-2xl py-3 backdrop-blur-xl z-50 overflow-hidden"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-60 bg-[#F9FAF4] border border-[#E3E7C8] rounded-lg shadow-2xl py-3 backdrop-blur-xl z-50 overflow-hidden"
                         onMouseEnter={() => setActiveDropdown(item.label)}
                         onMouseLeave={() => setActiveDropdown(null)}
                       >
                         {/* Decorative pattern */}
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
                         <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-5 pointer-events-none"></div>
                         
                         <div className="relative px-4 py-3 border-b border-[#E3E7C8]">
@@ -275,7 +275,7 @@ export function Header() {
                         onMouseLeave={() => setActiveDropdown(null)}
                       >
                         {/* Special gradient border */}
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E]"></div>
                         <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-5 pointer-events-none"></div>
                         
                         <div className="relative px-4 py-3 border-b border-[#E3E7C8]">
@@ -290,7 +290,7 @@ export function Header() {
                         <div className="space-y-1 px-2">
                           <Link
                             href="/announcement"
-                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
+                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-linear-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
                             onClick={() => setIsOpen(false)}
                           >
                             <Megaphone size={14} className="text-[#B7C83E]/70 group-hover:text-[#B7C83E]" />
@@ -301,7 +301,7 @@ export function Header() {
                           </Link>
                           <Link
                             href="/press"
-                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
+                            className="flex items-center gap-3 px-3 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-linear-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg transition-all duration-300 group"
                             onClick={() => setIsOpen(false)}
                           >
                             <Book size={14} className="text-[#6F7F1E]/70 group-hover:text-[#6F7F1E]" />
@@ -317,38 +317,22 @@ export function Header() {
                 )
               })}
 
-              {/* CTA Button - Olive Elegance */}
-              <Link
-                href="/contact"
-                className="ml-4 relative px-6 py-2.5 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-bold text-sm rounded-lg hover:shadow-[0_0_30px_rgba(183,200,62,0.4)] hover:scale-105 mobile-transition border border-[#E3E7C8] group overflow-hidden"
-              >
-                {/* Olive shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D9E6A3]/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                
-                {/* Olive border animation */}
-                <div className="absolute inset-0 rounded-lg p-px bg-gradient-to-r from-[#B7C83E] via-[#6F7F1E] to-[#B7C83E] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute inset-0 rounded-lg bg-[#F9FAF4]"></div>
-                </div>
-                
-                <span className="relative z-10 font-semibold">
-                  Begin Conversation
-                </span>
-              </Link>
+             
             </div>
 
             {/* Mobile Menu Button - Olive Accented */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden relative w-10 h-10 bg-gradient-to-br from-[#F9FAF4] to-[#D9E6A3] border border-[#E3E7C8] rounded-lg flex items-center justify-center hover:border-[#B7C83E] hover:shadow-[0_0_20px_rgba(183,200,62,0.4)] mobile-transition tap-highlight-transparent group overflow-hidden"
+              className="md:hidden relative w-10 h-10 bg-linear-to-br from-[#F9FAF4] to-[#D9E6A3] border border-[#E3E7C8] rounded-lg flex items-center justify-center hover:border-[#B7C83E] hover:shadow-[0_0_20px_rgba(183,200,62,0.4)] mobile-transition tap-highlight-transparent group overflow-hidden"
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {/* Olive shine */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D9E6A3]/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#D9E6A3]/20 to-transparent translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               
               {isOpen ? (
                 <>
                   <X size={20} className="text-[#2E2F1F] relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#B7C83E]/20 to-[#6F7F1E]/10"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-[#B7C83E]/20 to-[#6F7F1E]/10"></div>
                 </>
               ) : (
                 <>
@@ -365,12 +349,12 @@ export function Header() {
 
           {/* Mobile Navigation - Olive Theme */}
           {isOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8] space-y-1 animate-slide-down py-4 px-4 shadow-2xl z-40 overflow-hidden">
+            <div className="md:hidden absolute top-full left-0 right-0 bg-linear-to-b from-[#F9FAF4] to-[#D9E6A3] border-t border-[#E3E7C8] space-y-1 animate-slide-down py-4 px-4 shadow-2xl z-40 overflow-hidden">
               {/* Pattern overlay */}
               <div className="absolute inset-0 bg-[url('/images/pattern.jpg')] opacity-5 pointer-events-none"></div>
               
               {/* Olive top border */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B7C83E] to-transparent"></div>
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#B7C83E] to-transparent"></div>
               
               {/* Navigation Items */}
               {navItems.map((item) => {
@@ -380,7 +364,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     className={`group relative flex items-center gap-4 px-4 py-3.5 text-[#2E2F1F] hover:text-[#6F7F1E] mobile-transition rounded-lg overflow-hidden ${
-                      item.highlight ? 'bg-gradient-to-r from-[#B7C83E]/20 to-[#6F7F1E]/10 border border-[#B7C83E]/30' : ''
+                      item.highlight ? 'bg-linear-to-r from-[#B7C83E]/20 to-[#6F7F1E]/10 border border-[#B7C83E]/30' : ''
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -392,10 +376,10 @@ export function Header() {
                     )}
                     
                     {/* Olive accent line */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-gradient-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-6 transition-all duration-300"></div>
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-linear-to-b from-[#B7C83E] to-[#6F7F1E] group-hover:h-6 transition-all duration-300"></div>
                     
                     {/* Hover background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#B7C83E]/0 via-[#D9E6A3]/20 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-[#B7C83E]/0 via-[#D9E6A3]/20 to-[#B7C83E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     <Icon size={18} className={`relative z-10 transition-colors ${
                       item.highlight ? 'text-[#B7C83E]' : 'text-[#B7C83E]/70 group-hover:text-[#B7C83E]'
@@ -420,7 +404,7 @@ export function Header() {
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      className={`flex items-center justify-between px-4 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-gradient-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg mobile-transition group ${
+                      className={`flex items-center justify-between px-4 py-3 text-[#5F6148] hover:text-[#2E2F1F] hover:bg-linear-to-r hover:from-[#D9E6A3]/30 hover:to-transparent rounded-lg mobile-transition group ${
                         link.highlight ? 'bg-[#B7C83E]/10 border-l-2 border-[#B7C83E]' : ''
                       }`}
                       onClick={() => setIsOpen(false)}
@@ -443,11 +427,11 @@ export function Header() {
               <div className="pt-4 mt-3">
                 <Link
                   href="/contact"
-                  className="block w-full text-center px-6 py-3.5 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-bold rounded-lg hover:shadow-[0_0_30px_rgba(183,200,62,0.4)] mobile-transition active:scale-95 border border-[#E3E7C8] relative overflow-hidden group"
+                  className="block w-full text-center px-6 py-3.5 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] text-[#2E2F1F] font-bold rounded-lg hover:shadow-[0_0_30px_rgba(183,200,62,0.4)] mobile-transition active:scale-95 border border-[#E3E7C8] relative overflow-hidden group"
                   onClick={() => setIsOpen(false)}
                 >
                   {/* Olive shine */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D9E6A3]/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#D9E6A3]/20 to-transparent translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   
                   <span className="relative font-semibold">
                     Begin Conversation
@@ -457,9 +441,9 @@ export function Header() {
 
               {/* Decorative elements for mobile menu */}
               <div className="pt-6 flex justify-center gap-3">
-                <div className="w-1 h-1 bg-gradient-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full"></div>
-                <div className="w-1 h-1 bg-gradient-to-r from-[#6F7F1E] to-[#5F6148] rounded-full"></div>
-                <div className="w-1 h-1 bg-gradient-to-r from-[#5F6148] to-[#B7C83E] rounded-full"></div>
+                <div className="w-1 h-1 bg-linear-to-r from-[#B7C83E] to-[#6F7F1E] rounded-full"></div>
+                <div className="w-1 h-1 bg-linear-to-r from-[#6F7F1E] to-[#5F6148] rounded-full"></div>
+                <div className="w-1 h-1 bg-linear-to-r from-[#5F6148] to-[#B7C83E] rounded-full"></div>
               </div>
             </div>
           )}

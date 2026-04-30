@@ -30,31 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         {/* Dark mode script using next/script with beforeInteractive strategy */}
-        <Script
-          id="dark-mode-handler"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const theme = localStorage.getItem('theme');
-                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch(e) {
-                  console.error('Dark mode initialization error:', e);
-                }
-              })();
-            `,
-          }}
-        />
+       
       </head>
 
-      <body
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white dark:bg-[#0A1128] text-black dark:text-white`}
-      >
+      <body>
         {children}
         <Analytics />
       </body>
